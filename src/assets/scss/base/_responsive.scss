@@ -1,0 +1,34 @@
+$breakpoints: ( 'mobile-420': (max-width: 426px), //mobile size l 320 - 410px
+'mobile-m': (max-width: 375px), //mobile size m (iphone6/7/8)
+'mobile-max': (max-width: 767px),
+'mobile-only': (max-width: 768px),
+'small': (max-width: 991px), //xs
+'medium': (min-width: 992px), //md
+'medium-large':(max-width:991px), //991 803 
+'large': (min-width: 992px), //lg
+'laptop': (max-width: 1199px), //laptop
+'laptop-large': (max-width: 1199px), //laptop
+'huge': (min-width: 1200px), //huge
+);
+
+/// Responsive breakpoint manager
+/// @access public
+/// @param {String} $breakpoint - Breakpoint
+/// @requires $breakpoints
+@mixin respond-to($breakpoint) {
+    $raw-query: map-get($breakpoints, $breakpoint);
+
+    @if $raw-query {
+        $query: if( type-of($raw-query) == 'string', unquote($raw-query), inspect($raw-query) );
+
+        @media #{$query} {
+            @content;
+        }
+    }
+    @else {
+        @error 'No value found for `#{$breakpoint}`. ' + 'Please make sure it is defined in `$breakpoints` map.';
+    }
+}
+
+
+//using  @include respond-to('medium') {.........}

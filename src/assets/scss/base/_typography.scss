@@ -1,0 +1,429 @@
+
+//FONT
+@font-face {
+    font-family: 'DB HelvethaicaMon X 65 Med';
+    src: url('../../fonts/DB_HelvethaicaMon_X_Med_v3.2.ttf') format('truetype'), url('../../fonts/DBHelvethaicaXMedv65.woff2') format('woff2'), url('../../fonts/DBHelvethaicaXMedv65.woff') format('woff'), url('../../fonts/DBHelvethaicaXMedv65.eot') format('embedded-opentype');
+    // src: url('../../fonts/DBHelvethaicaXMedv65.woff2') format('woff2'), url('../../fonts/DBHelvethaicaXMedv65.woff') format('woff'), url('../../fonts/DBHelvethaicaXMedv65.eot') format('embedded-opentype'), url('../../fonts/DBHelvethaicaXMedv65.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DB HelvethaicaMon X 55 Regular';
+    src: url('../../fonts/DB_HelvethaicaMon_X_v3.2.ttf') format('truetype'), url('../../fonts/db_helvethaicamon_55_regular.woff2') format('woff2'), url('../../fonts/db_helvethaicamon_55_regular.woff') format('woff'), url('../../fonts/db_helvethaicamon_55_regular.eot') format('embedded-opentype');
+    // src: url('../../fonts/db_helvethaicamon_55_regular.woff2') format('woff2'), url('../../fonts/db_helvethaicamon_55_regular.woff') format('woff'), url('../../fonts/db_helvethaicamon_55_regular.eot') format('embedded-opentype'), url('../../fonts/db_helvethaicamon_55_regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DB Helvethaica';
+    src: url('../../fonts/DBHelvethaicaXMedv65.woff2') format('woff2'), url('../../fonts/DBHelvethaicaXMedv65.woff') format('woff'), url('../../fonts/DBHelvethaicaXMedv65.eot') format('embedded-opentype'), url('../../fonts/DBHelvethaicaXMedv65.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DB Helvethaica';
+    src: url('../../fonts/db_helvethaicamon_55_regular.woff2') format('woff2'), url('../../fonts/db_helvethaicamon_55_regular.woff') format('woff'), url('../../fonts/db_helvethaicamon_55_regular.eot') format('embedded-opentype'), url('../../fonts/db_helvethaicamon_55_regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../../fonts/Kanit-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kanit SemiBold';
+    src: url('../../fonts/Kanit-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Kanit SemiBold';
+    src: url('../../fonts/Kanit-SemiBoldItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Kanit Light';
+    src: url('../../fonts/Kanit-LightItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Kanit Light';
+    src: url('../../fonts/Kanit-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Phetsarath OT';
+    src: url('../../fonts/Phetsarath-OT.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sarabun';
+    src: url('../../fonts/Sarabun-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/*! = $rembase: 14px
+--------------------------------------------------------------
+* hmtl { font-size: 87.5%; }
+* body { font-size: 14px; font-size: 1rem; line-height: 1; }
+* 4px    	0.28571429rem
+* 8px		0.571428571rem
+* 12px		0.857142857rem
+* 13px		0.928571429rem
+* 14px		1rem
+* 16px		1.142857143rem
+* 18px		1.285714286rem
+* 20px		1.428571429rem
+* 21px		1.5rem
+* 22px		1.571428571rem
+* 24px		1.714285714rem
+* 28px		2rem
+* 36px		2.571428571rem
+* 42px		3rem
+* 48px		3.428571429rem
+* 64px		4.57142857rem
+* 72px		5.142857143rem
+*/
+
+/*! = $rembase: 16px
+--------------------------------------------------------------
+* hmtl { font-size: 100%; }
+* body { font-size: 16px; font-size: 1rem; line-height: 1; }
+* 4px    	0.25rem
+* 8px		  0.5rem
+* 12px		0.75rem
+* 14px		0.875rem
+* 16px		1rem
+* 18px		1.125rem
+* 19px		1.1875rem
+* 20px		1.25rem
+* 22px		1.375rem
+* 24px		1.5rem
+* 32px		2rem
+* 36px		2.25rem
+* 48px		3rem
+* 64px		4rem
+* 72px		4.5rem
+*/
+
+$font-size-base: 14px !default;
+$font-size-small: 12px !default;
+$font-size-medium: 16px !default;
+$font-size-large: 18px !default;
+$font-size-large-navbar: 20px !default;
+
+
+// $font-size-h1: 45px !default;
+// $font-size-h2: 36px !default;
+// $font-size-h3: 30px !default;
+// $font-size-h4: 24px !default;
+// $font-size-h5: 20px !default;
+// $font-size-h6: 18px !default;
+// $font-label: 20px !default;
+// $font-paragraph: 20px !default;
+// $font-icon: 16px !default;
+
+$font-size-h1:  2.5rem !default; //40px
+$font-size-h2:  2.25rem !default; //35px
+$font-size-h3: 1.75rem !default; //28px
+$font-size-h4:  1.4375rem !default; //23px
+$font-size-h5: 1.125rem !default; //18px
+$font-size-h6:  1.125rem !default; //18px
+$font-label: 1.125rem !default; //18px
+$font-paragraph: 1.125rem !default; //18px
+$font-input: 0.875rem !default; //20px //14
+$font-icon: 1.62rem !default;
+
+$font-size-navbar: 16px !default;
+$font-size-small: 12px !default;
+
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-semi: 500 !default;
+$font-weight-bold: 600 !default;
+
+$line-height-general: 1.5 !default;
+$line-height: 20px !default;
+$line-height-lg: 54px !default;
+
+html { font-size: 100%; }
+// body { font-size: $font-size-medium; font-size: 1rem; line-height: 1;}
+
+body,
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+p,
+a,
+td, label, button, th, span, select, legend {
+    font-family: 'DB HelvethaicaMon X 55 Regular';
+    font-weight: $font-weight-normal;
+    // color: $bs-gray1;
+    /*font-family: 'DB Helvethaica 55 Regular';*/
+    /*line-height: 25px;
+    word-wrap: break-word;*/
+}
+
+input, textarea {
+    font-family: 'Sarabun';
+    font-size: $font-input; //20px
+}
+
+textarea {
+  resize: auto !important;
+}
+
+select {
+    font-size: 19px;
+    padding: 2px 12px;
+    // outline: none;
+
+    option {
+      font-size: 14px;
+    }
+}
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-family: 'DB HelvethaicaMon X 65 Med' !important;
+  font-weight: $font-weight-normal !important;
+  margin: 0;
+}
+
+h1, .h1 {
+  font-size: $font-size-h1;
+}
+
+h2, .h2 {
+  font-size: $font-size-h2;
+}
+
+h3, .h3 {
+  font-size: $font-size-h3;
+}
+
+h4, .h4 {
+  font-size: $font-size-h4;
+  // line-height: 30px;
+}
+
+h5, .h5 {
+  font-size: $font-size-h5;
+}
+
+h6, .h6 {
+  font-size: $font-size-h6;
+  /*font-weight: $font-weight-bold;
+  text-transform: uppercase;*/
+}
+
+label {
+  font-size: $font-label;
+  font-weight: $font-weight-light;
+}
+
+p {
+  font-size: $font-paragraph;
+  /*line-height: $line-height-general;*/
+}
+
+.btn {
+  font-size: 18px;
+}
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+/*i {
+  font-size: $font-icon;
+}*/
+
+.grand-total {
+  font-size: 25px;
+}
+// @include respond-to('medium'){
+//   .grand-total{
+//       font-size: 22px;
+//   }
+// }
+
+a {
+  cursor: pointer;
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}
+
+i {
+  cursor: pointer;
+}
+
+.text-white {
+  color: white !important;
+}
+
+.font-helvetica {
+  font-size: 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.text-vertical {
+  vertical-align: middle;
+}
+
+//Mixin
+@mixin heading1{
+  font-family: 'DB HelvethaicaMon X 65 Med' !important;
+  font-size: 1.75rem !important; //28px
+  font-weight: $font-weight-normal !important;
+}
+
+@mixin heading2{
+  font-family: 'DB HelvethaicaMon X 65 Med' !important;
+  font-size: 1.4375rem !important; //23px
+  font-weight: $font-weight-normal !important;
+}
+
+@mixin subtitle1{
+  font-family: 'DB HelvethaicaMon X 65 Med' !important;
+  font-size: 1.375rem !important; //22px
+  font-weight: $font-weight-normal !important;
+}
+
+@mixin subtitle2{
+  font-family: 'DB HelvethaicaMon X 65 Med' !important;
+  font-size: 1.25rem !important; //20px
+  font-weight: $font-weight-normal !important;
+}
+
+@mixin subtitle3{
+  font-family: 'DB HelvethaicaMon X 65 Med' !important;
+  font-size: 1.1875rem !important; //18px //20 // 19
+  font-weight: $font-weight-normal !important;
+}
+
+@mixin subtitle4{
+  font-family: 'DB HelvethaicaMon X 65 Med' !important;
+  font-size: 1rem !important; //16px
+  font-weight: $font-weight-normal !important;
+}
+
+@mixin text1{
+  font-family: 'DB HelvethaicaMon X 55 Regular' !important;
+  font-size: 1.25rem !important; //18px //20
+  font-weight: $font-weight-normal !important;
+}
+
+@mixin text2{
+  font-family: 'THSarabunNew' !important;
+  font-size: $font-input; //20px //14
+  font-weight: $font-weight-normal !important;
+}
+
+@mixin text3{
+  font-family: 'DB HelvethaicaMon X 55 Regular' !important;
+  font-size: 1rem !important; //16px
+  font-weight: $font-weight-normal !important;
+}
+
+@mixin text4{
+  font-family: 'DB HelvethaicaMon X 55 Regular' !important;
+  font-size: 0.75rem !important; //12px
+  font-weight: $font-weight-normal !important; 
+}
+
+@mixin text14{
+  font-family: 'DB HelvethaicaMon X 55 Regular' !important;
+  font-size: 0.875rem !important; //14px
+  font-weight: $font-weight-normal !important; 
+}
+
+@mixin text-number1{
+  font-family: 'DB HelvethaicaMon X 65 Med' !important;
+  font-size: 2.5rem !important; //40px
+  font-weight: $font-weight-normal !important; 
+}
+
+@mixin text-number2{
+  font-family: 'DB HelvethaicaMon X 65 Med' !important;
+  font-size: 2.25rem !important; //35px
+  font-weight: $font-weight-normal !important; 
+}
+
+//=================================================
+.heading1{
+  @include heading1;
+}
+
+.heading2{
+  @include heading2;
+}
+
+.subtitle1{
+  @include subtitle1;
+}
+
+.subtitle2{
+  @include subtitle2;
+}
+
+.subtitle3{
+  @include subtitle3;
+}
+
+.subtitle4{
+  @include subtitle4;
+}
+
+.text1{
+  @include text1;
+}
+
+.text2{
+  @include text2;
+}
+
+.text3{
+  @include text3;
+}
+
+.text4{
+  @include text4;
+}
+
+.text14{
+  @include text14;
+}
+
+.text-number1{
+  @include text-number1;
+}
+
+.text-number2{
+  @include text-number2;
+}

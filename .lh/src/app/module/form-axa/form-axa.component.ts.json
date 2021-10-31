@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/app/module/form-axa/form-axa.component.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1634755415559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1634755704472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,29 +1,16 @@\n import { Component, OnInit } from '@angular/core';\n-import { FormBuilder } from '@angular/forms';\n \n @Component({\n   selector: 'app-form-axa',\n   templateUrl: './form-axa.component.html',\n   styleUrls: ['./form-axa.component.scss']\n })\n export class FormAxaComponent implements OnInit {\n+  \n \n+  constructor() { }\n \n-  selectedCar: number | undefined;\n-\n-  cars = [\n-      { id: 1, name: 'Volvo' },\n-      { id: 2, name: 'Saab' },\n-      { id: 3, name: 'Opel' },\n-      { id: 4, name: 'Audi' },\n-  ];\n-\n-  constructor(\n-    public formBuilder: FormBuilder\n-\n-  ) { }\n-\n   ngOnInit(): void {\n   }\n \n }\n"
+                },
+                {
+                    "date": 1634755799722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,14 @@\n })\n export class FormAxaComponent implements OnInit {\n   \n \n+  cities = [\n+    { value: 1, label: 'Vilnius' },\n+    { value: 2, label: 'Kaunas' },\n+    { value: 3, label: 'Pavilnys' }\n+];\n+\n   constructor() { }\n \n   ngOnInit(): void {\n   }\n"
+                },
+                {
+                    "date": 1634755831472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,21 +2,17 @@\n \n @Component({\n   selector: 'app-form-axa',\n   templateUrl: './form-axa.component.html',\n-  styleUrls: ['./form-axa.component.scss']\n+  styleUrls: ['./form-axa.component.scss'],\n })\n export class FormAxaComponent implements OnInit {\n-  \n-\n   cities = [\n     { value: 1, label: 'Vilnius' },\n     { value: 2, label: 'Kaunas' },\n-    { value: 3, label: 'Pavilnys' }\n-];\n+    { value: 3, label: 'Pavilnys' },\n+  ];\n \n-  constructor() { }\n+  constructor() {}\n \n-  ngOnInit(): void {\n-  }\n-\n+  ngOnInit(): void {}\n }\n"
+                },
+                {
+                    "date": 1634756092099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   templateUrl: './form-axa.component.html',\n   styleUrls: ['./form-axa.component.scss'],\n })\n export class FormAxaComponent implements OnInit {\n-  cities = [\n+  y = [\n     { value: 1, label: 'Vilnius' },\n     { value: 2, label: 'Kaunas' },\n     { value: 3, label: 'Pavilnys' },\n   ];\n"
+                },
+                {
+                    "date": 1634756185261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,12 +5,14 @@\n   templateUrl: './form-axa.component.html',\n   styleUrls: ['./form-axa.component.scss'],\n })\n export class FormAxaComponent implements OnInit {\n-  y = [\n-    { value: 1, label: 'Vilnius' },\n-    { value: 2, label: 'Kaunas' },\n-    { value: 3, label: 'Pavilnys' },\n+  years = [\n+    { value: 1, label: '7-15 ปี' },\n+    { value: 2, label: '16-25 ปี' },\n+    { value: 3, label: '35-45 ปี' },\n+    { value: 4, label: '45-55 ปี' },\n+    { value: 5, label: '65 ปี' }\n   ];\n \n   constructor() {}\n \n"
+                },
+                {
+                    "date": 1634756202042,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     { value: 1, label: '7-15 ปี' },\n     { value: 2, label: '16-25 ปี' },\n     { value: 3, label: '35-45 ปี' },\n     { value: 4, label: '45-55 ปี' },\n-    { value: 5, label: '65 ปี' }\n+    { value: 5, label: '65 ปีขึ้นไป' }\n   ];\n \n   constructor() {}\n \n"
+                },
+                {
+                    "date": 1634764125091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,12 @@\n   templateUrl: './form-axa.component.html',\n   styleUrls: ['./form-axa.component.scss'],\n })\n export class FormAxaComponent implements OnInit {\n+\n+\n+\n+  isSelected: boolean = true; \n   years = [\n     { value: 1, label: '7-15 ปี' },\n     { value: 2, label: '16-25 ปี' },\n     { value: 3, label: '35-45 ปี' },\n"
+                }
+            ],
+            "date": 1634755415559,
+            "name": "Commit-0",
+            "content": "import { Component, OnInit } from '@angular/core';\nimport { FormBuilder } from '@angular/forms';\n\n@Component({\n  selector: 'app-form-axa',\n  templateUrl: './form-axa.component.html',\n  styleUrls: ['./form-axa.component.scss']\n})\nexport class FormAxaComponent implements OnInit {\n\n\n  selectedCar: number | undefined;\n\n  cars = [\n      { id: 1, name: 'Volvo' },\n      { id: 2, name: 'Saab' },\n      { id: 3, name: 'Opel' },\n      { id: 4, name: 'Audi' },\n  ];\n\n  constructor(\n    public formBuilder: FormBuilder\n\n  ) { }\n\n  ngOnInit(): void {\n  }\n\n}\n"
+        }
+    ]
+}

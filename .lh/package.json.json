@@ -1,0 +1,30 @@
+{
+    "sourceFile": "package.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1634747104472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1634747136007,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,11 @@\n     \"@angular/router\": \"~12.1.1\",\n     \"rxjs\": \"~6.6.0\",\n     \"tslib\": \"^2.2.0\",\n     \"zone.js\": \"~0.11.4\",\n+    \"@fortawesome/fontawesome-free\": \"^5.15.3\",\n+    \"@ng-bootstrap/ng-bootstrap\": \"^11.0.0-beta.2\",\n+    \"@ng-select/ng-select\": \"^7.2.0\",\n   },\n   \"devDependencies\": {\n     \"@angular-devkit/build-angular\": \"~12.1.1\",\n     \"@angular/cli\": \"~12.1.1\",\n"
+                },
+                {
+                    "date": 1634747173295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n     \"zone.js\": \"~0.11.4\",\n     \"@fortawesome/fontawesome-free\": \"^5.15.3\",\n     \"@ng-bootstrap/ng-bootstrap\": \"^11.0.0-beta.2\",\n     \"@ng-select/ng-select\": \"^7.2.0\",\n+    \"font-awesome\": \"^4.7.0\",\n   },\n   \"devDependencies\": {\n     \"@angular-devkit/build-angular\": \"~12.1.1\",\n     \"@angular/cli\": \"~12.1.1\",\n"
+                },
+                {
+                    "date": 1634747186049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,9 @@\n     \"@fortawesome/fontawesome-free\": \"^5.15.3\",\n     \"@ng-bootstrap/ng-bootstrap\": \"^11.0.0-beta.2\",\n     \"@ng-select/ng-select\": \"^7.2.0\",\n     \"font-awesome\": \"^4.7.0\",\n+    \"bootstrap\": \"^5.0.2\",\n   },\n   \"devDependencies\": {\n     \"@angular-devkit/build-angular\": \"~12.1.1\",\n     \"@angular/cli\": \"~12.1.1\",\n"
+                }
+            ],
+            "date": 1634747104472,
+            "name": "Commit-0",
+            "content": "{\n  \"name\": \"krungthai-web\",\n  \"version\": \"0.0.0\",\n  \"scripts\": {\n    \"ng\": \"ng\",\n    \"start\": \"ng serve\",\n    \"build\": \"ng build\",\n    \"watch\": \"ng build --watch --configuration development\",\n    \"test\": \"ng test\"\n  },\n  \"private\": true,\n  \"dependencies\": {\n    \"@angular/animations\": \"~12.1.1\",\n    \"@angular/common\": \"~12.1.1\",\n    \"@angular/compiler\": \"~12.1.1\",\n    \"@angular/core\": \"~12.1.1\",\n    \"@angular/forms\": \"~12.1.1\",\n    \"@angular/platform-browser\": \"~12.1.1\",\n    \"@angular/platform-browser-dynamic\": \"~12.1.1\",\n    \"@angular/router\": \"~12.1.1\",\n    \"rxjs\": \"~6.6.0\",\n    \"tslib\": \"^2.2.0\",\n    \"zone.js\": \"~0.11.4\",\n  },\n  \"devDependencies\": {\n    \"@angular-devkit/build-angular\": \"~12.1.1\",\n    \"@angular/cli\": \"~12.1.1\",\n    \"@angular/compiler-cli\": \"~12.1.1\",\n    \"@types/jasmine\": \"~3.6.0\",\n    \"@types/node\": \"^12.11.1\",\n    \"jasmine-core\": \"~3.7.0\",\n    \"karma\": \"~6.3.0\",\n    \"karma-chrome-launcher\": \"~3.1.0\",\n    \"karma-coverage\": \"~2.0.3\",\n    \"karma-jasmine\": \"~4.0.0\",\n    \"karma-jasmine-html-reporter\": \"^1.5.0\",\n    \"typescript\": \"~4.3.2\"\n  }\n}\n"
+        }
+    ]
+}

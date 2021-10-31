@@ -1,0 +1,70 @@
+{
+    "sourceFile": "src/index.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1634822307406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1634822313367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   <meta charset=\"utf-8\">\n   <title>KrungthaiWeb</title>\n   <base href=\"/\">\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n-  <img src=\"\">\n+  <img src=\"../src/\">\n </head>\n <body>\n   <app-root></app-root>\n </body>\n"
+                },
+                {
+                    "date": 1634822318582,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   <meta charset=\"utf-8\">\n   <title>KrungthaiWeb</title>\n   <base href=\"/\">\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n-  <img src=\"../src/\">\n+  <img src=\"../src/assets/img/logo.jpg\">\n </head>\n <body>\n   <app-root></app-root>\n </body>\n"
+                },
+                {
+                    "date": 1634822334833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   <meta charset=\"utf-8\">\n   <title>KrungthaiWeb</title>\n   <base href=\"/\">\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n-  <img src=\"../src/assets/img/logo.jpg\">\n+  <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n </head>\n <body>\n   <app-root></app-root>\n </body>\n"
+                },
+                {
+                    "date": 1634822353992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   <meta charset=\"utf-8\">\n   <title>KrungthaiWeb</title>\n   <base href=\"/\">\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n-  <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n+  <link rel=\"icon\" type=\"image/x-icon\" href=\"/\">\n </head>\n <body>\n   <app-root></app-root>\n </body>\n"
+                },
+                {
+                    "date": 1634822361094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   <meta charset=\"utf-8\">\n   <title>KrungthaiWeb</title>\n   <base href=\"/\">\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n-  <link rel=\"icon\" type=\"image/x-icon\" href=\"/\">\n+  <link rel=\"icon\" type=\"image/x-icon\" href=\"/src/assets/img/logo.jpg\">\n </head>\n <body>\n   <app-root></app-root>\n </body>\n"
+                },
+                {
+                    "date": 1634822379274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   <meta charset=\"utf-8\">\n   <title>KrungthaiWeb</title>\n   <base href=\"/\">\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n-  <link rel=\"icon\" type=\"image/x-icon\" href=\"/src/assets/img/logo.jpg\">\n+  <link rel=\"icon\" type=\"image/x-icon\" href=\"../../\">\n </head>\n <body>\n   <app-root></app-root>\n </body>\n"
+                },
+                {
+                    "date": 1634822384956,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   <meta charset=\"utf-8\">\n   <title>KrungthaiWeb</title>\n   <base href=\"/\">\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n-  <link rel=\"icon\" type=\"image/x-icon\" href=\"../../\">\n+  <link rel=\"icon\" type=\"image/x-icon\" href=\"../src/\">\n </head>\n <body>\n   <app-root></app-root>\n </body>\n"
+                },
+                {
+                    "date": 1634822942651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   <meta charset=\"utf-8\">\n   <title>KrungthaiWeb</title>\n   <base href=\"/\">\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n-  <link rel=\"icon\" type=\"image/x-icon\" href=\"../src/\">\n+  <link rel=\"icon\" type=\"image/x-icon\" href=\"../src/assets/img/Tax-amico.svg\">\n </head>\n <body>\n   <app-root></app-root>\n </body>\n"
+                },
+                {
+                    "date": 1634822965045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,16 @@\n <!doctype html>\n <html lang=\"en\">\n+\n <head>\n   <meta charset=\"utf-8\">\n   <title>KrungthaiWeb</title>\n   <base href=\"/\">\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n   <link rel=\"icon\" type=\"image/x-icon\" href=\"../src/assets/img/Tax-amico.svg\">\n </head>\n+\n <body>\n   <app-root></app-root>\n </body>\n-</html>\n+\n+</html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634822989813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   <meta charset=\"utf-8\">\n   <title>KrungthaiWeb</title>\n   <base href=\"/\">\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n-  <link rel=\"icon\" type=\"image/x-icon\" href=\"../src/assets/img/Tax-amico.svg\">\n+  <link rel=\"icon\" type=\"image/x-icon\" href=\"./\">\n </head>\n \n <body>\n   <app-root></app-root>\n"
+                },
+                {
+                    "date": 1634823272645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   <meta charset=\"utf-8\">\n   <title>KrungthaiWeb</title>\n   <base href=\"/\">\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n-  <link rel=\"icon\" type=\"image/x-icon\" href=\"./\">\n+  <link rel=\"icon\" type=\"image/jpg\" href=\"./favicon.ico\">\n </head>\n \n <body>\n   <app-root></app-root>\n"
+                },
+                {
+                    "date": 1634823278079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   <meta charset=\"utf-8\">\n   <title>KrungthaiWeb</title>\n   <base href=\"/\">\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n-  <link rel=\"icon\" type=\"image/jpg\" href=\"./favicon.ico\">\n+  <link rel=\"icon\" type=\"image/jpg\" href=\"./\">\n </head>\n \n <body>\n   <app-root></app-root>\n"
+                },
+                {
+                    "date": 1634823283586,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   <meta charset=\"utf-8\">\n   <title>KrungthaiWeb</title>\n   <base href=\"/\">\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n-  <link rel=\"icon\" type=\"image/jpg\" href=\"./\">\n+  <link rel=\"icon\" type=\"image/jpg\" href=\"./assets/img/logo.jpg\">\n </head>\n \n <body>\n   <app-root></app-root>\n"
+                }
+            ],
+            "date": 1634822307406,
+            "name": "Commit-0",
+            "content": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>KrungthaiWeb</title>\n  <base href=\"/\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <img src=\"\">\n</head>\n<body>\n  <app-root></app-root>\n</body>\n</html>\n"
+        }
+    ]
+}

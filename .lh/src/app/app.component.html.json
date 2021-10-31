@@ -1,0 +1,186 @@
+{
+    "sourceFile": "src/app/app.component.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 42,
+            "patches": [
+                {
+                    "date": 1634745959644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1634745966725,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,1 @@\n+h\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634745973322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-h\n\\ No newline at end of file\n+<h3>K</h3>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634745979287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-<h3>K</h3>\n\\ No newline at end of file\n+<h3>Krungthai AxA</h3>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634747512890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-<h3>Krungthai AxA</h3>\n\\ No newline at end of file\n+<h3 class=\"\">Krungthai Axa</h3>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634747531712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-<h3 class=\"\">Krungthai Axa</h3>\n\\ No newline at end of file\n+<h3 class=\"subtitle3\">Krungthai Axa</h3>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634747967318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-<h3 class=\"subtitle3\">Krungthai Axa</h3>\n\\ No newline at end of file\n+<h3 class=\"heading1\">Krungthai Axa</h3>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634748043166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-<h3 class=\"heading1\">Krungthai Axa</h3>\n\\ No newline at end of file\n+<h3 class=\"heading1\">Krungthai Axa</h3>\n+<\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634748076551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n <h3 class=\"heading1\">Krungthai Axa</h3>\n-<\n\\ No newline at end of file\n+<app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634748187636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,15 @@\n-<h3 class=\"heading1\">Krungthai Axa</h3>\n+<div class=\"container-fluid\">\n+  <div class=\"row \">\n+      <div class=\"header-frame col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12 tab-name\">\n+          <div class=\"menu-top-right\">\n+              <i class=\"fa fa-chevron-left bs-gray3 fa-2x\" aria-hidden=\"true\" (click)=\"back()\"\n+                  style=\"align-items: left; margin-left: 20px;margin-top: 7px; font-size: 19px;\"></i>\n+              <h3>\n+                  <span *ngIf=\"!activityEdit\" class=\"heading1 mx-3 bs-gray1 margin-left-10\">{{'ACTIVITY.CREATEACT'|translate}}</span>\n+                  <span *ngIf=\"activityEdit\" class=\"heading1 mx-3 bs-gray1 margin-left-10\">{{'ACTIVITY.EDITACT'|translate}}</span>\n+              </h3>\n+          </div>\n+      </div>\n+  </div>\n+</div>\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634748307602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,7 @@\n <div class=\"container-fluid\">\n   <div class=\"row \">\n-      <div class=\"header-frame col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12 tab-name\">\n-          <div class=\"menu-top-right\">\n-              <i class=\"fa fa-chevron-left bs-gray3 fa-2x\" aria-hidden=\"true\" (click)=\"back()\"\n-                  style=\"align-items: left; margin-left: 20px;margin-top: 7px; font-size: 19px;\"></i>\n-              <h3>\n-                  <span *ngIf=\"!activityEdit\" class=\"heading1 mx-3 bs-gray1 margin-left-10\">{{'ACTIVITY.CREATEACT'|translate}}</span>\n-                  <span *ngIf=\"activityEdit\" class=\"heading1 mx-3 bs-gray1 margin-left-10\">{{'ACTIVITY.EDITACT'|translate}}</span>\n-              </h3>\n-          </div>\n+      <div class=\"header-frame col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\">\n       </div>\n   </div>\n </div>\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634748441194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n <div class=\"container-fluid\">\n   <div class=\"row \">\n       <div class=\"header-frame col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\">\n+        <span></span>\n       </div>\n   </div>\n </div>\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634748469830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"container-fluid\">\n   <div class=\"row \">\n       <div class=\"header-frame col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\">\n-        <span></span>\n+        <span class=\"subtitle3 \"></span>\n       </div>\n   </div>\n </div>\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634748482955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"container-fluid\">\n   <div class=\"row \">\n       <div class=\"header-frame col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\">\n-        <span class=\"subtitle3 \"></span>\n+        <span class=\"subtitle3 text-white\"></span>\n       </div>\n   </div>\n </div>\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634748490078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"container-fluid\">\n   <div class=\"row \">\n       <div class=\"header-frame col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\">\n-        <span class=\"subtitle3 text-white\"></span>\n+        <span class=\"subtitle3 text-white\">A</span>\n       </div>\n   </div>\n </div>\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634748496253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"container-fluid\">\n   <div class=\"row \">\n       <div class=\"header-frame col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\">\n-        <span class=\"subtitle3 text-white\">A</span>\n+        <span class=\"subtitle3 text-white\">{{'AXA</span>\n       </div>\n   </div>\n </div>\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634748502824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"container-fluid\">\n   <div class=\"row \">\n       <div class=\"header-frame col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\">\n-        <span class=\"subtitle3 text-white\">{{'AXA</span>\n+        <span class=\"subtitle3 text-white\">{{'AXA'}}</span>\n       </div>\n   </div>\n </div>\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634748517752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"container-fluid\">\n   <div class=\"row \">\n       <div class=\"header-frame col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\">\n-        <span class=\"subtitle3 text-white\">{{'AXA'}}</span>\n+        <span class=\"subtitle3 text-white text\">{{'AXA'}}</span>\n       </div>\n   </div>\n </div>\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634748937651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n-<div class=\"container-fluid\">\n+<div class=\"container-fluid\" style=\"z-index: 1030;\">\n   <div class=\"row \">\n       <div class=\"header-frame col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\">\n-        <span class=\"subtitle3 text-white text\">{{'AXA'}}</span>\n+        <span class=\"subtitle3 text-white text-center\">{{'AXA'}}</span>\n       </div>\n   </div>\n </div>\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634748956762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<div class=\"container-fluid\" style=\"z-index: 1030;\">\n+<div class=\"container-fluid\" >\n   <div class=\"row \">\n       <div class=\"header-frame col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\">\n         <span class=\"subtitle3 text-white text-center\">{{'AXA'}}</span>\n       </div>\n"
+                },
+                {
+                    "date": 1634748975605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n-<div class=\"container-fluid\" >\n+<div class=\"container-fluid\">\n   <div class=\"row \">\n       <div class=\"header-frame col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\">\n-        <span class=\"subtitle3 text-white text-center\">{{'AXA'}}</span>\n+        <span class=\"subtitle3 text-white text-c\">{{'AXA'}}</span>\n       </div>\n   </div>\n </div>\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634749012308,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"container-fluid\">\n-  <div class=\"row \">\n+  <div class=\"row\">\n       <div class=\"header-frame col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\">\n-        <span class=\"subtitle3 text-white text-c\">{{'AXA'}}</span>\n+        <span class=\"subtitle3 text-white\">{{'AXA'}}</span>\n       </div>\n   </div>\n </div>\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634749020861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <div class=\"container-fluid\">\n   <div class=\"row\">\n-      <div class=\"header-frame col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\">\n+      <div class=\"col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\" style=\"\">\n         <span class=\"subtitle3 text-white\">{{'AXA'}}</span>\n       </div>\n   </div>\n </div>\n"
+                },
+                {
+                    "date": 1634749043229,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"container-fluid\">\n   <div class=\"row\">\n-      <div class=\"col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\" style=\"\">\n-        <span class=\"subtitle3 text-white\">{{'AXA'}}</span>\n+      <div class=\"col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\" style=\"color: black;\">\n+        <span class=\"subtitle3\">{{'AXA'}}</span>\n       </div>\n   </div>\n </div>\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634749050158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <div class=\"container-fluid\">\n   <div class=\"row\">\n-      <div class=\"col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\" style=\"color: black;\">\n+      <div class=\"col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\" style=\"bcolor: black;\">\n         <span class=\"subtitle3\">{{'AXA'}}</span>\n       </div>\n   </div>\n </div>\n"
+                },
+                {
+                    "date": 1634749063309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"container-fluid\">\n   <div class=\"row\">\n-      <div class=\"col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\" style=\"bcolor: black;\">\n-        <span class=\"subtitle3\">{{'AXA'}}</span>\n+      <div class=\"col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\" style=\"color: black;\">\n+        <span class=\"subtitle3 text-white\">{{'AXA'}}</span>\n       </div>\n   </div>\n </div>\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634749080906,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"container-fluid\">\n   <div class=\"row\">\n-      <div class=\"col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\" style=\"color: black;\">\n-        <span class=\"subtitle3 text-white\">{{'AXA'}}</span>\n+      <div class=\"col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\" style=\"background-color: black;\">\n+        <span class=\"subtitle3 text-white\" >{{'AXA'}}</span>\n       </div>\n   </div>\n </div>\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634749086083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"container-fluid\">\n   <div class=\"row\">\n       <div class=\"col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\" style=\"background-color: black;\">\n-        <span class=\"subtitle3 text-white\" >{{'AXA'}}</span>\n+        <span class=\"subtitle3 text-white\" style=\"text-align: center;\">{{'AXA'}}</span>\n       </div>\n   </div>\n </div>\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634749230240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <div class=\"container-fluid\">\n   <div class=\"row\">\n-      <div class=\"col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12\" style=\"background-color: black;\">\n+      <nav\">\n         <span class=\"subtitle3 text-white\" style=\"text-align: center;\">{{'AXA'}}</span>\n       </div>\n   </div>\n </div>\n"
+                },
+                {
+                    "date": 1634749236611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <div class=\"container-fluid\">\n   <div class=\"row\">\n-      <nav\">\n+      <nav>\n         <span class=\"subtitle3 text-white\" style=\"text-align: center;\">{{'AXA'}}</span>\n       </div>\n   </div>\n </div>\n"
+                },
+                {
+                    "date": 1634749278384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n       <nav>\n         <span class=\"subtitle3 text-white\" style=\"text-align: center;\">{{'AXA'}}</span>\n       </div>\n   </div>\n-</div>\n+\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634749337682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,5 @@\n <div class=\"container-fluid\">\n   <div class=\"row\">\n-      <nav>\n-        <span class=\"subtitle3 text-white\" style=\"text-align: center;\">{{'AXA'}}</span>\n-      </div>\n+    <nav>AXA</nav>\n   </div>\n-\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634749344346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n <div class=\"container-fluid\">\n   <div class=\"row\">\n-    <nav>AXA</nav>\n+    <nav class=\"\">AXA</nav>\n   </div>\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634749356961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n <div class=\"container-fluid\">\n   <div class=\"row\">\n-    <nav class=\"\">AXA</nav>\n+    <nav class=subtitle3\"\">AXA</nav>\n   </div>\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634749372088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n <div class=\"container-fluid\">\n   <div class=\"row\">\n-    <nav class=subtitle3\"\">AXA</nav>\n+    <nav class=\"subtitle1\">AXA</nav>\n   </div>\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634749377753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n <div class=\"container-fluid\">\n   <div class=\"row\">\n-    <nav class=\"subtitle1\">AXA</nav>\n+    <nav class=\"subtitle2\">AXA</nav>\n   </div>\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634749418404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n <div class=\"container-fluid\">\n   <div class=\"row\">\n     <nav class=\"subtitle2\">AXA</nav>\n   </div>\n+  \n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634749432038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n-<div class=\"container-fluid\">\n+<div class=\"container-fluid\" s>\n   <div class=\"row\">\n     <nav class=\"subtitle2\">AXA</nav>\n   </div>\n-  \n+</div>\n <app-form-axa></app-form-axa>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1634749437917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<div class=\"container-fluid\" s>\n+<div class=\"container-fluid\" style=\"margin-top: 0px;\">\n   <div class=\"row\">\n     <nav class=\"subtitle2\">AXA</nav>\n   </div>\n </div>\n"
+                },
+                {
+                    "date": 1634749465854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<div class=\"container-fluid\" style=\"margin-top: 0px;\">\n+<div class=\"container-fluid\">\n   <div class=\"row\">\n     <nav class=\"subtitle2\">AXA</nav>\n   </div>\n </div>\n"
+                },
+                {
+                    "date": 1634749474596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n-<div class=\"container-fluid\">\n+<body>\n+  <div class=\"container-fluid\">\n   <div class=\"row\">\n     <nav class=\"subtitle2\">AXA</nav>\n   </div>\n\\ No newline at end of file\n </div>\n-<app-form-axa></app-form-axa>\n+<app-form-axa></app-form-axa>\n+</body>\n"
+                },
+                {
+                    "date": 1634749547318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <body>\n-  <div class=\"container-fluid\" style=\"\">\n+  <div class=\"container-fluid\" style=\"m\">\n   <div class=\"row\">\n     <nav class=\"subtitle2\">AXA</nav>\n   </div>\n </div>\n"
+                },
+                {
+                    "date": 1635433649433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,9 @@\n+<body>\n+  <div class=\"container-fluid\">\n+  <div class=\"row\">\n+    <nav class=\"subtitle2\">AXA</nav>\n+  </div>\n+</div>\n+<app-form-axa></app-form-axa>\n+\n+</body>\n"
+                }
+            ],
+            "date": 1634745959644,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

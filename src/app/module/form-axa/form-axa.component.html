@@ -1,0 +1,172 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 col-xl-6 col-lg-6 order-1">
+            <div class="row">
+                <div class="gender">
+                </div>
+            </div>
+
+        </div>
+        <div class="col-12 col-sm-6 col-md-12 col-xl-6 col-lg-6 order-2">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-12">
+                    <label
+                        class="heading1 text-color mt-5 mb-2">
+                        <i class="far fa-address-card  text-color " aria-hidden="true"
+                        style="font-size: 25px;"></i>
+                        {{'ให้เราช่วยคุณเลือกผลิตภัณฑ์ที่ใช่สำหรับคุณ'}}</label>
+                    <legend></legend>
+                </div>
+            </div>
+            <div class="form-axa">
+                <div class="row">
+                    <div class="col-12 col-md-5">
+                        <label class="subtitle1 text-color">เพศ</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-5">
+                        <label class="subtitle3 text-color2">กรุณาระบุเพศ</label>
+                    </div>
+                </div>
+                <div class="row mt-2 mb-2">
+                    <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                        <div class="row">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <label class="inbound-outbound text-center" style="cursor: pointer;"
+                                    [ngClass]="{'selected-inbound': isSelected}">
+                                    <i class="fas fa-male" style="font-size: 35px;"></i>
+                                    <input class="radio-custom" type="radio" [value]=1 style="display: none;">
+                                    <br>
+                                    <span class="subtitle3 bs-gray3">ชาย</span>
+                                </label>
+                            </div>
+                            <!-- หญิง-->
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 test">
+                                <label class="inbound-outbound text-center" style="cursor: pointer;"
+                                    [ngClass]="{'selected-outbound': !isSelected}">
+                                    <i class="fas fa-female" style="font-size: 35px;"></i>
+                                    <input class="radio-custom" type="radio" [value]=2 style="display: none;">
+                                    <br>
+                                    <span class="subtitle3 bs-gray3">หญิง</span>
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12 col-md-5">
+                        <label class="subtitle1 text-color">อายุ ( ปี )</label>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-12 col-md-4 mt-1">
+                        <ng-select [items]="years" placeholder=" --กรุณาเลือก-- ">
+                        </ng-select>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-5 col-md-5 col-lg-4">
+                        <label class="subtitle1 text-color">รายได้ต่อเดือน</label>
+                        <div class="d-flex">
+                            <input type="text" class="form-control hight-input-text">
+                            <span class="mt-1 subtitle3 bs-gray1 ps-2 pe-2">บาท</span>
+                        </div>
+                    </div>
+                    <div class="col-7 col-md-5 col-lg-4 pe-2">
+                        <label class="subtitle1 text-color">เงินที่สามารถชำระต่อเดือนได้</label>
+                        <div class="d-flex">
+                            <input type="text" class="form-control hight-input-text">
+                            <span class="mt-1 subtitle3 bs-gray1 ps-2 pe-2">บาท</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12 col-md-5">
+                        <label class="subtitle1 text-color">เงื่อนไขสุขภาพ</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-auto">
+                        <label class="text1 bs-gray1">
+                            <input type="checkbox" class="form-check-input mx-2">ตรวจสุขภาพ
+                        </label>
+                    </div>
+                    <div class="col-auto">
+                        <label class="text1 bs-gray1">
+                            <input type="checkbox" class="form-check-input mx-2">ไม่ตรวจสุขภาพ
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="modal-footer mt-5">
+                <div class="row">
+                    <div class="col-auto">
+                        <button type="button" class="button">
+                            <span class="button__text subtitle1">ยืนยันข้อมูล</span>
+                            <span class="button__icon">
+                                <i class="fab fa-telegram-plane"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="button-danger">
+                            <span class="button__text subtitle1">ล้างข้อมูล</span>
+                            <span class="button__icon">
+                                <i class="fas fa-trash-alt"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+<div class="footer-activity">
+    <div class="col-12 col-md-12 text-center" style="text-align: center;">
+
+        <button class="button button__text subtitle1 ps-4 pe-4 mx-2 p-1 btn-animate-type1"
+            type="button">&nbsp;&nbsp;ยืนยันข้อมูล&nbsp;&nbsp;|&nbsp;&nbsp;<i class="fab fa-telegram-plane mx-2 "></i>
+        </button>
+
+        <button
+            class="button-danger button__text subtitle1 ps-4 pe-4 p-1 ">&nbsp;&nbsp;ล้างข้อมูล&nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fas fa-trash-alt mx-2"></i>
+        </button>
+
+
+    </div>
+</div>
+<!-- <div class="footer-activity">
+    <div class="col-12 col-md-12 text-center" style="text-align: center;">
+        
+        <a class="btn-link-need btn-animate-type1 subtitle1 mx-3 col-6" type="button">ยืนยันข้อมูล&nbsp;&nbsp;|&nbsp;&nbsp;<i
+                class="fab fa-telegram-plane mx-2"></i>
+            </a>
+            
+        <a class="btn-link-need btn-animate-type1 subtitle1 col-6" type="button">&nbsp;ล้างข้อมูล&nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fas fa-trash-alt mx-2"></i>
+        </a>
+
+
+    </div>
+</div> -->
+<!-- <div class="col-12 col-md-12 footer-content">
+    <div class="col-12 col-md-12 text-center">
+        <div>
+            <button type="button" class="button">
+                <span class="button__text subtitle1"> ยืนยันข้อมูล </span>
+                <span class="button__icon">
+                    <i class="fab fa-telegram-plane"></i>
+                </span>
+            </button>
+            <button type="button" class="button-danger">
+                <span class="button__text subtitle1"> ล้างข้อมูล </span>
+                <span class="button__icon">
+                    <i class="fas fa-trash-alt"></i>
+                </span>
+            </button>
+        </div>
+    </div>
+</div> -->
