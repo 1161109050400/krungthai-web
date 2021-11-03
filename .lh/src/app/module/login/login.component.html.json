@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 174,
+            "activePatchIndex": 200,
             "patches": [
                 {
                     "date": 1635435829234,
@@ -704,6 +704,110 @@
                 {
                     "date": 1635602754394,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+AAAAAAA\n \n \n \n \n@@ -17,5 +18,4 @@\n \n \n \n \n-\n"
+                },
+                {
+                    "date": 1635859622929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,50 @@\n-AAAAAAA\n \n+<!DOCTYPE html>\n+<html>\n+<head>\n+\t<title>Animated Login Form</title>\n+\t<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">\n+\t<link href=\"https://fonts.googleapis.com/css?family=Poppins:600&display=swap\" rel=\"stylesheet\">\n+\t<script src=\"https://kit.fontawesome.com/a81368914c.js\"></script>\n+\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n+</head>\n+<body>\n+\t<img class=\"wave\" src=\"img/wave.png\">\n+\t<div class=\"container\">\n+\t\t<div class=\"img\">\n+\t\t\t<img src=\"img/bg.svg\">\n+\t\t</div>\n+\t\t<div class=\"login-content\">\n+\t\t\t<form action=\"index.html\">\n+\t\t\t\t<img src=\"img/avatar.svg\">\n+\t\t\t\t<h2 class=\"title\">Welcome</h2>\n+           \t\t<div class=\"input-div one\">\n+           \t\t   <div class=\"i\">\n+           \t\t   \t\t<i class=\"fas fa-user\"></i>\n+           \t\t   </div>\n+           \t\t   <div class=\"div\">\n+           \t\t   \t\t<h5>Username</h5>\n+           \t\t   \t\t<input type=\"text\" class=\"input\">\n+           \t\t   </div>\n+           \t\t</div>\n+           \t\t<div class=\"input-div pass\">\n+           \t\t   <div class=\"i\"> \n+           \t\t    \t<i class=\"fas fa-lock\"></i>\n+           \t\t   </div>\n+           \t\t   <div class=\"div\">\n+           \t\t    \t<h5>Password</h5>\n+           \t\t    \t<input type=\"password\" class=\"input\">\n+            \t   </div>\n+            \t</div>\n+            \t<a href=\"#\">Forgot Password?</a>\n+            \t<input type=\"submit\" class=\"btn\" value=\"Login\">\n+            </form>\n+        </div>\n+    </div>\n+    <script type=\"text/javascript\" src=\"js/main.js\"></script>\n+</body>\n+</html>\n \n \n \n \n@@ -13,9 +57,4 @@\n \n \n \n \n-\n-\n-\n-\n-\n"
+                },
+                {
+                    "date": 1635859643980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,5 @@\n \n-<!DOCTYPE html>\n-<html>\n-<head>\n-\t<title>Animated Login Form</title>\n-\t<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">\n-\t<link href=\"https://fonts.googleapis.com/css?family=Poppins:600&display=swap\" rel=\"stylesheet\">\n-\t<script src=\"https://kit.fontawesome.com/a81368914c.js\"></script>\n-\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n-</head>\n <body>\n \t<img class=\"wave\" src=\"img/wave.png\">\n \t<div class=\"container\">\n \t\t<div class=\"img\">\n"
+                },
+                {
+                    "date": 1635859650057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,8 @@\n         </div>\n     </div>\n     <script type=\"text/javascript\" src=\"js/main.js\"></script>\n </body>\n-</html>\n \n \n \n \n"
+                },
+                {
+                    "date": 1635860834650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n <body>\n \t<img class=\"wave\" src=\"img/wave.png\">\n \t<div class=\"container\">\n \t\t<div class=\"img\">\n-\t\t\t<img src=\"img/bg.svg\">\n+\t\t\t<img src=\"../../\">\n \t\t</div>\n \t\t<div class=\"login-content\">\n \t\t\t<form action=\"index.html\">\n \t\t\t\t<img src=\"img/avatar.svg\">\n@@ -31,9 +31,8 @@\n             \t<input type=\"submit\" class=\"btn\" value=\"Login\">\n             </form>\n         </div>\n     </div>\n-    <script type=\"text/javascript\" src=\"js/main.js\"></script>\n </body>\n \n \n \n"
+                },
+                {
+                    "date": 1635860842550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n <body>\n \t<img class=\"wave\" src=\"img/wave.png\">\n \t<div class=\"container\">\n \t\t<div class=\"img\">\n-\t\t\t<img src=\"../../\">\n+\t\t\t<img src=\"../../../assets/img/dashbord.svg\">\n \t\t</div>\n \t\t<div class=\"login-content\">\n \t\t\t<form action=\"index.html\">\n \t\t\t\t<img src=\"img/avatar.svg\">\n"
+                },
+                {
+                    "date": 1635904515875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \t\t\t<img src=\"../../../assets/img/dashbord.svg\">\n \t\t</div>\n \t\t<div class=\"login-content\">\n \t\t\t<form action=\"index.html\">\n-\t\t\t\t<img src=\"img/avatar.svg\">\n+\t\t\t\t<img src=\"../../../assets/\">\n \t\t\t\t<h2 class=\"title\">Welcome</h2>\n            \t\t<div class=\"input-div one\">\n            \t\t   <div class=\"i\">\n            \t\t   \t\t<i class=\"fas fa-user\"></i>\n"
+                },
+                {
+                    "date": 1635904524949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \t\t\t<img src=\"../../../assets/img/dashbord.svg\">\n \t\t</div>\n \t\t<div class=\"login-content\">\n \t\t\t<form action=\"index.html\">\n-\t\t\t\t<img src=\"../../../assets/\">\n+\t\t\t\t<img src=\"../../../assets/img/\">\n \t\t\t\t<h2 class=\"title\">Welcome</h2>\n            \t\t<div class=\"input-div one\">\n            \t\t   <div class=\"i\">\n            \t\t   \t\t<i class=\"fas fa-user\"></i>\n"
+                },
+                {
+                    "date": 1635904847433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,25 @@\n \t\t\t<img src=\"../../../assets/img/dashbord.svg\">\n \t\t</div>\n \t\t<div class=\"login-content\">\n \t\t\t<form action=\"index.html\">\n-\t\t\t\t<img src=\"../../../assets/img/\">\n+\t\t\t\t<img src=\"../../../assets/img/avatar.svg\">\n \t\t\t\t<h2 class=\"title\">Welcome</h2>\n+\n+\n+\t\t\t\t<div class=\"input-wrapper w-100\">\n+\t\t\t\t\t<input type=\"text\" class=\"form-control hight-input-text text1\">\n+\t\t\t\t</div>\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n            \t\t<div class=\"input-div one\">\n            \t\t   <div class=\"i\">\n            \t\t   \t\t<i class=\"fas fa-user\"></i>\n            \t\t   </div>\n"
+                },
+                {
+                    "date": 1635904923874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,13 +18,8 @@\n \n \n \n \n-\n-\n-\n-\n-\n            \t\t<div class=\"input-div one\">\n            \t\t   <div class=\"i\">\n            \t\t   \t\t<i class=\"fas fa-user\"></i>\n            \t\t   </div>\n"
+                },
+                {
+                    "date": 1635904940538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \t\t\t\t<h2 class=\"title\">Welcome</h2>\n \n \n \t\t\t\t<div class=\"input-wrapper w-100\">\n-\t\t\t\t\t<input type=\"text\" class=\"form-control hight-input-text text1\">\n+\t\t\t\t\t<input type=\"text\" class=\"form-control hight-input-text text1\" >\n \t\t\t\t</div>\n \n \n \n"
+                },
+                {
+                    "date": 1635904947296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \t\t\t\t<h2 class=\"title\">Welcome</h2>\n \n \n \t\t\t\t<div class=\"input-wrapper w-100\">\n-\t\t\t\t\t<input type=\"text\" class=\"form-control hight-input-text text1\" >\n+\t\t\t\t\t<input type=\"text\" class=\"form-control hight-input-text text1\" placeholder=\"Username\">\n \t\t\t\t</div>\n \n \n \n"
+                },
+                {
+                    "date": 1635905193696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \t\t</div>\n \t\t<div class=\"login-content\">\n \t\t\t<form action=\"index.html\">\n \t\t\t\t<img src=\"../../../assets/img/avatar.svg\">\n-\t\t\t\t<h2 class=\"title\">Welcome</h2>\n+\t\t\t\t<h2 class=\"title\">สวัสดี</h2>\n \n \n \t\t\t\t<div class=\"input-wrapper w-100\">\n \t\t\t\t\t<input type=\"text\" class=\"form-control hight-input-text text1\" placeholder=\"Username\">\n"
+                },
+                {
+                    "date": 1635905198919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \t\t</div>\n \t\t<div class=\"login-content\">\n \t\t\t<form action=\"index.html\">\n \t\t\t\t<img src=\"../../../assets/img/avatar.svg\">\n-\t\t\t\t<h2 class=\"title\">สวัสดี</h2>\n+\t\t\t\t<h2 class=\"hea\">สวัสดี</h2>\n \n \n \t\t\t\t<div class=\"input-wrapper w-100\">\n \t\t\t\t\t<input type=\"text\" class=\"form-control hight-input-text text1\" placeholder=\"Username\">\n"
+                },
+                {
+                    "date": 1635905261411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \t\t</div>\n \t\t<div class=\"login-content\">\n \t\t\t<form action=\"index.html\">\n \t\t\t\t<img src=\"../../../assets/img/avatar.svg\">\n-\t\t\t\t<h2 class=\"hea\">สวัสดี</h2>\n+\t\t\t\t<h1 class=\"heading1\">สวัสดี</h1>\n \n \n \t\t\t\t<div class=\"input-wrapper w-100\">\n \t\t\t\t\t<input type=\"text\" class=\"form-control hight-input-text text1\" placeholder=\"Username\">\n"
+                },
+                {
+                    "date": 1635905324175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \t\t</div>\n \t\t<div class=\"login-content\">\n \t\t\t<form action=\"index.html\">\n \t\t\t\t<img src=\"../../../assets/img/avatar.svg\">\n-\t\t\t\t<h1 class=\"heading1\">สวัสดี</h1>\n+\t\t\t\t<h2 class=\"heading1\">สวัสดี</h2>\n \n \n \t\t\t\t<div class=\"input-wrapper w-100\">\n \t\t\t\t\t<input type=\"text\" class=\"form-control hight-input-text text1\" placeholder=\"Username\">\n"
+                },
+                {
+                    "date": 1635905357187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \t\t</div>\n \t\t<div class=\"login-content\">\n \t\t\t<form action=\"index.html\">\n \t\t\t\t<img src=\"../../../assets/img/avatar.svg\">\n-\t\t\t\t<h2 class=\"heading1\">สวัสดี</h2>\n+\t\t\t\t<h2 class=\"text-number2\">สวัสดี</h2>\n \n \n \t\t\t\t<div class=\"input-wrapper w-100\">\n \t\t\t\t\t<input type=\"text\" class=\"form-control hight-input-text text1\" placeholder=\"Username\">\n"
+                },
+                {
+                    "date": 1635905366622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,16 +10,16 @@\n \t\t\t\t<img src=\"../../../assets/img/avatar.svg\">\n \t\t\t\t<h2 class=\"text-number2\">สวัสดี</h2>\n \n \n-\t\t\t\t<div class=\"input-wrapper w-100\">\n+\t\t\t\t<!-- <div class=\"input-wrapper w-100\">\n \t\t\t\t\t<input type=\"text\" class=\"form-control hight-input-text text1\" placeholder=\"Username\">\n \t\t\t\t</div>\n \n+ -->\n \n \n \n-\n            \t\t<div class=\"input-div one\">\n            \t\t   <div class=\"i\">\n            \t\t   \t\t<i class=\"fas fa-user\"></i>\n            \t\t   </div>\n"
+                },
+                {
+                    "date": 1635905372804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,4 @@\n-\n <body>\n \t<img class=\"wave\" src=\"img/wave.png\">\n \t<div class=\"container\">\n \t\t<div class=\"img\">\n@@ -10,50 +9,36 @@\n \t\t\t\t<img src=\"../../../assets/img/avatar.svg\">\n \t\t\t\t<h2 class=\"text-number2\">สวัสดี</h2>\n \n \n-\t\t\t\t<!-- <div class=\"input-wrapper w-100\">\n+\t\t\t\t<div class=\"input-wrapper w-100\">\n \t\t\t\t\t<input type=\"text\" class=\"form-control hight-input-text text1\" placeholder=\"Username\">\n \t\t\t\t</div>\n \n- -->\n \n \n \n-           \t\t<div class=\"input-div one\">\n-           \t\t   <div class=\"i\">\n-           \t\t   \t\t<i class=\"fas fa-user\"></i>\n-           \t\t   </div>\n-           \t\t   <div class=\"div\">\n-           \t\t   \t\t<h5>Username</h5>\n-           \t\t   \t\t<input type=\"text\" class=\"input\">\n-           \t\t   </div>\n-           \t\t</div>\n-           \t\t<div class=\"input-div pass\">\n-           \t\t   <div class=\"i\"> \n-           \t\t    \t<i class=\"fas fa-lock\"></i>\n-           \t\t   </div>\n-           \t\t   <div class=\"div\">\n-           \t\t    \t<h5>Password</h5>\n-           \t\t    \t<input type=\"password\" class=\"input\">\n-            \t   </div>\n-            \t</div>\n-            \t<a href=\"#\">Forgot Password?</a>\n-            \t<input type=\"submit\" class=\"btn\" value=\"Login\">\n-            </form>\n-        </div>\n-    </div>\n-</body>\n \n-\n-\n-\n-\n-\n-\n-\n-\n-\n-\n-\n-\n-\n+\t\t\t\t<div class=\"input-div one\">\n+\t\t\t\t\t<div class=\"i\">\n+\t\t\t\t\t\t<i class=\"fas fa-user\"></i>\n+\t\t\t\t\t</div>\n+\t\t\t\t\t<div class=\"div\">\n+\t\t\t\t\t\t<h5>Username</h5>\n+\t\t\t\t\t\t<input type=\"text\" class=\"input\">\n+\t\t\t\t\t</div>\n+\t\t\t\t</div>\n+\t\t\t\t<div class=\"input-div pass\">\n+\t\t\t\t\t<div class=\"i\">\n+\t\t\t\t\t\t<i class=\"fas fa-lock\"></i>\n+\t\t\t\t\t</div>\n+\t\t\t\t\t<div class=\"div\">\n+\t\t\t\t\t\t<h5>Password</h5>\n+\t\t\t\t\t\t<input type=\"password\" class=\"input\">\n+\t\t\t\t\t</div>\n+\t\t\t\t</div>\n+\t\t\t\t<a href=\"#\">Forgot Password?</a>\n+\t\t\t\t<input type=\"submit\" class=\"btn\" value=\"Login\">\n+\t\t\t</form>\n+\t\t</div>\n+\t</div>\n+</body>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1635905379673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,17 +8,12 @@\n \t\t\t<form action=\"index.html\">\n \t\t\t\t<img src=\"../../../assets/img/avatar.svg\">\n \t\t\t\t<h2 class=\"text-number2\">สวัสดี</h2>\n \n-\n-\t\t\t\t<div class=\"input-wrapper w-100\">\n+\t\t\t\t<!-- <div class=\"input-wrapper w-100\">\n \t\t\t\t\t<input type=\"text\" class=\"form-control hight-input-text text1\" placeholder=\"Username\">\n-\t\t\t\t</div>\n+\t\t\t\t</div> -->\n \n-\n-\n-\n-\n \t\t\t\t<div class=\"input-div one\">\n \t\t\t\t\t<div class=\"i\">\n \t\t\t\t\t\t<i class=\"fas fa-user\"></i>\n \t\t\t\t\t</div>\n"
+                },
+                {
+                    "date": 1635905465335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \t\t</div>\n \t\t<div class=\"login-content\">\n \t\t\t<form action=\"index.html\">\n \t\t\t\t<img src=\"../../../assets/img/avatar.svg\">\n-\t\t\t\t<h2 class=\"text-number2\">สวัสดี</h2>\n+\t\t\t\t<h2 class=\"text-number2\">ยินดีต้อนรับ</h2>\n \n \t\t\t\t<!-- <div class=\"input-wrapper w-100\">\n \t\t\t\t\t<input type=\"text\" class=\"form-control hight-input-text text1\" placeholder=\"Username\">\n \t\t\t\t</div> -->\n"
+                },
+                {
+                    "date": 1635905497039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \t\t</div>\n \t\t<div class=\"login-content\">\n \t\t\t<form action=\"index.html\">\n \t\t\t\t<img src=\"../../../assets/img/avatar.svg\">\n-\t\t\t\t<h2 class=\"text-number2\">ยินดีต้อนรับ</h2>\n+\t\t\t\t<h2 class=\"text-number1\">ยินดีต้อนรับ</h2>\n \n \t\t\t\t<!-- <div class=\"input-wrapper w-100\">\n \t\t\t\t\t<input type=\"text\" class=\"form-control hight-input-text text1\" placeholder=\"Username\">\n \t\t\t\t</div> -->\n"
+                },
+                {
+                    "date": 1635905510656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \t\t\t\t\t<div class=\"i\">\n \t\t\t\t\t\t<i class=\"fas fa-user\"></i>\n \t\t\t\t\t</div>\n \t\t\t\t\t<div class=\"div\">\n-\t\t\t\t\t\t<h5>Username</h5>\n+\t\t\t\t\t\t<!-- <h5>Username</h5> -->\n \t\t\t\t\t\t<input type=\"text\" class=\"input\">\n \t\t\t\t\t</div>\n \t\t\t\t</div>\n \t\t\t\t<div class=\"input-div pass\">\n"
+                },
+                {
+                    "date": 1635905745241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,14 +26,14 @@\n \t\t\t\t\t<div class=\"i\">\n \t\t\t\t\t\t<i class=\"fas fa-lock\"></i>\n \t\t\t\t\t</div>\n \t\t\t\t\t<div class=\"div\">\n-\t\t\t\t\t\t<h5>Password</h5>\n+\t\t\t\t\t\t<!-- <h5>Password</h5> -->\n \t\t\t\t\t\t<input type=\"password\" class=\"input\">\n \t\t\t\t\t</div>\n \t\t\t\t</div>\n \t\t\t\t<a href=\"#\">Forgot Password?</a>\n-\t\t\t\t<input type=\"submit\" class=\"btn\" value=\"Login\">\n+\t\t\t\t<input type=\"submit\" class=\"btn \" value=\"Login\">\n \t\t\t</form>\n \t\t</div>\n \t</div>\n </body>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1635905756279,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n \t\t\t\t\t\t<input type=\"password\" class=\"input\">\n \t\t\t\t\t</div>\n \t\t\t\t</div>\n \t\t\t\t<a href=\"#\">Forgot Password?</a>\n-\t\t\t\t<input type=\"submit\" class=\"btn \" value=\"Login\">\n+\t\t\t\t<input type=\"submit\" class=\"btn subtitle1\" value=\"Login\">\n \t\t\t</form>\n \t\t</div>\n \t</div>\n </body>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1635905777163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n \t\t\t\t\t\t<input type=\"password\" class=\"input\">\n \t\t\t\t\t</div>\n \t\t\t\t</div>\n \t\t\t\t<a href=\"#\">Forgot Password?</a>\n-\t\t\t\t<input type=\"submit\" class=\"btn subtitle1\" value=\"Login\">\n+\t\t\t\t<input type=\"submit\" class=\"btn subtitle1\" value=\"เข้าสู่ระบบ\">\n \t\t\t</form>\n \t\t</div>\n \t</div>\n </body>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1635906288603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \t\t</div>\n \t\t<div class=\"login-content\">\n \t\t\t<form action=\"index.html\">\n \t\t\t\t<img src=\"../../../assets/img/avatar.svg\">\n-\t\t\t\t<h2 class=\"text-number1\">ยินดีต้อนรับ lesiy[</h2>\n+\t\t\t\t<h2 class=\"text-number1\">ยินดีต้อนรับ lesiy</h2>\n \n \t\t\t\t<!-- <div class=\"input-wrapper w-100\">\n \t\t\t\t\t<input type=\"text\" class=\"form-control hight-input-text text1\" placeholder=\"Username\">\n \t\t\t\t</div> -->\n"
                 }
             ],
             "date": 1635435829234,

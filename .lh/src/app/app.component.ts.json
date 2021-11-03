@@ -1,0 +1,42 @@
+{
+    "sourceFile": "src/app/app.component.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1635909888458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1635909893937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,11 @@\n })\n export class AppComponent {\n   title = 'Krungthai-Web';\n \n+  gotoCreateActivity(){\n+    this.router.navigate(['jubsa/activity/create'])\n+  }\n \n \n \n \n@@ -21,6 +24,6 @@\n \n \n \n \n-  \n+\n }\n"
+                },
+                {
+                    "date": 1635909902515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,24 +6,12 @@\n   styleUrls: ['./app.component.scss']\n })\n export class AppComponent {\n   title = 'Krungthai-Web';\n+  router: any;\n \n   gotoCreateActivity(){\n     this.router.navigate(['jubsa/activity/create'])\n   }\n \n \n-\n-\n-\n-\n-\n-\n-\n-\n-\n-\n-\n-\n-\n }\n"
+                },
+                {
+                    "date": 1635909922737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   title = 'Krungthai-Web';\n   router: any;\n \n   gotoCreateActivity(){\n-    this.router.navigate(['jubsa/activity/create'])\n+    this.router.navigate(['krungthai/form-axa'])\n   }\n \n \n }\n"
+                },
+                {
+                    "date": 1635909928166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n export class AppComponent {\n   title = 'Krungthai-Web';\n   router: any;\n \n-  gotoCreateActivity(){\n+  gotoF(){\n     this.router.navigate(['krungthai/form-axa'])\n   }\n \n \n"
+                },
+                {
+                    "date": 1635909935611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n export class AppComponent {\n   title = 'Krungthai-Web';\n   router: any;\n \n-  gotoF(){\n+  gotoForm-axa(){\n     this.router.navigate(['krungthai/form-axa'])\n   }\n \n \n"
+                },
+                {
+                    "date": 1635909989412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,5 @@\n   styleUrls: ['./app.component.scss']\n })\n export class AppComponent {\n   title = 'Krungthai-Web';\n-  router: any;\n-\n-  gotoForm-axa(){\n-    this.router.navigate(['krungthai/form-axa'])\n-  }\n-\n-\n }\n"
+                }
+            ],
+            "date": 1635909888458,
+            "name": "Commit-0",
+            "content": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'Krungthai-Web';\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n}\n"
+        }
+    ]
+}

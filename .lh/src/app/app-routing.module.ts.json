@@ -1,0 +1,130 @@
+{
+    "sourceFile": "src/app/app-routing.module.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 28,
+            "patches": [
+                {
+                    "date": 1635908680340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1635908687154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,12 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n \n const routes: Routes = [\n-  \n+  [\n+    PQ\n+  ]\n+\n ];\n \n @NgModule({\n   imports: [RouterModule.forRoot(routes)],\n"
+                },
+                {
+                    "date": 1635908692797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { RouterModule, Routes } from '@angular/router';\n \n const routes: Routes = [\n   [\n-    PQ\n+    path\n   ]\n \n ];\n \n"
+                },
+                {
+                    "date": 1635908993298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,12 @@\n-import { NgModule } from '@angular/core';\n+import { Component, NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n+import { LoginComponent } from './module/login/login.component';\n \n const routes: Routes = [\n   [\n-    path\n+    { path: '', redirectTo: 'login', pathMatch: 'full', },\n+    { path: 'login', componnent: LoginComponent } \n   ]\n \n ];\n \n"
+                },
+                {
+                    "date": 1635909087998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,10 @@\n import { Component, NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n-import { LoginComponent } from './module/login/login.component';\n \n const routes: Routes = [\n   [\n-    { path: '', redirectTo: 'login', pathMatch: 'full', },\n-    { path: 'login', componnent: LoginComponent } \n+    { path: '', redirectTo: 'login', pathMatch: 'full', }, \n   ]\n \n ];\n \n"
+                },
+                {
+                    "date": 1635909097304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,9 @@\n-import { Component, NgModule } from '@angular/core';\n+import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n \n const routes: Routes = [\n-  [\n-    { path: '', redirectTo: 'login', pathMatch: 'full', }, \n-  ]\n+  \n \n ];\n \n @NgModule({\n"
+                },
+                {
+                    "date": 1635909189283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,11 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n \n const routes: Routes = [\n-  \n+  {\n+    \n+  }\n \n ];\n \n @NgModule({\n"
+                },
+                {
+                    "date": 1635909195322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,9 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n \n const routes: Routes = [\n-  {\n-    \n-  }\n+  {}\n \n ];\n \n @NgModule({\n"
+                },
+                {
+                    "date": 1635909202926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n \n const routes: Routes = [\n-  {}\n+  {path: '', }\n \n ];\n \n @NgModule({\n"
+                },
+                {
+                    "date": 1635909210287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n \n const routes: Routes = [\n-  {path: '', }\n+  {path: '', pathMatch: 'full'}\n \n ];\n \n @NgModule({\n"
+                },
+                {
+                    "date": 1635909215915,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n \n const routes: Routes = [\n-  {path: '', pathMatch: 'full'}\n+  {path: '', pathMatch: 'full' redi}\n \n ];\n \n @NgModule({\n"
+                },
+                {
+                    "date": 1635909221554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n \n const routes: Routes = [\n-  {path: '', pathMatch: 'full' redi}\n+  {path: '', pathMatch: 'full' redirec}\n \n ];\n \n @NgModule({\n"
+                },
+                {
+                    "date": 1635909226818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n \n const routes: Routes = [\n-  {path: '', pathMatch: 'full' redirec}\n+  {path: '', pathMatch: 'full' redirecT}\n \n ];\n \n @NgModule({\n"
+                },
+                {
+                    "date": 1635909232841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n \n const routes: Routes = [\n-  {path: '', pathMatch: 'full' redirecT}\n+  {path: '', pathMatch: 'full' , redirectTo}\n \n ];\n \n @NgModule({\n"
+                },
+                {
+                    "date": 1635909241770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n \n const routes: Routes = [\n-  {path: '', pathMatch: 'full' , redirectTo}\n+  {path: '', pathMatch: 'full' , redirectTo: 'a'}\n \n ];\n \n @NgModule({\n"
+                },
+                {
+                    "date": 1635909265949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n \n const routes: Routes = [\n-  {path: '', pathMatch: 'full' , redirectTo: 'a'}\n+  {path: '', pathMatch: 'full' , redirectTo: 'home'}\n \n ];\n \n @NgModule({\n"
+                },
+                {
+                    "date": 1635909271164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n \n const routes: Routes = [\n-  {path: '', pathMatch: 'full' , redirectTo: 'home'}\n+  {path: '', pathMatch: 'full' , redirectTo: 'home-page'}\n \n ];\n \n @NgModule({\n"
+                },
+                {
+                    "date": 1635909285862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n \n const routes: Routes = [\n-  {path: '', pathMatch: 'full' , redirectTo: 'home-page'}\n+  {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n+  \n \n ];\n \n @NgModule({\n"
+                },
+                {
+                    "date": 1635909301455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,13 @@\n import { RouterModule, Routes } from '@angular/router';\n \n const routes: Routes = [\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n-  \n+  {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n+  {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n+  {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n \n+\n ];\n \n @NgModule({\n   imports: [RouterModule.forRoot(routes)],\n"
+                },
+                {
+                    "date": 1635909309634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,11 @@\n import { RouterModule, Routes } from '@angular/router';\n \n const routes: Routes = [\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n+  {path: '', },\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n-  {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n \n \n ];\n \n"
+                },
+                {
+                    "date": 1635909320135,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { RouterModule, Routes } from '@angular/router';\n \n const routes: Routes = [\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n-  {path: '', },\n+  {path: 'login', component},\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n \n \n"
+                },
+                {
+                    "date": 1635909327786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n+import { LoginComponent } from './module/login/login.component';\n \n const routes: Routes = [\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n-  {path: 'login', component},\n+  {path: 'login', component:LoginComponent},\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n \n \n"
+                },
+                {
+                    "date": 1635909333123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,10 @@\n \n const routes: Routes = [\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n   {path: 'login', component:LoginComponent},\n+  {path: ''},\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n-  {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n \n \n ];\n \n"
+                },
+                {
+                    "date": 1635909339717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n const routes: Routes = [\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n   {path: 'login', component:LoginComponent},\n-  {path: ''},\n+  {path: 'form-axa'},\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n \n \n ];\n"
+                },
+                {
+                    "date": 1635909347532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n const routes: Routes = [\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n   {path: 'login', component:LoginComponent},\n-  {path: 'form-axa'},\n+  {path: 'form-axa' , component:},\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n \n \n ];\n"
+                },
+                {
+                    "date": 1635909353640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n const routes: Routes = [\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n   {path: 'login', component:LoginComponent},\n-  {path: 'form-axa' , component:},\n+  {path: 'form-axa' , component:fo},\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n \n \n ];\n"
+                },
+                {
+                    "date": 1635909372341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n const routes: Routes = [\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n   {path: 'login', component:LoginComponent},\n-  {path: 'form-axa' , component:fo},\n+  {path: 'form-axa' , component:FormAxaComponent},\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n \n \n ];\n"
+                },
+                {
+                    "date": 1635909378363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,16 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n+import { FormAxaComponent } from './module/form-axa/form-axa.component';\n import { LoginComponent } from './module/login/login.component';\n \n const routes: Routes = [\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n   {path: 'login', component:LoginComponent},\n   {path: 'form-axa' , component:FormAxaComponent},\n-  {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n \n \n+\n ];\n \n @NgModule({\n   imports: [RouterModule.forRoot(routes)],\n"
+                },
+                {
+                    "date": 1635909490796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,12 +5,10 @@\n \n const routes: Routes = [\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n   {path: 'login', component:LoginComponent},\n-  {path: 'form-axa' , component:FormAxaComponent},\n+  {path: 'krungform-axa' , component:FormAxaComponent},\n \n-\n-\n ];\n \n @NgModule({\n   imports: [RouterModule.forRoot(routes)],\n"
+                }
+            ],
+            "date": 1635908680340,
+            "name": "Commit-0",
+            "content": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [\n  \n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }\n"
+        }
+    ]
+}
