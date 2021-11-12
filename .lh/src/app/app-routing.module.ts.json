@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 28,
+            "activePatchIndex": 31,
             "patches": [
                 {
                     "date": 1635908680340,
@@ -120,6 +120,18 @@
                 {
                     "date": 1635909490796,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,12 +5,10 @@\n \n const routes: Routes = [\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n   {path: 'login', component:LoginComponent},\n-  {path: 'form-axa' , component:FormAxaComponent},\n+  {path: 'krungform-axa' , component:FormAxaComponent},\n \n-\n-\n ];\n \n @NgModule({\n   imports: [RouterModule.forRoot(routes)],\n"
+                },
+                {
+                    "date": 1636741910899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,13 +5,13 @@\n \n const routes: Routes = [\n   {path: '', pathMatch: 'full' , redirectTo: 'home-page'},\n   {path: 'login', component:LoginComponent},\n-  {path: 'krungform-axa' , component:FormAxaComponent},\n+  {path: 'krungthai/form-axa' , component:FormAxaComponent},\n \n ];\n \n @NgModule({\n-  imports: [RouterModule.forRoot(routes)],\n+  imports: [RouterModule.forRoot()],\n   exports: [RouterModule]\n })\n export class AppRoutingModule { }\n"
+                },
+                {
+                    "date": 1636741938608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,10 @@\n \n ];\n \n @NgModule({\n-  imports: [RouterModule.forRoot()],\n+  imports: [RouterModule.forRoot(\n+    []\n+  )],\n   exports: [RouterModule]\n })\n export class AppRoutingModule { }\n"
+                },
+                {
+                    "date": 1636741944439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n ];\n \n @NgModule({\n   imports: [RouterModule.forRoot(\n-    [pa]\n+    [pat]\n   )],\n   exports: [RouterModule]\n })\n export class AppRoutingModule { }\n"
                 }
             ],
             "date": 1635908680340,

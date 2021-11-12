@@ -1,0 +1,42 @@
+{
+    "sourceFile": "src/app/module/form-axa/form-rating/form-rating/form-rating.component.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1636462573447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1636462738022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-<p>--------------------------form-rating works!</p>\n+<p>--------------------------form-rating works!----------------------</p>.\n"
+                },
+                {
+                    "date": 1636462744955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-<p>--------------------------form-rating works!----------------------</p>.\n+<p>--------------------------form-rating works!----------------------</p>\n+.contrai\n"
+                },
+                {
+                    "date": 1636462900615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n <p>--------------------------form-rating works!----------------------</p>\n-.contrai\n+<div class=\"\"></div>\n"
+                },
+                {
+                    "date": 1636462908193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,6 @@\n <p>--------------------------form-rating works!----------------------</p>\n-<div class=\"\"></div>\n+<div class=\"container-fluid\">\n+    <div class=\"row\">\n+        \n+    </div>\n+</div>\n"
+                },
+                {
+                    "date": 1636462924783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <p>--------------------------form-rating works!----------------------</p>\n <div class=\"container-fluid\">\n     <div class=\"row\">\n-        .col-12\n+        .col-12-\n     </div>\n </div>\n"
+                },
+                {
+                    "date": 1636462941667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <p>--------------------------form-rating works!----------------------</p>\n <div class=\"container-fluid\">\n     <div class=\"row\">\n-        <div class=\"col-12 col-sm-12 col-md-12 \">\n+        <div class=\"col-12 col-sm-12 col-md-12 c\">\n \n         </div>\n     </div>\n </div>\n"
+                }
+            ],
+            "date": 1636462573447,
+            "name": "Commit-0",
+            "content": "<p>--------------------------form-rating works!</p>\n"
+        }
+    ]
+}

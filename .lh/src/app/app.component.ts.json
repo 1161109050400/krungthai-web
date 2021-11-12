@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 6,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1635909888458,
@@ -32,6 +32,14 @@
                 {
                     "date": 1635909989412,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,5 @@\n   styleUrls: ['./app.component.scss']\n })\n export class AppComponent {\n   title = 'Krungthai-Web';\n-  router: any;\n-\n-  gotoForm-axa(){\n-    this.router.navigate(['krungthai/form-axa'])\n-  }\n-\n-\n }\n"
+                },
+                {
+                    "date": 1636047456292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,8 @@\n   styleUrls: ['./app.component.scss']\n })\n export class AppComponent {\n   title = 'Krungthai-Web';\n+\n+\n+  gotoFormaxa()\n }\n"
+                },
+                {
+                    "date": 1636047477939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,7 @@\n   title = 'Krungthai-Web';\n \n \n   gotoFormaxa(){\n-    d\n+    \n   }\n }\n"
                 }
             ],
             "date": 1635909888458,

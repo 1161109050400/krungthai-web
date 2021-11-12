@@ -1,0 +1,29 @@
+@import "/src/assets/scss/base/typography";
+@import "/src//assets/scss/base/responsive";
+
+.text-color {
+    color: #0f2f86;
+  }
+
+.btn-number{
+  background: #0f2f86;
+  color: #ffff;
+  border-radius: 15px;
+  transition: all 0.25s ease;
+  // padding: 15px;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  margin: 5px 0 15px 0;
+  font-size: 21px;
+  line-height: inherit;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.card{
+  background-color: #F1F2F7;
+  
+}
+
