@@ -1,3 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@ng-select/ng-select/themes/default.theme.css";
 @import 'animate.css';
+
+
+.ng-select .ng-select-container {
+    font-family: 'DB HelvethaicaMon X 55 Regular';
+    font-size: 1.125rem;
+  }
+  .ng-select .ng-dropdown-panel  {
+    font-family: 'DB HelvethaicaMon X 55 Regular';
+    font-size: 1.125rem;
+  }
+  
+  .ng-select .ng-dropdown-panel .ng-dropdown-panel-items .ng-option  {
+      padding-top: 5px;
+      padding-bottom: 5px;
+  }
+  
+  .ng-select.ng-select-single .ng-select-container {
+    font-family: 'DB HelvethaicaMon X 55 Regular';
+    font-size: 1.125rem;
+  }

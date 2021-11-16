@@ -1,6 +1,21 @@
 @import "/src/assets/scss/base/typography";
 @import "/src//assets/scss/base/responsive";
 
+.img {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.img img {
+  width: 600px;
+  height: 420px;
+  margin: 60px;
+  @media (max-width: 428px) {
+    display: none;
+  }
+}
+
 .text-color {
   color: #0f2f86;
 }
@@ -93,6 +108,11 @@ legend {
 
 .gender {
   background-image: url("../../../assets/img/Tax-amico.svg");
+  width: 500px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   //   background-size: cover;
   background-repeat: no-repeat;
   //   background-position: bottom 0px right 0px;
@@ -103,9 +123,11 @@ legend {
     background-repeat: no-repeat;
   }
   @media (min-width: 1024px) {
-    margin: 125px;
+    margin-left: 80px;
+    margin-bottom: 18px;
+    margin-top: 20px;
     width: 500px;
-    height: 500px;
+    height: 760px;
   }
   @include respond-to("medium-large") {
     margin: 125px;
@@ -114,7 +136,6 @@ legend {
   }
   @media (max-width: 428px) {
     display: none;
-   
   }
 }
 
@@ -236,3 +257,6 @@ a {
   margin-left: unset;
   bottom: 0;
 }
+
+
+

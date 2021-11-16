@@ -22,7 +22,7 @@ body {
 
 .container {
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 7rem;
@@ -43,11 +43,11 @@ body {
 }
 
 .img img {
-  width: 500px;
+  width: 650px;
 }
 
 form {
-  width: 360px;
+  width: 450px;
 }
 
 .login-content img {
@@ -209,6 +209,7 @@ a:hover {
 }
 
 @media screen and (max-width: 900px) {
+  
   .container {
     grid-template-columns: 1fr;
   }

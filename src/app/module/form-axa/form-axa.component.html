@@ -2,17 +2,16 @@
     <div class="row">
         <div class="col-12 col-sm-6 col-md-6 col-xl-6 col-lg-6 order-1">
             <div class="row">
-                <div class="gender">
+                <div class="img">
+                    <img src="../../../assets/img/scrum_board.svg">
                 </div>
             </div>
         </div>
         <div class="col-12 col-sm-6 col-md-12 col-xl-6 col-lg-6 order-2">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-12">
-                    <label
-                        class="heading1 text-color mt-5">
-                        <i class="far fa-address-card  text-color " aria-hidden="true"
-                        style="font-size: 25px;"></i>
+                    <label class="heading1 text-color mt-12">
+                        <i class="far fa-address-card  text-color " aria-hidden="true" style="font-size: 25px;"></i>
                         {{'ให้เราช่วยคุณเลือกผลิตภัณฑ์ที่ใช่สำหรับคุณ'}}</label>
                     <legend></legend>
                 </div>
@@ -37,17 +36,17 @@
                                     <i class="fas fa-male" style="font-size: 35px;"></i>
                                     <input class="radio-custom" type="radio" [value]=1 style="display: none;">
                                     <br>
-                                    <span class="subtitle3 bs-gray3">ชาย</span>
+                                    <span class="subtitle3 bs-gray3"> ชาย </span>
                                 </label>
                             </div>
                             <!-- หญิง-->
                             <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 test">
                                 <label class="inbound-outbound text-center" style="cursor: pointer;"
-                                    [ngClass]="{'selected-outbound': !isSelected}">
+                                    [ngClass]="{'selected-outbound': isSelected}">
                                     <i class="fas fa-female" style="font-size: 35px;"></i>
                                     <input class="radio-custom" type="radio" [value]=2 style="display: none;">
                                     <br>
-                                    <span class="subtitle3 bs-gray3">หญิง</span>
+                                    <span class="subtitle3 bs-gray3"> หญิง </span>
                                 </label>
                             </div>
 
