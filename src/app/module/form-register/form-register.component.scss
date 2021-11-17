@@ -1,0 +1,120 @@
+@import "/src/assets/scss/base/typography";
+@import "/src//assets/scss/base/responsive";
+@import "/src//assets/scss/base/animations";
+
+.img {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.img img {
+  width: 600px;
+  height: 420px;
+  margin: 140px;
+  @media (max-width: 428px) {
+    display: none;
+  }
+}
+
+.text-color {
+  color: #0f2f86;
+}
+
+.text-color2 {
+  color: #333333;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  margin: 5px 0 15px 0;
+  font-size: 21px;
+  line-height: inherit;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.form-check-input {
+  font-size: 18px;
+}
+.form-check-input:checked {
+  background-color: #0f2f86;
+  border-color: #fff;
+}
+
+.hight-input-text {
+  height: 36px;
+}
+
+.button-danger {
+  background: #f64658;
+  display: flex;
+  height: 50px;
+  padding: 0;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button {
+  // display: flex;
+  height: 50px;
+  padding: 0;
+  background: #0f2f86;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+//   .button:hover {
+//     background: #464647;
+//   }
+//   .button-danger:hover {
+//     background: #F1F2F7;
+//   }
+
+.button:active {
+  background: #006e58;
+}
+
+.button__text,
+.button__icon {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 24px;
+  color: #fff;
+  height: 100%;
+}
+
+.button__icon-blue {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 24px;
+  color: #0f2f86;
+  height: 100%;
+}
+
+.button__icon {
+  font-size: 1.5em;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/*************** MODAL ***************/
+
+.modal-header {
+  background-color: #8abb3d !important;
+  // height: 20px !important;
+}
+
+.icon-control {
+  font-size: 70px;
+  color: #8abb3d;
+}

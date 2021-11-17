@@ -9,8 +9,7 @@ import { LoginComponent } from './module/login/login.component';
 import { FormRatingComponent } from './module/form-axa/form-rating/form-rating/form-rating.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './module/home-page/home-page.component';
-
-
+import { FormRegisterComponent } from './module/form-register/form-register.component';
 
 @NgModule({
   declarations: [
@@ -19,21 +18,10 @@ import { HomePageComponent } from './module/home-page/home-page.component';
     LoginComponent,
     FormRatingComponent,
     HomePageComponent,
+    FormRegisterComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgSelectModule,
-    FormsModule,
-    RouterModule.forRoot([
-      {path: 'login', component:LoginComponent ,} ,
-      {path: 'krungthai/form-axa' , component:FormAxaComponent ,} ,
-      {path: 'krungthai/form-rating' , component: FormRatingComponent ,} ,
-      {path: 'krungthai/home-page' , component:HomePageComponent ,}
-    ]) ,
-
-  ],
+  imports: [BrowserModule, AppRoutingModule, NgSelectModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

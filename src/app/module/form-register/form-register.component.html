@@ -1,0 +1,100 @@
+<div class="container-fluid" style="margin-top: 35px;">
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 col-xl-6 col-lg-6 order-1">
+            <div class="row">
+                <div class="img">
+                    <img src="../../../assets/img/register.svg">
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-12 col-xl-6 col-lg-6 order-2">
+            <div class="row" style="margin-top: 80px;">
+                <div class="col-md-12 col-sm-12 col-12">
+                    <h1 class="text-color mt-5">
+                        <!-- <i class="far fa-address-card  text-color " aria-hidden="true" style="font-size: 25px;"></i> -->
+                        สนใจทำแผนประกัน กรุณากรอกข้อมูล
+                    </h1>
+                    <legend></legend>
+                </div>
+            </div>
+            <div class="form-axa">
+                <div class="row">
+                    <div class="col-6 col-md-5">
+                        <label class="subtitle1 text-color">ชื่อตามบัตรประชาชน</label>
+                        <span class="subtitle1" style="color: #f64658;"> *</span>
+                        <input type="text" class="form-control hight-input-text">
+                    </div>
+                    <div class="col-6 col-md-5">
+                        <label class="subtitle1 text-color">นามสกุลตามบัตรประชาชน</label>
+                        <span class="subtitle1" style="color: #f64658;"> *</span>
+                        <input type="text" class="form-control hight-input-text">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-6 col-md-5">
+                        <label class="subtitle1 text-color">อีเมลล์</label>
+                        <input type="text" class="form-control hight-input-text">
+                    </div>
+                    <div class="col-6 col-md-5">
+                        <label class="subtitle1 text-color">เบอร์โทรศัพท์</label>
+                        <span class="subtitle1" style="color: #f64658;"> *</span>
+                        <input type="text" class="form-control hight-input-text">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-6 col-md-5">
+                        <label class="subtitle1 text-color">จังหวัดที่อยู่</label>
+                        <ng-select [items]="provinces"  bindLabel="text" bindValue="id">
+                        </ng-select>
+                    </div>
+                    <div class="col-6 col-md-5">
+                        <label class="subtitle1 text-color">เบอร์โทรสาร</label>
+                        <input type="text" class="form-control hight-input-text">
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <label class="subtitle1 text-color">ท่านสามารถศึกษานโยบายข้อมูลส่วนบุคคลได้ที่เว็บไซต์กรุงไทยแอกซ่า</label>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-auto">
+                        <label class="text1 bs-gray1">
+                            <input type="checkbox" class="form-check-input mx-2">ข้าพเจ้ายินยอมให้บริษัท กรุงไทย
+                            แอกซ่า จำกัด และกลุ่มบริษัทกรุงไทย แอกซ่า ตัวแทนประกันชีวิต นายหน้าประกันชีวิต <br>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; สามารถเก็บใช้ข้อมูลที่ข้าพเจ้าให้ไว้
+                        </label>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12 col-md-12 text-center" style="text-align: center;">
+                        <button class="button button__text subtitle1 ps-4 pe-4 mx-2 p-1 btn-animate-type1" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                            >&nbsp;&nbsp;ยืนยันข้อมูล&nbsp;&nbsp;|&nbsp;&nbsp;<i
+                                class="fas fa-cloud-download-alt mx-2 "></i>
+                        </button>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="text-center text-content m-0 pb-4">
+              <div class="icon-control">
+                <!-- <i class="fas fa-check animated rotateIn"></i> -->
+                <i class="far fa-check-circle animated rotateIn"></i>
+              </div>
+              <h2 class="m-0" style="color: #333;">บันทึกสำเร็จ</h2>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>

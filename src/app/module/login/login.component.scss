@@ -12,6 +12,13 @@ body {
   overflow: hidden;
 }
 
+
+input{
+  font-family: 'DB HelvethaicaMon X 55 Regular' !important;
+  font-size: 1.25rem !important; //18px //20
+  font-weight: $font-weight-normal !important;
+}
+
 .wave {
   position: fixed;
   bottom: 0;
@@ -22,7 +29,7 @@ body {
 
 .container {
   width: 100vw;
-  height: 80vh;
+  height: 90vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 7rem;
