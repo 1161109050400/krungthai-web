@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +10,8 @@ import { FormRatingComponent } from './module/form-axa/form-rating/form-rating/f
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './module/home-page/home-page.component';
 import { FormRegisterComponent } from './module/form-register/form-register.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './module/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,16 @@ import { FormRegisterComponent } from './module/form-register/form-register.comp
     FormRatingComponent,
     HomePageComponent,
     FormRegisterComponent,
+    DashboardComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, NgSelectModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgSelectModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

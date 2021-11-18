@@ -1,5 +1,6 @@
 @import "/src/assets/scss/base/typography";
 @import "/src//assets/scss/base/responsive";
+@import "/src//assets/scss/base/animations";
 
 // * {
 //   padding: 0;
@@ -14,8 +15,8 @@ body {
 
 
 input{
-  font-family: 'DB HelvethaicaMon X 55 Regular' !important;
-  font-size: 1.25rem !important; //18px //20
+  font-family: 'DB HelvethaicaMon X 65 Med' !important;
+  font-size: 1.1875rem !important; //18px //20 // 19
   font-weight: $font-weight-normal !important;
 }
 
@@ -47,6 +48,9 @@ input{
   justify-content: flex-start;
   align-items: center;
   text-align: center;
+  font-family: 'DB HelvethaicaMon X 65 Med' !important;
+  font-size: 1.1875rem !important; //18px //20 // 19
+  font-weight: $font-weight-normal !important;
 }
 
 .img img {
@@ -247,4 +251,16 @@ a:hover {
 
 .hight-input-text {
   height: 36px;
+}
+
+/*************** MODAL ***************/
+
+.modal-header {
+  background-color: #8abb3d !important;
+  // height: 20px !important;
+}
+
+.icon-control {
+  font-size: 70px;
+  color: #8abb3d;
 }
