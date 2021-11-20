@@ -13,6 +13,8 @@ import { FormRegisterComponent } from './module/form-register/form-register.comp
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './module/dashboard/dashboard.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,7 @@ import { DashboardComponent } from './module/dashboard/dashboard.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -30,21 +30,25 @@
                 <div class="row mt-2 mb-2">
                     <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
                         <div class="row">
-                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6"  (click)="isSelected = true">
                                 <label class="inbound-outbound text-center" style="cursor: pointer;"
                                     [ngClass]="{'selected-inbound': isSelected}">
                                     <i class="fas fa-male" style="font-size: 35px;"></i>
-                                    <input class="radio-custom" type="radio" [value]=1 style="display: none;">
+                                    <input class="radio-custom" type="radio" [value]=1 style="display: none;"
+                                    [formControl]="male"
+                                    >
                                     <br>
                                     <span class="subtitle3 bs-gray3"> ชาย </span>
                                 </label>
                             </div>
                             <!-- หญิง-->
-                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 test">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" (click)="isSelected = false">
                                 <label class="inbound-outbound text-center" style="cursor: pointer;"
-                                    [ngClass]="{'selected-outbound': isSelected}">
+                                    [ngClass]="{'selected-outbound': !isSelected}">
                                     <i class="fas fa-female" style="font-size: 35px;"></i>
-                                    <input class="radio-custom" type="radio" [value]=2 style="display: none;">
+                                    <input class="radio-custom" type="radio" [value]=2 style="display: none;"
+                                    [formControl]="female"
+                                    >
                                     <br>
                                     <span class="subtitle3 bs-gray3"> หญิง </span>
                                 </label>

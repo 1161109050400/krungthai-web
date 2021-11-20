@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-axa',
@@ -10,6 +11,8 @@ export class FormAxaComponent implements OnInit {
 
 
   isSelected: boolean = true; 
+  male = new FormControl();
+  female = new FormControl();
   
   years = [
     { value: 1, label: '7-15 ปี' },
@@ -19,7 +22,13 @@ export class FormAxaComponent implements OnInit {
     { value: 5, label: '65 ปีขึ้นไป' }
   ];
 
+  public genderType: boolean = true;
+  
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
+
 }

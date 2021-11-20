@@ -8,6 +8,25 @@
   align-items: center;
 }
 
+.alert-padding {
+  @include subtitle3;
+  padding: 1px 7px;
+  margin-bottom: 10px;
+  // font-size: 1.125rem;
+  color: #ec3238;
+
+  i {
+      font-size: .75em;
+      margin: 2px;
+  }
+}
+
+.alert-danger {
+  color: #ec3238;
+  background-color: #f8d7da;
+  font-size: 18px;
+}
+
 .img img {
   width: 600px;
   height: 420px;

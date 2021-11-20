@@ -8,7 +8,8 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
   login(username: string, password: string) {
-    return this.http.post('/api/login.php', {
+    console.log(username)
+    return this.http.post('/api/auth/login', {
           username,
           password,
     });

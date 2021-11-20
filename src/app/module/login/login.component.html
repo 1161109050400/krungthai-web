@@ -12,7 +12,6 @@
 						<i class="fas fa-user"></i>
 					</div>
 					<div class="div">
-						<!-- <h5>Username</h5> -->
 						<input type="text" class="input" [formControl]="username">
 					</div>
 				</div>
@@ -21,13 +20,12 @@
 						<i class="fas fa-lock"></i>
 					</div>
 					<div class="div">
-						<!-- <h5>Password</h5> -->
 						<input type="password" class="input" [formControl]="password" >
 					</div>
 				</div>
 				<a href="#">Forgot Password?</a>
-				<input type="button" class="btn subtitle1" value="เข้าสู่ระบบ" (click)="_beforeLogin()" >
-				<!-- <input type="submit" class="btn subtitle1" value="เข้าสู่ระบบ" routerLink="/krungthai/form-axa"> -->
+				<input type="button" class="btn subtitle1" value="เข้าสู่ระบบ" (click)="_beforeLogin()" routerLink="/krungthai/dashboard">
+				<!-- routerLink="/krungthai/dashboard" -->
 			</form>
 		</div>
 	</div>
@@ -37,7 +35,7 @@
 <!-- <button type="button" hidden class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#login" #login>
 </button> -->
 <!-- Modal -->
-<!-- <div class="modal fade" id="login" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="login" aria-hidden="true">
+<div class="modal fade" id="login" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="login" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -47,11 +45,12 @@
         <div class="modal-body">
             <div class="text-center text-content m-0 pb-4">
               <div class="icon-control">
-                <i class="far fa-check-circle animated rotateIn"></i>
+                <i class="fas fa-check animated rotateIn"></i>
+				<!-- <i class="fas fa-check"></i> -->
               </div>
               <h2 class="m-0" style="color: #333;"> Login Successfully ! </h2>
             </div>
           </div>
       </div>
     </div>
-  </div> -->
+  </div>

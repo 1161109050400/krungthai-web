@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="col-12 col-sm-6 col-md-12 col-xl-6 col-lg-6 order-2">
-            <div class="row" style="margin-top: 80px;">
+            <div class="row">
                 <div class="col-md-12 col-sm-12 col-12">
                     <h1 class="text-color mt-5">
                         <!-- <i class="far fa-address-card  text-color " aria-hidden="true" style="font-size: 25px;"></i> -->
@@ -22,29 +22,53 @@
                     <div class="col-6 col-md-5">
                         <label class="subtitle1 text-color">ชื่อตามบัตรประชาชน</label>
                         <span class="subtitle1" style="color: #f64658;"> *</span>
-                        <input type="text" class="form-control hight-input-text">
+                        <input type="text" class="form-control hight-input-text" [formControl]="firstName">
+                        <!-- <input type="text" pInputText /> -->
+                        <div  *ngIf="firstName.invalid && firstName.touched"  class="alert alert-danger alert-padding mt-2" role="alert">
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            <span class="subtitle3"> ชื่อลูกค้าจำเป็นต้องกรอก</span>
+                        </div>
                     </div>
                     <div class="col-6 col-md-5">
                         <label class="subtitle1 text-color">นามสกุลตามบัตรประชาชน</label>
                         <span class="subtitle1" style="color: #f64658;"> *</span>
-                        <input type="text" class="form-control hight-input-text">
+                        <input type="text" class="form-control hight-input-text" [formControl]="lastName">
+                        <div *ngIf="lastName.invalid && lastName.touched" class="alert alert-danger alert-padding mt-2" role="alert">
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            <span class="subtitle3"> ชื่อลูกค้าจำเป็นต้องกรอก</span>
+                        </div>
                     </div>
                 </div>
                 <div class="row mt-2">
                     <div class="col-6 col-md-5">
                         <label class="subtitle1 text-color">อีเมลล์</label>
-                        <input type="text" class="form-control hight-input-text">
+                        <input type="text" class="form-control hight-input-text" [formControl]="Email">
+                        <div *ngIf="Email.hasError('required') && Email.invalid && Email.touched" class="alert alert-danger alert-padding mt-2" role="alert">
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            <span class="subtitle3">กรุณากรอกข้อมูล</span>
+                        </div>
+
+                        <div *ngIf="Email.hasError('email') && Email.invalid && Email.touched" class="alert alert-danger alert-padding mt-2" role="alert">
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            <span class="subtitle3">รูปแบบอีเมลไม่ถูกต้อง</span>
+                        </div>
                     </div>
                     <div class="col-6 col-md-5">
                         <label class="subtitle1 text-color">เบอร์โทรศัพท์</label>
                         <span class="subtitle1" style="color: #f64658;"> *</span>
                         <input type="text" class="form-control hight-input-text">
+
+                        <!-- <div class="alert alert-danger alert-padding mt-2" role="alert">
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            <span class="subtitle3">กรุณากรอกข้อมูล</span>
+                        </div> -->
                     </div>
                 </div>
                 <div class="row mt-2">
                     <div class="col-6 col-md-5">
                         <label class="subtitle1 text-color">จังหวัดที่อยู่</label>
-                        <ng-select [items]="provinces"  bindLabel="text" bindValue="id">
+                        <ng-select 
+                        [items]="dataList" bindLabel="province"  [(ngModel)]="dataSelect">
                         </ng-select>
                     </div>
                     <div class="col-6 col-md-5">
@@ -53,7 +77,8 @@
                     </div>
                 </div>
                 <div class="row mt-3">
-                    <label class="subtitle1 text-color">ท่านสามารถศึกษานโยบายข้อมูลส่วนบุคคลได้ที่เว็บไซต์กรุงไทยแอกซ่า</label>
+                    <label
+                        class="subtitle1 text-color">ท่านสามารถศึกษานโยบายข้อมูลส่วนบุคคลได้ที่เว็บไซต์กรุงไทยแอกซ่า</label>
                 </div>
                 <div class="row mt-3">
                     <div class="col-auto">
@@ -66,12 +91,11 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-12 col-md-12 text-center" style="text-align: center;">
-                        <button class="button button__text subtitle1 ps-4 pe-4 mx-2 p-1 btn-animate-type1" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-                            >&nbsp;&nbsp;ยืนยันข้อมูล&nbsp;&nbsp;|&nbsp;&nbsp;<i
+                        <button class="button button__text subtitle1 ps-4 pe-4 mx-2 p-1 btn-animate-type1" (OnClick)="Onsubmit()">&nbsp;&nbsp;ยืนยันข้อมูล&nbsp;&nbsp;|&nbsp;&nbsp;<i
                                 class="fas fa-cloud-download-alt mx-2 "></i>
                         </button>
                     </div>
-                
+
                 </div>
             </div>
         </div>
@@ -79,22 +103,23 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel"></h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <div class="text-center text-content m-0 pb-4">
-              <div class="icon-control">
-                <!-- <i class="fas fa-check animated rotateIn"></i> -->
-                <i class="far fa-check-circle animated rotateIn"></i>
-              </div>
-              <h2 class="m-0" style="color: #333;">บันทึกสำเร็จ</h2>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-          </div>
-      </div>
+            <div class="modal-body">
+                <div class="text-center text-content m-0 pb-4">
+                    <div class="icon-control">
+                        <i class="fas fa-check animated rotateIn"></i>
+                        <!-- <i class="far fa-check-circle animated rotateIn"></i> -->
+                    </div>
+                    <h2 class="m-0" style="color: #333;">บันทึกสำเร็จ</h2>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
