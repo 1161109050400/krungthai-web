@@ -13,6 +13,10 @@ export class FormAxaComponent implements OnInit {
   isSelected: boolean = true; 
   male = new FormControl();
   female = new FormControl();
+  monthly_Income = new FormControl('', [Validators.required]);
+  monthly_Pay = new FormControl('', [Validators.required]);
+  name = 'World';
+
   
   years = [
     { value: 1, label: '7-15 ปี' },

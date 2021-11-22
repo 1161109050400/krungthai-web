@@ -26,6 +26,7 @@ export class FormRegisterComponent implements OnInit {
   firstName = new FormControl('', [Validators.required]);
   lastName = new FormControl('', [Validators.required]);
   Email = new FormControl('', [Validators.required, Validators.email]);
+  numberPhone = new FormControl('', [Validators.required]);
   dataSelect!:string;
   
   

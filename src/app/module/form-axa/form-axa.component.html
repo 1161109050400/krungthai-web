@@ -3,7 +3,7 @@
         <div class="col-12 col-sm-6 col-md-6 col-xl-6 col-lg-6 order-1">
             <div class="row">
                 <div class="img">
-                    <img src="../../../assets/img/scrum_board.svg">
+                    <img src="../../../assets/img/about.svg">
                 </div>
             </div>
         </div>
@@ -12,7 +12,7 @@
                 <div class="col-md-12 col-sm-12 col-12">
                     <label class="heading1 text-color mt-12">
                         <i class="far fa-address-card  text-color " aria-hidden="true" style="font-size: 25px;"></i>
-                        {{'ให้เราช่วยคุณเลือกผลิตภัณฑ์ที่ใช่สำหรับคุณ'}}</label>
+                        ให้เราช่วยคุณเลือกผลิตภัณฑ์ที่ใช่สำหรับคุณ</label>
                     <legend></legend>
                 </div>
             </div>
@@ -33,31 +33,29 @@
                             <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6"  (click)="isSelected = true">
                                 <label class="inbound-outbound text-center" style="cursor: pointer;"
                                     [ngClass]="{'selected-inbound': isSelected}">
-                                    <i class="fas fa-male" style="font-size: 35px;"></i>
+                                    <i class="fas fa-male" style="font-size: 40px;"></i>
                                     <input class="radio-custom" type="radio" [value]=1 style="display: none;"
-                                    [formControl]="male"
-                                    >
+                                    [formControl]="male">
                                     <br>
-                                    <span class="subtitle3 bs-gray3"> ชาย </span>
+                                    <span class="subtitle1 bs-gray3"> ชาย </span>
                                 </label>
                             </div>
                             <!-- หญิง-->
                             <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" (click)="isSelected = false">
                                 <label class="inbound-outbound text-center" style="cursor: pointer;"
                                     [ngClass]="{'selected-outbound': !isSelected}">
-                                    <i class="fas fa-female" style="font-size: 35px;"></i>
+                                    <i class="fas fa-female" style="font-size: 40px;"></i>
                                     <input class="radio-custom" type="radio" [value]=2 style="display: none;"
-                                    [formControl]="female"
-                                    >
+                                    [formControl]="female">
                                     <br>
-                                    <span class="subtitle3 bs-gray3"> หญิง </span>
+                                    <span class="subtitle1 bs-gray3"> หญิง </span>
                                 </label>
                             </div>
 
                         </div>
                     </div>
                 </div>
-                <div class="row mt-2">
+                <div class="row mt-3">
                     <div class="col-12 col-md-5">
                         <label class="subtitle1 text-color">อายุ ( ปี )</label>
                     </div>
@@ -68,19 +66,27 @@
                         </ng-select>
                     </div>
                 </div>
-                <div class="row mt-5">
+                <div class="row mt-3">
                     <div class="col-5 col-md-5 col-lg-4">
                         <label class="subtitle1 text-color">รายได้ต่อเดือน</label>
                         <div class="d-flex">
-                            <input type="text" class="form-control hight-input-text">
+                            <input type="text" class="form-control hight-input-text" [formControl]="monthly_Income">
                             <span class="mt-1 subtitle3 bs-gray1 ps-2 pe-2">บาท</span>
+                        </div>
+                        <div *ngIf="monthly_Income.invalid && monthly_Income.touched" class="alert alert-danger alert-padding mt-2" role="alert">
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            <span class="subtitle3"> จำเป็นต้องกรอก </span>
                         </div>
                     </div>
                     <div class="col-7 col-md-5 col-lg-4 pe-2">
                         <label class="subtitle1 text-color">เงินที่สามารถชำระต่อเดือนได้</label>
                         <div class="d-flex">
-                            <input type="text" class="form-control hight-input-text">
+                            <input type="text" class="form-control hight-input-text" [formControl]="monthly_Pay">
                             <span class="mt-1 subtitle3 bs-gray1 ps-2 pe-2">บาท</span>
+                        </div>
+                        <div *ngIf="monthly_Pay.invalid && monthly_Pay.touched" class="alert alert-danger alert-padding mt-2" role="alert">
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            <span class="subtitle3"> จำเป็นต้องกรอก </span>
                         </div>
                     </div>
                 </div>
@@ -102,6 +108,7 @@
                     </div>
                 </div>
             </div>
+            
             <!-- <div class="modal-footer mt-5">
                 <div class="row">
                     <div class="col-auto">
@@ -123,6 +130,7 @@
                 </div>
             </div> -->
         </div>
+        
     </div>
 </div>
 <div class="footer-activity">

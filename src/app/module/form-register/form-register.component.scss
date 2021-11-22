@@ -137,3 +137,27 @@ legend {
   font-size: 70px;
   color: #8abb3d;
 }
+
+
+.footer-activity {
+  padding-top: 13px;
+  height: 61px;
+  background-color: #f1f2f7;
+  @include respond-to("laptop") {
+    position: fixed;
+  }
+  @media (min-width: 1024px) {
+    position: fixed;
+  }
+  @include respond-to("medium-large") {
+    position: fixed;
+  }
+  @media (max-width: 428px) {
+    position: fixed;
+  }
+  z-index: 1020;
+  width: 100%;
+  margin-right: unset;
+  margin-left: unset;
+  bottom: 0;
+}

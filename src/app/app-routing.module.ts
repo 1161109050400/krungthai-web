@@ -15,6 +15,9 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'krungthai/home-page' },
   { path: 'krungthai/form-register', component: FormRegisterComponent },
   { path: 'krungthai/dashboard', component: DashboardComponent},
+  { path: 'krungthai/hospital', component: DashboardComponent},
+  { path: 'krungthai/insurance', component: DashboardComponent},
+  { path: 'krungthai/customer', component: DashboardComponent},
 ];
 
 @NgModule({

@@ -1,25 +1,43 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  
+  @ViewChild('login') public login: any; // เรียก Modal login
   username = new FormControl();
   password = new FormControl();
+  // login: any;
 
-  constructor(private loginService:LoginService) { }
+  constructor(
+    private loginService: LoginService,
+    private router: Router,
+    private modalService: NgbModal
+  ) {}
 
-  ngOnInit(): void {
-  }
-  _beforeLogin(){
-    this.loginService.login('test','test').subscribe(result=>{
+  ngOnInit(): void {}
+  _beforeLogin() {
+    this.loginService.login('test', 'test').subscribe((result) => {
       console.log(result);
-      // alert('Login Successfully')
+      // alert('Login Successfully');
+      this.router.navigate(['krungthai/dashboard']);
+      if (Response) {
+        this.modalService.open(this.login, { centered: true });
+        // this.login.open();
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);
+      } else {
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);
+      }
     });
   }
 }

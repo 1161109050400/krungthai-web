@@ -8,6 +8,9 @@
 //   box-sizing: border-box;
 // }
 
+.heading1{
+  font-size: 3rem !important;
+}
 body {
 //   font-family: "Poppins", sans-serif;
   overflow: hidden;
@@ -62,7 +65,7 @@ form {
 }
 
 .login-content img {
-  height: 100px;
+  height: 150px;
 }
 
 .login-content h2 {
@@ -156,7 +159,7 @@ form {
   padding: 0.5rem 0.7rem;
   font-size: 1.2rem;
   color: #555;
-  font-family: 'DB HelvethaicaMon X 55 Regular' !important;
+  // font-family: 'DB HelvethaicaMon X 55 Regular' !important;
 }
 
 .input-div.pass {
