@@ -1,13 +1,13 @@
 <div class="container-fluid" style="margin-top: 35px;">
     <div class="row">
-        <div class="col-12 col-sm-6 col-md-6 col-xl-6 col-lg-6 order-1">
+        <div class="col-12 col-sm-6 col-md-6 col-xl-5 col-lg-6 order-1">
             <div class="row">
                 <div class="img">
-                    <img src="../../../assets/img/about.svg">
+                    <img src="../../../assets/img/undraw_real_time_sync_re_nky7.svg">
                 </div>
             </div>
         </div>
-        <div class="col-12 col-sm-6 col-md-12 col-xl-6 col-lg-6 order-2">
+        <div class="col-12 col-sm-6 col-md-12 col-xl-7 col-lg-6 order-2">
             <div class="row" style="margin-top: 35px;">
                 <div class="col-md-12 col-sm-12 col-12">
                     <label class="heading1 text-color mt-12">
@@ -19,7 +19,7 @@
             <div class="form-axa">
                 <div class="row">
                     <div class="col-12 col-md-5">
-                        <label class="subtitle1 text-color">เพศ</label>
+                        <label class="subtitle2 text-color">เพศ</label>
                     </div>
                 </div>
                 <div class="row">
@@ -30,153 +30,274 @@
                 <div class="row mt-2 mb-2">
                     <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
                         <div class="row">
-                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6"  (click)="isSelected = true">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-5" (click)="isSelected = true">
                                 <label class="inbound-outbound text-center" style="cursor: pointer;"
                                     [ngClass]="{'selected-inbound': isSelected}">
-                                    <i class="fas fa-male" style="font-size: 40px;"></i>
+                                    <i class="fas fa-male" style="font-size: 30px;"></i>
                                     <input class="radio-custom" type="radio" [value]=1 style="display: none;"
-                                    [formControl]="male">
+                                        [formControl]="male">
                                     <br>
-                                    <span class="subtitle1 bs-gray3"> ชาย </span>
+                                    <span class="subtitle3 bs-gray3"> ชาย </span>
                                 </label>
                             </div>
                             <!-- หญิง-->
-                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" (click)="isSelected = false">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-5" (click)="isSelected = false">
                                 <label class="inbound-outbound text-center" style="cursor: pointer;"
                                     [ngClass]="{'selected-outbound': !isSelected}">
-                                    <i class="fas fa-female" style="font-size: 40px;"></i>
+                                    <i class="fas fa-female" style="font-size: 30px;"></i>
                                     <input class="radio-custom" type="radio" [value]=2 style="display: none;"
-                                    [formControl]="female">
+                                        [formControl]="female">
                                     <br>
-                                    <span class="subtitle1 bs-gray3"> หญิง </span>
+                                    <span class="subtitle3 bs-gray3"> หญิง </span>
                                 </label>
                             </div>
-
                         </div>
                     </div>
                 </div>
+
                 <div class="row mt-3">
+                    <div class="col-auto">
+                        <div class="d-flex">
+                            <span class="subtitle2 text-color">อายุ</span>
+                            <input type="text" class="form-control hight-input-text mx-2">
+                            <span class="mt-1 subtitle3 bs-gray1 ps-2 pe-2">ปี</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="row mt-1">
+                    <div class="col-6 col-md-3 mt-1">
+                        <input type="text" class="form-control hight-input-text">
+                            <span class="mt-1 subtitle3 bs-gray1 ps-2 pe-2">ปี</span>
+                    </div>
+                </div> -->
+                <div class="row mt-2">
                     <div class="col-12 col-md-5">
-                        <label class="subtitle1 text-color">อายุ ( ปี )</label>
+                        <!-- <img src="../../../assets/img/a.png" alt="" width="10px" height="10px" class=""> -->
+                        <span class="subtitle2 text-color">ประเภทกรมธรรม์</span>
                     </div>
                 </div>
-                <div class="row mt-1">
-                    <div class="col-12 col-md-4 mt-1">
-                        <ng-select [items]="years" placeholder=" --กรุณาเลือก-- ">
-                        </ng-select>
+
+                <div class="row">
+                    <div class="col-12 col-md-7">
+                        <div class="single-select-group">
+                            <label class="single-select">
+                                <input type="radio" name="policy-type" [formControl]="policyType" value="1"
+                                    (click)="togglePolicy($event)">
+                                <span class="label-text text1">
+                                    <img src="../../../assets/img/a.png" alt="" width="10px" height="10px">
+                                    สะสมทรัพท์</span>
+                            </label>
+
+                            <label class="single-select">
+                                <input type="radio" name="policy-type" [formControl]="policyType" value="2"
+                                    (click)="togglePolicy($event)">
+                                <span class="label-text text1">
+                                    <img src="../../../assets/img/a.png" alt="" width="10px" height="10px">
+                                    เกษียณอายุ</span>
+                            </label>
+
+                            <label class="single-select">
+                                <input type="radio" name="policy-type" [formControl]="policyType" value="3"
+                                    (click)="togglePolicy($event)">
+                                <span class="label-text text1">
+                                    <img src="../../../assets/img/a.png" alt="" width="10px" height="10px">
+                                    โรคร้ายแรง</span>
+                            </label>
+
+                            <label class="single-select">
+                                <input type="radio" name="policy-type" [formControl]="policyType" value="4"
+                                    (click)="togglePolicy($event)">
+                                <span class="label-text text1">
+                                    <img src="../../../assets/img/a.png" alt="" width="10px" height="10px">
+                                    สุขภาพ</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
-                <div class="row mt-3">
-                    <div class="col-5 col-md-5 col-lg-4">
-                        <label class="subtitle1 text-color">รายได้ต่อเดือน</label>
+
+                <div class="row mt-2">
+                    <div class="col-5 col-md-5 col-lg-3">
+                        <label class="subtitle2 text-color">รายได้ต่อเดือน</label>
                         <div class="d-flex">
                             <input type="text" class="form-control hight-input-text" [formControl]="monthly_Income">
                             <span class="mt-1 subtitle3 bs-gray1 ps-2 pe-2">บาท</span>
                         </div>
-                        <div *ngIf="monthly_Income.invalid && monthly_Income.touched" class="alert alert-danger alert-padding mt-2" role="alert">
+                        <div *ngIf="monthly_Income.invalid && monthly_Income.touched"
+                            class="alert alert-danger alert-padding mt-2" role="alert">
                             <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
                             <span class="subtitle3"> จำเป็นต้องกรอก </span>
                         </div>
                     </div>
-                    <div class="col-7 col-md-5 col-lg-4 pe-2">
-                        <label class="subtitle1 text-color">เงินที่สามารถชำระต่อเดือนได้</label>
+                    <div class="col-7 col-md-5 col-lg-3 pe-2">
+                        <label class="subtitle2 text-color">เงินที่สามารถชำระต่อเดือนได้</label>
                         <div class="d-flex">
                             <input type="text" class="form-control hight-input-text" [formControl]="monthly_Pay">
                             <span class="mt-1 subtitle3 bs-gray1 ps-2 pe-2">บาท</span>
                         </div>
-                        <div *ngIf="monthly_Pay.invalid && monthly_Pay.touched" class="alert alert-danger alert-padding mt-2" role="alert">
+                        <div *ngIf="monthly_Pay.invalid && monthly_Pay.touched"
+                            class="alert alert-danger alert-padding mt-2" role="alert">
                             <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
                             <span class="subtitle3"> จำเป็นต้องกรอก </span>
                         </div>
                     </div>
                 </div>
+
+
+                <!-- คำถามสะสมทรัพย์ -->
+                <div class="row mt-2" [hidden]="!isAsset">
+                    <div class="col-5 col-md-5 col-lg-3">
+                        <label class="subtitle2 text-color">ลูกค้าต้องการส่งกี่ปี ? </label>
+                        <div class="d-flex">
+                            <input type="text" class="form-control hight-input-text">
+                            <span class="mt-1 subtitle3 bs-gray1 ps-2 pe-2">ปี</span>
+                        </div>
+                    </div>
+                    <div class="col-7 col-md-5 col-lg-3 pe-2">
+                        <label class="subtitle2 text-color">ท่านมีโรคประจำตัวไหม ?</label>
+                        <div class="">
+                            <div class="single-select-group">
+                                <label class="single-select">
+                                    <input type="radio" name="q2" value="Y">
+                                    <span class="label-text text1">ใช่</span>
+                                </label>
+
+                                <label class="single-select">
+                                    <input type="radio" name="q2" value="N">
+                                    <span class="label-text text1">ไม่</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- คำถามเกษียณอายุ -->
+                <div class="row mt-2" [hidden]="!isRetire">
+                    <div class="col-5 col-md-5 col-lg-3">
+                        <label class="subtitle2 text-color">รับเงินบำนาญรายปีไหม ? </label>
+                        <div class="">
+                            <div class="single-select-group">
+                                <label class="single-select">
+                                    <input type="radio" name="q2" value="Y">
+                                    <span class="label-text text1">รับ</span>
+                                </label>
+
+                                <label class="single-select">
+                                    <input type="radio" name="q2" value="N">
+                                    <span class="label-text text1">ไม่รับ</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-7 col-md-5 col-lg-3 pe-2">
+                        <label class="subtitle2 text-color">ท่านมีโรคประจำตัวไหม ?</label>
+                        <div class="">
+                            <div class="single-select-group">
+                                <label class="single-select">
+                                    <input type="radio" name="q2" value="Y">
+                                    <span class="label-text text1">ใช่</span>
+                                </label>
+
+                                <label class="single-select">
+                                    <input type="radio" name="q2" value="N">
+                                    <span class="label-text text1">ไม่</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- คำถามโรคร้ายแรง -->
+                <div class="row mt-2" [hidden]="!isPest">
+                    <div class="col-5 col-md-5 col-lg-3">
+                        <label class="subtitle2 text-color">วงเงินที่อยากได้รับความคุ้มครอง </label>
+                        <div class="d-flex">
+                            <input type="text" class="form-control hight-input-text">
+                            <span class="mt-1 subtitle3 bs-gray1 ps-2 pe-2">บาท</span>
+                        </div>
+                    </div>
+                    <div class="col-7 col-md-5 col-lg-3 pe-2">
+                        <label class="subtitle2 text-color">ท่านมีโรคประจำตัวไหม ?</label>
+                        <div class="">
+                            <div class="single-select-group">
+                                <label class="single-select">
+                                    <input type="radio" name="q2" value="Y">
+                                    <span class="label-text text1">ใช่</span>
+                                </label>
+
+                                <label class="single-select">
+                                    <input type="radio" name="q2" value="N">
+                                    <span class="label-text text1">ไม่</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- คำถามสุขภาพ -->
+                <div class="row mt-2" [hidden]="!isHealth">
+                    <div class="col-5 col-md-5 col-lg-3">
+                        <label class="subtitle2 text-color">วงเงินที่อยากได้รับความคุ้มครอง </label>
+                        <div class="d-flex">
+                            <input type="text" class="form-control hight-input-text">
+                            <span class="mt-1 subtitle3 bs-gray1 ps-2 pe-2">บาท</span>
+                        </div>
+                    </div>
+                    <div class="col-7 col-md-5 col-lg-3 pe-2">
+                        <label class="subtitle2 text-color">ท่านมีโรคประจำตัวไหม ?</label>
+                        <div class="">
+                            <div class="single-select-group">
+                                <label class="single-select">
+                                    <input type="radio" name="q2" value="Y">
+                                    <span class="label-text text1">ใช่</span>
+                                </label>
+
+                                <label class="single-select">
+                                    <input type="radio" name="q2" value="N">
+                                    <span class="label-text text1">ไม่</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row mt-3">
                     <div class="col-12 col-md-5">
-                        <label class="subtitle1 text-color">เงื่อนไขสุขภาพ</label>
+                        <label class="subtitle2 text-color">เงื่อนไขสุขภาพ</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-auto">
                         <label class="text1 bs-gray1">
-                            <input type="checkbox" class="form-check-input mx-2">ตรวจสุขภาพ
+                            <input type="checkbox" value="1" class="form-check-input mx-2">ตรวจสุขภาพ
                         </label>
                     </div>
                     <div class="col-auto">
                         <label class="text1 bs-gray1">
-                            <input type="checkbox" class="form-check-input mx-2">ไม่ตรวจสุขภาพ
+                            <input type="checkbox" value="2" class="form-check-input mx-2">ไม่ตรวจสุขภาพ
                         </label>
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-12 col-md-5">
+                        <label class="subtitle3" style="color: #ec3238;">*หมายเหตุ : สำหรับท่านที่อายุ 55
+                            ปีขึ้นไปอาจมีการตรวจสุขภาพ</label>
                     </div>
                 </div>
             </div>
-            
-            <!-- <div class="modal-footer mt-5">
-                <div class="row">
-                    <div class="col-auto">
-                        <button type="button" class="button">
-                            <span class="button__text subtitle1">ยืนยันข้อมูล</span>
-                            <span class="button__icon">
-                                <i class="fab fa-telegram-plane"></i>
-                            </span>
-                        </button>
-                    </div>
-                    <div class="col-auto">
-                        <button type="button" class="button-danger">
-                            <span class="button__text subtitle1">ล้างข้อมูล</span>
-                            <span class="button__icon">
-                                <i class="fas fa-trash-alt"></i>
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </div> -->
         </div>
-        
     </div>
+    <br>
 </div>
 <div class="footer-activity">
     <div class="col-12 col-md-12 text-center" style="text-align: center;">
-
-        <button class="button button__text subtitle1 ps-4 pe-4 mx-2 p-1 btn-animate-type1"
-            type="button" routerLink="/krungthai/form-rating">&nbsp;&nbsp;ยืนยันข้อมูล&nbsp;&nbsp;|&nbsp;&nbsp;<i class="fab fa-telegram-plane mx-2 "></i>
+        <button class="button button__text subtitle1 ps-4 pe-4 mx-2 p-1 btn-animate-type1" type="button"
+            routerLink="/krungthai/form-rating">&nbsp;&nbsp;ยืนยันข้อมูล&nbsp;&nbsp;|&nbsp;&nbsp;<i
+                class="fab fa-telegram-plane mx-2 "></i>
         </button>
-
         <button
             class="button-danger button__text subtitle1 ps-4 pe-4 p-1 ">&nbsp;&nbsp;ล้างข้อมูล&nbsp;&nbsp;|&nbsp;&nbsp;
             <i class="fas fa-trash-alt mx-2"></i>
         </button>
-
-
     </div>
 </div>
-<!-- <div class="footer-activity">
-    <div class="col-12 col-md-12 text-center" style="text-align: center;">
-        
-        <a class="btn-link-need btn-animate-type1 subtitle1 mx-3 col-6" type="button">ยืนยันข้อมูล&nbsp;&nbsp;|&nbsp;&nbsp;<i
-                class="fab fa-telegram-plane mx-2"></i>
-            </a>
-            
-        <a class="btn-link-need btn-animate-type1 subtitle1 col-6" type="button">&nbsp;ล้างข้อมูล&nbsp;&nbsp;|&nbsp;&nbsp;
-            <i class="fas fa-trash-alt mx-2"></i>
-        </a>
-
-
-    </div>
-</div> -->
-<!-- <div class="col-12 col-md-12 footer-content">
-    <div class="col-12 col-md-12 text-center">
-        <div>
-            <button type="button" class="button">
-                <span class="button__text subtitle1"> ยืนยันข้อมูล </span>
-                <span class="button__icon">
-                    <i class="fab fa-telegram-plane"></i>
-                </span>
-            </button>
-            <button type="button" class="button-danger">
-                <span class="button__text subtitle1"> ล้างข้อมูล </span>
-                <span class="button__icon">
-                    <i class="fas fa-trash-alt"></i>
-                </span>
-            </button>
-        </div>
-    </div>
-</div> -->

@@ -1,0 +1,110 @@
+<div class="container-fluid" style="margin-top: 35px;">
+    <!-- <p>dashboard works!</p> -->
+    <div class="col-1">
+        <div class="navigation">
+            <ul>
+                <!-- <li class="list" routerLinkActive="active" routerLink="/krungthai/dashboard">
+                    <a> 
+                        <span class="icon"><i class="fas fa-chart-bar"></i></span>
+                        <span class="title subtitle3">ภาพรวมระบบ</span>
+                    </a>
+                </li> -->
+                <li class="list" routerLinkActive="active" routerLink="/krungthai/dashboard-chart">
+                    <a>
+                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                        <span class="title">ภาพรวมระบบ</span>
+                    </a>
+                </li>
+                <li class="list" routerLinkActive="active" routerLink="/krungthai/dashboard-hospital">
+                    <a>
+                        <span class="icon"><i class="fas fa-hospital"></i></span>
+                        <span class="title">โรงพยาบาล</span>
+                    </a>
+                </li>
+                <li class="list" routerLinkActive="active" routerLink="/krungthai/insurance">
+                    <a>
+                        <span class="icon"><i class="fas fa-poll"></i></span>
+                        <span class="title">แผนประกัน</span>
+                    </a>
+                </li>
+                <li class="list" routerLinkActive="active" routerLink="/krungthai/customer">
+                    <a>
+                        <span class="icon"><i class="fas fa-thumbs-up"></i></span>
+                        <span class="title">ลูกค้าที่สนใจ</span>
+                    </a>
+                </li>
+                <li class="list" routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <a>
+                        <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                        <span class="title">ออกจากระบบ</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-11 p-2">
+        <!-- <app-dashboard-chart></app-dashboard-chart> -->
+        <!-- <div class="row"> -->
+            <!-- <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions" style="width: 100%; display: block;">
+            </highcharts-chart> -->
+        <!-- </div> -->
+        <h1 class="mt-2" style="color: #63799B;">แผนประกันทั้งหมด</h1>
+        <legend></legend>
+
+        <div class="col-12 mt-2">
+            <div class="bg-table">
+                <table class="table table-list">
+                    <thead class="table-dark">
+                        <tr>
+                            <th class="first-col"></th>
+                            <th class="text-center">แผนประกัน</th>
+                            <th class="text-center">ประเภท</th>
+                            <th class="text-center">ไฟล์</th>
+                            <th class="last-col text-center"></th>
+                
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="tr-content">
+                            <td></td>
+                            <td class="text-center">ประกันชีวิตควบการลงทุน | iWealthy</td>
+                            <td class="text-center">การออมเพื่อการเกษียณอายุ</td>
+                            <td class="text-center"><i class="fas fa-file-pdf" style="font-size: 40px;color: #63799B;"></i> 3.39 MB</td>
+                           <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div> -->
+                <div class="modal-body">
+                    <h2 class="text-center"> คุณต้องการออกจากระบบหรือไม่ ?</h2>
+                    <!-- <div class="text-center">
+                        <i class="fas fa-sign-out-alt" style="font-size: 60px;"></i>
+                    </div> -->
+                    <div class="text-center mt-2">
+                        <button type="button" class="btn btn-link-need subtitle1 mx-2" routerLink="/login">ใช่</button>
+                        <button type="button" class="btn btn-link-need-1 subtitle1" data-bs-dismiss="modal">ไม่</button>
+                    </div>
+                </div>
+                <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div> -->
+            </div>
+        </div>
+    </div>

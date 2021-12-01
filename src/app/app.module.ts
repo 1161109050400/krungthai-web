@@ -12,6 +12,13 @@ import { HomePageComponent } from './module/home-page/home-page.component';
 import { FormRegisterComponent } from './module/form-register/form-register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './module/dashboard/dashboard.component';
+import { DashboardChartComponent } from './module/dashboard/dashboard-chart/dashboard-chart/dashboard-chart.component';
+import { HighchartsChartModule } from 'highcharts-angular';
+import { DashboardHospitalComponent } from './module/dashboard/dashboard-hospital/dashboard-hospital/dashboard-hospital.component';
+import { DashboardInsuranceComponent } from './module/dashboard/dashboard- insurance/dashboard-insurance/dashboard-insurance.component';
+import { DashboardCustomerComponent } from './module/dashboard/dashboard-customer/dashboard-customer/dashboard-customer.component';
+
+
 
 
 
@@ -23,7 +30,12 @@ import { DashboardComponent } from './module/dashboard/dashboard.component';
     FormRatingComponent,
     HomePageComponent,
     FormRegisterComponent,
-    DashboardComponent
+    DashboardComponent,
+    DashboardChartComponent,
+    DashboardHospitalComponent,
+    DashboardInsuranceComponent,
+    DashboardCustomerComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -31,7 +43,10 @@ import { DashboardComponent } from './module/dashboard/dashboard.component';
     NgSelectModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HighchartsChartModule
+    
+
 
   ],
   providers: [],

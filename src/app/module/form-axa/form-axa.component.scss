@@ -8,14 +8,13 @@
 }
 
 .img img {
-  width: 700px;
-  height: 480px;
-  margin: 60px;
+  width: 600px;
+  height: 600px;
+  margin: 50px;
   @media (max-width: 428px) {
     display: none;
   }
 }
-
 
 .alert-padding {
   @include subtitle3;
@@ -25,8 +24,8 @@
   color: #ec3238;
 
   i {
-      font-size: .75em;
-      margin: 2px;
+    font-size: 0.75em;
+    margin: 2px;
   }
 }
 
@@ -278,5 +277,59 @@ a {
   bottom: 0;
 }
 
+.single-select {
+  color: #b3b3b3;
+  display: inline;
+  
+}
 
-
+.single-select-group label > input[type="checkbox"],
+.single-select-group label > input[type="radio"],
+.multi-select-group label > input[type="checkbox"],
+.multi-select-group label > input[type="radio"] {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.single-select-group label > input:checked + .label-text,
+.multi-select-group label > input:checked + .label-text {
+  background-color: #0f2f86;
+  color: #fff;
+  border: 1px solid transparent;
+  background-size: 28px;
+  background-repeat: no-repeat;
+  background-position: 4% 20%;
+}
+.single-select-group label > input + .label-text,
+.multi-select-group label > input + .label-text {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+}
+// .single-select-group label > input + .label-text,
+// .multi-select-group label > input + .label-text {
+//   border: 2px solid #e0e0e0;
+// }
+.single-select-group .label-text,
+.multi-select-group .label-text {
+  max-width: 250px;
+}
+.single-select-group .label-text,
+.multi-select-group .label-text {
+  display: inline-block;
+  width: calc(100% / 2);
+  max-width: 100%;
+  text-align: center;
+  line-height: 30px;
+  margin-right: -9px;
+  margin-bottom: 0;
+}
+.single-select-group label > input:checked + .label-text,
+.multi-select-group label > input:checked + .label-text {
+  background-image: none;
+  background-color: #0f2f86;
+}

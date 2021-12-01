@@ -1,0 +1,11 @@
+@import "/src/app/module/dashboard/dashboard.component.scss";
+@import "/src/assets/scss/base/table";
+
+legend {
+    display: block;
+    width: 100%;
+    margin: 5px 0 15px 0;
+    font-size: 21px;
+    line-height: inherit;
+    border-bottom: 1px solid #e0e0e0;
+  }

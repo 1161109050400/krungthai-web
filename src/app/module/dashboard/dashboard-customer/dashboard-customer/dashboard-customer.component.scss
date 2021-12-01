@@ -1,0 +1,39 @@
+@import "/src/app/module/dashboard/dashboard.component.scss";
+@import "/src/assets/scss/base/table";
+
+legend {
+  display: block;
+  width: 100%;
+  margin: 5px 0 15px 0;
+  font-size: 21px;
+  line-height: inherit;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  // text-decoration: none;
+  // transition: background 0.2s;
+}
+
+.success {
+  background: #22c55e;
+  &:hover {
+    background: #242323;
+  }
+}
+
+.not{
+  background: #f64658;
+  &:hover {
+    background: #242323;
+  }
+}

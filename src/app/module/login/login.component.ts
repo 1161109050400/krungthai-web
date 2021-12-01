@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
   _beforeLogin() {
-    this.loginService.login('test', 'test').subscribe((result) => {
+    this.loginService.login(this.username.value, this.password.value).subscribe((result) => {
       console.log(result);
       // alert('Login Successfully');
       this.router.navigate(['krungthai/dashboard']);
@@ -32,11 +32,15 @@ export class LoginComponent implements OnInit {
         // this.login.open();
         setTimeout(() => {
           window.location.reload();
-        }, 500);
+        }, 1000);
       } else {
         setTimeout(() => {
           window.location.reload();
-        }, 500);
+        }, 1000);
+      }
+    },err=>{
+      if(err.status===403){
+        alert('ชื่อผู้ใช้หรือรหัสผิดไงไอสัส!');
       }
     });
   }

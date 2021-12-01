@@ -43,7 +43,7 @@
                 </div>
                 <div class="row mt-2">
                     <div class="col-6 col-md-5">
-                        <label class="subtitle1 text-color">อีเมลล์</label>
+                        <label class="subtitle1 text-color">อีเมล</label>
                         <span class="subtitle1" style="color: #f64658;"> *</span>
                         <input type="text" class="form-control hight-input-text" [formControl]="Email">
                         <div *ngIf="Email.hasError('required') && Email.invalid && Email.touched"
@@ -63,7 +63,7 @@
                         <span class="subtitle1" style="color: #f64658;"> *</span>
                         <input type="text" class="form-control hight-input-text" [formControl]="numberPhone">
 
-                        <div *ngIf="numberPhone.invalid && numberPhone.touched" 
+                        <div *ngIf="numberPhone.invalid && numberPhone.touched"
                             class="alert alert-danger alert-padding mt-2" role="alert">
                             <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
                             <span class="subtitle3">จำเป็นต้องกรอก</span>
@@ -73,12 +73,12 @@
                 <div class="row mt-2">
                     <div class="col-6 col-md-5">
                         <label class="subtitle1 text-color">จังหวัดที่อยู่</label>
-                        <ng-select [items]="dataList" bindLabel="province" [(ngModel)]="dataSelect">
+                        <ng-select [items]="dataList" bindLabel="province" [formControl]="dataSelect">
                         </ng-select>
                     </div>
                     <div class="col-6 col-md-5">
                         <label class="subtitle1 text-color">เบอร์โทรสาร</label>
-                        <input type="text" class="form-control hight-input-text">
+                        <input type="text" class="form-control hight-input-text" [formControl]="faxNumber">
                     </div>
                 </div>
                 <div class="row mt-3">
@@ -110,38 +110,32 @@
 
 <div class="footer-activity">
     <div class="col-12 col-md-12 text-center" style="text-align: center;">
-        <button class="button button__text subtitle1 ps-4 pe-4 mx-2 p-1 btn-animate-type1" (OnClick)="Onsubmit()"
+        <button class="button button__text subtitle1 ps-4 pe-4 mx-2 p-1 btn-animate-type1" type="submit"
             data-bs-toggle="modal" data-bs-target="#saveModal"
-            #login>&nbsp;&nbsp;ยืนยันข้อมูล&nbsp;&nbsp;|&nbsp;&nbsp;<i class="fas fa-cloud-download-alt mx-2 "></i>
+            (click)="submitsResgister()">&nbsp;&nbsp;ยืนยันข้อมูล&nbsp;&nbsp;|&nbsp;&nbsp;<i
+                class="fas fa-cloud-download-alt mx-2 "></i>
+            <!-- data-bs-toggle="modal" data-bs-target="#saveModal" #login -->
         </button>
     </div>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="saveModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="saveModal" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel"></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="text-center text-content m-0 pb-4">
-                    <div class="icon-control">
-                        <!-- <i class="fas fa-check animated rotateIn"></i> -->
-                        <!-- <i class="fas fa-grin-beam animated rotateIn"></i> -->
-                        <i class="fas fa-check animated rotateIn"></i>
-                        <!-- <i class="far fa-thumbs-up animated rotateIn"></i> -->
 
+<ng-template #saveModal let-modal>
 
-                        <!-- <i class="fas fa-check"></i> -->
-                    </div>
-                    <h3 class="m-0" style="color: #333;"> ขอบคุณที่ให้ความสนใจแผนประกันบริษัทของเรา
-                        <br>
-                        ทางเราจะติดต่อกลับท่านภายในเวลาเร็วที่สุด
-                    </h3>
-                </div>
+    <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel"></h5>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+    </div>
+    <div class="modal-body">
+        <div class="text-center text-content m-0 pb-4">
+            <div class="icon-control">
+                <i class="fas fa-check animated rotateIn"></i>
             </div>
+            <h3 class="m-0" style="color: #333;"> ขอบคุณที่ให้ความสนใจแผนประกันบริษัทของเรา
+                <br>
+                ทางเราจะติดต่อกลับท่านภายในเวลาเร็วที่สุด
+            </h3>
         </div>
     </div>
-</div>
+
+</ng-template>
