@@ -8,7 +8,9 @@ import {
 } from '@angular/forms';
 import { Data, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 import { FormRegisterService } from 'src/app/services/form-register.service';
+
 // import { FormRegisterService } from './form-register.service';
 
 @Component({
@@ -23,7 +25,9 @@ export class FormRegisterComponent implements OnInit {
     private router: Router,
     private http: HttpClient,
     public formBuilder: FormBuilder,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private toastr: ToastrService
+    
   ) {
     // this.registerForm = this.formBuilder.group({
     //   firstName : [null, Validators.required],
@@ -44,35 +48,45 @@ export class FormRegisterComponent implements OnInit {
   faxNumber = new FormControl();
   Province = new FormControl();
 
-  dataSelect=new FormControl();
+  dataSelect = new FormControl();
 
   // registerForm:FormGroup;
-
 
   dataList: Data[] = [];
 
   submitsResgister() {
-    this.formRegisterService.UserRegister(this.firstName.value,this.lastName.value,this.Email.value,this.numberPhone.value,this.faxNumber.value,this.dataSelect.value).subscribe((result) => {
-        if (Response) {
-          this.modalService.open(this.saveModal, { centered: true });
-          // this.login.open();
-          setTimeout(() => {
-            window.location.reload();
-          }, 1000);
-        } else {
-          setTimeout(() => {
-            window.location.reload();
-          }, 1000);
+    this.formRegisterService
+      .UserRegister(
+        this.firstName.value,
+        this.lastName.value,
+        this.Email.value,
+        this.numberPhone.value,
+        this.faxNumber.value,
+        this.dataSelect.value
+      )
+      .subscribe(
+        (result) => {
+          if (Response) {
+            this.modalService.open(this.saveModal, { centered: true });
+            // this.login.open();
+            setTimeout(() => {
+              window.location.reload();
+            }, 1000);
+          } else {
+            setTimeout(() => {
+              window.location.reload();
+            }, 1000);
+          }
+          // this.router.navigate(['krungthai/home-page']);
+          // alert('Data added successfully !');
+        },
+        (err) => {
+          if (err.status === 400) {
+            // alert('มีชื่อผู้ใช้นี้แล้ว?');
+            this.toastr.warning('มีชื่อผู้ใช้นี้แล้ว','แจ้งเตือน');
+          }
         }
-        // this.router.navigate(['krungthai/home-page']);
-        // alert('Data added successfully !');
-      },(err)=>{
-        if(err.status===400){
-          alert('มีชื่อผู้ใช้นี้แล้ว?')
-        }
-        
-      });
-
+      );
 
     this.formRegisterService.getUser().subscribe((Response) => {
       this.user = Response;
@@ -82,12 +96,6 @@ export class FormRegisterComponent implements OnInit {
     });
   }
 
-  // onSubmit(): any{
-  //   this.formRegisterService.UserRegister(this.registerForm).subscribe(()=>{
-  //     console.log("Data added successfully ! ");
-  //   })
-
-  // }
 
   ngOnInit(): void {
     this.http
@@ -97,20 +105,5 @@ export class FormRegisterComponent implements OnInit {
       .subscribe((response) => {
         this.dataList = response.data;
       });
-
-    // function formatEmail(f: FormControl) {
-    //   if (f.value == null || f.value == '') {
-    //     return null;
-    //   }
-    //   const EMAIL_REGEXP =
-    //     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    //   return EMAIL_REGEXP.test(f.value)
-    //     ? null
-    //     : {
-    //         validateEmail: {
-    //           valid: false,
-    //         },
-    //       };
-    // }
   }
 }

@@ -9,3 +9,43 @@ legend {
     line-height: inherit;
     border-bottom: 1px solid #e0e0e0;
   }
+
+  
+.circle {
+  width: 40px;
+  height: 40px;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  // text-decoration: none;
+  // transition: background 0.2s;
+}
+
+.edit {
+  background: #01008f;
+  &:hover {
+    background: #242323;
+  }
+}
+
+.delete{
+  background: #f64658;
+  &:hover {
+    background: #242323;
+  }
+}
+.btn-add-data {
+  // width: auto !important;
+  color: white;
+  background-color: #22C55E;
+  text-align: center;
+  float: right;
+  margin-bottom: 10px;
+  &:hover {
+    background-color: #242323;
+  }
+}

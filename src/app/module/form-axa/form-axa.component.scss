@@ -8,8 +8,8 @@
 }
 
 .img img {
-  width: 600px;
-  height: 600px;
+  width: 750px;
+  height: 700px;
   margin: 50px;
   @media (max-width: 428px) {
     display: none;
@@ -332,4 +332,30 @@ a {
 .multi-select-group label > input:checked + .label-text {
   background-image: none;
   background-color: #0f2f86;
+}
+
+
+.form-check-input {
+  font-size: 14px;
+  margin-top: 5px;
+}
+.form-check-input:checked {
+  background-color: #0f2f86;
+  border-color: #fff;
+}
+
+
+.first {
+  color: #eb5757;
+  font-size: 15px;
+}
+
+.second {
+  color: #ff8e38;
+  font-size: 15px;
+}
+
+.third {
+  color: #2d9cdb;
+  font-size: 15px;
 }

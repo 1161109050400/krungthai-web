@@ -3,7 +3,7 @@
         <div class="col-12 col-sm-6 col-md-6 col-xl-5 col-lg-6 order-1">
             <div class="row">
                 <div class="img">
-                    <img src="../../../assets/img/undraw_real_time_sync_re_nky7.svg">
+                    <img src="../../../assets/img/undraw_working_re_ddwy.svg">
                 </div>
             </div>
         </div>
@@ -43,7 +43,7 @@
                             <!-- หญิง-->
                             <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-5" (click)="isSelected = false">
                                 <label class="inbound-outbound text-center" style="cursor: pointer;"
-                                    [ngClass]="{'selected-outbound': !isSelected}">
+                                    [ngClass]="{'selected-inbound': !isSelected}">
                                     <i class="fas fa-female" style="font-size: 30px;"></i>
                                     <input class="radio-custom" type="radio" [value]=2 style="display: none;"
                                         [formControl]="female">
@@ -54,15 +54,69 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row mt-3">
-                    <div class="col-auto">
+                    <div class="col-3 col-xl-1">
+                        <span class="subtitle2 text-color">สถานภาพ</span>
+                    </div>
+                    <div class="col-9 col-xl-11">
+                        <div class="form-group">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" value="1" [formControl]="statusType"
+                                    (change)="toggleStatus($event)">
+                                <label class="form-check-label text1">โสด</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" value="2" [formControl]="statusType"
+                                    (change)="toggleStatus($event)">
+                                <label class="form-check-label text1">สมรส</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" value="3" [formControl]="statusType"
+                                    (change)="toggleStatus($event)">
+                                <label class="form-check-label text1">หม้าย</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" value="4" [formControl]="statusType"
+                                    (change)="toggleStatus($event)">
+                                <label class="form-check-label text1">หย่า</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-3 col-8 col-xl-3">
                         <div class="d-flex">
                             <span class="subtitle2 text-color">อายุ</span>
-                            <input type="text" class="form-control hight-input-text mx-2">
+                            <input type="text" class="form-control hight-input-text mx-2" maxlength="2"
+                            required="true"
+                            title="Example : 25"
+                            >
                             <span class="mt-1 subtitle3 bs-gray1 ps-2 pe-2">ปี</span>
                         </div>
                     </div>
+                    <div class="col-xl-6">
+                        <div class="row">
+                            <div class="col-xl-1">
+                                <span class="subtitle2 text-color">อาชีพ</span>
+                            </div>
+                            <div class="col-xl-4">
+                                <ng-select [items]="occupation" bindValue="id" bindLabel="text">
+                                    <ng-template ng-label-tmp let-item="item">
+                                        <div class="selector-dropdown text1">
+                                            <i class="fa {{item.icon}}"></i>&nbsp;&nbsp;{{item.text}}
+                                        </div>
+                                    </ng-template>
+                                    <ng-template ng-option-tmp let-item="item">
+                                        <div class="selector-dropdown text1">
+                                            <i class="fa {{item.icon}}"></i>&nbsp;&nbsp;{{item.text}}
+                                        </div>
+                                    </ng-template>
+                                </ng-select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
                 </div>
                 <!-- <div class="row mt-1">
                     <div class="col-6 col-md-3 mt-1">
@@ -76,16 +130,15 @@
                         <span class="subtitle2 text-color">ประเภทกรมธรรม์</span>
                     </div>
                 </div>
-
                 <div class="row">
-                    <div class="col-12 col-md-7">
+                    <div class="col-12 col-md-12 col-xl-7">
                         <div class="single-select-group">
                             <label class="single-select">
                                 <input type="radio" name="policy-type" [formControl]="policyType" value="1"
                                     (click)="togglePolicy($event)">
                                 <span class="label-text text1">
                                     <img src="../../../assets/img/a.png" alt="" width="10px" height="10px">
-                                    สะสมทรัพท์</span>
+                                    สะสมทรัพย์</span>
                             </label>
 
                             <label class="single-select">
@@ -114,12 +167,11 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row mt-2">
-                    <div class="col-5 col-md-5 col-lg-3">
-                        <label class="subtitle2 text-color">รายได้ต่อเดือน</label>
+                    <div class="col-8 col-md-5 col-lg-3">
+                        <label class="subtitle2 text-color">รายได้ต่อปี</label>
                         <div class="d-flex">
-                            <input type="text" class="form-control hight-input-text" [formControl]="monthly_Income">
+                            <input type="text" class="form-control hight-input-text" [formControl]="monthly_Income" maxlength="7">
                             <span class="mt-1 subtitle3 bs-gray1 ps-2 pe-2">บาท</span>
                         </div>
                         <div *ngIf="monthly_Income.invalid && monthly_Income.touched"
@@ -128,7 +180,7 @@
                             <span class="subtitle3"> จำเป็นต้องกรอก </span>
                         </div>
                     </div>
-                    <div class="col-7 col-md-5 col-lg-3 pe-2">
+                    <!-- <div class="col-7 col-md-5 col-lg-3 pe-2">
                         <label class="subtitle2 text-color">เงินที่สามารถชำระต่อเดือนได้</label>
                         <div class="d-flex">
                             <input type="text" class="form-control hight-input-text" [formControl]="monthly_Pay">
@@ -139,10 +191,8 @@
                             <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
                             <span class="subtitle3"> จำเป็นต้องกรอก </span>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
-
-
                 <!-- คำถามสะสมทรัพย์ -->
                 <div class="row mt-2" [hidden]="!isAsset">
                     <div class="col-5 col-md-5 col-lg-3">
@@ -169,7 +219,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- คำถามเกษียณอายุ -->
                 <div class="row mt-2" [hidden]="!isRetire">
                     <div class="col-5 col-md-5 col-lg-3">
@@ -205,7 +254,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- คำถามโรคร้ายแรง -->
                 <div class="row mt-2" [hidden]="!isPest">
                     <div class="col-5 col-md-5 col-lg-3">
@@ -232,7 +280,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- คำถามสุขภาพ -->
                 <div class="row mt-2" [hidden]="!isHealth">
                     <div class="col-5 col-md-5 col-lg-3">
@@ -259,7 +306,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row mt-3">
                     <div class="col-12 col-md-5">
                         <label class="subtitle2 text-color">เงื่อนไขสุขภาพ</label>
@@ -277,16 +323,25 @@
                         </label>
                     </div>
                 </div>
-
                 <div class="row mt-2">
-                    <div class="col-12 col-md-5">
-                        <label class="subtitle3" style="color: #ec3238;">*หมายเหตุ : สำหรับท่านที่อายุ 55
-                            ปีขึ้นไปอาจมีการตรวจสุขภาพ</label>
+                    <div class="col-12 col-md-10">
+                        <!-- <label class="subtitle3" style="color: #ec3238;">*หมายเหตุ : สำหรับท่านที่อายุ 55
+                            ปีขึ้นไปอาจมีการตรวจสุขภาพ</label> -->
+                            <div class="form-group subtitle4"style="color: #ec3238;" >
+                                <label>การแบ่งอาชีพในการรับประกันภัยแบ่งเป็น 3 ส่วน ได้แก่</label>
+                                <br>
+                                <label>อาชีพส่วนที่ 1 ส่วนใหญ่ทำงานประจำในสำนักงาน</label>
+                                <br>
+                                <label>อาชีพส่วนที่ 2 ปฎิบัติงานที่ใช้วิชาชีพที่ต้องทำงานกลางแจ้งตลอดเวลา</label>
+                                <label>อาชีพส่วนที่ 3 ปฎิบัติงานด้านช่าง กระบวนการผลิต ที่มีการใช้เครื่องจักรกลหนัก
+                                    ผู้ใช้แรงงาน การเดินทาง หรือทำงานนอกสำนักงานเป็นประจำ</label>
+                            </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <br>
     <br>
 </div>
 <div class="footer-activity">

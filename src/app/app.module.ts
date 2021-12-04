@@ -19,8 +19,8 @@ import { DashboardInsuranceComponent } from './module/dashboard/dashboard- insur
 import { DashboardCustomerComponent } from './module/dashboard/dashboard-customer/dashboard-customer/dashboard-customer.component';
 
 
-
-
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,6 @@ import { DashboardCustomerComponent } from './module/dashboard/dashboard-custome
     DashboardHospitalComponent,
     DashboardInsuranceComponent,
     DashboardCustomerComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -44,10 +43,14 @@ import { DashboardCustomerComponent } from './module/dashboard/dashboard-custome
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    HighchartsChartModule
-    
-
-
+    HighchartsChartModule,
+    ToastrModule.forRoot({
+      timeOut: 1500,
+      progressBar:true,
+      progressAnimation: 'increasing',
+      preventDuplicates: true
+    }),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@ng-select/ng-select/themes/default.theme.css";
 @import 'animate.css';
+@import '~ngx-toastr/toastr';
 
 
 .ng-select .ng-select-container {
@@ -20,4 +21,21 @@
   .ng-select.ng-select-single .ng-select-container {
     font-family: 'DB HelvethaicaMon X 55 Regular';
     font-size: 1.125rem;
+  }
+
+
+  #toast-container > .ngx-toastr {
+    // background-color: #ffeb3b;
+    // color: #333333;
+    font-size: 1.25rem;
+    .toast-title {
+      font-family: 'DB HelvethaicaMon X 65 Med';
+      font-weight: normal;
+      line-height: 20px;
+    }
+    .toast-message {
+      font-family: 'DB HelvethaicaMon X 55 Regular';
+      font-weight: normal;
+      line-height: 20px;
+    }
   }

@@ -46,12 +46,15 @@
     <div class="col-11 p-2">
         <!-- <app-dashboard-chart></app-dashboard-chart> -->
         <!-- <div class="row"> -->
-            <!-- <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions" style="width: 100%; display: block;">
+        <!-- <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions" style="width: 100%; display: block;">
             </highcharts-chart> -->
         <!-- </div> -->
         <h1 class="mt-2" style="color: #63799B;">แผนประกันทั้งหมด</h1>
         <legend></legend>
-
+        <button type="button" class="btn btn-add-data" data-bs-toggle="modal" data-bs-target="#AddModal"><i
+                class="fas fa-plus-square"
+                style="font-size: 15px;"></i>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;เพิ่มข้อมูล</button>
+                <!-- <i class="fas fa-plus"></i> -->
         <div class="col-12 mt-2">
             <div class="bg-table">
                 <table class="table table-list">
@@ -62,7 +65,7 @@
                             <th class="text-center">ประเภท</th>
                             <th class="text-center">ไฟล์</th>
                             <th class="last-col text-center"></th>
-                
+
                         </tr>
                     </thead>
                     <tbody>
@@ -70,8 +73,16 @@
                             <td></td>
                             <td class="text-center">ประกันชีวิตควบการลงทุน | iWealthy</td>
                             <td class="text-center">การออมเพื่อการเกษียณอายุ</td>
-                            <td class="text-center"><i class="fas fa-file-pdf" style="font-size: 40px;color: #63799B;"></i> 3.39 MB</td>
-                           <td></td>
+                            <td class="text-center"><i class="fas fa-file-pdf"
+                                    style="font-size: 30px;color: #63799B;"></i> 3.39 MB</td>
+                            <td class="text-center">
+
+                                <button type="button" class="button circle edit">
+                                    <i class="fas fa-pencil-alt" style="font-size: 20px;"></i></button>
+                                <button type="button" class="button circle delete mx-2">
+                                    <i class="far fa-trash-alt" style="font-size: 20px;"></i></button>
+
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -83,28 +94,28 @@
     </div>
 </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <!-- <div class="modal-header">
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- <div class="modal-header">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div> -->
-                <div class="modal-body">
-                    <h2 class="text-center"> คุณต้องการออกจากระบบหรือไม่ ?</h2>
-                    <!-- <div class="text-center">
+            <div class="modal-body">
+                <h2 class="text-center"> คุณต้องการออกจากระบบหรือไม่ ?</h2>
+                <!-- <div class="text-center">
                         <i class="fas fa-sign-out-alt" style="font-size: 60px;"></i>
                     </div> -->
-                    <div class="text-center mt-2">
-                        <button type="button" class="btn btn-link-need subtitle1 mx-2" routerLink="/login">ใช่</button>
-                        <button type="button" class="btn btn-link-need-1 subtitle1" data-bs-dismiss="modal">ไม่</button>
-                    </div>
+                <div class="text-center mt-2">
+                    <button type="button" class="btn btn-link-need subtitle1 mx-2" routerLink="/login">ใช่</button>
+                    <button type="button" class="btn btn-link-need-1 subtitle1" data-bs-dismiss="modal">ไม่</button>
                 </div>
-                <!-- <div class="modal-footer">
+            </div>
+            <!-- <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Understood</button>
         </div> -->
-            </div>
         </div>
     </div>
+</div>

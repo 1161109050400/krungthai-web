@@ -48,85 +48,40 @@
         <h1 class="mt-2" style="color: #63799B;">เครือข่ายสถานพยาบาล</h1>
         <legend></legend>
         <!-- <img src="../../../../../assets/img/2b6a3b9bed1648c48698065c54e5eacc7d192f80_hospitals-desktop.jfif" alt=""> -->
-        <button type="button" class="btn btn-add-data" data-bs-toggle="modal" data-bs-target="#AddModal"><i
+        <button type="button" class="btn btn-add-data" data-bs-toggle="modal" data-bs-target="#AddModal" (click)="setCreateModal()"><i
                 class="fas fa-plus-square"
                 style="font-size: 15px;"></i>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;เพิ่มข้อมูล</button>
         <div class="col-12 mt-2">
             <div class="bg-table">
                 <table class="table table-list">
-                    <thead class="table-color">
+                    <thead class="table-dark">
                         <tr>
-                            <th>ชื่อเครือข่ายสถานพยาบาล</th>
+                            <th class="first-col"> &nbsp; &nbsp;ชื่อเครือข่ายสถานพยาบาล</th>
+
                             <th>ที่อยู่เครือข่ายสถานพยาบาล</th>
-                            <th>ละติจูด</th>
-                            <th>ลองติจูด</th>
+                            <th></th>
                             <th>เบอร์โทรศัพท์</th>
                             <th></th>
+                            <th class="last-col"></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let hospital of hospital;" class="tr-content">
+                            
                             <td>{{hospital.hospital_name}}</td> 
                             <td>{{hospital.hospital_location}}</td>
-                            <td>{{hospital.hospital_latitude}}</td>
-                            <td>{{hospital.hospital_longitude}}</td>
+                            <td></td>
                             <td>{{hospital.hospital_phone}}</td>
+                            <td></td>
                             <td>
-                                <button type="button" class="btn btn-link-need mx-1" data-bs-toggle="modal"
+                                <button type="button" class="button circle edit" data-bs-toggle="modal" (click)="setEditModal(hospital.hospital_id)"
                                     data-bs-target="#EditModal"><i class="fas fa-pencil-alt"
                                         style="font-size: 20px;"></i></button>
-                                <button type="button" class="btn btn-link-need-1" data-bs-toggle="modal"
+                                <button type="button" class="button circle delete mx-2" data-bs-toggle="modal"                                  
                                     data-bs-target="#DeleteModal"><i class="far fa-trash-alt"
                                         style="font-size: 20px;"></i></button>
                             </td>
-
-
                         </tr>
-                        <!-- <tr class="tr-content">
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>
-                                <button type="button" class="btn btn-link-need mx-1"><i class="fas fa-pencil-alt"
-                                        style="font-size: 20px;"></i></button>
-                                <button type="button" class="btn btn-link-need-1"><i class="far fa-trash-alt"
-                                        style="font-size: 20px;"></i></button>
-                            </td>
-
-
-                        </tr>
-                        <tr class="tr-content">
-                            <th scope="row">3</th>
-                            <td>Larry the Bird</td>
-                            <td>@twitter</td>
-                            <td>@fat</td>
-                            <td>
-                                <button type="button" class="btn btn-link-need mx-1"><i class="fas fa-pencil-alt"
-                                        style="font-size: 20px;"></i></button>
-                                <button type="button" class="btn btn-link-need-1"><i class="far fa-trash-alt"
-                                        style="font-size: 20px;"></i></button>
-                            </td>
-
-
-
-                        </tr>
-
-                        <tr class="tr-content">
-                            <th scope="row">4</th>
-                            <td>Larry the Bird</td>
-                            <td>@twitter</td>
-                            <td>@fat</td>
-                            <td>
-                                <button type="button" class="btn btn-link-need mx-1"><i class="fas fa-pencil-alt"
-                                        style="font-size: 20px;"></i></button>
-                                <button type="button" class="btn btn-link-need-1"><i class="far fa-trash-alt"
-                                        style="font-size: 20px;"></i></button>
-                            </td>
-
-                        </tr> -->
-
-
                     </tbody>
                 </table>
 
@@ -200,7 +155,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-6 col-6 col-sm-6">
                             <span class="subtitle3">ลองติจูด</span>
                             <input type="text" class="form-control hight-input-text" [formControl]="longitude">
@@ -219,7 +174,7 @@
                                 <span class="subtitle3"> จำเป็นต้องกรอก </span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="row">
                         <div class="col-md-12 col-12 col-sm-12">
                             <span class="subtitle3">เบอร์โทรศัพท์</span>
@@ -277,7 +232,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-6 col-6 col-sm-6">
                             <span class="subtitle3">ลองติจูด</span>
                             <input type="text" class="form-control hight-input-text" [formControl]="longitude">
@@ -296,7 +251,7 @@
                                 <span class="subtitle3"> จำเป็นต้องกรอก </span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="row">
                         <div class="col-md-12 col-12 col-sm-12">
                             <span class="subtitle3">เบอร์โทรศัพท์</span>
@@ -312,7 +267,7 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary subtitle3" data-bs-dismiss="modal">ยกเลิก</button>
+            <button type="button" class="btn btn-secondary subtitle3" data-bs-dismiss="modal" #closeModal>ยกเลิก</button>
             <button type="button" class="btn btn-edit subtitle3" (click)="onUpdate()">บันทึก</button>
         </div>
     </div>
@@ -336,7 +291,7 @@
                     <h1 class="heading1 mt-3">ต้องการลบใช่หรือไม่</h1>
                     <button type="button" class="btn btn-secondary subtitle3 mx-1"
                         data-bs-dismiss="modal">ยกเลิก</button>
-                    <button type="button" class="btn btn-delete subtitle3">ยืนยัน</button>
+                    <button type="button" class="btn btn-delete subtitle3"  (click)="onDelete(hospital.hospital_id)">ยืนยัน</button>
                 </div>
             </div>
         </div>
