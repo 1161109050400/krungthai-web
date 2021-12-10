@@ -38,7 +38,7 @@ export class DashboardHospitalComponent implements OnInit {
       )
       .subscribe(
         (result) => {
-          this.toastr.success('บันทึกข้อมูลสำเร็จ','แจ้งเตือน');
+          this.toastr.success('เพิ่มข้อมูลเรียบร้อยแล้ว','แจ้งเตือน');
           // alert('Data added successfully !');
           this.getHospital();
           this.closeModal.nativeElement.click();
@@ -54,6 +54,8 @@ export class DashboardHospitalComponent implements OnInit {
   setCreateModal() {
     this.hospital_id = null;
     this.hospitalName.setValue(' ');
+    this.hospitalLocation.setValue(' ');
+    this.phone.setValue(' ');
   }
 
   setEditModal(id: number) {

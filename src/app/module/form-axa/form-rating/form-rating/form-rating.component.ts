@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-form-rating',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormRatingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private spinner: NgxSpinnerService) {
+    this.spinner.show();
+
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 3000);
+   }
 
   ngOnInit(): void {
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-form-axa',
@@ -22,9 +23,14 @@ export class FormAxaComponent implements OnInit {
   isPest: boolean = false; // โรคร้าย
   isHealth: boolean = false; //สุขภาพ
 
-  toggleStatus(event:any) {
-    this.selectStatus = event.target.value;
+  public genderType: boolean = true;
 
+  constructor() { }
+
+  ngOnInit(): void {}
+
+   toggleStatus(event: any) {
+    this.selectStatus = event.target.value;
   }
 
   togglePolicy(event: Event) {
@@ -43,38 +49,26 @@ export class FormAxaComponent implements OnInit {
     { value: 5, label: '65 ปีขึ้นไป' },
   ];
 
-
-  occupation = [{
+  occupation = [
+    {
       id: 1,
-      text: "ส่วนที่ 1",
-      icon: "fas fa-id-badge first",
-      imageSrc: ""
-  }, {
+      text: 'ส่วนที่ 1',
+      icon: 'fas fa-id-badge first',
+      imageSrc: '',
+    },
+    {
       id: 2,
       text: `ส่วนที่ 2`,
-      icon: "fas fa-id-badge second",
-      imageSrc: ""
-  }, {
+      icon: 'fas fa-id-badge second',
+      imageSrc: '',
+    },
+    {
       id: 3,
       text: `ส่วนที่ 3`,
-      icon: "fas fa-id-badge third",
-      imageSrc: ""
-  },];
+      icon: 'fas fa-id-badge third',
+      imageSrc: '',
+    },
+  ];
 
-
-
-
-
-
-
-
-
-
-
-
-  public genderType: boolean = true;
-
-  constructor() {}
-
-  ngOnInit(): void {}
+  
 }

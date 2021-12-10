@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
           // alert('ชื่อผู้ใช้งานหรือรหัสผ่านผิด กรุณากรอกใหม่ค่ะ ');
           this.toastr.warning('ชื่อผู้ใช้งานหรือรหัสผ่านผิด กรุณากรอกใหม่ค่ะ','แจ้งเตือน');
         } else {
-          this.toastr.warning('','ERROR');
+          this.toastr.error('BUG !','แจ้งเตือน');
           // alert('บัค!');
         }
       }
