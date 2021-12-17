@@ -57,7 +57,7 @@ legend {
 }
 
 .tr-content {
-  border: 1px solid #ddd;
+  border: 0px solid #ddd !important;
   &:hover {
       background-color: #f5f5f5;
       cursor: pointer;

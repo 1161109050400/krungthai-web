@@ -22,6 +22,10 @@ import { DashboardCustomerComponent } from './module/dashboard/dashboard-custome
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { DiseaseComponent } from './module/insurance-type/disease/disease/disease.component';
+import { HealthComponent } from './module/insurance-type/health/health/health.component';
+import { MoneyComponent } from './module/insurance-type/money/money/money.component';
+import { RetireComponent } from './module/insurance-type/retire/retire/retire.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +40,10 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     DashboardHospitalComponent,
     DashboardInsuranceComponent,
     DashboardCustomerComponent,
+    DiseaseComponent,
+    HealthComponent,
+    MoneyComponent,
+    RetireComponent,
   ],
   imports: [
     BrowserModule,

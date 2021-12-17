@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardInsuranceComponent implements OnInit {
 
+
+
+  cars = [
+      { id: 0, name: 'สะสมทรัพย์' },
+      { id: 1, name: 'เกษียณอายุ' },
+      { id: 2, name: 'โรคร้ายแรง' },
+      { id: 3, name: 'สุขภาพ' },
+  ];
+
   constructor() { }
 
   ngOnInit(): void {

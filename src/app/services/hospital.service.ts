@@ -54,7 +54,7 @@ export class HospitalService {
   //   return this.http.get<any>('/api/hospital/get-hospital/' + id);
   // }
 
-  deleteHospital(id: number){
+  deleteHospital(id: number|null){
     return this.http.delete<any>('/api/hospital/del-hospital/'+id);
   }
 

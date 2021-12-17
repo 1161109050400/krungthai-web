@@ -2,14 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import * as AOS from 'aos';
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss'],
+  selector: 'app-disease',
+  templateUrl: './disease.component.html',
+  styleUrls: ['./disease.component.scss']
 })
-export class HomePageComponent implements OnInit {
-  constructor() {}
-  navActive = false;
-  ngOnInit(){
+export class DiseaseComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
     AOS.init(
       {
         offset: 400, // offset (in px) from the original trigger point
@@ -19,9 +20,5 @@ export class HomePageComponent implements OnInit {
 
     );
   }
-  
-  toggleMenu() {
-    // console.log(this.navActive);
-    this.navActive = !this.navActive;
-  }
+
 }

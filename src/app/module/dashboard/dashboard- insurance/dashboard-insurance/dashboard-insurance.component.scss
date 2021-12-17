@@ -1,5 +1,6 @@
 @import "/src/app/module/dashboard/dashboard.component.scss";
 @import "/src/assets/scss/base/table";
+@import "/src/app/module/dashboard/dashboard-hospital/dashboard-hospital/dashboard-hospital.component.scss";
 
 legend {
     display: block;
@@ -48,4 +49,41 @@ legend {
   &:hover {
     background-color: #242323;
   }
+}
+
+// input[type="file"]{
+//   display: none;
+// }
+
+.drag-area{
+  border: 3px dashed #999999;
+  // height: 500px;
+  // width: 700px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.drag-area.active{
+  border: 2px solid #fff;
+}
+.drag-area .icon{
+  font-size: 50px;
+  color: #999999;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.upload-btn-wrapper input[type="file"] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
 }

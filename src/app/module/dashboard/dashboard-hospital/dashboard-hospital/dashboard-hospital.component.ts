@@ -58,6 +58,9 @@ export class DashboardHospitalComponent implements OnInit {
     this.phone.setValue(' ');
   }
 
+  setDeleteModal(id:number){
+    this.hospital_id = id;
+  }
   setEditModal(id: number) {
     this.hospital_id = id;
     this.hospitalService.getHospitalById(id).subscribe((result) => {
@@ -89,12 +92,11 @@ export class DashboardHospitalComponent implements OnInit {
 
 
 
-  onDelete(id: number) {
-    this.hospital_id = id;
-    this.hospitalService.deleteHospital(id).subscribe((result) => {
-      
-      // this.getHospital();
-      // this.toastr.success('ลบข้อมูลสำเร็จ','แจ้งเตือน');
+  onDelete() {
+    this.hospitalService.deleteHospital(this.hospital_id).subscribe((result) => {
+      this.toastr.success('ลบข้อมูลสำเร็จ','แจ้งเตือน');
+      this.getHospital();
+      this.closeModal.nativeElement.click();
     });
   }
 

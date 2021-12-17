@@ -9,6 +9,10 @@ import { FormAxaComponent } from './module/form-axa/form-axa.component';
 import { FormRatingComponent } from './module/form-axa/form-rating/form-rating/form-rating.component';
 import { FormRegisterComponent } from './module/form-register/form-register.component';
 import { HomePageComponent } from './module/home-page/home-page.component';
+import { DiseaseComponent } from './module/insurance-type/disease/disease/disease.component';
+import { HealthComponent } from './module/insurance-type/health/health/health.component';
+import { MoneyComponent } from './module/insurance-type/money/money/money.component';
+import { RetireComponent } from './module/insurance-type/retire/retire/retire.component';
 import { LoginComponent } from './module/login/login.component';
 
 const routes: Routes = [
@@ -22,7 +26,11 @@ const routes: Routes = [
   { path: 'krungthai/dashboard-chart', component: DashboardChartComponent},
   { path: 'krungthai/dashboard-hospital', component: DashboardHospitalComponent},
   { path: 'krungthai/insurance', component: DashboardInsuranceComponent},
-  { path: 'krungthai/customer', component: DashboardCustomerComponent}
+  { path: 'krungthai/customer', component: DashboardCustomerComponent},
+  { path: 'krungthai/disease', component: DiseaseComponent},
+  { path: 'krungthai/health', component: HealthComponent},
+  { path: 'krungthai/money', component: MoneyComponent},
+  { path: 'krungthai/retire', component: RetireComponent},
 
 
 ];
