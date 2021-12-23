@@ -3,6 +3,12 @@
       "target": "http://127.0.0.1:3000",
       "secure": false,
       "logLevel": "debug"
+    },
+    "/workspaces/*": {
+      "target": "https://ussouthcentral.services.azureml.net",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
     }
   }
   

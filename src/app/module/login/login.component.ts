@@ -28,20 +28,9 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.username.value, this.password.value).subscribe(
       (result) => {
         console.log(result);
-        // alert('Login Successfully');
         this.toastr.success('เข้าสู่ระบบสำเร็จ','แจ้งเตือน');
         this.router.navigate(['krungthai/dashboard-chart']);
-        // if (Response) {
-        //   this.modalService.open(this.login, { centered: true });
-        //   // this.login.open();
-        //   setTimeout(() => {
-        //     window.location.reload();
-        //   }, 1000);
-        // } else {
-        //   setTimeout(() => {
-        //     window.location.reload();
-        //   }, 1000);
-        // }
+
       },
       (err) => {
         if (err.status === 403) {

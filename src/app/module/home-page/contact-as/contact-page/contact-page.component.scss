@@ -1,0 +1,150 @@
+@import "/src/assets/scss/base/typography";
+@import "/src//assets/scss/base/responsive";
+
+
+
+.text-white{
+    color: #ffff;
+}
+.container {
+  width: 85%;
+  background: rgb(255, 255, 255);
+  border-radius: 6px;
+  padding: 20px 60px 30px 40px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.container .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container .content .right-side {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  position: relative;
+}
+
+.content .right-side::before {
+  content: '';
+  position: absolute;
+  height: 70%;
+  width: 2px;
+  right: 700px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #afafb6;
+}
+
+.content .right-side .details {
+  margin: 14px;
+  text-align: center;
+}
+
+.content .right-side .details i {
+  font-size: 30px;
+  color: #3e2093;
+  margin-bottom: 10px;
+}
+
+.content .right-side .details .topic {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.content .right-side .details .text-one,
+.content .right-side .details .text-two {
+  font-size: 14px;
+  color: #afafb6;
+}
+
+.container .content .left-side {
+  width: 30%;
+  margin-left: 75px;
+}
+
+.content .left-side .topic-text {
+  font-size: 23px;
+  font-weight: 600;
+  color: #3e2093;
+}
+
+
+@media (max-width: 950px) {
+  .container {
+    width: 90%;
+    padding: 30px 40px 40px 35px;
+  }
+
+  .container .content .left-side {
+    width: 75%;
+    margin-left: 55px;
+  }
+}
+
+@media (max-width: 820px) {
+  .container {
+    margin: 40px 0;
+    height: 100%;
+  }
+
+  .container .content {
+    flex-direction: column-reverse;
+  }
+
+  .container .content .right-side {
+    width: 100%;
+    flex-direction: row;
+    margin-top: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .container .content .right-side::before {
+    display: none;
+  }
+
+  .container .content .left-side {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.img-admin {
+  background-image: url(../../../../../assets/img/admin.png);
+  // background-position: center;
+ 
+  //   border: 1px solid #ECECEC;
+  //   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.10), 0 15px 12px rgba(0, 0, 0, 0.02);
+
+}
+
+.img-disease {
+  // background-image: url(../../../../../assets/img/axa.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 50px 100px;
+  // border-radius: 0 0 80px 80px;
+  // box-shadow: 0 0 30.5px #d1d1d1;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../../../../assets/img/axa.png);
+  background-size: cover;
+
+
+
+}
+
+legend {
+  display: block;
+  width: 100%;
+  margin: 5px 0 15px 0;
+  font-size: 21px;
+  line-height: inherit;
+  border-bottom: 1px solid #e0e0e0;
+}

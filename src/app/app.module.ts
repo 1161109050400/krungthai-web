@@ -26,6 +26,10 @@ import { DiseaseComponent } from './module/insurance-type/disease/disease/diseas
 import { HealthComponent } from './module/insurance-type/health/health/health.component';
 import { MoneyComponent } from './module/insurance-type/money/money/money.component';
 import { RetireComponent } from './module/insurance-type/retire/retire/retire.component';
+import { ContactPageComponent } from './module/home-page/contact-as/contact-page/contact-page.component';
+import { WLANP85Component } from './module/result-insurance/WLANP85/wlanp85/wlanp85.component';
+
+
 
 @NgModule({
   declarations: [
@@ -44,6 +48,8 @@ import { RetireComponent } from './module/insurance-type/retire/retire/retire.co
     HealthComponent,
     MoneyComponent,
     RetireComponent,
+    ContactPageComponent,
+    WLANP85Component,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +67,7 @@ import { RetireComponent } from './module/insurance-type/retire/retire/retire.co
     }),
     BrowserAnimationsModule,
     NgxSpinnerModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -45,7 +45,7 @@ export class FormRegisterComponent implements OnInit {
   lastName = new FormControl('', [Validators.required]);
   Email = new FormControl('', [Validators.required, Validators.email]);
   numberPhone = new FormControl('', [Validators.required]);
-  faxNumber = new FormControl();
+  faxNumber = new FormControl('-');
   Province = new FormControl();
 
   dataSelect = new FormControl();

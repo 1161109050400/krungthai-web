@@ -147,7 +147,10 @@
 
                         <div class="col-md-12 col-12 col-sm-12 mt-2">
                             <span class="subtitle3">ที่อยู่เครือข่ายสถานพยาบาล</span>
-                            <input type="text" class="form-control hight-input-text" [formControl]="hospitalLocation">
+                            <!-- <input type="text" class="form-control hight-input-text" [formControl]="hospitalLocation"> -->
+                            <textarea type="text" class="form-control" [formControl]="hospitalLocation" rows="3"></textarea>
+
+                            
                             <div *ngIf="hospitalLocation.invalid && hospitalLocation.touched"
                                 class="alert alert-danger alert-padding mt-2" role="alert">
                                 <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
@@ -224,7 +227,8 @@
 
                         <div class="col-md-12 col-12 col-sm-12 mt-2">
                             <span class="subtitle3">ที่อยู่เครือข่ายสถานพยาบาล</span>
-                            <input type="text" class="form-control hight-input-text" [formControl]="hospitalLocation">
+                            <!-- <input type="text" class="form-control hight-input-text" [formControl]="hospitalLocation"> -->
+                            <textarea type="text" class="form-control" [formControl]="hospitalLocation" rows="3"></textarea>
                             <div *ngIf="hospitalLocation.invalid && hospitalLocation.touched"
                                 class="alert alert-danger alert-padding mt-2" role="alert">
                                 <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
