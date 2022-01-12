@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgxSpinnerService } from 'ngx-spinner';
 
+import * as AOS from 'aos';
 @Component({
   selector: 'app-wlanp85',
   templateUrl: './wlanp85.component.html',
@@ -8,16 +8,19 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class WLANP85Component implements OnInit {
 
-  constructor(private spinner: NgxSpinnerService) { 
-    this.spinner.show();
-    setTimeout(() => {
-  /** spinner ends after 5 seconds */
-    this.spinner.hide();
-    }, 3000);
+  constructor() { 
 
   }
 
   ngOnInit(): void {
+    AOS.init(
+      {
+        offset: 400, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        // duration: 1000 // values from 0 to 3000, with step 50ms
+      }
+
+    );
   }
 
 }

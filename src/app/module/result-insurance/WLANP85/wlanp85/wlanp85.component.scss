@@ -1,2 +1,11 @@
 @import "/src/assets/scss/base/typography";
 @import "/src//assets/scss/base/responsive";
+@import "/src/app/module/result-insurance/PWLNP85/pwlnp85/pwlnp85.component.scss";
+
+.img-wlan85{
+    background-image: url(../../../../../assets/img/insurance/WLAN85-1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 100px 100px;
+  }

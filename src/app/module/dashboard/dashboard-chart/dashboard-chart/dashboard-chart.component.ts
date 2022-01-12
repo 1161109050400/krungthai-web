@@ -19,60 +19,60 @@ export class DashboardChartComponent implements OnInit {
   ngOnInit(): void {
     this.chartOptions = {
       chart: {
-        plotBackgroundColor: null,
-        plotBorderWidth: null,
-        plotShadow: false,
-        type: 'pie',
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+          plotShadow: false,
+          type: 'pie'
       },
       title: {
-        text: '',
+          text: ''
       },
       tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>',
+          pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
       },
       accessibility: {
-        point: {
-          valueSuffix: '%',
-        },
+          point: {
+              valueSuffix: '%'
+          }
       },
       plotOptions: {
-        pie: {
-          allowPointSelect: true,
-          cursor: 'pointer',
-          dataLabels: {
-            enabled: false,
-          },
-          showInLegend: true,
-        },
+          pie: {
+              allowPointSelect: true,
+              cursor: 'pointer',
+              dataLabels: {
+                  enabled: false
+              },
+              showInLegend: true
+          }
       },
       exporting: { enabled: false },
       credits: { enabled: false },
-      series: [
-        {
+      series: [{
           name: 'Brands',
           colorByPoint: true,
-          data: [
-            {
-              name: 'Chrome',
+          data: [{
+              name: 'PWLNP85',
               y: 61.41,
               sliced: true,
-              selected: true,
-              color: '#003696',
-            },
-            {
-              name: 'Internet Explorer',
-              y: 11.84,
-              color: '#2C77FF',
-            },
-            {
-              name: 'Firefox',
-              y: 10.85,
-              color: '#C7E4FF',
-            },
-          ],
-        },
-      ],
-    };
+              selected: true
+          }, {
+              name: 'WLANP85',
+              y: 11.84
+          }, {
+              name: '12PL',
+              y: 10.85
+          }, {
+              name: '10EC',
+              y: 4.67
+          }, {
+              name: 'WLN99L',
+              y: 4.18
+          }, {
+              name: 'PLB10',
+              y: 7.05
+          }]
+      }]
+  };
     // HC_exporting(Highcharts);
 
     setTimeout(() => {
@@ -144,21 +144,7 @@ export class DashboardChartComponent implements OnInit {
             106.6, 92.3,
           ],
         },
-        
-        // {
-        //   name: 'London',
-        //   data: [
-        //     48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3,
-        //     51.2,
-        //   ],
-        // },
-        // {
-        //   name: 'Berlin',
-        //   data: [
-        //     42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8,
-        //     51.1,
-        //   ],
-        // },
+  
       ],
     };
   }

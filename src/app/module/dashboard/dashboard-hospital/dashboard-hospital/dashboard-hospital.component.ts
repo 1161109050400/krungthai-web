@@ -12,7 +12,6 @@ import { HospitalService } from 'src/app/services/hospital.service';
 })
 export class DashboardHospitalComponent implements OnInit {
   hospital: any;
-
   hospitalName = new FormControl('', [Validators.required]);
   hospitalLocation = new FormControl('', [Validators.required]);
   // latitude = new FormControl('', [Validators.required]);

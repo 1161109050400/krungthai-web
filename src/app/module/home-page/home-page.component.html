@@ -1,114 +1,133 @@
 <body>
+    <header class="l-header scroll-header mt-5" id="header">
+        <nav class="nav container">
+            <!-- <a href="#" class="nav__logo" style="color: white;">Delivery</a> -->
+            <img src="../../../assets/img/logo.png" alt="" class="logo">
+
+            <div class="nav__menu" [ngClass]="{'show-menu':navActive}">
+                <ul class="nav__list">
+                    <li class="nav__listitem">
+                        <a href="#home" class="nav__link">แบบประกัน</a>
+                        <!-- <i class="fa fa-angle-down" style="color: white;margin-left: 10px;"></i> -->
+                        <ul class="nav__listitemdrop">
+                            <li>
+                                <a routerLink="/krungthai/money">ประกันแบบสะสมทรัพย์</a>
+                            </li>
+                            <li>
+                                <a routerLink="/krungthai/health">ประกันแบบสุขภาพ </a>
+                            </li>
+                            <li>
+                                <a routerLink="/krungthai/disease">ประกันแบบโรคร้ายแรง</a>
+                            </li>
+                            <li>
+                                <a routerLink="/krungthai/retire">ประกันแบบเกษียณอายุ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav__listitem">
+                        <a href="#about" class="nav__link">เกี่ยวกับบริษัท</a>
+                    </li>
+                    <li class="nav__listitem">
+                        <a href="#services" class="nav__link">ร.พ.ในเครือข่าย</a>
+                    </li>
+                    <li class="nav__listitem">
+                        <a href="#contact" class="nav__link">ดาวน์โหลดเอกสาร</a>
+                    </li>
+                    <li class="nav__listitem">
+                        <a href="#contact" class="nav__link" routerLink="/krungthai/contact">ติดต่อเรา</a>
+                    </li>
+                    <i class='bx bx-toggle-left change-theme' id="theme-button"></i>
+                </ul>
+            </div>
+            <div class="nav__toggle" (click)="toggleMenu()">
+
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xmlns:svgjs="http://svgjs.com/svgjs" width="20" height="20" x="0" y="0" viewBox="0 0 512 512"
+                    style="enable-background:new 0 0 512 512" xml:space="preserve" class="hovered-paths">
+                    <g>
+                        <g xmlns="http://www.w3.org/2000/svg">
+                            <g>
+                                <path
+                                    d="M176.792,0H59.208C26.561,0,0,26.561,0,59.208v117.584C0,209.439,26.561,236,59.208,236h117.584    C209.439,236,236,209.439,236,176.792V59.208C236,26.561,209.439,0,176.792,0z M196,176.792c0,10.591-8.617,19.208-19.208,19.208    H59.208C48.617,196,40,187.383,40,176.792V59.208C40,48.617,48.617,40,59.208,40h117.584C187.383,40,196,48.617,196,59.208    V176.792z"
+                                    fill="#ffffff" data-original="#000000" class="hovered-path"></path>
+                            </g>
+                        </g>
+                        <g xmlns="http://www.w3.org/2000/svg">
+                            <g>
+                                <path
+                                    d="M452,0H336c-33.084,0-60,26.916-60,60v116c0,33.084,26.916,60,60,60h116c33.084,0,60-26.916,60-60V60    C512,26.916,485.084,0,452,0z M472,176c0,11.028-8.972,20-20,20H336c-11.028,0-20-8.972-20-20V60c0-11.028,8.972-20,20-20h116    c11.028,0,20,8.972,20,20V176z"
+                                    fill="#ffffff" data-original="#000000" class="hovered-path"></path>
+                            </g>
+                        </g>
+                        <g xmlns="http://www.w3.org/2000/svg">
+                            <g>
+                                <path
+                                    d="M176.792,276H59.208C26.561,276,0,302.561,0,335.208v117.584C0,485.439,26.561,512,59.208,512h117.584    C209.439,512,236,485.439,236,452.792V335.208C236,302.561,209.439,276,176.792,276z M196,452.792    c0,10.591-8.617,19.208-19.208,19.208H59.208C48.617,472,40,463.383,40,452.792V335.208C40,324.617,48.617,316,59.208,316h117.584    c10.591,0,19.208,8.617,19.208,19.208V452.792z"
+                                    fill="#ffffff" data-original="#000000" class="hovered-path"></path>
+                            </g>
+                        </g>
+                        <g xmlns="http://www.w3.org/2000/svg">
+                            <g>
+                                <path
+                                    d="M452,276H336c-33.084,0-60,26.916-60,60v116c0,33.084,26.916,60,60,60h116c33.084,0,60-26.916,60-60V336    C512,302.916,485.084,276,452,276z M472,452c0,11.028-8.972,20-20,20H336c-11.028,0-20-8.972-20-20V336c0-11.028,8.972-20,20-20    h116c11.028,0,20,8.972,20,20V452z"
+                                    fill="#ffffff" data-original="#000000" class="hovered-path"></path>
+                            </g>
+                        </g>
+                        <g xmlns="http://www.w3.org/2000/svg">
+                        </g>
+                        <g xmlns="http://www.w3.org/2000/svg">
+                        </g>
+                        <g xmlns="http://www.w3.org/2000/svg">
+                        </g>
+                        <g xmlns="http://www.w3.org/2000/svg">
+                        </g>
+                        <g xmlns="http://www.w3.org/2000/svg">
+                        </g>
+                        <g xmlns="http://www.w3.org/2000/svg">
+                        </g>
+                        <g xmlns="http://www.w3.org/2000/svg">
+                        </g>
+                        <g xmlns="http://www.w3.org/2000/svg">
+                        </g>
+                        <g xmlns="http://www.w3.org/2000/svg">
+                        </g>
+                        <g xmlns="http://www.w3.org/2000/svg">
+                        </g>
+                        <g xmlns="http://www.w3.org/2000/svg">
+                        </g>
+                        <g xmlns="http://www.w3.org/2000/svg">
+                        </g>
+                        <g xmlns="http://www.w3.org/2000/svg">
+                        </g>
+                        <g xmlns="http://www.w3.org/2000/svg">
+                        </g>
+                        <g xmlns="http://www.w3.org/2000/svg">
+                        </g>
+                    </g>
+                </svg>
+                <!-- <i class="fas fa-bars" style="color: white;"></i> -->
+
+            </div>
+            <!-- <a href="#" class="button button__header" style="color: white;">ติดต่อเรา</a> -->
+        </nav>
+    </header>
     <div class="container-fluid" style="margin-top: 70px;">
-        <header class="l-header scroll-header mt-5" id="header">
-            <nav class="nav container">
-                <!-- <a href="#" class="nav__logo" style="color: white;">Delivery</a> -->
-                <img src="../../../assets/img/logo.png" alt="" class="logo">
-
-                <div class="nav__menu" [ngClass]="{'show-menu':navActive}">
-                    <ul class="nav__list">
-                        <li class="nav__listitem">
-                            <a href="#home" class="nav__link">แบบประกัน</a>
-                            <!-- <i class="fa fa-angle-down" style="color: white;margin-left: 10px;"></i> -->
-                            <ul class="nav__listitemdrop">
-                                <li>
-                                    <a routerLink="/krungthai/money">ประกันแบบสะสมทรัพย์</a>
-                                </li>
-                                <li>
-                                    <a routerLink="/krungthai/health">ประกันแบบสุขภาพ </a>
-                                </li>
-                                <li>
-                                    <a routerLink="/krungthai/disease">ประกันแบบโรคร้ายแรง</a>
-                                </li>
-                                <li>
-                                    <a routerLink="/krungthai/retire">ประกันแบบเกษียณอายุ</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav__listitem">
-                            <a href="#about" class="nav__link" >เกี่ยวกับบริษัท</a>
-                        </li>
-                        <li class="nav__listitem">
-                            <a href="#services" class="nav__link">ร.พ.ในเครือข่าย</a>
-                        </li>
-                        <li class="nav__listitem">
-                            <a href="#contact" class="nav__link">ดาวน์โหลดเอกสาร</a>
-                        </li>
-                        <li class="nav__listitem">
-                            <a href="#contact" class="nav__link" routerLink="/krungthai/contact">ติดต่อเรา</a>
-                        </li>
-                        <i class='bx bx-toggle-left change-theme' id="theme-button"></i>
-                    </ul>
+        <div class="row">
+            <div class="img-disease">
+                <h1 class="text-center text-white callout-title animate__animated animate__zoomInDown">
+                    ระบบสนับสนุนการตัดสินใจเพื่อการเลือกซื้อแผนประกันชีวิต</h1>
+                <div class="text-center">
+                    <legend></legend>
+                    <div class="text-white callout-subtitle animate__animated animate__zoomInDown">Decision Support
+                        System for Insurance Plan
+                    </div>
                 </div>
-                <div class="nav__toggle" (click)="toggleMenu()">
-
-                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="20" height="20" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class="hovered-paths"><g>
-                        <g xmlns="http://www.w3.org/2000/svg">
-                            <g>
-                                <path d="M176.792,0H59.208C26.561,0,0,26.561,0,59.208v117.584C0,209.439,26.561,236,59.208,236h117.584    C209.439,236,236,209.439,236,176.792V59.208C236,26.561,209.439,0,176.792,0z M196,176.792c0,10.591-8.617,19.208-19.208,19.208    H59.208C48.617,196,40,187.383,40,176.792V59.208C40,48.617,48.617,40,59.208,40h117.584C187.383,40,196,48.617,196,59.208    V176.792z" fill="#ffffff" data-original="#000000" class="hovered-path"></path>
-                            </g>
-                        </g>
-                        <g xmlns="http://www.w3.org/2000/svg">
-                            <g>
-                                <path d="M452,0H336c-33.084,0-60,26.916-60,60v116c0,33.084,26.916,60,60,60h116c33.084,0,60-26.916,60-60V60    C512,26.916,485.084,0,452,0z M472,176c0,11.028-8.972,20-20,20H336c-11.028,0-20-8.972-20-20V60c0-11.028,8.972-20,20-20h116    c11.028,0,20,8.972,20,20V176z" fill="#ffffff" data-original="#000000" class="hovered-path"></path>
-                            </g>
-                        </g>
-                        <g xmlns="http://www.w3.org/2000/svg">
-                            <g>
-                                <path d="M176.792,276H59.208C26.561,276,0,302.561,0,335.208v117.584C0,485.439,26.561,512,59.208,512h117.584    C209.439,512,236,485.439,236,452.792V335.208C236,302.561,209.439,276,176.792,276z M196,452.792    c0,10.591-8.617,19.208-19.208,19.208H59.208C48.617,472,40,463.383,40,452.792V335.208C40,324.617,48.617,316,59.208,316h117.584    c10.591,0,19.208,8.617,19.208,19.208V452.792z" fill="#ffffff" data-original="#000000" class="hovered-path"></path>
-                            </g>
-                        </g>
-                        <g xmlns="http://www.w3.org/2000/svg">
-                            <g>
-                                <path d="M452,276H336c-33.084,0-60,26.916-60,60v116c0,33.084,26.916,60,60,60h116c33.084,0,60-26.916,60-60V336    C512,302.916,485.084,276,452,276z M472,452c0,11.028-8.972,20-20,20H336c-11.028,0-20-8.972-20-20V336c0-11.028,8.972-20,20-20    h116c11.028,0,20,8.972,20,20V452z" fill="#ffffff" data-original="#000000" class="hovered-path"></path>
-                            </g>
-                        </g>
-                        <g xmlns="http://www.w3.org/2000/svg">
-                        </g>
-                        <g xmlns="http://www.w3.org/2000/svg">
-                        </g>
-                        <g xmlns="http://www.w3.org/2000/svg">
-                        </g>
-                        <g xmlns="http://www.w3.org/2000/svg">
-                        </g>
-                        <g xmlns="http://www.w3.org/2000/svg">
-                        </g>
-                        <g xmlns="http://www.w3.org/2000/svg">
-                        </g>
-                        <g xmlns="http://www.w3.org/2000/svg">
-                        </g>
-                        <g xmlns="http://www.w3.org/2000/svg">
-                        </g>
-                        <g xmlns="http://www.w3.org/2000/svg">
-                        </g>
-                        <g xmlns="http://www.w3.org/2000/svg">
-                        </g>
-                        <g xmlns="http://www.w3.org/2000/svg">
-                        </g>
-                        <g xmlns="http://www.w3.org/2000/svg">
-                        </g>
-                        <g xmlns="http://www.w3.org/2000/svg">
-                        </g>
-                        <g xmlns="http://www.w3.org/2000/svg">
-                        </g>
-                        <g xmlns="http://www.w3.org/2000/svg">
-                        </g>
-                        </g></svg>
-                    <!-- <i class="fas fa-bars" style="color: white;"></i> -->
-
-                </div>
-                <!-- <a href="#" class="button button__header" style="color: white;">ติดต่อเรา</a> -->
-            </nav>
-        </header>
-
-        <br>
-        <!-- <div class="row">
-            <img src="../../../assets/img/bg2.jpg" alt="">
-        </div> -->
-        <div class="row fix-row-first" style="margin-bottom: 100px;">
+            </div>
+        </div>
+        <div class="row fix-row-first">
             <div class="col" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <!-- <div class="fix"></div> -->
-                <h1 class="">กรุงไทยแอกซ่า ประกันชีวิต</h1>
+                <h2 class="text-white">กรุงไทย-แอกซ่า ประกันชีวิต</h2>
                 <label class="subtitle1 text-white">เว็ปไซด์นี้สำหรับเสนอขายผลิตภัณฑ์ประกันชีวิตเท่านั้น
                     ยินดีให้คำปรึกษา น.ส.ธัญวลัย ร่วมพงษ์ </label>
                 <i class="fas fa-phone-volume mt-1" style="color:#fff;font-size: 30px;">
@@ -151,14 +170,19 @@
                 </div>
             </div>
         </div>
-
         <br>
-        <br>
+        <div class="about pt-5 mb-5">
+            <div class="container">
+                <div class="position-relative d-flex align-items-center justify-content-center">
+                    <div class="display-1 text-uppercase about-text" style="-webkit-text-stroke: 1px #dee2e6;">About
+                    </div>
+                    <div class="position-absolute text-uppercase text-primary about-text-1">About Us</div>
+                </div>
+            </div>
+        </div>
 
-
-        <div class="row" id="about" style="margin-bottom: 100px;">
-            <div class="col-12 col-xl-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
-                data-aos-duration="1500">
+        <div class="row" id="about">
+            <div class="col-12 col-xl-6">
                 <img src="../../../assets/img/About us page-pana.svg" alt="" width="700px">
             </div>
             <div class="col-12 col-xl-5" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
@@ -177,13 +201,18 @@
             </div>
         </div>
 
-        <div class="row" id="home" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
-            <h2 style="color: #fff; text-align: center;">เกี่ยวกับแผนประกัน</h2>
+        <div class="about pt-5 mb-5">
+            <div class="container">
+                <div class="position-relative d-flex align-items-center justify-content-center">
+                    <div class="display-1 text-uppercase about-text" style="-webkit-text-stroke: 1px #dee2e6;">Insurance
+                    </div>
+                    <div class="position-absolute text-uppercase text-primary about-text-1">About Insurance</div>
+                </div>
+            </div>
         </div>
         <br>
         <div class="row">
-            <div class="col-12 col-xl-4 mt-3" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
-                data-aos-duration="1500">
+            <div class="col-12 col-xl-4 mt-3">
                 <div class="services__content">
                     <svg class="services__img" xmlns="http://www.w3.org/2000/svg" version="1.1"
                         xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="60"
@@ -211,13 +240,13 @@
                         </g>
                     </svg>
                     <h3 class="text-color mt-3">ประกันสุขภาพ</h3>
-                    <p class="services__description">ประกันสุขภาพของคนฉลาดเลือก แบบเหมาจ่าย คุ้มค่า คุ้มครองสูงสุด 100 ล้านบาท* 
-                        </p>
-                        <a href="" style="float: right;" routerLink="/krungthai/form-register">อ่านต่อ...</a>
+                    <p class="services__description">ประกันสุขภาพของคนฉลาดเลือก แบบเหมาจ่าย คุ้มค่า คุ้มครองสูงสุด 100
+                        ล้านบาท*
+                    </p>
+                    <a href="" style="float: right;" routerLink="/krungthai/form-register">อ่านต่อ...</a>
                 </div>
             </div>
-            <div class="col-12 col-xl-4 mt-3" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
-                data-aos-duration="2000">
+            <div class="col-12 col-xl-4 mt-3">
                 <div class="services__content">
                     <svg class="services__img" xmlns="http://www.w3.org/2000/svg" version="1.1"
                         xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="60"
@@ -232,12 +261,12 @@
                         </g>
                     </svg>
                     <h3 class="text-color mt-3">ประกันโรคร้ายแรง</h3>
-                    <p class="services__description">ที่ให้ความคุ้มครองเต็มเหนี่ยวถึง 100 อาการ ครอบคลุมทุกระยะโรคร้าย</p>
-                        <a href="" style="float: right;">อ่านต่อ...</a>
+                    <p class="services__description">ที่ให้ความคุ้มครองเต็มเหนี่ยวถึง 100 อาการ ครอบคลุมทุกระยะโรคร้าย
+                    </p>
+                    <a href="" style="float: right;">อ่านต่อ...</a>
                 </div>
             </div>
-            <div class="col-12 col-xl-4 mt-3" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
-                data-aos-duration="2500">
+            <div class="col-12 col-xl-4 mt-3">
                 <div class="services__content">
                     <svg class="services__img" xmlns="http://www.w3.org/2000/svg" version="1.1"
                         xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="60"
@@ -308,15 +337,22 @@
                     </svg>
                     <h3 class="text-color mt-3">ประกันสะสมทรัพย์</h3>
                     <p class="services__description">แผนการออมก้าวแรกสำหรับผู้เริ่มต้นชีวิตทำงานที่ต้องการสร้างวินัย</p>
-                        <a href="" style="float: right;">อ่านต่อ...</a>
+                    <a href="" style="float: right;">อ่านต่อ...</a>
+                </div>
+            </div>
+        </div>
+        <div class="contact pt-5 mb-5">
+            <div class="container">
+                <div class="position-relative d-flex align-items-center justify-content-center">
+                    <div class="display-1 text-uppercase about-text" style="-webkit-text-stroke: 1px #dee2e6;">CONTACT
+                    </div>
+                    <div class="position-absolute text-uppercase text-primary about-text-1">CONTACT ME</div>
                 </div>
             </div>
         </div>
         <br>
         <br>
-        <br>
-        <br>
-        
+
     </div>
 </body>
 
@@ -325,8 +361,8 @@
     <div class="col-12 col-md-12 text-center" style="text-align: center;">
         <span style="color: #fff;font-size: 20px;">
             <i class="far fa-copyright" style="color: #fff;font-size: 10px;"> </i>
-            Copyright  by Chonticha Chotchai</span>
-            <!-- 2020 Krungthai AXA. All right reserved -->
+            Copyright Decision Support System for Insurance Plan. All right reserved by Chonticha Chotchai</span>
+        <!-- 2020 Krungthai AXA. All right reserved -->
     </div>
 </div>
 

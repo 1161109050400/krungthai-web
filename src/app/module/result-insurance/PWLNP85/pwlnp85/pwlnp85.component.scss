@@ -1,0 +1,47 @@
+@import "/src/assets/scss/base/typography";
+@import "/src//assets/scss/base/responsive";
+
+nav {
+    padding: 0.5rem;
+    background-color: #f1f2f7;
+    color: #0f2f86;
+    text-align: left;
+    position: fixed;
+    z-index: 100;
+    // top: 0px;
+  }
+
+
+legend {
+  display: block;
+  width: 100%;
+  margin: 5px 0 15px 0;
+  font-size: 21px;
+  line-height: inherit;
+  border-bottom: 1px solid #0f2f86;
+}
+  .text-color{
+      color: #0f2f86;
+  }
+  
+  .img {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .img img {
+    width: 600px;
+    height: 700px;
+    @media (max-width: 428px) {
+      display: none;
+    }
+  }
+
+  .img-pwlnp85{
+    background-image: url(../../../../../assets/img/insurance/PWLNP85-3.png);
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 100px 100px;
+  }

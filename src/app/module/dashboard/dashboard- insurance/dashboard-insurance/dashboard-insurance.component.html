@@ -1,4 +1,5 @@
 <div class="container-fluid" style="margin-top: 35px;">
+
     <!-- <p>dashboard works!</p> -->
     <div class="col-1">
         <div class="navigation">
@@ -44,11 +45,24 @@
     </div>
 
     <div class="col-11 p-2">
+        <ul>
+            <li *ngFor="let item of insurances">
+                <a class="btn btn-primary" download={{item.insurance_file}}
+                    href="/api/pdf-storage/{{item.insurance_file}}">{{item.insurance_name}}</a>
+            </li>
+        </ul>
+
+
+
+        
         <!-- <app-dashboard-chart></app-dashboard-chart> -->
         <!-- <div class="row"> -->
         <!-- <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions" style="width: 100%; display: block;">
             </highcharts-chart> -->
         <!-- </div> -->
+
+
+
         <h1 class="mt-2" style="color: #63799B;">แผนประกันทั้งหมด</h1>
         <legend></legend>
         <button type="button" class="btn btn-add-data" data-bs-toggle="modal" data-bs-target="#AddModal"><i
@@ -68,14 +82,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="tr-content">
+                        <tr class="tr-content" *ngFor="let item of insurances">
                             <td></td>
-                            <td class="text-center">ประกันชีวิตควบการลงทุน | iWealthy</td>
-                            <td class="text-center">การออมเพื่อการเกษียณอายุ</td>
+                            <td class="text-center">{{item.insurance_name}}</td>
+                            <td class="text-center">{{item.type_insurance_id}}</td>
                             <td class="text-center"><i class="fas fa-file-pdf"
-                                    style="font-size: 30px;color: #63799B;"></i> 3.39 MB</td>
+                                    style="font-size: 30px;color: #63799B;"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{item.insurance_file}}</td>
                             <td class="text-center">
-
+                          
                                 <button type="button" class="button circle edit">
                                     <i class="fas fa-pencil-alt" style="font-size: 20px;"></i></button>
                                 <button type="button" class="button circle delete mx-2">
@@ -100,25 +114,18 @@
                 </div> -->
             <div class="modal-body">
                 <h2 class="text-center"> คุณต้องการออกจากระบบหรือไม่ ?</h2>
-                <!-- <div class="text-center">
-                        <i class="fas fa-sign-out-alt" style="font-size: 60px;"></i>
-                    </div> -->
                 <div class="text-center mt-2">
                     <button type="button" class="btn btn-link-need subtitle1 mx-2" routerLink="/login">ใช่</button>
                     <button type="button" class="btn btn-link-need-1 subtitle1" data-bs-dismiss="modal">ไม่</button>
                 </div>
             </div>
-            <!-- <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
-        </div> -->
         </div>
     </div>
 </div>
 
 
 <!-- Modal เพิ่มข้อมูล -->
-<div class="modal fade" id="AddModal" tabindex="-1" aria-labelledby="AddModalLabel" aria-hidden="true">
+<div class="modal fade" id="AddModal" tabindex="-1" aria-labelledby="AddModalLabel" aria-hidden="true" [formGroup]="form" > 
     <div class="modal-dialog modal-content">
         <div class="modal-header">
             <div class="modal-title">
@@ -133,11 +140,11 @@
                     <div class="row">
                         <div class="col-6">
                             <span class="subtitle3">ชื่อแผนประกัน</span>
-                            <input type="text" class="form-control hight-input-text">
+                            <input type="text" class="form-control hight-input-text" formControlName="insurance_name">
                         </div>
                         <div class="col-6">
                             <span class="subtitle3">ประเภทแผนประกัน</span>
-                            <ng-select [items]="cars" bindLabel="name" bindValue="id">
+                            <ng-select [items]="type_insurance_id" bindLabel="name" bindValue="id" formControlName="type_insurance_id" (change)="onSelectType($event)">
                             </ng-select>
                         </div>
                     </div>
@@ -147,7 +154,7 @@
                                 <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
                                 <h3>อัปโหลดไฟล์</h3>
                                 <div class="mb-3">
-                                    <input class="form-control" type="file" id="formFile">
+                                    <input class="form-control" type="file" id="formFile" (change)="_setFile($event)" formControlName="insurance_file">
                                 </div>
                             </div>
                         </div>
@@ -158,7 +165,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary subtitle3" data-bs-dismiss="modal">ยกเลิก</button>
-            <button type="button" class="btn btn-save subtitle3">บันทึก</button>
+            <button type="button" class="btn btn-save subtitle3" (click)="_beforeSave()">บันทึก</button>
         </div>
     </div>
 </div>

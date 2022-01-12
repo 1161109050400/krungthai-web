@@ -21,7 +21,8 @@ export class HomePageComponent implements OnInit {
   }
   
   toggleMenu() {
-    // console.log(this.navActive);
     this.navActive = !this.navActive;
   }
+
+
 }

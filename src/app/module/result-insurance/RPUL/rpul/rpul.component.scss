@@ -1,0 +1,33 @@
+@import "/src/app/module/result-insurance/10EC/ec10/ec10.component.scss";
+
+
+.img-rpul{
+    background-image: url(../../../../../assets/img/insurance/rpul.jpg) !important;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 120px 100px;
+  }
+
+
+  .circle-normal {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    border-radius: 25px;
+    z-index: 1;
+}
+
+.not-pass {
+    background: #0f2f86 !important;
+}
+
+.circle-normal .title {
+    color: white;
+    //-size: 25px !important;
+    line-height: 0px;
+    display: block;
+    margin-top: 7px;
+    padding-top: 5px;
+    text-align: center;
+}

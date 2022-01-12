@@ -17,7 +17,7 @@
                 </div>
             </div>
             <form [formGroup]="form">
-                <div class="form-axa animate__animated animate__zoomIn">
+                <div class="form-axa">
                     <div class="row">
                         <div class="col-12 col-md-5">
                             <label class="subtitle2 text-color">เพศ</label>
@@ -61,45 +61,31 @@
                         </div>
                         <div class="col-9 col-xl-4">
                             <div class="form-group">
-                                    <div class="single-select-group">
-                                        <label class="single-select">
-                                            <input type="radio" name="status" value="Single" formControlName="status">
-                                            <span class="label-text text1"><i class="far fa-check-circle" style="font-size: 15px;"></i>&nbsp;&nbsp;โสด</span>
-                                        </label>
+                                <div class="single-select-group">
+                                    <label class="single-select">
+                                        <input type="radio" name="status" value="Single" formControlName="status">
+                                        <span class="label-text text1"><i class="far fa-check-circle"
+                                                style="font-size: 15px;"></i>&nbsp;&nbsp;โสด</span>
+                                    </label>
 
-                                        <label class="single-select">
-                                            <input type="radio" name="status" value="Married" formControlName="status">
-                                            <span class="label-text text1"><i class="far fa-check-circle" style="font-size: 15px;"></i>&nbsp;&nbsp;สมรส</span>
-                                        </label>
-                                    </div>
-                            
-
-                                <!-- <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" value="1" [formControl]="statusSingle"
-                                        (change)="toggleStatus($event)">
-                                    <input type="checkbox" name="toggleStatus" value="1" class="form-check-input"
-                                        (change)="toggleStatus($event)" [formControl]="statusSingle">
-                                    <label class="form-check-label text1">โสด</label>
+                                    <label class="single-select">
+                                        <input type="radio" name="status" value="Married" formControlName="status">
+                                        <span class="label-text text1"><i class="far fa-check-circle"
+                                                style="font-size: 15px;"></i>&nbsp;&nbsp;สมรส</span>
+                                    </label>
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" value="2" [formControl]="statusMarried"
-                                        (change)="toggleStatus($event)"> 
-                                    <input type="checkbox" name="toggleStatus" value="2" class="form-check-input"
-                                        (change)="toggleStatus($event)" [formControl]="statusMarried">
-                                    <label class="form-check-label text1">สมรส</label>
-                                </div> -->
-                                
                             </div>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-md-3 col-sm-12">
+                        <div class="col-xl-3 col-md-6 col-sm-12">
                             <span class="subtitle3 text-color">อายุ</span>
-                            <ng-select [items]="years" bindLabel="label" bindValue="value" formControlName="year" (change)="onSelectYear($event)" placeholder="กรุณาเลือกอายุ">
+                            <ng-select [items]="years" bindLabel="label" bindValue="value" formControlName="year"
+                                (change)="onSelectYear($event)" placeholder="กรุณาเลือกอายุ">
                             </ng-select>
                         </div>
-                        <div class="col-md-3 col-sm-12 fix-colum-left">
+                        <div class="col-xl-3 col-md-6 col-sm-12 fix-colum-left">
                             <label class="subtitle3 text-color">
                                 อาชีพ
                             </label>
@@ -109,10 +95,12 @@
                             อาชีพส่วนที่ 2 : ปฎิบัติงานที่ใช้วิชาชีพที่ต้องทำงานกลางแจ้งตลอดเวลา 
                             อาชีพส่วนที่ 3 : ปฎิบัติงานด้านช่าง กระบวนการผลิต ที่มีการใช้เครื่องจักรกลหนักผู้ใช้แรงงาน การเดินทาง หรือทำงานนอกสำนักงานเป็นประจำ"
                                 data-tooltip-location="right">
-                                คลิกดูเงื่อนไขอาชีพ</a>
+                                <i class="fas fa-mouse mx-2" style="font-size: 13px;"></i>ชี้เพื่อดูเงื่อนไขอาชีพ</a>
 
 
-                            <ng-select [items]="occupation" bindValue="id" bindLabel="text" placeholder="กรุณาเลือกอาชีพ" formControlName="occupation" (change)="onSelectOccupation($event)">
+                            <ng-select [items]="occupation" bindValue="id" bindLabel="text"
+                                placeholder="กรุณาเลือกอาชีพ" formControlName="occupation"
+                                (change)="onSelectOccupation($event)">
                                 <ng-template ng-label-tmp let-item="item">
                                     <div class="selector-dropdown text1">
                                         <i class="fa {{item.icon}}"></i>&nbsp;&nbsp;{{item.text}}
@@ -182,28 +170,32 @@
                         <div class="col-12 col-md-12 col-xl-7">
                             <div class="single-select-group">
                                 <label class="single-select">
-                                    <input type="radio" name="policy-type" name="insuranceType" value="Type 1" formControlName="insuranceType">
+                                    <input type="radio" name="policy-type" name="insuranceType" value="Type 1"
+                                        formControlName="insuranceType">
                                     <span class="label-text text1">
                                         <img src="../../../assets/img/a.png" alt="" width="10px" height="10px">
                                         สะสมทรัพย์</span>
                                 </label>
 
                                 <label class="single-select">
-                                    <input type="radio" name="policy-type" name="insuranceType" value="Type 4" formControlName="insuranceType">
+                                    <input type="radio" name="policy-type" name="insuranceType" value="Type 4"
+                                        formControlName="insuranceType">
                                     <span class="label-text text1">
                                         <img src="../../../assets/img/a.png" alt="" width="10px" height="10px">
                                         เกษียณอายุ</span>
                                 </label>
 
                                 <label class="single-select">
-                                    <input type="radio" name="policy-type" name="insuranceType" value="Type 3" formControlName="insuranceType">
+                                    <input type="radio" name="policy-type" name="insuranceType" value="Type 3"
+                                        formControlName="insuranceType">
                                     <span class="label-text text1">
                                         <img src="../../../assets/img/a.png" alt="" width="10px" height="10px">
                                         โรคร้ายแรง</span>
                                 </label>
 
                                 <label class="single-select">
-                                    <input type="radio" name="policy-type" name="insuranceType" value="Type 2" formControlName="insuranceType">
+                                    <input type="radio" name="policy-type" name="insuranceType" value="Type 2"
+                                        formControlName="insuranceType">
                                     <span class="label-text text1">
                                         <img src="../../../assets/img/a.png" alt="" width="10px" height="10px">
                                         สุขภาพ</span>
@@ -216,24 +208,29 @@
                             <label class="subtitle2 text-color">รายได้ต่อปี</label>
                             <div class="form-group m-2">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="incomeYears" value="120000-360000" formControlName="incomeYears">
+                                    <input class="form-check-input" type="radio" name="incomeYears"
+                                        value="120000-360000" formControlName="incomeYears">
                                     <label class="form-check-label text1">120,000 - 360,000 บาท</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="incomeYears" value="360001-600000" formControlName="incomeYears">
+                                    <input class="form-check-input" type="radio" name="incomeYears"
+                                        value="360001-600000" formControlName="incomeYears">
                                     <label class="form-check-label text1">360,001 - 600,000 บาท</label>
                                 </div>
 
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="incomeYears" value="600001-840000" formControlName="incomeYears">
+                                    <input class="form-check-input" type="radio" name="incomeYears"
+                                        value="600001-840000" formControlName="incomeYears">
                                     <label class="form-check-label text1">600,001 - 840,000 บาท</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="incomeYears" value="840001-1080000" formControlName="incomeYears">
+                                    <input class="form-check-input" type="radio" name="incomeYears"
+                                        value="840001-1080000" formControlName="incomeYears">
                                     <label class="form-check-label text1">840,001 - 1,080,000 บาท</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="incomeYears" value=">=1080000" formControlName="incomeYears">
+                                    <input class="form-check-input" type="radio" name="incomeYears" value=">=1080000"
+                                        formControlName="incomeYears">
                                     <label class="form-check-label text1">1,080,000 บาทขึ้นไป</label>
                                 </div>
                             </div>
@@ -251,14 +248,21 @@
                 routerLink="/krungthai/form-rating">&nbsp;&nbsp; ยืนยันข้อมูล &nbsp;&nbsp;|&nbsp;&nbsp;<i
                     class="fab fa-telegram-plane mx-2 "></i>
             </button> -->
-            <button class="button button__text subtitle1 ps-4 pe-4 mx-2 p-1 btn-animate-type1" (click)="_submit()" type="button"
-                >&nbsp;&nbsp; ยืนยันข้อมูล &nbsp;&nbsp;|&nbsp;&nbsp;<i
+            <button class="button button__text subtitle1 ps-4 pe-4 mx-2 p-1 btn-animate-type1" (click)="_submit()"
+                type="button">&nbsp;&nbsp; ยืนยันข้อมูล &nbsp;&nbsp;|&nbsp;&nbsp;<i
                     class="fab fa-telegram-plane mx-2 "></i>
             </button>
-            <button class="button-danger button__text subtitle1 ps-4 pe-4 p-1 ">&nbsp;&nbsp; ล้างข้อมูล
+            <button class="button-danger button__text subtitle1 ps-4 pe-4 p-1" (click)="_reset()"
+                type="button">&nbsp;&nbsp; ล้างข้อมูล
                 &nbsp;&nbsp;|&nbsp;&nbsp;
                 <i class="fas fa-trash-alt mx-2"></i>
             </button>
         </div>
     </div>
+</div>
 
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="large" color="#fff" type="ball-spin-clockwise" [fullScreen]="true">
+    <br>
+    <br>
+    <p style="color: white" class="subtitle1"> กำลังประมวลผล... </p>
+</ngx-spinner>

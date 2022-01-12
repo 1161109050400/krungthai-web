@@ -1,7 +1,7 @@
 <div class="container-fluid" style="margin-top: 35px;">
     <div class="row">
         <div class="col-12 col-sm-6 col-md-6 col-xl-6 col-lg-6 order-1">
-            <div class="row">
+            <div class="row animate__animated animate__zoomIn">
                 <div class="img">
                     <img src="../../../assets/img/register.svg">
                 </div>
@@ -17,12 +17,12 @@
                     <legend></legend>
                 </div>
             </div>
-            <div class="form-axa">
+            <div class="form-axa animate__animated animate__zoomIn">
                 <div class="row">
                     <div class="col-6 col-md-5">
                         <label class="subtitle1 text-color">ชื่อตามบัตรประชาชน</label>
                         <span class="subtitle1" style="color: #f64658;"> *</span>
-                        <input type="text" class="form-control hight-input-text" [formControl]="firstName">
+                        <input type="text" class="form-control hight-input-text" [formControl]="firstName" placeholder="ระบุชื่อจริง">
                         <!-- <input type="text" pInputText /> -->
                         <div *ngIf="firstName.invalid && firstName.touched"
                             class="alert alert-danger alert-padding mt-2" role="alert">
@@ -33,7 +33,7 @@
                     <div class="col-6 col-md-5">
                         <label class="subtitle1 text-color">นามสกุลตามบัตรประชาชน</label>
                         <span class="subtitle1" style="color: #f64658;"> *</span>
-                        <input type="text" class="form-control hight-input-text" [formControl]="lastName">
+                        <input type="text" class="form-control hight-input-text" [formControl]="lastName" placeholder="ระบุนามสกุล">
                         <div *ngIf="lastName.invalid && lastName.touched" class="alert alert-danger alert-padding mt-2"
                             role="alert">
                             <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
@@ -45,7 +45,7 @@
                     <div class="col-6 col-md-5">
                         <label class="subtitle1 text-color">อีเมล</label>
                         <span class="subtitle1" style="color: #f64658;"> *</span>
-                        <input type="text" class="form-control hight-input-text" [formControl]="Email">
+                        <input type="text" class="form-control hight-input-text" [formControl]="Email" placeholder="ระบุอีเมล" >
                         <div *ngIf="Email.hasError('required') && Email.invalid && Email.touched"
                             class="alert alert-danger alert-padding mt-2" role="alert">
                             <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
@@ -61,7 +61,7 @@
                     <div class="col-6 col-md-5">
                         <label class="subtitle1 text-color">เบอร์โทรศัพท์</label>
                         <span class="subtitle1" style="color: #f64658;"> *</span>
-                        <input type="text" class="form-control hight-input-text" [formControl]="numberPhone">
+                        <input type="text" class="form-control hight-input-text" [formControl]="numberPhone" placeholder="ระบุเบอร์โทรศัพท์">
 
                         <div *ngIf="numberPhone.invalid && numberPhone.touched"
                             class="alert alert-danger alert-padding mt-2" role="alert">
@@ -73,7 +73,7 @@
                 <div class="row mt-2">
                     <div class="col-6 col-md-5">
                         <label class="subtitle1 text-color">จังหวัดที่อยู่</label>
-                        <ng-select [items]="dataList" bindLabel="province" [formControl]="dataSelect">
+                        <ng-select [items]="dataList" bindLabel="province" [formControl]="dataSelect" placeholder="ระบุจังหวัดที่อยู่">
                         </ng-select>
                     </div>
                     <div class="col-6 col-md-5">

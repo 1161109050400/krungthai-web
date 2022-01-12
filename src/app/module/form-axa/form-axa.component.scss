@@ -2,10 +2,17 @@
 @import "/src//assets/scss/base/responsive";
 
 
-a{
+.heading1 {
+  @media (max-width: 428px) {
+    font-size: 1.55rem !important;
+  }
+}
+
+a {
   color: #333333;
 }
-a:hover{
+
+a:hover {
   color: #f64658;
 }
 
@@ -19,7 +26,12 @@ a:hover{
   width: 750px;
   height: 700px;
   margin: 50px;
+
   @media (max-width: 428px) {
+    display: none;
+  }
+
+  @media (max-width: 1024px) {
     display: none;
   }
 }
@@ -63,6 +75,7 @@ legend {
 .form-check-input {
   font-size: 18px;
 }
+
 .form-check-input:checked {
   background-color: #0f2f86;
   border-color: #fff;
@@ -73,7 +86,7 @@ legend {
 }
 
 .button-danger {
-  background: #f64658;
+  background-color: #f64658;
   display: flex;
   height: 50px;
   padding: 0;
@@ -86,11 +99,20 @@ legend {
   cursor: pointer;
 }
 
+.button-danger:hover {
+  background-color: #ff1c33;
+}
+
+.button:hover {
+  background-color: rgb(3, 55, 199);
+}
+
+
 .button {
   // display: flex;
   height: 50px;
   padding: 0;
-  background: #0f2f86;
+  background-color: #0f2f86;
   border: none;
   outline: none;
   border-radius: 5px;
@@ -142,6 +164,7 @@ legend {
   align-items: center;
   //   background-size: cover;
   background-repeat: no-repeat;
+
   //   background-position: bottom 0px right 0px;
   @include respond-to("laptop") {
     margin: 125px;
@@ -149,6 +172,7 @@ legend {
     height: 500px;
     background-repeat: no-repeat;
   }
+
   @media (min-width: 1024px) {
     margin-left: 80px;
     margin-bottom: 18px;
@@ -156,11 +180,13 @@ legend {
     width: 500px;
     height: 760px;
   }
+
   @include respond-to("medium-large") {
     margin: 125px;
     width: 500px;
     height: 500px;
   }
+
   @media (max-width: 428px) {
     display: none;
   }
@@ -253,6 +279,7 @@ legend {
   width: 0;
   z-index: -1;
 }
+
 .btn-animate-type1:hover:after {
   opacity: 1;
   width: 100%;
@@ -266,18 +293,23 @@ a {
   padding-top: 13px;
   height: 61px;
   background-color: #f1f2f7;
+
   @include respond-to("laptop") {
     position: fixed;
   }
+
   @media (min-width: 1024px) {
     position: fixed;
   }
+
   @include respond-to("medium-large") {
     position: fixed;
   }
+
   @media (max-width: 428px) {
     position: fixed;
   }
+
   z-index: 1020;
   width: 100%;
   margin-right: unset;
@@ -288,13 +320,13 @@ a {
 .single-select {
   color: #b3b3b3;
   display: inline;
-  
+
 }
 
-.single-select-group label > input[type="checkbox"],
-.single-select-group label > input[type="radio"],
-.multi-select-group label > input[type="checkbox"],
-.multi-select-group label > input[type="radio"] {
+.single-select-group label>input[type="checkbox"],
+.single-select-group label>input[type="radio"],
+.multi-select-group label>input[type="checkbox"],
+.multi-select-group label>input[type="radio"] {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -304,8 +336,9 @@ a {
   position: absolute;
   width: 1px;
 }
-.single-select-group label > input:checked + .label-text,
-.multi-select-group label > input:checked + .label-text {
+
+.single-select-group label>input:checked+.label-text,
+.multi-select-group label>input:checked+.label-text {
   background-color: #0f2f86;
   color: #fff;
   border: 1px solid transparent;
@@ -313,11 +346,13 @@ a {
   background-repeat: no-repeat;
   background-position: 4% 20%;
 }
-.single-select-group label > input + .label-text,
-.multi-select-group label > input + .label-text {
+
+.single-select-group label>input+.label-text,
+.multi-select-group label>input+.label-text {
   background-color: #fff;
   border: 1px solid #e0e0e0;
 }
+
 // .single-select-group label > input + .label-text,
 // .multi-select-group label > input + .label-text {
 //   border: 2px solid #e0e0e0;
@@ -326,6 +361,7 @@ a {
 .multi-select-group .label-text {
   max-width: 250px;
 }
+
 .single-select-group .label-text,
 .multi-select-group .label-text {
   display: inline-block;
@@ -336,8 +372,9 @@ a {
   margin-right: -9px;
   margin-bottom: 0;
 }
-.single-select-group label > input:checked + .label-text,
-.multi-select-group label > input:checked + .label-text {
+
+.single-select-group label>input:checked+.label-text,
+.multi-select-group label>input:checked+.label-text {
   background-image: none;
   background-color: #0f2f86;
 }
@@ -347,6 +384,7 @@ a {
   font-size: 14px;
   margin-top: 5px;
 }
+
 .form-check-input:checked {
   background-color: #0f2f86;
   border-color: #fff;
@@ -384,7 +422,8 @@ a {
   visibility: hidden;
   opacity: 0;
   left: 50%;
-  bottom: calc(100% + 5px); /* 5px is the size of the arrow */
+  bottom: calc(100% + 5px);
+  /* 5px is the size of the arrow */
   pointer-events: none;
   transition: 0.2s;
   will-change: transform;
@@ -416,12 +455,15 @@ a {
 [data-tooltip]:after {
   content: '';
   border-style: solid;
-  border-width: 5px 5px 0px 5px; /* CSS triangle */
+  border-width: 5px 5px 0px 5px;
+  /* CSS triangle */
   border-color: rgba(55, 64, 70, 0.9) transparent transparent transparent;
-  transition-duration: 0s; /* If the mouse leaves the element, 
+  transition-duration: 0s;
+  /* If the mouse leaves the element, 
                               the transition effects for the 
                               tooltip arrow are "turned off" */
-  transform-origin: top;   /* Orientation setting for the
+  transform-origin: top;
+  /* Orientation setting for the
                               slide-down effect */
   transform: translateX(-50%) scaleY(0);
 }
@@ -432,6 +474,7 @@ a {
   visibility: visible;
   opacity: 1;
 }
+
 /* Scales from 0.5 to 1 -> grow effect */
 [data-tooltip]:hover:before {
   transition-delay: 0.3s;
@@ -439,7 +482,8 @@ a {
 }
 
 [data-tooltip]:hover:after {
-  transition-delay: 0.5s; /* Starting after the grow effect */
+  transition-delay: 0.5s;
+  /* Starting after the grow effect */
   transition-duration: 0.2s;
   transform: translateX(-50%) scaleY(1);
 }
@@ -454,6 +498,7 @@ a {
 [data-tooltip-location="right"]:before {
   transform: translate(5px, 50%) scale(0.5);
 }
+
 [data-tooltip-location="right"]:hover:before {
   transform: translate(5px, 50%) scale(1);
 }
@@ -464,8 +509,14 @@ a {
   transform-origin: right;
   transform: translateY(50%) scaleX(0);
 }
+
 [data-tooltip-location="right"]:hover:after {
   transform: translateY(50%) scaleX(1);
+}
+
+.loading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
 }
 
 

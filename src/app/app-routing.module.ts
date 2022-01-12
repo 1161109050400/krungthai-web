@@ -15,6 +15,10 @@ import { HealthComponent } from './module/insurance-type/health/health/health.co
 import { MoneyComponent } from './module/insurance-type/money/money/money.component';
 import { RetireComponent } from './module/insurance-type/retire/retire/retire.component';
 import { LoginComponent } from './module/login/login.component';
+import { Ec10Component } from './module/result-insurance/10EC/ec10/ec10.component';
+import { Pwlnp85Component } from './module/result-insurance/PWLNP85/pwlnp85/pwlnp85.component';
+import { Rl05Component } from './module/result-insurance/RL05/rl05/rl05.component';
+import { RpulComponent } from './module/result-insurance/RPUL/rpul/rpul.component';
 import { WLANP85Component } from './module/result-insurance/WLANP85/wlanp85/wlanp85.component';
 
 const routes: Routes = [
@@ -34,8 +38,13 @@ const routes: Routes = [
   { path: 'krungthai/money', component: MoneyComponent },
   { path: 'krungthai/retire', component: RetireComponent },
   { path: 'krungthai/contact', component: ContactPageComponent },
-  { path: 'krungthai/wlanp85', component: WLANP85Component }
+  { path: 'krungthai/wlanp85', component: WLANP85Component },
+  { path: 'krungthai/pwlnp85', component: Pwlnp85Component },
+  { path: 'krungthai/10ec', component: Ec10Component },
+  { path: 'krungthai/rl05', component: Rl05Component },
+  { path: 'krungthai/rpul', component: RpulComponent }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -5,7 +5,6 @@ import * as AOS from 'aos';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-
 @Component({
   selector: 'app-form-axa',
   templateUrl: './form-axa.component.html',
@@ -13,7 +12,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class FormAxaComponent implements OnInit {
   isSelected: boolean = true;
-
   monthly_Pay = new FormControl('', [Validators.required]);
   policyType: FormControl = new FormControl();
   genderSelect = '';
@@ -25,7 +23,7 @@ export class FormAxaComponent implements OnInit {
     year: new FormControl(null, Validators.required),
     occupation: new FormControl(null, Validators.required),
     insuranceType: new FormControl(null, Validators.required),
-    incomeYears: new FormControl(null, Validators.required)
+    incomeYears: new FormControl(null, Validators.required),
   });
 
   selectStatus: string = '';
@@ -47,7 +45,7 @@ export class FormAxaComponent implements OnInit {
       console.log(data.value);
     }
   }
-  onSelectOccupation(data:any){
+  onSelectOccupation(data: any) {
     if (data) {
       console.log(data.id);
     }
@@ -72,8 +70,10 @@ export class FormAxaComponent implements OnInit {
     console.log(insuranceType);
     console.log(incomeYears);
 
-    const token ='TYymL24bz64tD3DEv+5IYkErT73Tra/1f5OUPh8sbHRcb4FifuYEATmVAoMPPe7tOfTIvCaylHymZkGn1Mb91Q==';
-    const url ='/workspaces/e0045c04c9aa48d6bc2855f45f63f067/services/34c0f9c51e0d45618378b41118e53682/execute?api-version=2.0&details=true';
+    const token =
+      'TYymL24bz64tD3DEv+5IYkErT73Tra/1f5OUPh8sbHRcb4FifuYEATmVAoMPPe7tOfTIvCaylHymZkGn1Mb91Q==';
+    const url =
+      '/workspaces/e0045c04c9aa48d6bc2855f45f63f067/services/34c0f9c51e0d45618378b41118e53682/execute?api-version=2.0&details=true';
     const header = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -81,18 +81,18 @@ export class FormAxaComponent implements OnInit {
       }),
     };
     const payload = {
-      "Inputs": {
-        "input1": {
-          "ColumnNames": [
-            "Gender",
-            "Age",
-            "Status",
-            "Occupation",
-            "Income(Y)",
-            "Result",
-            "Insurance_id"
+      Inputs: {
+        input1: {
+          ColumnNames: [
+            'Gender',
+            'Age',
+            'Status',
+            'Occupation',
+            'Income(Y)',
+            'Result',
+            'Insurance_id',
           ],
-          "Values": [
+          Values: [
             [
               gender,
               year,
@@ -100,46 +100,54 @@ export class FormAxaComponent implements OnInit {
               occupation,
               incomeYears,
               insuranceType,
-              "value"
-            ]
-          ]
-        }
+              'value',
+            ],
+          ],
+        },
       },
-      "GlobalParameters": {}
+      GlobalParameters: {},
     };
-    
     console.log(payload);
     this.http.post(url, payload, header).subscribe((res: any) => {
-      if(res){
+      if (res) {
         console.log(res);
         let value = res.Results.output1.value.Values[0];
-        let value2 = value[value.length-1]; //ผลลัพภ์แผนประกัน
-        this.spinner.show();
+        let value2 = value[value.length - 1]; //ผลลัพภ์แผนประกัน
+        console.log(value2);
 
+        this.spinner.show();
         setTimeout(() => {
-      /** spinner ends after 5 seconds */
-        this.spinner.hide();
-        }, 3000);
-        if("PWLNP85" == value2 ){
-          this.router.navigate(['krungthai/wlanp85']);
-        }else if("PWLNP95" == value2 ){
-          this.router.navigate(['krungthai/wlanp95']);
-        }
-        
-      }else{
-        console.log("no data");
-      }    
+          /** spinner ends after 5 seconds */
+          this.spinner.hide();
+
+          if ('PWLNP85' == value2) {
+            this.router.navigate(['krungthai/pwlnp85']);
+          } else if ('WLANP85' == value2) {
+            this.router.navigate(['krungthai/wlanp85']);
+          } else if ('10EC' == value2) {
+            this.router.navigate(['krungthai/10ec']);
+          } else if ('RL05' == value2) {
+            this.router.navigate(['krungthai/rl05']);
+          } else if ('RPUL' == value2) {
+            this.router.navigate(['krungthai/rpul']);
+          }
+        }, 1500);
+      } else {
+        console.log('no data');
+      }
     });
 
     // console.log(this.genderSelect);
   }
   ngOnInit() {
-    
     AOS.init({
-      offset: 700, // offset (in px) from the original trigger point
-      delay: 0, // values from 0 to 3000, with step 50ms
-      // duration: 1000 // values from 0 to 3000, with step 50ms
+      offset: 700,
+      delay: 0,
     });
+  }
+
+  _reset() {
+    this.form.reset();
   }
 
   toggleStatus(event: any) {
