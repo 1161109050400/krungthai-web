@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as AOS from 'aos';
+
 
 @Component({
   selector: 'app-rl05',
@@ -10,12 +12,17 @@ export class Rl05Component implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    AOS.init(
+      {
+        offset: 400, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        // duration: 1000 // values from 0 to 3000, with step 50ms
+      }
+  
+    );
   }
-  data = [
-    { img: "https://therichpost.com/wp-content/uploads/2021/05/bootstrap5-carousel-slider-img1.jpg", title: "Slide 1" },
-    { img: "https://therichpost.com/wp-content/uploads/2021/05/bootstrap5-carousel-slider-img2.jpg", title: "Slide 2" },
-    { img: "https://therichpost.com/wp-content/uploads/2021/05/bootstrap5-carousel-slider-img3.jpg", title: "Slide 3" }
-  ];
+
 
 
 }

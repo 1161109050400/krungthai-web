@@ -1,98 +1,3 @@
-<div class="container-fluid" style="margin-top: 35px;">
-    <!-- <p>dashboard works!</p> -->
-    <div class="col-1">
-        <div class="navigation">
-            <ul>
-                <!-- <li class="list" routerLinkActive="active" routerLink="/krungthai/dashboard">
-                    <a> 
-                        <span class="icon"><i class="fas fa-chart-bar"></i></span>
-                        <span class="title subtitle3">ภาพรวมระบบ</span>
-                    </a>
-                </li> -->
-                <li class="list" routerLinkActive="active" routerLink="/krungthai/dashboard-chart">
-                    <a>
-                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
-                        <span class="title">ภาพรวมระบบ</span>
-                    </a>
-                </li>
-                <li class="list" routerLinkActive="active" routerLink="/krungthai/dashboard-hospital">
-                    <a>
-                        <span class="icon"><i class="fas fa-hospital"></i></span>
-                        <span class="title">โรงพยาบาล</span>
-                    </a>
-                </li>
-                <li class="list" routerLinkActive="active" routerLink="/krungthai/insurance">
-                    <a>
-                        <span class="icon"><i class="fas fa-poll"></i></span>
-                        <span class="title">แผนประกัน</span>
-                    </a>
-                </li>
-                <li class="list" routerLinkActive="active" routerLink="/krungthai/customer">
-                    <a>
-                        <span class="icon"><i class="fas fa-thumbs-up"></i></span>
-                        <span class="title">ลูกค้าที่สนใจ</span>
-                    </a>
-                </li>
-                <li class="list" routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    <a>
-                        <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
-                        <span class="title">ออกจากระบบ</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="col-11 p-2">
-
-        <h1 class="mt-2" style="color: #63799B;">เครือข่ายสถานพยาบาล</h1>
-        <legend></legend>
-        <!-- <img src="../../../../../assets/img/2b6a3b9bed1648c48698065c54e5eacc7d192f80_hospitals-desktop.jfif" alt=""> -->
-        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#AddModal" (click)="setCreateModal()"><i
-                class="fas fa-plus-square"
-                style="font-size: 15px;"></i>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;เพิ่มข้อมูล</button>
-        <div class="col-12 mt-2">
-            <div class="bg-table">
-                <table class="table table-list">
-                    <thead class="table-dark">
-                        <tr>
-                            <th class="first-col"> &nbsp; &nbsp;ชื่อเครือข่ายสถานพยาบาล</th>
-
-                            <th>ที่อยู่เครือข่ายสถานพยาบาล</th>
-                            <th></th>
-                            <th>เบอร์โทรศัพท์</th>
-                            <th></th>
-                            <th class="last-col"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let hospital of hospital;" class="tr-content">
-                            
-                            <td>{{hospital.hospital_name}}</td> 
-                            <td>{{hospital.hospital_location}}</td>
-                            <td></td>
-                            <td>{{hospital.hospital_phone}}</td>
-                            <td></td>
-                            <td>
-                                <button type="button" class="button circle edit" data-bs-toggle="modal" (click)="setEditModal(hospital.hospital_id)"
-                                    data-bs-target="#EditModal"><i class="fas fa-pencil-alt"
-                                        style="font-size: 20px;"></i></button>
-                                <button type="button" class="button circle delete mx-2" data-bs-toggle="modal"  (click)="setDeleteModal(hospital.hospital_id)"                        
-                                    data-bs-target="#DeleteModal"><i class="far fa-trash-alt"
-                                        style="font-size: 20px;"></i></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-            </div>
-
-        </div>
-    </div>
-</div>
-
-
-
 <!-- Modal ออกจากระบบ -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -136,21 +41,28 @@
                 <div class="fix-padding">
                     <div class="row">
                         <div class="col-md-12 col-12 col-sm-12 mt-2">
-                            <span class="subtitle3">ชื่อเครือข่ายสถานพยาบาล</span>
-                            <input type="text" class="form-control hight-input-text" [formControl]="hospitalName">
-                            <div *ngIf="hospitalName.invalid && hospitalName.touched"
-                                class="alert alert-danger alert-padding mt-2" role="alert">
+                            <div class="drag-area">
+                               <img src="../../../../../assets/img/hospital.png" alt="" width="100px" height="100px">
+
+                               <span class="subtitle3">ชื่อเครือข่ายสถานพยาบาล</span>
+                            <input type="text" class="form-control hight-input-text" [formControl]="hospitalName" placeholder="ระบุชื่อโรงพยาบาล">
+                            <div class="col-md-12 col-12 col-sm-12 mt-2">
+                                <div *ngIf="hospitalName.invalid && hospitalName.touched"
+                                class="alert alert-danger alert-padding" role="alert">
                                 <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
                                 <span class="subtitle3"> จำเป็นต้องกรอก </span>
                             </div>
+                            </div>
+                            </div>
+                            <hr class="style19">
                         </div>
 
                         <div class="col-md-12 col-12 col-sm-12 mt-2">
                             <span class="subtitle3">ที่อยู่เครือข่ายสถานพยาบาล</span>
                             <!-- <input type="text" class="form-control hight-input-text" [formControl]="hospitalLocation"> -->
-                            <textarea type="text" class="form-control" [formControl]="hospitalLocation" rows="3"></textarea>
+                            <textarea type="text" class="form-control" [formControl]="hospitalLocation" placeholder="ระบุชื่อโรงพยาบาล" rows="3"></textarea>
 
-                            
+
                             <div *ngIf="hospitalLocation.invalid && hospitalLocation.touched"
                                 class="alert alert-danger alert-padding mt-2" role="alert">
                                 <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
@@ -193,7 +105,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary subtitle3" data-bs-dismiss="modal">ยกเลิก</button>
+            <button type="button" class="btn btn-secondary subtitle3" data-bs-dismiss="modal"
+            #closeModal>ยกเลิก</button>
             <button type="button" class="btn btn-save subtitle3" (click)="onSubmit()">บันทึก</button>
         </div>
     </div>
@@ -216,19 +129,27 @@
                 <div class="fix-padding">
                     <div class="row">
                         <div class="col-md-12 col-12 col-sm-12 mt-2">
-                            <span class="subtitle3">ชื่อเครือข่ายสถานพยาบาล</span>
-                            <input type="text" class="form-control hight-input-text" [formControl]="hospitalName">
-                            <div *ngIf="hospitalName.invalid && hospitalName.touched"
-                                class="alert alert-danger alert-padding mt-2" role="alert">
-                                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                <span class="subtitle3"> จำเป็นต้องกรอก </span>
-                            </div>
+                            <div class="drag-area">
+                                <img src="../../../../../assets/img/hospital.png" alt="" width="100px" height="100px">
+ 
+                                <span class="subtitle3">ชื่อเครือข่ายสถานพยาบาล</span>
+                             <input type="text" class="form-control hight-input-text" [formControl]="hospitalName" placeholder="ระบุชื่อโรงพยาบาล">
+                             <div class="col-md-12 col-12 col-sm-12 mt-2">
+                                 <div *ngIf="hospitalName.invalid && hospitalName.touched"
+                                 class="alert alert-danger alert-padding" role="alert">
+                                 <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                 <span class="subtitle3"> จำเป็นต้องกรอก </span>
+                             </div>
+                             </div>
+                             </div>
+                             <hr class="style19">
                         </div>
 
                         <div class="col-md-12 col-12 col-sm-12 mt-2">
                             <span class="subtitle3">ที่อยู่เครือข่ายสถานพยาบาล</span>
                             <!-- <input type="text" class="form-control hight-input-text" [formControl]="hospitalLocation"> -->
-                            <textarea type="text" class="form-control" [formControl]="hospitalLocation" rows="3"></textarea>
+                            <textarea type="text" class="form-control" [formControl]="hospitalLocation"
+                                rows="3"></textarea>
                             <div *ngIf="hospitalLocation.invalid && hospitalLocation.touched"
                                 class="alert alert-danger alert-padding mt-2" role="alert">
                                 <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
@@ -236,26 +157,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="row">
-                        <div class="col-md-6 col-6 col-sm-6">
-                            <span class="subtitle3">ลองติจูด</span>
-                            <input type="text" class="form-control hight-input-text" [formControl]="longitude">
-                            <div *ngIf="longitude.invalid && longitude.touched"
-                                class="alert alert-danger alert-padding mt-2" role="alert">
-                                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                <span class="subtitle3"> จำเป็นต้องกรอก </span>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-6 col-sm-6">
-                            <span class="subtitle3">ละติจูด</span>
-                            <input type="text" class="form-control hight-input-text" [formControl]="latitude">
-                            <div *ngIf="latitude.invalid && latitude.touched"
-                                class="alert alert-danger alert-padding mt-2" role="alert">
-                                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                <span class="subtitle3"> จำเป็นต้องกรอก </span>
-                            </div>
-                        </div>
-                    </div> -->
                     <div class="row">
                         <div class="col-md-12 col-12 col-sm-12">
                             <span class="subtitle3">เบอร์โทรศัพท์</span>
@@ -271,7 +172,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary subtitle3" data-bs-dismiss="modal" #closeModal>ยกเลิก</button>
+            <button type="button" class="btn btn-secondary subtitle3" data-bs-dismiss="modal"
+            #closeModal>ยกเลิก</button>
             <button type="button" class="btn btn-edit subtitle3" (click)="onUpdate()">บันทึก</button>
         </div>
     </div>
@@ -293,10 +195,106 @@
                 <div class="col-md-12 col-12 col-sm-12 mt-2 text-center">
                     <i class="far fa-trash-alt" style="font-size: 70px;color: #f64658;"></i>
                     <h1 class="heading1 mt-3">ต้องการลบใช่หรือไม่</h1>
-                    <button type="button" class="btn btn-secondary subtitle3 mx-1"
-                        data-bs-dismiss="modal">ยกเลิก</button>
-                    <button type="button" class="btn btn-delete subtitle3"  (click)="onDelete()">ยืนยัน</button>
+                    <button type="button" class="btn btn-secondary subtitle3 mx-1" data-bs-dismiss="modal">ยกเลิก</button>
+                    <button type="button" class="btn btn-delete subtitle3" (click)="onDelete()" data-bs-dismiss="modal"
+                    #closeModal>ยืนยัน</button>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+
+<body>
+    <app-sidebar-backend></app-sidebar-backend>
+    <section class="home-section">
+        <nav class="navbar navbar-expand-md  bg-dark fixed-top">
+            <div class="container-fluid mx-4">
+                <div class="sidebar-button">
+                    <i class="fas fa-bars"></i>
+                    <span class="dashboard" style="font-size: 30px;">Dashboard</span>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 profile-details">
+                        <img src="../../../../../assets/img/undraw_female_avatar_w3jk.svg" alt="">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                สามิตร ไอทีจีเนียส
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" routerLink="/dashboard/profile">ข้อมูลส่วนตัว</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="/auth/login">ออกจากระบบ</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="home-content">
+            <div class="overview-boxes">
+                <h1 class="mt-2" style="color: #63799B;">เครือข่ายสถานพยาบาล</h1>
+                <legend></legend>
+                <!-- <img src="../../../../../assets/img/2b6a3b9bed1648c48698065c54e5eacc7d192f80_hospitals-desktop.jfif" alt=""> -->
+                <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#AddModal"
+                    (click)="setCreateModal()"><i class="fas fa-plus-square"
+                        style="font-size: 15px;"></i>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;เพิ่มข้อมูล</button>
+                <div class="col-12 mt-2">
+                    <div class="bg-table">
+                        <table class="table table-list">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th class="first-col"> &nbsp; &nbsp;ชื่อเครือข่ายสถานพยาบาล</th>
+
+                                    <th>ที่อยู่เครือข่ายสถานพยาบาล</th>
+                                    <th></th>
+                                    <th>เบอร์โทรศัพท์</th>
+                                    <th></th>
+                                    <th class="last-col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let hospital of hospital;" class="tr-content">
+
+                                    <td>{{hospital.hospital_name}}</td>
+                                    <td>{{hospital.hospital_location}}</td>
+                                    <td></td>
+                                    <td>{{hospital.hospital_phone}}</td>
+                                    <td></td>
+                                    <td>
+                                        <!-- <button type="button" class="button circle edit" data-bs-toggle="modal" (click)="setEditModal(hospital.hospital_id)"
+                                            data-bs-target="#EditModal"><i class="fas fa-pencil-alt"
+                                                style="font-size: 20px;"></i></button>
+                                        <button type="button" class="button circle delete mx-2" data-bs-toggle="modal"  (click)="setDeleteModal(hospital.hospital_id)"                        
+                                            data-bs-target="#DeleteModal"><i class="far fa-trash-alt"
+                                                style="font-size: 20px;"></i></button> -->
+
+                                        <button type="button" class="btn btn-warning mx-2" data-bs-toggle="modal"
+                                            (click)="setEditModal(hospital.hospital_id)" data-bs-target="#EditModal"><i
+                                                class="fas fa-edit mx-1" style="font-size: 15px;"></i> แก้ไข</button>
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                            (click)="setDeleteModal(hospital.hospital_id)"
+                                            data-bs-target="#DeleteModal"><i class="fas fa-trash-alt mx-1"
+                                                style="font-size: 15px;"></i> ลบ</button>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>

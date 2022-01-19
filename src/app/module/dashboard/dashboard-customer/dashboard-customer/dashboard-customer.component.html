@@ -1,127 +1,181 @@
-<div class="container-fluid" style="margin-top: 35px;">
-    <!-- <p>dashboard works!</p> -->
-    <div class="col-1">
-        <div class="navigation">
-            <ul>
-                <!-- <li class="list" routerLinkActive="active" routerLink="/krungthai/dashboard">
-                    <a> 
-                        <span class="icon"><i class="fas fa-chart-bar"></i></span>
-                        <span class="title subtitle3">ภาพรวมระบบ</span>
-                    </a>
-                </li> -->
-                <li class="list" routerLinkActive="active" routerLink="/krungthai/dashboard-chart">
-                    <a>
-                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
-                        <span class="title">ภาพรวมระบบ</span>
-                    </a>
-                </li>
-                <li class="list" routerLinkActive="active" routerLink="/krungthai/dashboard-hospital">
-                    <a>
-                        <span class="icon"><i class="fas fa-hospital"></i></span>
-                        <span class="title">โรงพยาบาล</span>
-                    </a>
-                </li>
-                <li class="list" routerLinkActive="active" routerLink="/krungthai/insurance">
-                    <a>
-                        <span class="icon"><i class="fas fa-poll"></i></span>
-                        <span class="title">แผนประกัน</span>
-                    </a>
-                </li>
-                <li class="list" routerLinkActive="active" routerLink="/krungthai/customer">
-                    <a>
-                        <span class="icon"><i class="fas fa-thumbs-up"></i></span>
-                        <span class="title">ลูกค้าที่สนใจ</span>
-                    </a>
-                </li>
-                <li class="list" routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    <a>
-                        <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
-                        <span class="title">ออกจากระบบ</span>
-                    </a>
-                </li>
-            </ul>
+<body>
+  <app-sidebar-backend></app-sidebar-backend>
+  <section class="home-section">
+    <nav class="navbar navbar-expand-md  bg-dark fixed-top">
+      <div class="container-fluid mx-4">
+        <div class="sidebar-button">
+          <i class="fas fa-bars"></i>
+          <span class="dashboard" style="font-size: 30px;">Dashboard</span>
         </div>
-    </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 profile-details">
+            <img src="../../../../../assets/img/undraw_female_avatar_w3jk.svg" alt="">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                สามิตร ไอทีจีเนียส
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" routerLink="/dashboard/profile">ข้อมูลส่วนตัว</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="/auth/login">ออกจากระบบ</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <div class="col-11 mt-2">
-        <!-- <app-dashboard-chart></app-dashboard-chart> -->
-        <h1 class="mt-2" style="color: #63799B;">ลูกค้าที่สนใจทำแผนประกัน</h1>
+    <div class="home-content">
+      <div class="overview-boxes">
+        <!-- <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Total Order</div>
+              <div class="number">40,876</div>
+              <div class="indicator">
+                  <i class="far fa-list-alt"></i>
+                <span class="text">Up from yesterday</span>
+              </div>
+            </div>
+            <i class="far fa-list-alt cart"></i>
+          
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Total Sales</div>
+              <div class="number">38,876</div>
+              <div class="indicator">
+                <i class='bx bx-up-arrow-alt'></i>
+                <span class="text">Up from yesterday</span>
+              </div>
+            </div>
+            <i class='bx bxs-cart-add cart two' ></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Total Profit</div>
+              <div class="number">$12,876</div>
+              <div class="indicator">
+                <i class='bx bx-up-arrow-alt'></i>
+                <span class="text">Up from yesterday</span>
+              </div>
+            </div>
+            <i class='bx bx-cart cart three' ></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Total Return</div>
+              <div class="number">11,086</div>
+              <div class="indicator">
+                <i class='bx bx-down-arrow-alt down'></i>
+                <span class="text">Down From Today</span>
+              </div>
+            </div>
+            <i class='bx bxs-cart-download cart four' ></i>
+          </div> -->
+
+        <h1 style="color: #63799B;">ลูกค้าที่สนใจทำแผนประกัน</h1>
         <legend></legend>
+        <div class="col-12">
+          <div class="bg-table">
+            <table class="table table-list">
+              <thead class="table-dark">
+                <tr>
+                  <th class="first-col"></th>
+                  <th></th>
+                  <th class="text-center">ชื่อลูกค้า</th>
+                  <th class="text-center">เบอร์โทรศัพท์</th>
+                  <th class="text-center">อีเมล</th>
+                  <th class="last-col text-center">สถานะ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="tr-content" *ngFor="let user of user |
+                paginate: { 
+                  itemsPerPage: 4, 
+                  currentPage: page
+                  
+                 }">
+                  <td class="text-center"><img src="../../../../../assets/img/avatar/{{getRandom()}}" alt="" width="85"
+                      height="85"></td>
+                  <td *ngIf="isSuccess">
+                    <i class="far fa-check-circle" style="color: #22c55e;"></i>
+                  </td>
+                  <!-- <td><img src="../../../../../assets/img/user.png" alt="" width="100" height="100"></td> -->
+                  <td class="text-center">คุณ&nbsp; &nbsp;{{user.user_firstname}}&nbsp; &nbsp; &nbsp;
+                    {{user.user_lastname}}</td>
+                  <td class="text-center">{{user.user_phone}}</td>
+                  <td class="text-center"><i class="far fa-envelope mx-1" style="font-size: 15px;"></i>
+                    {{user.user_email}}</td>
+                  <td class="text-center">
+                    <!-- <button type="button" class="button circle success">
+                      <i class="fas fa-check" style="font-size: 20px;"></i></button> -->
+                    <!-- 
+                      <button type="button" class="btn btn-success mx-1">ติดต่อแล้ว</button>
+                      <button type="button" class="btn btn-danger">ยังไม่ติดต่อ</button> -->
 
-        <div class="col-12 mt-2">
-            <div class="bg-table">
-                <table class="table table-list">
-                    <thead class="table-dark">
-                        <tr>
-                            <th class="first-col"></th>
-                            <th class="text-center">ชื่อลูกค้า</th>
-                            <th class="text-center">เบอร์โทรศัพท์</th>
-                            <th class="text-center">อีเมล</th>
-                            <th class="last-col text-center">สถานะ</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let user of user;" class="tr-content">
-                            <td class="text-center"><img src="../../../../../assets/img/avatar/{{getRandom()}}" alt="" width="100"
-                                    height="100"></td>
-                            <!-- <td><img src="../../../../../assets/img/user.png" alt="" width="100" height="100"></td> -->
-                            <td class="text-center">คุณ&nbsp; &nbsp;{{user.user_firstname}}&nbsp; &nbsp; &nbsp; {{user.user_lastname}}</td>
-                            <td class="text-center">{{user.user_phone}}</td>
-                            <td class="text-center"><i class="far fa-envelope mx-1" style="font-size: 15px;"></i> {{user.user_email}}</td>
-                            <td class="text-center">
-                                <!-- <i class="far fa-envelope"></i>
-                                <i class="fas fa-phone-alt"></i> -->
 
-                                <!-- <button type="button" class="btn btn-link-need mx-1"><i class="fas fa-check"
-                                        style="font-size: 20px;"></i></button>
-                                <button type="button" class="btn btn-link-need-1"><i class="fas fa-times"
-                                        style="font-size: 20px;"></i>
-                                </button> -->
 
-                                <!-- <button type="button" class="circle success">
-                                    <i class="fas fa-check"
-                                        style="font-size: 20px;"></i>
-                                </button> -->
 
-                                <button type="button" class="button circle success">
-                                    <i class="fas fa-check" style="font-size: 20px;"></i></button>
-                                <button type="button" class="button circle not mx-2">
-                                    <i class="fas fa-times" style="font-size: 20px;"></i></button>
+                    <label class="switch-relative">
+                      <input type="checkbox">
+                      <div class="slider-green">
+                        <span class="on subtitle2 fix-switch">ติดต่อแล้ว</span>
+                        <span class="off subtitle2 fix-switch">ยังไม่ติดต่อ</span>
+                      </div>
+                    </label>
 
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
 
-            </div>
-
+                    <!-- <button type="button" class="button circle not mx-2">
+                      <i class="fas fa-times" style="font-size: 20px;"></i></button> -->
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="d-flex justify-content-end">
+            <pagination-controls class="text-center my-pagination" (pageChange)="page=$event"></pagination-controls>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </section>
+</body>
 
 
-<!-- Modal -->
+
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal
+</button>
+
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <!-- <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div> -->
-            <div class="modal-body">
-                <h2 class="text-center"> คุณต้องการออกจากระบบหรือไม่ ?</h2>
-                <!-- <div class="text-center">
-                        <i class="fas fa-sign-out-alt" style="font-size: 60px;"></i>
-                    </div> -->
-                <div class="text-center mt-2">
-                    <button type="button" class="btn btn-link-need subtitle1 mx-2" routerLink="/login">ใช่</button>
-                    <button type="button" class="btn btn-link-need-1 subtitle1" data-bs-dismiss="modal">ไม่</button>
-                </div>
-            </div>
-            <!-- <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
-        </div> -->
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!-- <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div> -->
+      <div class="modal-body">
+        <h2 class="text-center"> คุณต้องการออกจากระบบหรือไม่ ?</h2>
+        <!-- <div class="text-center">
+                      <i class="fas fa-sign-out-alt" style="font-size: 60px;"></i>
+                  </div> -->
+        <div class="text-center mt-2">
+          <button type="button" class="btn btn-link-need subtitle1 mx-2" routerLink="/login">ใช่</button>
+          <button type="button" class="btn btn-link-need-1 subtitle1" data-bs-dismiss="modal">ไม่</button>
         </div>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div> -->
     </div>
+  </div>
 </div>

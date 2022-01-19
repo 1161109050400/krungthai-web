@@ -11,13 +11,13 @@ import { HospitalService } from 'src/app/services/hospital.service';
   styleUrls: ['./dashboard-hospital.component.scss'],
 })
 export class DashboardHospitalComponent implements OnInit {
+
   hospital: any;
-  hospitalName = new FormControl('', [Validators.required]);
-  hospitalLocation = new FormControl('', [Validators.required]);
-  // latitude = new FormControl('', [Validators.required]);
-  // longitude = new FormControl('', [Validators.required]);
-  phone = new FormControl('', [Validators.required]);
+  hospitalName = new FormControl(null, [Validators.required]);
+  hospitalLocation = new FormControl(null, [Validators.required]);
+  phone = new FormControl(null, [Validators.required]);
   hospital_id: number | null = null;
+
   @ViewChild('closeModal') closeModal!: ElementRef;
   constructor(
     private http: HttpClient,
@@ -52,9 +52,9 @@ export class DashboardHospitalComponent implements OnInit {
   }
   setCreateModal() {
     this.hospital_id = null;
-    this.hospitalName.setValue(' ');
-    this.hospitalLocation.setValue(' ');
-    this.phone.setValue(' ');
+    this.hospitalName.setValue('');
+    this.hospitalLocation.setValue('');
+    this.phone.setValue('');
   }
 
   setDeleteModal(id:number){
@@ -66,8 +66,6 @@ export class DashboardHospitalComponent implements OnInit {
       // console.log(result);
       this.hospitalName.setValue(result.hospital_name);
       this.hospitalLocation.setValue(result.hospital_location);
-      // this.latitude.setValue(result.hospital_latitude);
-      // this.longitude.setValue(result.hospital_longitude);
       this.phone.setValue(result.hospital_phone);
     });
   }
@@ -76,13 +74,10 @@ export class DashboardHospitalComponent implements OnInit {
     this.hospitalService.putHospital(
         this.hospitalName.value,
         this.hospitalLocation.value,
-        // this.latitude.value,
-        // this.longitude.value,
         this.phone.value,
         this.hospital_id
       )
       .subscribe((result) => {
-        // alert('Edit successfully !');
         this.toastr.success('แก้ไขข้อมูลสำเร็จ','แจ้งเตือน');
         this.getHospital();
         this.closeModal.nativeElement.click();
@@ -94,8 +89,8 @@ export class DashboardHospitalComponent implements OnInit {
   onDelete() {
     this.hospitalService.deleteHospital(this.hospital_id).subscribe((result) => {
       this.toastr.success('ลบข้อมูลสำเร็จ','แจ้งเตือน');
-      this.getHospital();
       this.closeModal.nativeElement.click();
+      this.getHospital();
     });
   }
 

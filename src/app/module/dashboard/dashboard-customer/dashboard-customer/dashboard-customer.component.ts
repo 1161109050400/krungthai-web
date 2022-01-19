@@ -15,13 +15,18 @@ export class DashboardCustomerComponent implements OnInit {
     private router: Router,
     private http: HttpClient
   ) {}
+
+  isSuccess: boolean = true;
+  totalLength: any;
+  page: number = 1;
   user: any;
+  showpost: any = [];
 
   getUser() {
     this.formRegisterService.getUser().subscribe((Response) => {
       this.user = Response;
-
       console.log(this.user);
+      this.totalLength = Response.length;
       // this.user[0].user_firstname;
     });
   }
@@ -30,5 +35,10 @@ export class DashboardCustomerComponent implements OnInit {
   }
   ngOnInit(): void {
     this.getUser();
+    this.formRegisterService.getUser().subscribe((result) => {
+      this.showpost = result;
+      this.totalLength = result.length;
+      console.log(this.showpost);
+    });
   }
 }

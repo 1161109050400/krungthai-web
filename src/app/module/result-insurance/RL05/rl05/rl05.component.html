@@ -1,26 +1,91 @@
-<div class="container-fluid" style="margin-top: 35px;">
-    <div class="row">
-        <div class="col-6">
-            
-        </div>
-        <p>rl05 works!</p>
-    </div>
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
+<app-header-frontend></app-header-frontend>
+<div class="container-fluid" style="margin-top: 35px;" data-aos="zoom-in">
+  <div class="row">
+    <nav class="subtitle3">
+      <i class="fas fa-chevron-left" style="align-items: left; margin-left: 20px; margin-top: 7px; font-size: 17px;"
+        routerLink="/krungthai/home-page">
+        <span style="padding-top: 20px;font-size: 25px;" class="mx-2">ย้อนหลับ</span></i>
+    </nav>
+  </div>
 
-      <!-- ngfor loop using get dynamic value and ngclass for add acive class -->
-      <div class="carousel-item" *ngFor="let result of data; let i = index" [ngClass]="{'active': i === 1}">
-       <img src={{result.img}} title={{result.title}} />
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-6 col-xl-5 col-lg-6 order-1">
+      <div class="row">
+        <div class="img animate__animated animate__zoomInLeft">
+          <img src="../../../../../assets/img/insurance/rl05.svg" alt="">
+        </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+    <div class="col-12 col-sm-6 col-md-12 col-xl-7 col-lg-6 order-2">
+      <div class="row" style="margin-top: 5rem;">
+        <h1 class="text-center">คุณเหมาะกับแผนประกัน <br>แบบประกันบำนาญ Life Retire 5</h1>
+        <span class="text-center"> เมื่อการวางแผนการเกษียณ ไม่ได้เป็นเรื่องของผู้สูงอายุอีกต่อไป
+          เริ่มต้นวางแผนตั้งแต่วันนี้เพื่อให้ความสุขอยู่คู่กับคุณในวัยเกษียณ</span>
+      </div>
+      <div class="row">
+        <i class="far fa-address-card text-color" style="font-size: 20px;">
+          <span class="text-color mx-2" style="font-size: 1.75rem;">จุดเด่นผลิตภัณฑ์</span>
+        </i>
+        <div class="col-10">
+          <legend></legend>
+        </div>
+      </div>
+      <div class="row">
+        <div class="img-rl05">
+          <!-- <img src="../../../../../assets/img/insurance/ProductImageHighlight_355corona-virus.jpg"> -->
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12 col-xl-4 text-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+          data-aos-duration="1200">
+          <img src="../../../../../assets/img/insurance/select.png" alt="" width="70px">
+          <label class="subtitle3">ช่วยให้คุณเริ่มต้นวางแผนได้ง่ายขึ้น
+            ด้วยการชำระเบี้ยประกันภัย 5 ปี คุ้มครองจนครบอายุ 85 ปี</label>
+        </div>
+        <div class="col-12 col-xl-4 text-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+          data-aos-duration="1200">
+          <img src="../../../../../assets/img/insurance/select.png" alt="" width="70px">
+          <label class="subtitle3">รับเงินบำนาญ
+            15% ของจำนวนเงินเอาประกันภัย
+            ตั้งแต่วันครบรอบปีกรมธรรม์ที่อายุครบ 60 ปี - 85 ปี</label>
+        </div>
+        <div class="col-12 col-xl-4 text-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+          data-aos-duration="1500">
+          <img src="../../../../../assets/img/insurance/select.png" alt="" width="70px">
+          <label class="subtitle3"> รับสิทธิลดหย่อนภาษี
+            สูงสุดถึง 300,000 บาท*
+            โดยเป็นไปตามข้อกำหนดและเงื่อนไขของกรมสรรพากร</label>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <div class="d-grid gap-2 col-12 col-xl-2 mx-auto">
+    <button class="btn btn-outline-primary subtitle1" type="button">
+      <i class="far fa-thumbs-up"></i>
+      สนใจซื้อผลิตภัณฑ์นี้</button>
+  </div>
+  <br>
+  <!-- <div class="row mb-3" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+    <div class="col-12 col-sm-12 col-md-12 col-xl-12 col-lg-12">
+      <div class="text-center">
+        <h1>แผนประกันที่ใกล้เคียง</h1>
+      </div>
+    </div>
+  </div> -->
+  <br>
+
+
+
+  <br>
+  <br>
 </div>
 
+<div class="footer-activity">
+  <div class="col-12 col-md-12 text-center" style="text-align: center;">
+    <span style="color: #fff;font-size: 20px;">
+      <!-- <i class="far fa-copyright" style="color: #fff;font-size: 10px;"></i> -->
+      เว็ปไซด์นี้สำหรับเสนอขายผลิตภัณฑ์ประกันชีวิตเท่านั้น
+    </span>
+  </div>
+</div>

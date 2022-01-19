@@ -1,6 +1,6 @@
-@import "/src/app/module/dashboard/dashboard.component.scss";
 @import "/src/assets/scss/base/table";
 @import "/src/app/module/dashboard/dashboard-hospital/dashboard-hospital/dashboard-hospital.component.scss";
+@import "../../dashboard-customer/dashboard-customer/dashboard-customer.component.scss";
 
 legend {
     display: block;
@@ -56,7 +56,7 @@ legend {
 // }
 
 .drag-area{
-  border: 3px dashed #999999;
+  border: 3px dashed #828282;
   // height: 500px;
   // width: 700px;
   border-radius: 5px;
@@ -69,8 +69,9 @@ legend {
   border: 2px solid #fff;
 }
 .drag-area .icon{
-  font-size: 50px;
-  color: #999999;
+  font-size: 45px;
+  color: #828282;
+  margin-top: 10px;
 }
 
 .upload-btn-wrapper {
@@ -88,5 +89,76 @@ legend {
   opacity: 0;
 }
 
+.icon{
+  display: inline;
+}
 
 
+.btn-warning {
+  color: #ffffff; /*Make the color Change Here*/
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active,
+.btn-warning.active,
+.open .dropdown-toggle.btn-warning {
+  color: #ffffff;
+  background-color: #ed9c28;
+  border-color: #d58512;
+// text-decoration:underline;
+}
+
+.btn-warning:active,
+.btn-warning.active,
+.open .dropdown-toggle.btn-warning {
+  background-image: none;
+}
+
+.btn-warning.disabled,
+.btn-warning[disabled],
+fieldset[disabled] .btn-warning,
+.btn-warning.disabled:hover,
+.btn-warning[disabled]:hover,
+fieldset[disabled] .btn-warning:hover,
+.btn-warning.disabled:focus,
+.btn-warning[disabled]:focus,
+fieldset[disabled] .btn-warning:focus,
+.btn-warning.disabled:active,
+.btn-warning[disabled]:active,
+fieldset[disabled] .btn-warning:active,
+.btn-warning.disabled.active,
+.btn-warning[disabled].active,
+fieldset[disabled] .btn-warning.active {
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+
+.uploaded-area{
+  max-height: 232px;
+  overflow-y: scroll;
+}
+.uploaded-area.onprogress{
+  max-height: 150px;
+}
+.uploaded-area::-webkit-scrollbar{
+  width: 0px;
+}
+.uploaded-area .row .content{
+  display: flex;
+  align-items: center;
+}
+.uploaded-area .row .details{
+  display: flex;
+  margin-left: 15px;
+  flex-direction: column;
+}
+.uploaded-area .row .details .size{
+  color: #404040;
+  font-size: 11px;
+}
+.uploaded-area i.fa-check{
+  font-size: 16px;
+}

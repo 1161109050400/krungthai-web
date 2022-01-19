@@ -31,7 +31,10 @@ import { Ec10Component } from './module/result-insurance/10EC/ec10/ec10.componen
 import { Rl05Component } from './module/result-insurance/RL05/rl05/rl05.component';
 import { RpulComponent } from './module/result-insurance/RPUL/rpul/rpul.component';
 import { NgImageSliderModule } from 'ng-image-slider';
-
+import { HeaderFrontendComponent } from './shared/header-frontend/header-frontend/header-frontend.component';
+import { HeaderBackendComponent } from './shared/header-backend/header-backend/header-backend.component';
+import { SidebarBackendComponent } from './shared/sidebar-backend/sidebar-backend/sidebar-backend.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -57,6 +60,9 @@ import { NgImageSliderModule } from 'ng-image-slider';
     Ec10Component,
     Rl05Component,
     RpulComponent,
+    HeaderFrontendComponent,
+    HeaderBackendComponent,
+    SidebarBackendComponent,
  
   ],
   imports: [
@@ -75,9 +81,8 @@ import { NgImageSliderModule } from 'ng-image-slider';
     }),
     BrowserAnimationsModule,
     NgxSpinnerModule,
-    NgImageSliderModule
-
-    
+    NgImageSliderModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

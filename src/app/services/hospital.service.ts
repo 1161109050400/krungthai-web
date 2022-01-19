@@ -11,16 +11,12 @@ export class HospitalService {
   Hospital(
     hospital_name: string,
     hospital_location: string,
-    // hospital_latitude: string,
-    // hospital_longitude: string,
     hospital_phone: string
   ) {
     // console.log(user_id);
     return this.http.post('/api/hospital/post-hospital', {
       hospital_name,
       hospital_location,
-      // hospital_latitude,
-      // hospital_longitude,
       hospital_phone,
     });
   }
@@ -36,16 +32,12 @@ export class HospitalService {
   putHospital(
     hospital_name: string,
     hospital_location: string,
-    // hospital_latitude: string,
-    // hospital_longitude: string,
     hospital_phone: string,
     hospital_id: number|null
   ) {
     return this.http.put<any>('/api/hospital/put-hospital/'+hospital_id, {
       hospital_name,
       hospital_location,
-      // hospital_latitude,
-      // hospital_longitude,
       hospital_phone,
     });
   }

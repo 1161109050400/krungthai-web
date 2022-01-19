@@ -4,6 +4,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import * as AOS from 'aos';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-form-axa',
@@ -32,13 +33,13 @@ export class FormAxaComponent implements OnInit {
   isRetire: boolean = false; // เกษียณอายุ
   isPest: boolean = false; // โรคร้าย
   isHealth: boolean = false; //สุขภาพ
-
   public genderType: boolean = true;
 
   constructor(
     private spinner: NgxSpinnerService,
     private router: Router,
-    private http: HttpClient
+    private http: HttpClient,
+    private toastr: ToastrService
   ) {}
   onSelectYear(data: any) {
     if (data) {
@@ -51,7 +52,6 @@ export class FormAxaComponent implements OnInit {
     }
   }
   _submit() {
-    //let gender = this.form.controls.gender.value;
     let gender = 'Female';
     if (this.isSelected) {
       gender = 'Male';
@@ -115,29 +115,30 @@ export class FormAxaComponent implements OnInit {
         let value2 = value[value.length - 1]; //ผลลัพภ์แผนประกัน
         console.log(value2);
 
-        this.spinner.show();
-        setTimeout(() => {
-          /** spinner ends after 5 seconds */
-          this.spinner.hide();
+        if (year == null || status == null || occupation == null || incomeYears == null || insuranceType == null) {
+          this.toastr.warning('กรุณากรอกข้อมูลให้ครบ', 'แจ้งเตือน');
 
-          if ('PWLNP85' == value2) {
-            this.router.navigate(['krungthai/pwlnp85']);
-          } else if ('WLANP85' == value2) {
-            this.router.navigate(['krungthai/wlanp85']);
-          } else if ('10EC' == value2) {
-            this.router.navigate(['krungthai/10ec']);
-          } else if ('RL05' == value2) {
-            this.router.navigate(['krungthai/rl05']);
-          } else if ('RPUL' == value2) {
-            this.router.navigate(['krungthai/rpul']);
-          }
-        }, 1500);
-      } else {
-        console.log('no data');
+        } else {
+          this.spinner.show();
+          setTimeout(() => {
+            /** spinner ends after 5 seconds */
+            this.spinner.hide();
+
+            if ('PWLNP85' == value2) {
+              this.router.navigate(['krungthai/pwlnp85']);
+            } else if ('WLANP85' == value2) {
+              this.router.navigate(['krungthai/wlanp85']);
+            } else if ('10EC' == value2) {
+              this.router.navigate(['krungthai/10ec']);
+            } else if ('RL05' == value2) {
+              this.router.navigate(['krungthai/rl05']);
+            } else if ('RPUL' == value2) {
+              this.router.navigate(['krungthai/rpul']);
+            }
+          }, 1000);
+        }
       }
     });
-
-    // console.log(this.genderSelect);
   }
   ngOnInit() {
     AOS.init({

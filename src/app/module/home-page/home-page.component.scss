@@ -541,7 +541,7 @@ legend {
 }
 
 .text-primary {
-  color: #007bff!important;
+  color: #fff!important;
 }
 .text-uppercase {
   text-transform: uppercase!important;
@@ -549,3 +549,11 @@ legend {
 .position-absolute {
   position: absolute!important;
 }
+
+.border{
+  width: 200px;
+  height: 2px;
+  background: #fff;
+  margin: 20px auto;
+}
+

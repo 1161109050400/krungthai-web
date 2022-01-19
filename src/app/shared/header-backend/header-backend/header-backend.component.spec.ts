@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MoneyComponent } from './money.component';
+import { HeaderBackendComponent } from './header-backend.component';
 
-describe('MoneyComponent', () => {
-  let component: MoneyComponent;
-  let fixture: ComponentFixture<MoneyComponent>;
+describe('HeaderBackendComponent', () => {
+  let component: HeaderBackendComponent;
+  let fixture: ComponentFixture<HeaderBackendComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MoneyComponent ]
+      declarations: [ HeaderBackendComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MoneyComponent);
+    fixture = TestBed.createComponent(HeaderBackendComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
