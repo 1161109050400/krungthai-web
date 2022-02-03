@@ -5,7 +5,7 @@
             <i class="fas fa-chevron-left"
                 style="align-items: left; margin-left: 20px; margin-top: 7px; font-size: 17px;"
                 routerLink="/krungthai/home-page">
-                <span style="padding-top: 20px;font-size: 25px;" class="mx-2">ย้อนหลับ</span></i>
+                <span style="padding-top: 20px;font-size: 25px;" class="mx-2">ย้อนกลับ</span></i>
         </nav>
     </div>
 
@@ -39,29 +39,99 @@
                 <div class="col-12 col-xl-4 text-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
                     data-aos-duration="1200">
                     <img src="../../../../../assets/img/insurance/select.png" alt="" width="70px">
-                    <label class="subtitle3">ใช้สิทธิกู้ยืมจากมูลค่าในกรมธรรม์ เพื่อใช้ในเวลาฉุกเฉิน</label>
+                    <label class="subtitle3">อุ่นใจมีเงินใช้ทุกปี
+                        โดยเริ่มต้น ณ สิ้นปีที่ 1 ถึงสิ้นปีที่ 9 ด้วยอัตรา 2% ของจำนวนเงินเอาประกันภัยโดยบริษัทฯ
+                        รับรองการจ่าย รวมทั้งสิ้น 18% ของจำนวนเอาประกันภัย</label>
                 </div>
                 <div class="col-12 col-xl-4 text-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
                     data-aos-duration="1200">
                     <img src="../../../../../assets/img/insurance/select.png" alt="" width="70px">
-                    <label class="subtitle3">สิทธิพิเศษในการซื้อความคุ้มครองเพิ่มเติมเพื่อคุ้มครองค่ารักษาพยาบาล,
-                        อุบัติเหตุ, โรคร้ายแรง และค่าชดเชยรายวัน
-                        ตามกฎเกณฑ์การรับประกันของบริษัทฯ </label>
+                    <label class="subtitle3">
+                        รวมรับผลประโยชน์ขั้นต่ำ 200%
+                        โดยจะได้รับเงินครบกำหนดสัญญา ณ สิ้นปีที่ 10 ด้วยจำนวนเงิน 182% ของจำนวนเงิน
+                        เอาประกันภัย </label>
                 </div>
                 <div class="col-12 col-xl-4 text-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
                     data-aos-duration="1500">
                     <img src="../../../../../assets/img/insurance/select.png" alt="" width="70px">
-                    <label class="subtitle3"> สามารถนำเบี้ยประกันภัยหลักของแบบประกันภัยนี้ และสัญญาเพิ่มเติมชั่วระยะเวลา
-                        ระยะ 10 ปีขึ้นไป มาหักลดหย่อน
-                        ภาษีได้ตามเงื่อนไขของกรมสรรพากร</label>
+                    <label class="subtitle3"> พิเศษ เงินปันผล*
+                        ซึ่งเริ่มต้น ณ สิ้นปีที่ 7-10 ด้วยอัตราสูงสุดปีละ 2% ของจำนวนเงินเอาประกันภัยและ ณ สิ้นปี
+                        ที่ 10 รับเงินปันผลสูงสุด 22% ของจำนวนเงินเอาประกันภัย รวมรับสูงสุด 28% ของจำนวน
+                        เงินเอาประกันภัย</label>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="container">
+    <div class="row fix-padding">
+        <div class="col-xl-6 col-12">
+            <img src="../../../../../assets/img/insurance/10.jpg" alt="" class="fix-img">
+        </div>
+        <div class="col-xl-6 col-12">
+            <img src="../../../../../assets/img/insurance/11.jpg" class="fix-img">
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="tab">
+            <ul>
+                <li id="mission" [class.color]="id === 'mission'" (click)="tabChange('mission')"><i
+                        class="fas fa-question-circle mx-1"></i> ลักษณะแบบประกัน</li><span style="color: #fff;">|</span>
+                <li id="version" [class.color]="id === 'vision'" (click)="tabChange('vision')"><i
+                        class="fas fa-exclamation-circle mx-1"></i> กฎเกณฑ์การรับประกัน</li><span
+                    style="color: #fff;">|</span>
+                <li id="value" [class.color]="id === 'value'" (click)="tabChange('value')">สนใจแผน Easy Cash</li>
+            </ul>
+            <div class="content">
+                <div class="content-value" *ngIf="id === 'mission'">
+                    <h2>ลักษณะแบบประกัน Easy Cash ? </h2>
+                    <li>เป็นการประกันชีวิตแบบออมทรัพย์ระยะสั้น ที่ให้ผลตอบแทนสูง</li>
+                    <li>คุ้มครอง 10 ปีและชำระเบี้ยประกันภัย 6 ปี</li>
+                    <li>ความคุ้มครองชีวิต : ตามจำนวนเงินเอาประกันภัย หรือ มูลค่าเวนคืนเงินสด หรือ
+                        เบี้ยประกันภัยของกรมธรรม์หลักที่ชำระมาแล้วทั้งหมดแล้วแต่จำนวนใดจะมากกว่า</li>
+                </div>
+                <div class="content-value" *ngIf="id === 'vision'">
+                    <h2>เงื่อนไขการรับประกัน</h2>
+                    <li>อายุขณะขอเอาประกันภัย 1 เดือน – 70 ปี</li>
+                    <li>จำนวนเงินเอาประกันภัยขั้นต่ำ 100,000 บาท</li>
+                    <li>สามารถซื้อสัญญาเพิ่มเติมได้ ตามกฎเกณฑ์การรับประกันของสัญญาเพิ่มเติมนั้นๆ
+                        ยกเว้น สัญญาเพิ่มเติมคุ้มครองโรคร้ายแรง แบบจ่ายจำนวนเงินเอาประกันภัยของกรมธรรม์หลักล่วงหน้า(SLI)
+                        สัญญาเพิ่มเติม
+                        ผลประโยชน์มรณกรรมผู้ชำระเบี้ยประกันภัย(WPD)และสัญญาเพิ่มเติมผลประโยชน์ผู้ชำระเบี้ยประกันภัย(WPDD)
+                    </li>
+                    <li>หลังจากสิ้นสุดระยะเวลาชำระเบี้ย สามารถชำระเบี้ยประกันภัย ในส่วนของสัญญาเพิ่มเติมต่อ
+                        จนสิ้นสุดระยะเวลาคุ้มครองได้
+                        (ในปีที่ 7-10) ตามกฎเกณฑ์ของบริษัท</li>
+                </div>
+
+                <div class="content-value" *ngIf="id === 'value'">
+                    <h2>สนใจแผน Easy Cash</h2>
+                    <li>กรอกรายละเอียดข้อมูล เพื่อรับการติดต่อกลับ</li>
+                    <li>โทรหาเราที่เบอร์ 093-110-7879</li>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <br>
+
+    <div class="row" style="background-color:#f1f2f7;">
+        <div class="col-12 text-center">
+            <button type="button" class="btn-apply ripples mx-3" routerLink="/krungthai/form-register">สนใจผลิตภัณฑ์</button>
+            <a class="btn-send ripple" download={{getFileName(85)}} href="/api/pdf-storage/{{getFileName(85)}}">ดาวน์โหลดโบรชัวร์</a>
+        </div>
+    </div>
+
+    <br>
+   
     <div class="row mb-3" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
         <div class="col-12 col-sm-12 col-md-12 col-xl-12 col-lg-12">
             <div class="text-center">
-                <h1>แผนประกันที่ใกล้เคียง</h1>
+                <h1>แผนประกันอื่นๆ ที่น่าสนใจ</h1>
             </div>
         </div>
     </div>
@@ -79,12 +149,14 @@
         </div>
         <div class="col-8 mt-1">
             <!-- <i class="fas fa-chevron-circle-right text-color" style="font-size: 1rem;"></i> -->
-            <span class="text-color animate__animated animate__bounceInRight" style="font-size: 1.75rem;"> ประกันควบการลงทุน | iInvest</span>
+            <span class="text-color animate__animated animate__bounceInRight" style="font-size: 1.75rem;">
+                ประกันควบการลงทุน | iInvest</span>
             <div class="col-10">
                 <legend></legend>
             </div>
             <br>
-            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ตอบโจทย์การออมเพื่อความสําเร็จในการบริหารความมั่งคั่ง เพิ่มมูลค่าทางการเงิน พร้อมปกป้อง <br>
+            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ตอบโจทย์การออมเพื่อความสําเร็จในการบริหารความมั่งคั่ง
+                เพิ่มมูลค่าทางการเงิน พร้อมปกป้อง <br>
                 ความมั่งคั่งของคุณในเวลาเดียวกัน เพื่อส่งต่อความมั่งคั่งที่ยั่งยืนจากรุ่นสู่รุ่น</label>
             <br>
             <div class="row mt-3">
@@ -111,12 +183,11 @@
         </div>
     </div>
 
-    <div class="row" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+    <div class="row">
         <div class="col-4" style="padding: 10px 70px;">
             <!-- <img src="../../../../../assets/img/insurance/9e711ed2b06920ca4575f0ee27a6116aa5ef4fc5_iinvest_340x228px.jpg"> -->
             <figure class="hover-img">
-                <img
-                    src="../../../../../assets/img/insurance/b.jpg" />
+                <img src="../../../../../assets/img/insurance/b.jpg" />
                 <figcaption>
                     <h3>ประกันตลอดชีพ | Life Legacy</h3>
                 </figcaption>
@@ -131,7 +202,8 @@
                 <legend></legend>
             </div>
             <br>
-            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ช่วยให้คุณสามารถวางแผนล่วงหน้า เพื่อจัดสรรมรดกของคุณตามที่คุณต้องการส่งต่อ <br> ความมั่งคั่งของคุณให้คนที่คุณรัก</label>
+            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ช่วยให้คุณสามารถวางแผนล่วงหน้า
+                เพื่อจัดสรรมรดกของคุณตามที่คุณต้องการส่งต่อ <br> ความมั่งคั่งของคุณให้คนที่คุณรัก</label>
             <br>
             <div class="row mt-3">
                 <div class="col-4">
@@ -150,14 +222,6 @@
         </div>
     </div>
     <br>
-    <br>
-    <br>
 </div>
 
-<div class="footer-activity">
-    <div class="col-12 col-md-12 text-center" style="text-align: center;">
-        <span style="color: #fff;font-size: 20px;">
-            <i class="far fa-copyright" style="color: #fff;font-size: 10px;"></i>
-            เว็ปไซด์นี้สำหรับเสนอขายผลิตภัณฑ์ประกันชีวิตเท่านั้น</span>
-    </div>
-</div>
+<app-footer-frontend></app-footer-frontend>

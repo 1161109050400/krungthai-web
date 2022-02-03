@@ -35,6 +35,10 @@ import { HeaderFrontendComponent } from './shared/header-frontend/header-fronten
 import { HeaderBackendComponent } from './shared/header-backend/header-backend/header-backend.component';
 import { SidebarBackendComponent } from './shared/sidebar-backend/sidebar-backend/sidebar-backend.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FooterFrontendComponent } from './shared/footer-frontend/footer-frontend/footer-frontend.component';
+import { CardHomeComponent } from './shared/card-home/card-home/card-home.component';
+import { DocumentInsuranceComponent } from './module/document/document-insurance/document-insurance.component';
+import { HospitalComponent } from './module/hospital/hospital/hospital.component';
 
 
 @NgModule({
@@ -63,6 +67,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HeaderFrontendComponent,
     HeaderBackendComponent,
     SidebarBackendComponent,
+    FooterFrontendComponent,
+    CardHomeComponent,
+    DocumentInsuranceComponent,
+    HospitalComponent,
  
   ],
   imports: [

@@ -1,9 +1,10 @@
 <app-header-frontend></app-header-frontend>
+
 <body>
     <header class="l-header scroll-header mt-5" id="header">
         <nav class="nav container">
             <!-- <a href="#" class="nav__logo" style="color: white;">Delivery</a> -->
-            <img src="../../../assets/img/logo.png" alt="" class="logo">
+            <img src="../../../assets/img/logo-mai2.png" alt="" class="logo">
 
             <div class="nav__menu" [ngClass]="{'show-menu':navActive}">
                 <ul class="nav__list">
@@ -29,10 +30,10 @@
                         <a href="#about" class="nav__link">เกี่ยวกับบริษัท</a>
                     </li>
                     <li class="nav__listitem">
-                        <a href="#services" class="nav__link">ร.พ.ในเครือข่าย</a>
+                        <a href="#services" class="nav__link" routerLink="/krungthai/hospital">ร.พ.ในเครือข่าย</a>
                     </li>
                     <li class="nav__listitem">
-                        <a href="#contact" class="nav__link">ดาวน์โหลดเอกสาร</a>
+                        <a href="#contact" class="nav__link" routerLink="/krungthai/download">ดาวน์โหลดเอกสาร</a>
                     </li>
                     <li class="nav__listitem">
                         <a href="#contact" class="nav__link" routerLink="/krungthai/contact">ติดต่อเรา</a>
@@ -122,6 +123,7 @@
                     <div class="text-white callout-subtitle animate__animated animate__zoomInDown">Decision Support
                         System for Insurance Plan
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -172,7 +174,7 @@
             </div>
         </div>
         <br>
-        <div class="about pt-5 mb-5" id="about">
+        <div class="col-12 about pt-5 mb-5" id="about">
             <div class="container">
                 <div class="position-relative d-flex align-items-center justify-content-center">
                     <div class="display-1 text-uppercase about-text" style="-webkit-text-stroke: 1px #fff;">About Us
@@ -183,27 +185,9 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-12 col-xl-6">
-                <img src="../../../assets/img/About us page-pana.svg" alt="" width="700px">
-            </div>
-            <div class="col-12 col-xl-5" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
-                data-aos-duration="2000">
-                <div class="">
-                    <label style="color: #fff;">เกี่ยวกับบริษัท</label>
-                    <h2 style="color: #fff;">กรุงไทย-แอกซ่า ประกันชีวิต</h2>
-                    <label style="color: #fff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; เกิดจากการผนึกกำลังของ บมจ. ธนาคารกรุงไทย
-                        ธนาคารพาณิชย์ชั้นนำของไทย
-                        และกลุ่มแอกซ่า กลุ่มธุรกิจประกันชีวิต สุขภาพและบริหารสินทรัพย์ระดับโลก
-                        ผลให้ กรุงไทย-แอกซ่า ประกันชีวิต เป็นบริษัทประกันชีวิตที่มีสถานะทางการเงินที่แข็งแกร่ง
-                        และมีความเชี่ยวชาญในด้านการรับประกันชีวิต และประกันสุขภาพ
-                        โดยมุ่งมั่นที่จะเป็นบริษัทประกันชีวิตอันดับ 1 ในใจของคนไทย</label>
-                    <!-- <a href="#" class="button">Explore history</a> -->
-                </div>
-            </div>
-        </div>
+        <app-card-home></app-card-home>
 
-        <div class="about pt-5 mb-5">
+        <div class="col-12 about pt-5 mb-5">
             <div class="container">
                 <div class="position-relative d-flex align-items-center justify-content-center">
                     <div class="display-1 text-uppercase about-text" style="-webkit-text-stroke: 1px #fff;">Insurance
@@ -215,8 +199,8 @@
         </div>
         <br>
         <div class="row">
-            <div class="col-12 col-xl-4 mt-3" data-aos="fade-up"
-            data-aos-anchor-placement="top-bottom"  data-aos-duration="1000">
+            <div class="col-12 col-xl-4 mt-3" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+                data-aos-duration="1000">
                 <div class="services__content">
                     <svg class="services__img" xmlns="http://www.w3.org/2000/svg" version="1.1"
                         xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="60"
@@ -250,8 +234,8 @@
                     <a href="" style="float: right;" routerLink="/krungthai/form-register">อ่านต่อ...</a>
                 </div>
             </div>
-            <div class="col-12 col-xl-4 mt-3" data-aos="fade-up"
-            data-aos-anchor-placement="top-bottom"  data-aos-duration="1100">
+            <div class="col-12 col-xl-4 mt-3" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+                data-aos-duration="1100">
                 <div class="services__content">
                     <svg class="services__img" xmlns="http://www.w3.org/2000/svg" version="1.1"
                         xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="60"
@@ -271,8 +255,8 @@
                     <a href="" style="float: right;">อ่านต่อ...</a>
                 </div>
             </div>
-            <div class="col-12 col-xl-4 mt-3" data-aos="fade-up"
-            data-aos-anchor-placement="top-bottom"  data-aos-duration="1200">
+            <div class="col-12 col-xl-4 mt-3" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+                data-aos-duration="1200">
                 <div class="services__content">
                     <svg class="services__img" xmlns="http://www.w3.org/2000/svg" version="1.1"
                         xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="60"
@@ -347,38 +331,12 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="contact pt-5 mb-5">
-            <div class="container">
-                <div class="position-relative d-flex align-items-center justify-content-center">
-                    <div class="display-1 text-uppercase about-text" style="-webkit-text-stroke: 1px #dee2e6;">CONTACT
-                    </div>
-                    <div class="position-absolute text-uppercase text-primary about-text-1">CONTACT ME</div>
-                </div>
-            </div>
-        </div> -->
         <br>
         <br>
-
+        <br>
     </div>
 </body>
 
+<app-footer-frontend></app-footer-frontend>
 
-<div class="footer-activity">
-    <div class="col-12 col-md-12 text-center" style="text-align: center;">
-        <span style="color: #fff;font-size: 20px;">
-            <i class="far fa-copyright" style="color: #fff;font-size: 10px;"> </i>
-            Copyright Decision Support System for Insurance Plan. All right reserved by Chonticha Chotchai</span>
-        <!-- 2020 Krungthai AXA. All right reserved -->
-    </div>
-</div>
 
-<!-- <div class="card">
-    <div class="icon"><i class="material-icons md-36">favorite_border</i></div>
-    <p class="title">Favourites</p>
-    <p class="text">Check all your favourites in one place.</p>
-</div>
-<div class="card">
-    <div class="icon"><i class="material-icons md-36">alternate_email</i></div>
-    <p class="title">Contacts</p>
-    <p class="text">Add or change your contacts and links.</p>
-</div> -->

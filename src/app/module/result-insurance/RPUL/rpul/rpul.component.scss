@@ -31,3 +31,67 @@
     padding-top: 5px;
     text-align: center;
 }
+
+.btn-apply {
+    cursor: pointer;
+    font-family: 'DB HelvethaicaMon X 65 Med' !important;
+    // font-weight: 600;
+    font-size: 1.2rem;
+    padding: 0.6rem 1.5rem;
+    outline: none;
+    color: #0f2f86;
+    border: 1px solid #0f2f86;
+    background: #fff;
+    // border: 1px solid #fff;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  
+  .btn-send {
+    cursor: pointer;
+    font-family: 'DB HelvethaicaMon X 65 Med' !important;
+    // font-weight: 600;
+    font-size: 1.2rem;
+    padding: 0.6rem 1.5rem;
+    outline: none;
+    color: #fff;
+    // border-radius: 0.3rem;
+    background: #0f2f86;
+    border: 1px solid #0f2f86;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  
+  .ripples {
+    background-position: center;
+    transition: background 0.9s;
+  }
+  
+  .ripples:hover {
+    background: #f1f2f7
+      radial-gradient(circle, transparent 1%, #fff 1%) center/15000%;
+  }
+  
+  .ripples:active {
+    background-color: #898d97;
+    background-size: 100%;
+    transition: background 0s;
+  }
+  
+  .ripple {
+    background-position: center;
+    transition: background 0.9s;
+  }
+  
+  .ripple:hover {
+    background: #0f2f86
+      radial-gradient(circle, transparent 1%, #0f2f86 1%) center/15000%;
+  }
+  
+  .ripple:active {
+    background-color: #0435bb;
+    background-size: 100%;
+    transition: background 0s;
+  }

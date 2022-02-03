@@ -1,17 +1,17 @@
 <app-header-frontend></app-header-frontend>
 <div class="container-fluid" style="margin-top: 35px;" data-aos="zoom-in">
     <div class="row">
-        <nav class="subtitle3">
+        <nav class="subtitle3" style="position: fixed;">
             <i class="fas fa-chevron-left"
                 style="align-items: left; margin-left: 20px; margin-top: 7px; font-size: 17px;"
                 routerLink="/krungthai/home-page">
-                <span style="padding-top: 20px;font-size: 25px;" class="mx-2">ย้อนหลับ</span></i>
+                <span style="padding-top: 20px;font-size: 25px;" class="mx-2">ย้อนกลับ</span></i>
         </nav>
     </div>
 
     <div class="row">
         <div class="col-12 col-sm-6 col-md-6 col-xl-5 col-lg-6 order-1">
-            <div class="row">
+            <div class="row ">
                 <div class="img animate__animated animate__zoomInLeft">
                     <img src="../../../../../assets/img/insurance/WLAN85.svg" alt="">
                 </div>
@@ -24,13 +24,13 @@
             </div>
             <div class="row">
                 <i class="far fa-address-card text-color" style="font-size: 20px;">
-                   <span class="text-color mx-2" style="font-size: 1.75rem;">จุดเด่นผลิตภัณฑ์</span> 
+                    <span class="text-color mx-2" style="font-size: 1.75rem;">จุดเด่นผลิตภัณฑ์</span>
                 </i>
-                
+
                 <div class="col-10">
                     <legend></legend>
                 </div>
-                
+
             </div>
 
             <div class="row">
@@ -40,24 +40,647 @@
             </div>
 
             <div class="row mt-3">
-                <div class="col-4 text-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1200">
+                <div class="col-12 col-xl-4 text-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+                    data-aos-duration="1200">
                     <img src="../../../../../assets/img/insurance/select.png" alt="" width="70px">
                     <label class="subtitle3">รับความคุ้มครองตั้งแต่วันแรก
                         ในขณะที่รูปแบบอื่นอาจใช้เวลากว่า 50 ปีถึงจะสร้างกองมรดกได้ 1 ล้านบาทเท่ากับ i-Protect</label>
                 </div>
-                <div class="col-4 text-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1200">
+                <div class="col-12 col-xl-4 text-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+                    data-aos-duration="1200">
                     <img src="../../../../../assets/img/insurance/select.png" alt="" width="70px">
                     <label class="subtitle3">หมดกังวัล กับการจ่ายเบี้ยประกัน
-                        ด้วยเบี้ย ไอโพรเทค (i-Protect) เริ่มต้นเพียง 23บาท/วัน หรือเลือกจ่ายเบี้ย 5 ปี 10 ปี หรือ 85 ปีก็ได้</label>
+                        ด้วยเบี้ย ไอโพรเทค (i-Protect) เริ่มต้นเพียง 23บาท/วัน หรือเลือกจ่ายเบี้ย 5 ปี 10 ปี หรือ 85
+                        ปีก็ได้</label>
                     <!-- <label class="text1">เบิกได้ไม่จำกัดจำนวนครั้ง เหมาจ่ายตามวงเงินสูงสุดของแต่ละแผน</label> -->
 
                 </div>
-                <div class="col-4 text-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1500">
+                <div class="col-12 col-xl-4 text-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+                    data-aos-duration="1500">
                     <img src="../../../../../assets/img/insurance/select.png" alt="" width="70px">
                     <label class="subtitle3">ผลประโยชน์ที่ทายาทได้รับไม่เสียภาษี
                         และค่าธรรมเนียม ไม่ต้องจดทะเบียนโอนกรรมสิทธิ์ในทรัพย์สิน</label>
                 </div>
+                <!-- <ul>
+                    <li *ngFor="let item of insurances">
+                        <a class="btn btn-primary" download={{item.insurance_file}}
+                            href="/api/pdf-storage/{{item.insurance_file}}">ดาวน์โหลดเอกสาร</a>
+                    </li>
+                </ul> -->
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-xl-6">
+                <div class="h2 text-center">ชำระเบี้ยประกัน 5 ปี คุ้มครองถึง 85
+                    <br>
+                    i-Protect 05 เพศชาย
+                </div>
+                <table class="w3-table-all w3-tiny">
+                    <tbody>
+                        <tr class="w3-center w3-green w3-hover-blue">
+                            <th>ทุน</th>
+                            <th>2แสน</th>
+                            <th>4แสน</th>
+                            <th>6แสน</th>
+                            <th>8แสน</th>
+                            <th>1ล้าน</th>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> อายุ 20</td>
+                            <td>13,266</td>
+                            <td>26,532</td>
+                            <td>39,798</td>
+                            <td>53,064</td>
+                            <td>66,330</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 21</td>
+                            <td>13,276</td>
+                            <td>26,552</td>
+                            <td>39,828</td>
+                            <td>53,104</td>
+                            <td>66,380</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 22</td>
+                            <td>13,284</td>
+                            <td>26,568</td>
+                            <td>39,852</td>
+                            <td>53,136</td>
+                            <td>66,420</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 23</td>
+                            <td>13,290</td>
+                            <td>26,580</td>
+                            <td>39,870</td>
+                            <td>53,160</td>
+                            <td>66,450</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 24</td>
+                            <td>13,296</td>
+                            <td>26,592</td>
+                            <td>39,888</td>
+                            <td>53,184</td>
+                            <td>66,480</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 25</td>
+                            <td>13,302</td>
+                            <td>26,604</td>
+                            <td>39,906</td>
+                            <td>53,208</td>
+                            <td>66,510</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 26</td>
+                            <td>13,310</td>
+                            <td>26,620</td>
+                            <td>39,930</td>
+                            <td>53,240</td>
+                            <td>66,550</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 27</td>
+                            <td>13,318</td>
+                            <td>26,636</td>
+                            <td>39,954</td>
+                            <td>53,272</td>
+                            <td>66,590</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 28</td>
+                            <td>13,328</td>
+                            <td>26,656</td>
+                            <td>39,984</td>
+                            <td>53,312</td>
+                            <td>66,640</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 29</td>
+                            <td>13,340</td>
+                            <td>26,680</td>
+                            <td>40,020</td>
+                            <td>53,360</td>
+                            <td>66,700</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 30</td>
+                            <td>13,352</td>
+                            <td>26,704</td>
+                            <td>40,056</td>
+                            <td>53,408</td>
+                            <td>66,760</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 31</td>
+                            <td>13,592</td>
+                            <td>27,184</td>
+                            <td>40,776</td>
+                            <td>54,368</td>
+                            <td>67,960</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 32</td>
+                            <td>13,610</td>
+                            <td>27,220</td>
+                            <td>40,830</td>
+                            <td>54,440</td>
+                            <td>68,050</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 33</td>
+                            <td>13,862</td>
+                            <td>27,724</td>
+                            <td>41,586</td>
+                            <td>55,448</td>
+                            <td>69,310</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 34</td>
+                            <td>13,884</td>
+                            <td>27,768</td>
+                            <td>41,652</td>
+                            <td>55,536</td>
+                            <td>69,420</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 35</td>
+                            <td>14,272</td>
+                            <td>28,544</td>
+                            <td>42,816</td>
+                            <td>57,088</td>
+                            <td>70,095</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 36</td>
+                            <td>14,922</td>
+                            <td>29,844</td>
+                            <td>44,766</td>
+                            <td>59,688</td>
+                            <td>74,610</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 37</td>
+                            <td>15,216</td>
+                            <td>30,432</td>
+                            <td>45,648</td>
+                            <td>60,864</td>
+                            <td>76,080</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 38</td>
+                            <td>15,516</td>
+                            <td>31,032</td>
+                            <td>46,548</td>
+                            <td>62,064</td>
+                            <td>77,580</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 39</td>
+                            <td>15,828</td>
+                            <td>31,656</td>
+                            <td>47,484</td>
+                            <td>63,312</td>
+                            <td>79,140</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 40</td>
+                            <td>16,280</td>
+                            <td>32,560</td>
+                            <td>48,840</td>
+                            <td>65,120</td>
+                            <td>81,400</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 41</td>
+                            <td>17,024</td>
+                            <td>34,048</td>
+                            <td>51,072</td>
+                            <td>68,096</td>
+                            <td>85,120</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 42</td>
+                            <td>18,074</td>
+                            <td>36,148</td>
+                            <td>54,222</td>
+                            <td>72,296</td>
+                            <td>90,370</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 43</td>
+                            <td>18,446</td>
+                            <td>36,892</td>
+                            <td>55,338</td>
+                            <td>73,784</td>
+                            <td>92,230</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 44</td>
+                            <td>18,828</td>
+                            <td>37,656</td>
+                            <td>56,484</td>
+                            <td>75,312</td>
+                            <td>94,140</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 45</td>
+                            <td>19,220</td>
+                            <td>38,440</td>
+                            <td>57,660</td>
+                            <td>76,880</td>
+                            <td>96,100</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 46</td>
+                            <td>20,076</td>
+                            <td>40,152</td>
+                            <td>60,228</td>
+                            <td>80,304</td>
+                            <td>100,380</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 47</td>
+                            <td>20,970</td>
+                            <td>41,940</td>
+                            <td>62,910</td>
+                            <td>83,880</td>
+                            <td>104,850</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 48</td>
+                            <td>21,422</td>
+                            <td>42,844</td>
+                            <td>64,266</td>
+                            <td>85,688</td>
+                            <td>107,110</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 49</td>
+                            <td>21,886</td>
+                            <td>43,772</td>
+                            <td>65,658</td>
+                            <td>87,544</td>
+                            <td>109,430</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-male"></i> 50</td>
+                            <td>22,367</td>
+                            <td>44,728</td>
+                            <td>67,092</td>
+                            <td>89,456</td>
+                            <td>111,820</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-12 col-xl-6">
+                <div class="h2 text-center">ชำระเบี้ยประกัน 5 ปี คุ้มครองถึง 85
+                    <br>
+                    i-Protect 05 เพศหญิง
+                </div>
+                <table class="w3-table-all w3-tiny">
+                    <tbody>
+                        <tr class="w3-center w3-pink w3-hover-blue">
+                            <th>ทุน</th>
+                            <th>2แสน</th>
+                            <th>4แสน</th>
+                            <th>6แสน</th>
+                            <th>8แสน</th>
+                            <th>1ล้าน</th>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> อายุ 20</td>
+                            <td>11,338</td>
+                            <td>22,676</td>
+                            <td>34,014</td>
+                            <td>45,352</td>
+                            <td>56,690</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 21</td>
+                            <td>11,354</td>
+                            <td>22,708</td>
+                            <td>34,062</td>
+                            <td>45,416</td>
+                            <td>56,770</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 22</td>
+                            <td>11,370</td>
+                            <td>22,740</td>
+                            <td>34,110</td>
+                            <td>45,480</td>
+                            <td>56,850</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 23</td>
+                            <td>11,386</td>
+                            <td>22,772</td>
+                            <td>34,158</td>
+                            <td>45,544</td>
+                            <td>56,930</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 24</td>
+                            <td>11,402</td>
+                            <td>22,804</td>
+                            <td>34,206</td>
+                            <td>45,608</td>
+                            <td>57,010</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 25</td>
+                            <td>11,420</td>
+                            <td>22,840</td>
+                            <td>34,260</td>
+                            <td>45,680</td>
+                            <td>57,100</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 26</td>
+                            <td>11,436</td>
+                            <td>22,872</td>
+                            <td>34,308</td>
+                            <td>45,744</td>
+                            <td>57,180</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 27</td>
+                            <td>11,454</td>
+                            <td>22,908</td>
+                            <td>34,362</td>
+                            <td>45,816</td>
+                            <td>57,270</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 28</td>
+                            <td>11,472</td>
+                            <td>22,944</td>
+                            <td>34,416</td>
+                            <td>45,888</td>
+                            <td>57,360</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 29</td>
+                            <td>11,588</td>
+                            <td>23,176</td>
+                            <td>34,764</td>
+                            <td>46,352</td>
+                            <td>57,940</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 30</td>
+                            <td>11,706</td>
+                            <td>23,412</td>
+                            <td>35,118</td>
+                            <td>46,824</td>
+                            <td>58,530</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 31</td>
+                            <td>11,728</td>
+                            <td>23,456</td>
+                            <td>35,184</td>
+                            <td>46,912</td>
+                            <td>58,640</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 32</td>
+                            <td>11,750</td>
+                            <td>23,500</td>
+                            <td>35,250</td>
+                            <td>47,000</td>
+                            <td>58,750</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 33</td>
+                            <td>11,980</td>
+                            <td>23,960</td>
+                            <td>35,940</td>
+                            <td>47,920</td>
+                            <td>59,900</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 34</td>
+                            <td>12,218</td>
+                            <td>24,436</td>
+                            <td>36,654</td>
+                            <td>48,872</td>
+                            <td>61,090</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 35</td>
+                            <td>12,680</td>
+                            <td>25,360</td>
+                            <td>38,040</td>
+                            <td>50,720</td>
+                            <td>63,400</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 36</td>
+                            <td>13,050</td>
+                            <td>26,100</td>
+                            <td>39,150</td>
+                            <td>52,200</td>
+                            <td>65,250</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 37</td>
+                            <td>13,430</td>
+                            <td>26,860</td>
+                            <td>40,290</td>
+                            <td>53,720</td>
+                            <td>67,150</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 38</td>
+                            <td>13,708</td>
+                            <td>27,416</td>
+                            <td>41,124</td>
+                            <td>54,832</td>
+                            <td>68,540</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 39</td>
+                            <td>13,994</td>
+                            <td>27,988</td>
+                            <td>41,982</td>
+                            <td>55,976</td>
+                            <td>69,970</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 40</td>
+                            <td>14,290</td>
+                            <td>28,580</td>
+                            <td>42,870</td>
+                            <td>57,160</td>
+                            <td>71,450</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 41</td>
+                            <td>14,594</td>
+                            <td>29,188</td>
+                            <td>43,782</td>
+                            <td>58,376</td>
+                            <td>72,970</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 42</td>
+                            <td>15,164</td>
+                            <td>30,328</td>
+                            <td>45,492</td>
+                            <td>60,656</td>
+                            <td>75,820</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 43</td>
+                            <td>15,754</td>
+                            <td>31,508</td>
+                            <td>47,262</td>
+                            <td>63,016</td>
+                            <td>78,770</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 44</td>
+                            <td>16,366</td>
+                            <td>32,732</td>
+                            <td>49,098</td>
+                            <td>65,464</td>
+                            <td>81,830</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 45</td>
+                            <td>16,868</td>
+                            <td>33,736</td>
+                            <td>50,604</td>
+                            <td>67,472</td>
+                            <td>84,340</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 46</td>
+                            <td>17,386</td>
+                            <td>34,772</td>
+                            <td>52,158</td>
+                            <td>69,544</td>
+                            <td>86,930</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 47</td>
+                            <td>18,064</td>
+                            <td>36,128</td>
+                            <td>54,192</td>
+                            <td>72,256</td>
+                            <td>90,320</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 48</td>
+                            <td>19,058</td>
+                            <td>38,116</td>
+                            <td>57,174</td>
+                            <td>76,232</td>
+                            <td>95,290</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 49</td>
+                            <td>19,796</td>
+                            <td>39,592</td>
+                            <td>59,388</td>
+                            <td>79,184</td>
+                            <td>98,980</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-female"></i> 50</td>
+                            <td>20,258</td>
+                            <td>40,516</td>
+                            <td>60,774</td>
+                            <td>81,032</td>
+                            <td>101,290</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-xl-7 col-12">
+                <div class="h3 text-center">เชื่อหรือไม่ ?</div>
+                <label class="text-center">คุณเองก็เป็นคนหนึ่งที่สามารถสร้างมรดกหลักล้านไว้ให้ลูกหลานได้ไม่ยาก ด้วย
+                    i-Protect
+                    เปลี่ยนเงินสะสมของคุณให้เป็นมรดกหลักล้าน ตั้งแต่ปีแรกที่เริ่มออม
+                    เรามีตัวอย่างเปรียบเทียบการเก็บเงินล้านเพื่อสร้างมรดกด้วยตนเอง กับการเก็บเงินด้วย i-Protect</label>
+                <br>
+
+                <div class="text-center">
+                    <img src="../../../../../assets/img/insurance/money.svg" alt="" width="400px">
+                </div>
+            </div>
+
+            <div class="col-xl-5 col-12">
+                <img src="../../../../../assets/img/insurance/iprotect.png" alt="" class="fix-img-1">
+            </div>
+        </div>
+        <br>
+        <div class="row fix-padding">
+            <div class="col-xl-6 col-12">
+                <img src="../../../../../assets/img/insurance/iprotect-4.jpg" alt="" class="fix-img">
+            </div>
+            <div class="col-xl-6 col-12">
+                <img src="../../../../../assets/img/insurance/iprotect-5.jpg" class="fix-img">
+            </div>
+
+        </div>
+        <!-- <div class="row p-5">
+            <img src="../../../../../assets/img/insurance/iprotect-5.jpg" alt="" width="350px">
+        </div> -->
+        <div class="row">
+            <div class="tab">
+                <ul>
+                    <li id="mission" [class.color]="id === 'mission'" (click)="tabChange('mission')"><i
+                            class="fas fa-question-circle mx-1"></i> ทำไมต้องเลือก i-Protect?</li><span
+                        style="color: #fff;">|</span>
+                    <li id="version" [class.color]="id === 'vision'" (click)="tabChange('vision')"><i
+                            class="fas fa-exclamation-circle mx-1"></i> เงื่อนไขการรับประกัน</li><span
+                        style="color: #fff;">|</span>
+                    <li id="value" [class.color]="id === 'value'" (click)="tabChange('value')">สนใจแผน i-protect</li>
+                </ul>
+                <div class="content">
+                    <div class="content-value" *ngIf="id === 'mission'">
+                        <h2>ทำไมต้องเลือก i-Protect ? </h2>
+                        <li>เบี้ยประกันคงที่ ตลอดอายุสัญญา</li>
+                        <li>คุ้มครองถึงอายุ 85ปี</li>
+                        <li>เบี้ยประกันนำไปลดหย่อนภาษีได้</li>
+                    </div>
+                    <div class="content-value" *ngIf="id === 'vision'">
+                        <h2>เงื่อนไขการรับประกัน</h2>
+                        <li>อายุขณะทำประกันภัยปีแรก ตั้งแต่ 1เดือน ถึง 70ปี</li>
+                        <li>จำนวนเอาประกันภัยขั้นต่ำ 200,000บาท</li>
+                        <li>เบี้ยประกันสามารถเลือกชำระ รายเดือน หรือ รายปี</li>
+
+                    </div>
+                    <div class="content-value" *ngIf="id === 'value'">
+                        <h2>สนใจแผน i-protect</h2>
+                        <li>กรอกรายละเอียดข้อมูล เพื่อรับการติดต่อกลับ</li>
+                        <li>โทรหาเราที่เบอร์ 093-110-7879</li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+    
+    <div class="row" style="background-color:#f1f2f7;">
+        <div class="col-12 text-center">
+            <button type="button" class="btn-apply ripples mx-3"
+                routerLink="/krungthai/form-register">สนใจผลิตภัณฑ์</button>
+            <!-- <button type="button" class="btn-send ripple" download={{getFileName(80)}} href="/api/pdf-storage/{{getFileName(80)}}">ดาวน์โหลดโบรชัวร์</button> -->
+            <a class="btn-send ripple" download={{getFileName(84)}} href="/api/pdf-storage/{{getFileName(84)}}">ดาวน์โหลดโบรชัวร์</a>
+        </div>
+    </div>
 </div>
+
+<app-footer-frontend></app-footer-frontend>

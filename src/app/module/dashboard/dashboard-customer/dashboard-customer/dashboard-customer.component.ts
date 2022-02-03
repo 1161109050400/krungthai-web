@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { flatten } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormRegisterService } from 'src/app/services/form-register.service';
@@ -16,7 +17,26 @@ export class DashboardCustomerComponent implements OnInit {
     private http: HttpClient
   ) {}
 
-  isSuccess: boolean = true;
+  title = 'increment-notification';
+  notify = false;
+  count = 0;
+
+  onSendClick() {
+    this.count++;
+    this.notify = true;
+    setTimeout(() => {
+      this.notify = false;
+    }, 300);
+  }
+
+  isSuccess: boolean = false;
+  
+
+  toggleTag() {
+    this.isSuccess = !this.isSuccess;
+  }
+
+
   totalLength: any;
   page: number = 1;
   user: any;

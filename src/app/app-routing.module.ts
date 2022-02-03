@@ -5,11 +5,13 @@ import { DashboardChartComponent } from './module/dashboard/dashboard-chart/dash
 import { DashboardCustomerComponent } from './module/dashboard/dashboard-customer/dashboard-customer/dashboard-customer.component';
 import { DashboardHospitalComponent } from './module/dashboard/dashboard-hospital/dashboard-hospital/dashboard-hospital.component';
 import { DashboardComponent } from './module/dashboard/dashboard.component';
+import { DocumentInsuranceComponent } from './module/document/document-insurance/document-insurance.component';
 import { FormAxaComponent } from './module/form-axa/form-axa.component';
 import { FormRatingComponent } from './module/form-axa/form-rating/form-rating/form-rating.component';
 import { FormRegisterComponent } from './module/form-register/form-register.component';
 import { ContactPageComponent } from './module/home-page/contact-as/contact-page/contact-page.component';
 import { HomePageComponent } from './module/home-page/home-page.component';
+import { HospitalComponent } from './module/hospital/hospital/hospital.component';
 import { DiseaseComponent } from './module/insurance-type/disease/disease/disease.component';
 import { HealthComponent } from './module/insurance-type/health/health/health.component';
 import { MoneyComponent } from './module/insurance-type/money/money/money.component';
@@ -42,7 +44,12 @@ const routes: Routes = [
   { path: 'krungthai/pwlnp85', component: Pwlnp85Component },
   { path: 'krungthai/10ec', component: Ec10Component },
   { path: 'krungthai/rl05', component: Rl05Component },
-  { path: 'krungthai/rpul', component: RpulComponent }
+  { path: 'krungthai/rpul', component: RpulComponent },
+
+
+  { path: 'krungthai/download', component: DocumentInsuranceComponent },
+  { path: 'krungthai/hospital', component: HospitalComponent }
+
 ];
 
 

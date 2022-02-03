@@ -39,20 +39,31 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 profile-details">
+                        <!-- <i class="far fa-bell mx-3"></i> -->
+                        <div class="notification">
+                            <em class="far fa-bell icon" [ngClass]="{'notify':notify}"></em>
+                            <span class="badge" *ngIf="count > 0">{{count}}</span>
+                          </div>
+
+                          <!-- ปิด button ก่อน -->
+                          <button hidden class="btn-send ripple" (click)="onSendClick()">Send Notification</button>
+
                         <img src="../../../../../assets/img/undraw_female_avatar_w3jk.svg" alt="">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                สามิตร ไอทีจีเนียส
+                                ธัญวลัย ร่วมพงษ์
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" routerLink="/dashboard/profile">ข้อมูลส่วนตัว</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="/auth/login">ออกจากระบบ</a></li>
+                                <li><a class="dropdown-item" href="/auth/login"><i class="fas fa-sign-out-alt mx-2" style="font-size: 15px;"></i>ออกจากระบบ</a></li>
                             </ul>
                         </li>
                     </ul>

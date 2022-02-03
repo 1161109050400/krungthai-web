@@ -25,7 +25,7 @@ export class InsuranceService {
     insurance_file: string,
     type_insurance_id: number | null
   ) {
-    return this.http.put<any>('/api/insurance/put-insurance/' + insurance_id, {
+    return this.http.put<any>('/api/insurance/put-insurance', {
       insurance_id,
       insurance_name,
       insurance_file,

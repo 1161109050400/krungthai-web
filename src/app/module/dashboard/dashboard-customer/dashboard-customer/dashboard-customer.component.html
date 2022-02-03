@@ -13,22 +13,31 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 profile-details">
-            <img src="../../../../../assets/img/undraw_female_avatar_w3jk.svg" alt="">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                สามิตร ไอทีจีเนียส
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" routerLink="/dashboard/profile">ข้อมูลส่วนตัว</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="/auth/login">ออกจากระบบ</a></li>
-              </ul>
-            </li>
+              <!-- <i class="far fa-bell mx-3"></i> -->
+              <div class="notification">
+                  <em class="far fa-bell icon" [ngClass]="{'notify':notify}"></em>
+                  <span class="badge" *ngIf="count > 0">{{count}}</span>
+                </div>
+
+                <!-- ปิด button ก่อน -->
+                <button hidden class="btn-send ripple" (click)="onSendClick()">Send Notification</button>
+
+              <img src="../../../../../assets/img/undraw_female_avatar_w3jk.svg" alt="">
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      ธัญวลัย ร่วมพงษ์
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" routerLink="/dashboard/profile">ข้อมูลส่วนตัว</a></li>
+                      <li>
+                          <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="/auth/login"><i class="fas fa-sign-out-alt mx-2" style="font-size: 15px;"></i>ออกจากระบบ</a></li>
+                  </ul>
+              </li>
           </ul>
-        </div>
+      </div>
       </div>
     </nav>
 
@@ -80,7 +89,7 @@
             <i class='bx bxs-cart-download cart four' ></i>
           </div> -->
 
-        <h1 style="color: #63799B;">ลูกค้าที่สนใจทำแผนประกัน</h1>
+        <h1 style="color: #63799B;"><i class="far fa-thumbs-up mx-2" style="font-size: 30px;"></i>ลูกค้าที่สนใจทำแผนประกัน</h1>
         <legend></legend>
         <div class="col-12">
           <div class="bg-table">
@@ -88,41 +97,30 @@
               <thead class="table-dark">
                 <tr>
                   <th class="first-col"></th>
-                  <th></th>
-                  <th class="text-center">ชื่อลูกค้า</th>
-                  <th class="text-center">เบอร์โทรศัพท์</th>
-                  <th class="text-center">อีเมล</th>
-                  <th class="last-col text-center">สถานะ</th>
+                  <!-- <th></th> -->
+                  <th class="">ชื่อลูกค้า</th>
+                  <th class="">เบอร์โทรศัพท์</th>
+                  <th class="">อีเมล</th>
+                  <th class="">จังหวัด</th>
+                  <th class="last-col">สถานะ</th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="tr-content" *ngFor="let user of user |
-                paginate: { 
-                  itemsPerPage: 4, 
-                  currentPage: page
-                  
-                 }">
-                  <td class="text-center"><img src="../../../../../assets/img/avatar/{{getRandom()}}" alt="" width="85"
+                paginate: { itemsPerPage: 4, currentPage: page }">
+                  <td class=""><img src="../../../../../assets/img/avatar/{{getRandom()}}" alt="" width="85"
                       height="85"></td>
-                  <td *ngIf="isSuccess">
-                    <i class="far fa-check-circle" style="color: #22c55e;"></i>
-                  </td>
+                  <!-- <td>
+                    <i *ngIf="isSuccess" class="far fa-check-circle" style="color: #22c55e;"></i>
+                  </td> -->
                   <!-- <td><img src="../../../../../assets/img/user.png" alt="" width="100" height="100"></td> -->
-                  <td class="text-center">คุณ&nbsp; &nbsp;{{user.user_firstname}}&nbsp; &nbsp; &nbsp;
+                  <td class="">คุณ&nbsp; &nbsp;{{user.user_firstname}}&nbsp; &nbsp; &nbsp;
                     {{user.user_lastname}}</td>
-                  <td class="text-center">{{user.user_phone}}</td>
-                  <td class="text-center"><i class="far fa-envelope mx-1" style="font-size: 15px;"></i>
+                  <td class=""><i class="fas fa-phone-alt" style="font-size: 15px;color: #63799B;"></i>&nbsp;&nbsp;&nbsp;{{user.user_phone}}</td>
+                  <td class=""><i class="far fa-envelope" style="font-size: 15px;color: #63799B;"></i>&nbsp;&nbsp;&nbsp;
                     {{user.user_email}}</td>
-                  <td class="text-center">
-                    <!-- <button type="button" class="button circle success">
-                      <i class="fas fa-check" style="font-size: 20px;"></i></button> -->
-                    <!-- 
-                      <button type="button" class="btn btn-success mx-1">ติดต่อแล้ว</button>
-                      <button type="button" class="btn btn-danger">ยังไม่ติดต่อ</button> -->
-
-
-
-
+                    <td class="">{{user.user_county}}</td>
+                  <td class="">
                     <label class="switch-relative">
                       <input type="checkbox">
                       <div class="slider-green">
@@ -130,7 +128,6 @@
                         <span class="off subtitle2 fix-switch">ยังไม่ติดต่อ</span>
                       </div>
                     </label>
-
 
                     <!-- <button type="button" class="button circle not mx-2">
                       <i class="fas fa-times" style="font-size: 20px;"></i></button> -->
@@ -151,7 +148,7 @@
 
 
 
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+<button hidden type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
   Launch static backdrop modal
 </button>
 

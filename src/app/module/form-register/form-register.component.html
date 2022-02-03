@@ -1,6 +1,14 @@
 <app-header-frontend></app-header-frontend>
 <div class="container-fluid" style="margin-top: 35px;">
     <div class="row">
+        <nav class="subtitle3" style="position: fixed;">
+            <i class="fas fa-chevron-left"
+                style="align-items: left; margin-left: 20px; margin-top: 7px; font-size: 17px;"
+                routerLink="/krungthai/home-page">
+                <span style="padding-top: 20px;font-size: 25px;" class="mx-2">ย้อนกลับ</span></i>
+        </nav>
+    </div>
+    <div class="row mt-3">
         <div class="col-12 col-sm-6 col-md-6 col-xl-6 col-lg-6 order-1">
             <div class="row animate__animated animate__zoomIn">
                 <div class="img">
@@ -119,6 +127,15 @@
         </button>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
 <!-- Modal -->
 
 <ng-template #saveModal let-modal>
@@ -138,5 +155,4 @@
             </h3>
         </div>
     </div>
-
 </ng-template>

@@ -2,6 +2,16 @@
 @import "/src//assets/scss/base/responsive";
 @import "/src//assets/scss/base/animations";
 
+nav {
+  padding: 0.5rem;
+  background-color: #f1f2f7;
+  color: #0f2f86;
+  text-align: left;
+  position: fixed;
+  z-index: 100;
+  // top: 0px;
+}
+
 .img {
   display: flex;
   justify-content: flex-end;

@@ -8,6 +8,19 @@ import HC_exporting from 'highcharts/modules/exporting';
   styleUrls: ['./dashboard-chart.component.scss'],
 })
 export class DashboardChartComponent implements OnInit {
+
+  title = "increment-notification";
+  notify = false;
+  count = 0;
+
+  onSendClick() {
+    this.count++;
+    this.notify = true;
+    setTimeout(() => {
+      this.notify = false;
+    }, 300);
+  }
+
   Highcharts = Highcharts;
   chartOptions = {};
   chartOptions1 = {};

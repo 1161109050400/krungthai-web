@@ -39,9 +39,157 @@ legend {
   }
 
   .img-pwlnp85{
-    background-image: url(../../../../../assets/img/insurance/PWLNP85-3.png);
+    background-image: url(../../../../../assets/img/insurance/cover-web-1920x617.jpg);
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
     padding: 100px 100px;
   }
+
+
+  .w3-tiny {
+    font-size: 20px !important;
+  }
+  
+  .w3-table-all {
+    border: 1px solid #ccc;
+  }
+  
+  .w3-table, .w3-table-all {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    display: table;
+  }
+  
+  .w3-bordered tr, .w3-table-all tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .w3-green, .w3-hover-green:hover {
+    color: #fff!important;
+    background-color: #0f2f86!important;
+  }
+  
+  .w3-pink, .w3-hover-pink:hover {
+    color: #fff!important;
+    background-color: #fbc638!important;
+  }
+  
+  
+  .w3-table th:first-child, .w3-table td:first-child, .w3-table-all th:first-child, .w3-table-all td:first-child {
+    padding-left: 16px;
+  }
+  
+  .w3-table td, .w3-table th, .w3-table-all td, .w3-table-all th {
+    padding: 8px 8px;
+    display: table-cell;
+    text-align: left;
+    vertical-align: top;
+    border-width: 0px !important;
+  }
+  
+  .btn-apply {
+    cursor: pointer;
+    font-family: 'DB HelvethaicaMon X 65 Med' !important;
+    // font-weight: 600;
+    font-size: 1.2rem;
+    padding: 0.6rem 1.5rem;
+    outline: none;
+    color: #0f2f86;
+    border: 1px solid #0f2f86;
+    background: #fff;
+    // border: 1px solid #fff;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  
+  .btn-send {
+    cursor: pointer;
+    font-family: 'DB HelvethaicaMon X 65 Med' !important;
+    // font-weight: 600;
+    font-size: 1.2rem;
+    padding: 0.6rem 1.5rem;
+    outline: none;
+    color: #fff;
+    // border-radius: 0.3rem;
+    background: #0f2f86;
+    border: 1px solid #0f2f86;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  
+  .ripples {
+    background-position: center;
+    transition: background 0.9s;
+  }
+  
+  .ripples:hover {
+    background: #f1f2f7
+      radial-gradient(circle, transparent 1%, #fff 1%) center/15000%;
+  }
+  
+  .ripples:active {
+    background-color: #898d97;
+    background-size: 100%;
+    transition: background 0s;
+  }
+  
+  .ripple {
+    background-position: center;
+    transition: background 0.9s;
+  }
+  
+  .ripple:hover {
+    background: #0f2f86
+      radial-gradient(circle, transparent 1%, #0f2f86 1%) center/15000%;
+  }
+  
+  .ripple:active {
+    background-color: #0435bb;
+    background-size: 100%;
+    transition: background 0s;
+  }
+  
+  .notify {
+    transform-origin: 50% 4px;
+    animation: ring 1.5s ease;
+  }
+  
+  @keyframes ring {
+    0% {
+      transform: rotate(35deg);
+    }
+  
+    12.5% {
+      transform: rotate(-30deg);
+    }
+  
+    25% {
+      transform: rotate(25deg);
+    }
+  
+    37.5% {
+      transform: rotate(-20deg);
+    }
+  
+    50% {
+      transform: rotate(15deg);
+    }
+  
+    62.5% {
+      transform: rotate(-10deg);
+    }
+  
+    75% {
+      transform: rotate(5deg);
+    }
+  
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  

@@ -1,6 +1,14 @@
 <app-header-frontend></app-header-frontend>
 <div class="container-fluid" style="margin-top: 35px;">
     <div class="row">
+        <nav class="subtitle3" style="position: fixed;">
+            <i class="fas fa-chevron-left"
+                style="align-items: left; margin-left: 20px; margin-top: 7px; font-size: 17px;"
+                routerLink="/krungthai/home-page">
+                <span style="padding-top: 20px;font-size: 25px;" class="mx-2">ย้อนกลับ</span></i>
+        </nav>
+    </div>
+    <div class="row">
         <div class="col-12 col-sm-6 col-md-6 col-xl-5 col-lg-6 order-1">
             <div class="row">
                 <div class="img animate__animated animate__zoomIn">
@@ -9,11 +17,11 @@
             </div>
         </div>
         <div class="col-12 col-sm-6 col-md-12 col-xl-7 col-lg-6 order-2">
-            <div class="row" style="margin-top: 35px;">
+            <div class="row" style="margin-top: 65px;">
                 <div class="col-md-12 col-sm-12 col-12">
-                    <label class="heading1 text-color mt-12">
-                        <i class="far fa-address-card  text-color " aria-hidden="true" style="font-size: 25px;"></i>
-                        ให้เราช่วยคุณเลือกผลิตภัณฑ์ที่ใช่สำหรับคุณ</label>
+                    <span class="heading1 text-color mt-12">
+                        <i class="far fa-address-card text-color " aria-hidden="true" style="font-size: 25px;"></i>
+                        ให้เราช่วยคุณเลือกผลิตภัณฑ์ที่ใช่สำหรับคุณ</span>
                     <legend></legend>
                 </div>
             </div>
@@ -243,26 +251,33 @@
         <!-- <br>
         <br> -->
     </div>
-    <div class="footer-activity">
-        <div class="col-12 col-md-12 text-center" style="text-align: center;">
-            <!-- <button class="button button__text subtitle1 ps-4 pe-4 mx-2 p-1 btn-animate-type1" type="button"
-                routerLink="/krungthai/form-rating">&nbsp;&nbsp; ยืนยันข้อมูล &nbsp;&nbsp;|&nbsp;&nbsp;<i
-                    class="fab fa-telegram-plane mx-2 "></i>
-            </button> -->
-            <button class="button button__text subtitle1 ps-4 pe-4 mx-2 p-1 btn-animate-type1" (click)="_submit()"
-                type="button">&nbsp;&nbsp; ยืนยันข้อมูล &nbsp;&nbsp;|&nbsp;&nbsp;<i
-                    class="fab fa-telegram-plane mx-2 "></i>
-            </button>
-            <button class="button-danger button__text subtitle1 ps-4 pe-4 p-1" (click)="_reset()"
-                type="button">&nbsp;&nbsp; ล้างข้อมูล
-                &nbsp;&nbsp;|&nbsp;&nbsp;
-                <i class="fas fa-trash-alt mx-2"></i>
-            </button>
-        </div>
+</div>
+
+<div class="footer-activity">
+    <div class="col-12 col-md-12 text-center" style="text-align: center;">
+        <!-- <button class="button button__text subtitle1 ps-4 pe-4 mx-2 p-1 btn-animate-type1" type="button"
+            routerLink="/krungthai/form-rating">&nbsp;&nbsp; ยืนยันข้อมูล &nbsp;&nbsp;|&nbsp;&nbsp;<i
+                class="fab fa-telegram-plane mx-2 "></i>
+        </button> -->
+        <button class="button button__text subtitle1 ps-4 pe-4 mx-2 p-1 btn-animate-type1" (click)="_submit()"
+            type="button">&nbsp;&nbsp; ยืนยันข้อมูล &nbsp;&nbsp;|&nbsp;&nbsp;<i
+                class="fab fa-telegram-plane mx-2 "></i>
+        </button>
+        <button class="button-danger button__text subtitle1 ps-4 pe-4 p-1" (click)="_reset()"
+            type="button">&nbsp;&nbsp; ล้างข้อมูล
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fas fa-trash-alt mx-2"></i>
+        </button>
     </div>
 </div>
 
-<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-beat" [fullScreen]="true">
+
+
+
+
+
+
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-spin-clockwise-fade" [fullScreen]="true">
     <br>
     <br>
     <p style="color: white" class="subtitle1"> กำลังประมวลผล... </p>

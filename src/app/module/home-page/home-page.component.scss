@@ -56,14 +56,21 @@ h1 {
 }
 
 .logo {
-  padding: 10px;
-  width: 120px;
+  padding: 5px;
+  width: 200px;
   height: auto;
   cursor: pointer;
+
   @media (max-width: 428px) {
-    width: 80px;
+    width: 200px;
     margin-left: 15px;
   }
+}
+
+
+.logo-1 {
+  width: 330px;
+  height: auto;
 }
 
 
@@ -364,18 +371,31 @@ path.two {
 }
 
 
+.menu-footer {
+  z-index: 1020;
+  width: 100%;
+  margin-right: unset;
+  margin-left: unset;
+
+  height: auto;
+  background-color: #0f2f86;
+
+}
+
+
+
 .footer-activity {
   // padding-top: 13px;
   height: 30px;
-  background-color: #0f2f86;
+  background-color: #030f4e;
 
-  @include respond-to("laptop") {
-    position: fixed;
-  }
+  // @include respond-to("laptop") {
+  //   position: fixed;
+  // }
 
-  @media (min-width: 1024px) {
-    position: fixed;
-  }
+  // @media (min-width: 1024px) {
+  //   position: fixed;
+  // }
 
   @include respond-to("medium-large") {
     position: fixed;
@@ -414,7 +434,7 @@ a {
       list-style: none;
       // font-weight: bold;
       position: relative;
-      padding: 0.7rem ;
+      padding: 0.7rem;
       cursor: pointer;
 
       &::after {
@@ -477,7 +497,7 @@ a {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 50px 50px;
+  padding: 90px 30px 30px 30px;
   // border-radius: 0 0 80px 80px;
   // box-shadow: 0 0 30.5px #d1d1d1;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../../assets/img/axa.png);
@@ -512,28 +532,48 @@ legend {
 }
 
 
-.about{
+.about {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
 }
 
-.about-text{
+.about-text {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
 }
 
-.about-text-1{
+.about-text-1 {
   font-family: "Roboto", sans-serif;
   font-size: 1.8rem;
 }
 
 .display-1 {
-  font-size: 90px;
-  font-weight: 1000;
+
+
+  @include respond-to("laptop") {
+    font-size: 90px;
+    font-weight: 1000;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 90px;
+    font-weight: 1000;
+  }
+
+  @include respond-to("medium-large") {
+    font-size: 90px;
+    font-weight: 1000;
+  }
+
+  @media (max-width: 428px) {
+    font-size: 50px;
+    font-weight: 1000;
+  }
+
 }
 
 .position-absolute {
@@ -541,19 +581,40 @@ legend {
 }
 
 .text-primary {
-  color: #fff!important;
-}
-.text-uppercase {
-  text-transform: uppercase!important;
-}
-.position-absolute {
-  position: absolute!important;
+  color: #fff !important;
 }
 
-.border{
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.position-absolute {
+  position: absolute !important;
+}
+
+.border {
   width: 200px;
   height: 2px;
   background: #fff;
   margin: 20px auto;
 }
 
+.border-menu {
+  width: 50px;
+  height: 3px;
+  background: rgb(28, 97, 175);
+  margin: 10px auto;
+}
+
+.border-ul {
+  width: 100%;
+  height: 1px;
+  background: rgb(28, 97, 175);
+  margin: 5px auto;
+}
+
+.menu-social{
+  font-family: 'DB HelvethaicaMon X 65 Med' !important;
+  font-size: 1.3rem !important; //35px
+  color: #f3f3f3;
+}

@@ -1,16 +1,18 @@
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <!-- <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div> -->
-            <div class="modal-body">
-                <h2 class="text-center"> คุณต้องการออกจากระบบหรือไม่ ?</h2>
-                <div class="text-center mt-2">
-                    <button type="button" class="btn btn-link-need subtitle1 mx-2" routerLink="/login">ใช่</button>
-                    <button type="button" class="btn btn-link-need-1 subtitle1" data-bs-dismiss="modal">ไม่</button>
+
+<!-- Modal ลบข้อมูล -->
+<div class="modal fade" id="DeleteModal" tabindex="-1" aria-labelledby="DeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-content ">
+        <div class="modal-header modal-header-delete">
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-12 col-12 col-sm-12 mt-2 text-center">
+                    <i class="far fa-trash-alt" style="font-size: 70px;color: #f64658;"></i>
+                    <h1 class="heading1 mt-3">ต้องการลบใช่หรือไม่</h1>
+                    <button type="button" class="btn btn-secondary subtitle3 mx-2"
+                        data-bs-dismiss="modal">ยกเลิก</button>
+                    <button type="button" class="btn btn-delete subtitle3"
+                    >ยืนยัน</button>
                 </div>
             </div>
         </div>
@@ -39,7 +41,7 @@
                         </div>
                         <div class="col-6">
                             <span class="subtitle3">ประเภทแผนประกัน</span>
-                            <ng-select [items]="type_insurance_id" bindLabel="name" bindValue="id"
+                            <ng-select [items]="typeInsurance" bindLabel="label" bindValue="value" placeholder="กรุณาเลือกประเภท"
                                 formControlName="type_insurance_id" (change)="onSelectType($event)">
                             </ng-select>
                         </div>
@@ -96,7 +98,7 @@
                         </div>
                         <div class="col-6">
                             <span class="subtitle3">ประเภทแผนประกัน</span>
-                            <ng-select [items]="type_insurance_id" bindLabel="name" bindValue="id"
+                            <ng-select [items]="typeInsurance" bindLabel="label" bindValue="value"
                                 formControlName="type_insurance_id" (change)="onSelectType($event)">
                             </ng-select>
                         </div>
@@ -139,6 +141,7 @@
             <div class="container-fluid mx-4">
                 <div class="sidebar-button">
                     <i class="fas fa-bars"></i>
+                    <!-- <img src="../../../../../assets/img/a.png" alt=""  height="20px"> -->
                     <span class="dashboard" style="font-size: 30px;">Dashboard</span>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -148,18 +151,28 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 profile-details">
+                        <!-- <i class="far fa-bell mx-3"></i> -->
+                        <div class="notification">
+                            <em class="far fa-bell icon" [ngClass]="{'notify':notify}"></em>
+                            <span class="badge" *ngIf="count > 0">{{count}}</span>
+                        </div>
+
+                        <!-- ปิด button ก่อน -->
+                        <button hidden class="btn-send ripple" (click)="onSendClick()">Send Notification</button>
+
                         <img src="../../../../../assets/img/undraw_female_avatar_w3jk.svg" alt="">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                สามิตร ไอทีจีเนียส
+                                ธัญวลัย ร่วมพงษ์
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" routerLink="/dashboard/profile">ข้อมูลส่วนตัว</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="/auth/login">ออกจากระบบ</a></li>
+                                <li><a class="dropdown-item" href="/auth/login"><i class="fas fa-sign-out-alt mx-2"
+                                            style="font-size: 15px;"></i>ออกจากระบบ</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -175,7 +188,7 @@
                     </li>
                 </ul> -->
 
-                <h1 style="color: #63799B;">แผนประกันทั้งหมด</h1>
+                <h1 style="color: #63799B;"><i class="far fa-list-alt mx-2" style="font-size: 30px;"></i> แผนประกันทั้งหมด</h1>
                 <legend></legend>
                 <button type="button" class="btn btn-add-data" data-bs-toggle="modal" data-bs-target="#AddModal"
                     (click)="setCreateModal()"><i class="fas fa-plus-square"
@@ -195,16 +208,12 @@
                             </thead>
                             <tbody>
                                 <tr class="tr-content" *ngFor="let item of insurances |
-                                paginate: { 
-                                  itemsPerPage: 4, 
-                                  currentPage: page
-                                  
-                                 }">
+                                paginate: { itemsPerPage: 6, currentPage: page }">
                                     <td></td>
                                     <td class="text-center">{{item.insurance_name}}</td>
-                                    <td class="text-center">{{item.type_insurance_id}}</td>
+                                    <td class="text-center" >{{getTypeOfInsurance(item.type_insurance_id)}}</td>
                                     <td class="text-center"><i class="fas fa-file-pdf"
-                                            style="font-size: 30px;color: #63799B;"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{item.insurance_file}}
+                                            style="font-size: 15px;color: #63799B;"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{item.insurance_file}}
                                     </td>
                                     <td class="text-center">
 
@@ -216,10 +225,9 @@
                                         <button type="button" class="btn btn-warning mx-2" data-bs-toggle="modal"
                                             (click)="setEditModal(item.insurance_id)" data-bs-target="#EditModal"><i
                                                 class="fas fa-edit mx-1" style="font-size: 15px;"></i> แก้ไข</button>
-                                        <button type="button" class="btn btn-danger"><i class="fas fa-trash-alt mx-1"
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                        data-bs-target="#DeleteModal"><i class="fas fa-trash-alt mx-1"
                                                 style="font-size: 15px;"></i> ลบ</button>
-
-
 
                                     </td>
                                 </tr>
@@ -227,10 +235,32 @@
                         </table>
                     </div>
                     <div class="d-flex justify-content-end">
-                        <pagination-controls class="text-center my-pagination" (pageChange)="page=$event"></pagination-controls>
-                      </div>
+                        <pagination-controls class="text-center my-pagination" (pageChange)="page=$event">
+                        </pagination-controls>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 </body>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div> -->
+            <div class="modal-body">
+                <h2 class="text-center"> คุณต้องการออกจากระบบหรือไม่ ?</h2>
+                <div class="text-center mt-2">
+                    <button type="button" class="btn btn-link-need subtitle1 mx-2" routerLink="/login">ใช่</button>
+                    <button type="button" class="btn btn-link-need-1 subtitle1" data-bs-dismiss="modal">ไม่</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

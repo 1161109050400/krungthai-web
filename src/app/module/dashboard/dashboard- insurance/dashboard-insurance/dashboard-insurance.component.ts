@@ -9,13 +9,24 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./dashboard-insurance.component.scss'],
 })
 export class DashboardInsuranceComponent implements OnInit {
-  
+  title = 'increment-notification';
+  notify = false;
+  count = 0;
+
+  onSendClick() {
+    this.count++;
+    this.notify = true;
+    setTimeout(() => {
+      this.notify = false;
+    }, 300);
+  }
+
   file: any;
   insurances: any[] = [];
   totalLength: any;
   page: number = 1;
   showpost: any = [];
-  
+
   @ViewChild('closeModal') closeModal!: ElementRef;
 
   form = new FormGroup({
@@ -36,14 +47,22 @@ export class DashboardInsuranceComponent implements OnInit {
     }
   }
 
-  type_insurance_id = [
-    { id: '3', name: 'สะสมทรัพย์' },
-    { id: '4', name: 'เกษียณอายุ' },
-    { id: '1', name: 'โรคร้ายแรง' },
-    { id: '2', name: 'สุขภาพ' },
+  typeInsurance = [
+    { value: '3', label: 'สะสมทรัพย์' },
+    { value: '4', label: 'เกษียณอายุ' },
+    { value: '1', label: 'โรคร้ายแรง' },
+    { value: '2', label: 'สุขภาพ' },
   ];
 
-  constructor(private insuranceService: InsuranceService,private toastr: ToastrService) {}
+  //ค่าประเภท
+  getTypeOfInsurance(id: any) {
+    return this.typeInsurance.find((item: any) => (item.value == id))?.label;
+  }
+
+  constructor(
+    private insuranceService: InsuranceService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this._fetchInsurance();
@@ -52,7 +71,6 @@ export class DashboardInsuranceComponent implements OnInit {
       this.totalLength = result.length;
       console.log(this.showpost);
     });
-
   }
   _fetchInsurance() {
     this.insuranceService.getInsurance().subscribe((result) => {
@@ -63,23 +81,29 @@ export class DashboardInsuranceComponent implements OnInit {
 
   _beforeSave() {
     const formData = new FormData();
-    formData.append('type_insurance_id', this.form.controls.type_insurance_id.value);
+    formData.append(
+      'type_insurance_id',
+      this.form.controls.type_insurance_id.value
+    );
     formData.append('insurance_file', this.file);
     formData.append('insurance_name', this.form.controls.insurance_name.value);
 
-    this.insuranceService.postInsurance(formData).subscribe((result) => {
-      console.log(result);
-      // alert('Uploaded Successfully.');
-      this.toastr.success('เพิ่มข้อมูลเรียบร้อยแล้ว','แจ้งเตือน');
-      this._fetchInsurance();
-      this.closeModal.nativeElement.click(); 
-    },
-    (err) => {
-      if (err.status === 400) {
-        // alert('มีข้อมูลเครือข่ายพยาบาลนี้อยู่แล้ว?');
-        this.toastr.warning('มีข้อมูลแผนประกันนี้อยู่แล้ว','แจ้งเตือน');
+    this.insuranceService.postInsurance(formData).subscribe(
+      (result) => {
+        console.log(result);
+        // alert('Uploaded Successfully.');
+        this.toastr.success('เพิ่มข้อมูลเรียบร้อยแล้ว', 'แจ้งเตือน');
+        // this._fetchInsurance();
+        this.closeModal.nativeElement.click();
+      },
+      (err) => {
+        if (err.status === 400) {
+          // alert('มีข้อมูลเครือข่ายพยาบาลนี้อยู่แล้ว?');
+          this.toastr.warning('มีข้อมูลแผนประกันนี้อยู่แล้ว', 'แจ้งเตือน');
+        }
       }
-    });
+    );
+    window.location.reload();
   }
 
   setCreateModal() {
@@ -89,34 +113,35 @@ export class DashboardInsuranceComponent implements OnInit {
     this.form.controls.type_insurance_id.setValue('');
   }
 
-  setDeleteModal(id:number){
+  setDeleteModal(id: number) {
     this.insurance_id = id;
   }
   setEditModal(id: number) {
     this.insurance_id = id;
     this.insuranceService.getInsuranceById(id).subscribe((result) => {
-      // console.log(result);
+      console.log(result);
       this.form.controls.insurance_name.setValue(result.insurance_name);
       this.form.controls.type_insurance_id.setValue(result.type_insurance_id);
       this.form.controls.insurance_file.setValue(result.insurance_file);
     });
+   
   }
 
-
- onUpdate() {
-    this.insuranceService.putInsurance(
-      this.form.controls.insurance_name.value,
-      this.form.controls.type_insurance_id.value,
-      this.form.controls.insurance_file.value,
-        this.insurance_id
+  onUpdate() {
+    this.insuranceService
+      .putInsurance(
+        this.insurance_id,
+        this.form.controls.insurance_name.value,
+        this.form.controls.insurance_file.value,
+        this.form.controls.type_insurance_id.value,
       )
       .subscribe((result) => {
-        this.toastr.success('แก้ไขข้อมูลสำเร็จ','แจ้งเตือน');
+        this.toastr.success('แก้ไขข้อมูลสำเร็จ', 'แจ้งเตือน');
         this._fetchInsurance();
-        this.closeModal.nativeElement.click();
+        // this.closeModal.nativeElement.click();
       });
+      window.location.reload();
   }
-
 
   _setFile(event: Event) {
     this.file = (event.target as any).files[0];

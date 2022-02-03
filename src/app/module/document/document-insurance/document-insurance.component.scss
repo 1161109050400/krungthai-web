@@ -1,0 +1,12 @@
+@import "/src/assets/scss/base/typography";
+@import "/src/assets/scss/base/responsive";
+
+
+
+.img-document {
+  background-image: url(../../../../assets/img/document.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 130px 100px;
+}
