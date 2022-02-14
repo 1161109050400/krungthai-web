@@ -27,6 +27,8 @@ export class DashboardInsuranceComponent implements OnInit {
   page: number = 1;
   showpost: any = [];
 
+  filterDocument!: string;
+
   @ViewChild('closeModal') closeModal!: ElementRef;
 
   form = new FormGroup({
@@ -36,9 +38,8 @@ export class DashboardInsuranceComponent implements OnInit {
 
     // file: new FormControl('', Validators.required)
   });
-
+  hospital_id: number | null = null;
   insurance_id: number | null = null;
-
   progress: number = 0;
 
   onSelectType(data: any) {
@@ -56,7 +57,7 @@ export class DashboardInsuranceComponent implements OnInit {
 
   //ค่าประเภท
   getTypeOfInsurance(id: any) {
-    return this.typeInsurance.find((item: any) => (item.value == id))?.label;
+    return this.typeInsurance.find((item: any) => item.value == id)?.label;
   }
 
   constructor(
@@ -124,8 +125,18 @@ export class DashboardInsuranceComponent implements OnInit {
       this.form.controls.type_insurance_id.setValue(result.type_insurance_id);
       this.form.controls.insurance_file.setValue(result.insurance_file);
     });
-   
   }
+
+  onDelete() {
+    this.insuranceService
+      .deleteInsurance(this.insurance_id)
+      .subscribe((result) => {
+        this.toastr.success('ลบข้อมูลสำเร็จ', 'แจ้งเตือน');
+        // this.getHospital();
+      });
+    // window.location.reload();
+  }
+
 
   onUpdate() {
     this.insuranceService
@@ -133,14 +144,14 @@ export class DashboardInsuranceComponent implements OnInit {
         this.insurance_id,
         this.form.controls.insurance_name.value,
         this.form.controls.insurance_file.value,
-        this.form.controls.type_insurance_id.value,
+        this.form.controls.type_insurance_id.value
       )
       .subscribe((result) => {
         this.toastr.success('แก้ไขข้อมูลสำเร็จ', 'แจ้งเตือน');
         this._fetchInsurance();
         // this.closeModal.nativeElement.click();
       });
-      window.location.reload();
+    window.location.reload();
   }
 
   _setFile(event: Event) {

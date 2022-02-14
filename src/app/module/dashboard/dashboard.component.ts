@@ -10,18 +10,9 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
 
   list = document.querySelectorAll('.list');
-  // listenerCount!:any[];
   
 
   constructor() {
-
-    // function activeLink() {
-    //   this.listenerCount.forEach((item) => ItemsList.classList.remove('active'));
-    //   this.classList.add('active');
-    // }
-    // listenerCount.array.forEach((item) =>
-    //   item.addEventListener('click', activiveLink)
-    // );
   
   }
 

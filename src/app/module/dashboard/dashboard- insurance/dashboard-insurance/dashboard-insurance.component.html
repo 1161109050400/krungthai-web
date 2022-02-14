@@ -1,4 +1,3 @@
-
 <!-- Modal ลบข้อมูล -->
 <div class="modal fade" id="DeleteModal" tabindex="-1" aria-labelledby="DeleteModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-content ">
@@ -11,8 +10,7 @@
                     <h1 class="heading1 mt-3">ต้องการลบใช่หรือไม่</h1>
                     <button type="button" class="btn btn-secondary subtitle3 mx-2"
                         data-bs-dismiss="modal">ยกเลิก</button>
-                    <button type="button" class="btn btn-delete subtitle3"
-                    >ยืนยัน</button>
+                    <button type="button" class="btn btn-delete subtitle3" (click)="onDelete()">ยืนยัน</button>
                 </div>
             </div>
         </div>
@@ -41,8 +39,9 @@
                         </div>
                         <div class="col-6">
                             <span class="subtitle3">ประเภทแผนประกัน</span>
-                            <ng-select [items]="typeInsurance" bindLabel="label" bindValue="value" placeholder="กรุณาเลือกประเภท"
-                                formControlName="type_insurance_id" (change)="onSelectType($event)">
+                            <ng-select [items]="typeInsurance" bindLabel="label" bindValue="value"
+                                placeholder="กรุณาเลือกประเภท" formControlName="type_insurance_id"
+                                (change)="onSelectType($event)">
                             </ng-select>
                         </div>
                     </div>
@@ -137,48 +136,14 @@
 <body>
     <app-sidebar-backend></app-sidebar-backend>
     <section class="home-section">
-        <nav class="navbar navbar-expand-md  bg-dark fixed-top">
-            <div class="container-fluid mx-4">
-                <div class="sidebar-button">
-                    <i class="fas fa-bars"></i>
-                    <!-- <img src="../../../../../assets/img/a.png" alt=""  height="20px"> -->
-                    <span class="dashboard" style="font-size: 30px;">Dashboard</span>
-                </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 profile-details">
-                        <!-- <i class="far fa-bell mx-3"></i> -->
-                        <div class="notification">
-                            <em class="far fa-bell icon" [ngClass]="{'notify':notify}"></em>
-                            <span class="badge" *ngIf="count > 0">{{count}}</span>
-                        </div>
-
-                        <!-- ปิด button ก่อน -->
-                        <button hidden class="btn-send ripple" (click)="onSendClick()">Send Notification</button>
-
-                        <img src="../../../../../assets/img/undraw_female_avatar_w3jk.svg" alt="">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                ธัญวลัย ร่วมพงษ์
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" routerLink="/dashboard/profile">ข้อมูลส่วนตัว</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="/auth/login"><i class="fas fa-sign-out-alt mx-2"
-                                            style="font-size: 15px;"></i>ออกจากระบบ</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+        <header class="header">
+            <div class="container-fluid">
+              <div class="row">
+                  <nav class="subtitle3"><i class="fa fa-street-view" aria-hidden="true" style="font-size: 15px;"></i>
+                    &nbsp;&nbsp;A M I N</nav>
+              </div>
             </div>
-        </nav>
+          </header>
         <div class="home-content">
             <div class="overview-boxes">
                 <!-- <ul>
@@ -188,11 +153,23 @@
                     </li>
                 </ul> -->
 
-                <h1 style="color: #63799B;"><i class="far fa-list-alt mx-2" style="font-size: 30px;"></i> แผนประกันทั้งหมด</h1>
+                <h1 style="color: #081D45;"><i class="far fa-list-alt mx-2" style="font-size: 30px;"></i>
+                    แผนประกันทั้งหมด</h1>
                 <legend></legend>
-                <button type="button" class="btn btn-add-data" data-bs-toggle="modal" data-bs-target="#AddModal"
-                    (click)="setCreateModal()"><i class="fas fa-plus-square"
-                        style="font-size: 15px;"></i>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;เพิ่มข้อมูล</button>
+                <div class="row">
+
+                    <div class="col-12 col-xl-3">
+                        <div class="input-wrapper w-100">
+                            <input type="text" [(ngModel)]="filterDocument" name="filterDocument" class="form-control hight-input-text text1" placeholder="ค้นหาเอกสาร">
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-9">
+                        <button type="button" class="btn btn-add-data" data-bs-toggle="modal" data-bs-target="#AddModal"
+                            (click)="setCreateModal()"><i class="fas fa-plus-square"
+                                style="font-size: 15px;"></i>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;เพิ่มข้อมูล</button>
+                    </div>
+                </div>
+
                 <!-- <i class="fas fa-plus"></i> -->
                 <div class="col-12 mt-2">
                     <div class="bg-table">
@@ -207,11 +184,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="tr-content" *ngFor="let item of insurances |
+                                <tr class="tr-content" *ngFor="let item of insurances | filter:filterDocument |
                                 paginate: { itemsPerPage: 6, currentPage: page }">
                                     <td></td>
                                     <td class="text-center">{{item.insurance_name}}</td>
-                                    <td class="text-center" >{{getTypeOfInsurance(item.type_insurance_id)}}</td>
+                                    <td class="text-center">{{getTypeOfInsurance(item.type_insurance_id)}}</td>
                                     <td class="text-center"><i class="fas fa-file-pdf"
                                             style="font-size: 15px;color: #63799B;"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{item.insurance_file}}
                                     </td>
@@ -226,7 +203,7 @@
                                             (click)="setEditModal(item.insurance_id)" data-bs-target="#EditModal"><i
                                                 class="fas fa-edit mx-1" style="font-size: 15px;"></i> แก้ไข</button>
                                         <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                        data-bs-target="#DeleteModal"><i class="fas fa-trash-alt mx-1"
+                                            data-bs-target="#DeleteModal"><i class="fas fa-trash-alt mx-1"
                                                 style="font-size: 15px;"></i> ลบ</button>
 
                                     </td>

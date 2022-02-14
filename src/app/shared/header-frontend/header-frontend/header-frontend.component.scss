@@ -2,67 +2,73 @@
 @import "../../../../assets/scss/base/responsive";
 
 
-nav {
+.header {
   padding: 0.2rem;
   background: #0f2f86;
   color: #f1f2f7;
   text-align: center;
   position: fixed;
-  z-index: 100;
   top: 0px;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
 }
 
 
 
-.slide{
+.slide {
   position: relative;
   float: left;
   width: 65px;
 }
 
 @media (max-width: 768px) {
-  .content{
-      position: relative;
-      top: 45px;
-      width: calc(100%);
-      overflow-x: hidden;
+  .content {
+    position: relative;
+    top: 45px;
+    width: calc(100%);
+    overflow-x: hidden;
   }
 }
+
 @include respond-to("medium-large") {
-.content {
-  height: 100% !important;
-}
-}
-@media (min-width: 768px) {
-  .content{
-      position: relative;
-      float: left;
-      width: calc(100%);
-      top: 45px;
-      overflow-x: hidden;
-      height:90vh;
+  .content {
+    height: 100% !important;
   }
 }
+
+@media (min-width: 768px) {
+  .content {
+    position: relative;
+    float: left;
+    width: calc(100%);
+    top: 45px;
+    overflow-x: hidden;
+    height: 90vh;
+  }
+}
+
 @media (min-width: 1024px) {
-.content{
-  position: relative;
-  float: left;
-  width: calc(100% - 65px);
-  left: 65px;
-  top: 45px;
-  overflow-x: hidden;
-  height:90vh;
+  .content {
+    position: relative;
+    float: left;
+    width: calc(100% - 65px);
+    left: 65px;
+    top: 45px;
+    overflow-x: hidden;
+    height: 90vh;
+  }
 }
-}
+
 @media (min-width: 1440px) {
-.content{
-  position: relative;
-  float: left;
-  width: calc(100% - 65px);
-  left: 65px;
-  top: 45px;
-  overflow-x: hidden;
-  height:95vh;
-}
+  .content {
+    position: relative;
+    float: left;
+    width: calc(100% - 65px);
+    left: 65px;
+    top: 45px;
+    overflow-x: hidden;
+    height: 95vh;
+  }
 
 }

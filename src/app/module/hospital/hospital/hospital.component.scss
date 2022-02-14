@@ -1,0 +1,77 @@
+@import "/src/assets/scss/base/typography";
+@import "/src/assets/scss/base/responsive";
+
+
+nav {
+  padding: 0.5rem;
+  background-color: #f1f2f7;
+  color: #0f2f86;
+  text-align: left;
+  position: fixed;
+  z-index: 100;
+  // top: 0px;
+}
+
+.img-document {
+  background-image: url(../../../../assets/img/hospital.jfif);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 130px 100px;
+}
+
+
+.border-menu {
+  width: 200px;
+  height: 4px;
+  background: #e9252b;
+  margin: 10px auto;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: none!important;
+}
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #0f2f86;
+    border-color: #003e7a;
+}
+
+.color-text{
+  color: #0f2f86;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  margin: 5px 0 15px 0;
+  font-size: 21px;
+  line-height: inherit;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.input-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.input-wrapper:after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f002";
+  font-weight: 800;
+  color: #828282;
+  position: absolute;
+  right: 13px;
+  top: 6px;
+  font-size: 15px;
+}
+
+
+.hight-input-text{
+  height: 36px;
+}

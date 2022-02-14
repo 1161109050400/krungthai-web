@@ -204,3 +204,20 @@ hr.style19 {
   color: #828282;
   margin-top: 10px;
 }
+
+
+.input-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.input-wrapper:after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f002";
+  font-weight: 800;
+  color: #828282;
+  position: absolute;
+  right: 13px;
+  top: 8px;
+  font-size: 12.5px;
+}

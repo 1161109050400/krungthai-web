@@ -39,6 +39,9 @@ import { FooterFrontendComponent } from './shared/footer-frontend/footer-fronten
 import { CardHomeComponent } from './shared/card-home/card-home/card-home.component';
 import { DocumentInsuranceComponent } from './module/document/document-insurance/document-insurance.component';
 import { HospitalComponent } from './module/hospital/hospital/hospital.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+
 
 
 @NgModule({
@@ -74,7 +77,7 @@ import { HospitalComponent } from './module/hospital/hospital/hospital.component
  
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, Ng2SearchPipeModule,
     AppRoutingModule,
     NgSelectModule,
     FormsModule,
@@ -95,5 +98,6 @@ import { HospitalComponent } from './module/hospital/hospital/hospital.component
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
+
 })
 export class AppModule {}

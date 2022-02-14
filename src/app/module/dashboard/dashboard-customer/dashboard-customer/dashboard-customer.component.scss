@@ -143,11 +143,17 @@ legend {
   left: 60px;
 }
 .home-section nav{
-  display: flex;
+  
   justify-content: space-between;
-  height: 80px;
-  background: #fff;
-  display: flex;
+  // height: 80px;
+
+  background: #081D45;
+  color: #f1f2f7;
+  text-align: center;
+  position: fixed;
+  top: 0px;
+
+  
   align-items: center;
   position: fixed;
   width: calc(100% - 240px);
@@ -232,7 +238,7 @@ nav .profile-details i{
 }
 .home-section .home-content{
   position: relative;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 .home-content .overview-boxes{
   // display: flex;
@@ -622,4 +628,25 @@ input:checked + .slider-green:before {
   border-radius: 0.3rem;
   background: #fc5c61;
   padding: 10px 30px;
+}
+
+
+.hight-input-text {
+  height: 36px;
+}
+
+.input-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.input-wrapper:after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f002";
+  font-weight: 800;
+  color: #828282;
+  position: absolute;
+  right: 13px;
+  top: 8px;
+  font-size: 12.5px;
 }

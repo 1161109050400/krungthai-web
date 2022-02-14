@@ -1,30 +1,76 @@
 <app-header-frontend></app-header-frontend>
 
-
 <body>
     <div class="container-fluid" style="margin-top: 35px;">
-    <div class="row">
-        <h1 class="text-center" style="margin-top: 50px;margin-bottom: 10px;color: #0f2f86;">
-            ดาวน์โหลดเอกสารต่างๆ</h1>
-        <div class="img-document">
+
+        <div class="row">
+            <nav class="subtitle3" style="position: fixed;">
+                <i class="fas fa-chevron-left"
+                    style="align-items: left; margin-left: 20px; margin-top: 7px; font-size: 17px;"
+                    routerLink="/krungthai/home-page">
+                    <span style="padding-top: 20px;font-size: 25px;" class="mx-2">ย้อนกลับ</span></i>
+            </nav>
         </div>
-    </div>
-    <div class="row">
-        <label class="subtitle2 text-center mt-3" style="color: #0f2f86;">ดาวน์โหลดแบบฟอร์มและเอกสารต่างๆ ที่เป็นประโยชน์ต่อลูกค้า</label>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            
+        <div class="row">
+            <h1 class="text-center" style="margin-top: 80px;margin-bottom: 10px;color: #0f2f86;">
+                ดาวน์โหลดเอกสารต่างๆ</h1>
+            <div class="text-center">
+                <img src="../../../../assets/img/document.png" alt="" width="150px">
+                <h4 class="mt-1" style="color: #0f2f86;">เอกสาร</h4>
+                <div class="border-menu"></div>
+            </div>
         </div>
+        <div class="row">
+            <label class="subtitle2 text-center mt-3" style="color: #0f2f86;">ดาวน์โหลดเอกสารต่างๆ
+                ที่เป็นประโยชน์ต่อลูกค้า</label>
+        </div>
+        <div class="row" style="background-color: #f1f2f7;">
+            <div class="col-12 col-xl-3 col-md-8 center-block">
+                <br>
+                <!-- <h4>ประเภทกรมธรรม์</h4> -->
+                <div class="col mb-2">
+                    <!-- <ng-select [items]="typeInsurance" bindLabel="label" bindValue="value"
+                        placeholder="กรุณาเลือกประเภทของเอกสาร">
+                    </ng-select> -->
+
+                </div>
+            </div>
+        </div>
+        <div class="row" style="background-color: #f1f2f7;">
+            <div class="col-12 col-xl-7 col-md-8 center-block">
+                <table class="table table-list">
+                    <thead class="table-dark">
+                        <tr>
+                            <!-- <th class="first-col">ลำดับ</th> -->
+                            <th class="first-col">ชื่อเอกสาร</th>
+                            <th scope="col"></th>
+                            <th class="last-col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of insurances |
+                        paginate: { itemsPerPage: 6, currentPage: page }">
+                            <td><i class="fas fa-file-pdf"
+                                    style="font-size: 15px;color: #63799B;"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{item.insurance_name}}
+                            </td>
+                            <td>{{item.insurance_file}}</td>
+                            <div class="p-1">
+                                <a class="btn btn-outline-primary subtitle3" download={{item.insurance_file}}
+                                    href="/api/pdf-storage/{{item.insurance_file}}"><i class="fa fa-download"
+                                        style="font-size: 15px;"></i>&nbsp;&nbsp;&nbsp;&nbsp;Download</a>
+                            </div>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="d-flex justify-content-end">
+                    <pagination-controls class="text-center my-pagination" (pageChange)="page=$event">
+                    </pagination-controls>
+                </div>
+                <br>
+            </div>
+        </div>
+        <br>
+        <br>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-</div>
 </body>
-
-
 <app-footer-frontend></app-footer-frontend>

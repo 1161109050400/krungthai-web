@@ -26,6 +26,7 @@ export class DashboardHospitalComponent implements OnInit {
   totalLength: any;
   page: number = 1;
   showpost: any = [];
+  filterHospital!: string;
 
   onSendClick() {
     this.count++;
@@ -54,15 +55,14 @@ export class DashboardHospitalComponent implements OnInit {
         this.phone.value
       )
       .subscribe(
-        (result) => { 
-
+        (result) => {
           Swal.fire({
             position: 'top-end',
             icon: 'success',
             title: 'Your work has been saved',
             showConfirmButton: false,
-            timer: 1500
-          }).then(result => {
+            timer: 1500,
+          }).then((result) => {
             window.location.reload();
           });
 
@@ -126,7 +126,6 @@ export class DashboardHospitalComponent implements OnInit {
   getHospital() {
     this.hospitalService.getHospital().subscribe((Response) => {
       console.log(Response);
-
       this.hospital = Response;
       console.log(this.hospital);
     });

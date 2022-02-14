@@ -1,97 +1,27 @@
 <body>
   <app-sidebar-backend></app-sidebar-backend>
   <section class="home-section">
-    <nav class="navbar navbar-expand-md  bg-dark fixed-top">
-      <div class="container-fluid mx-4">
-        <div class="sidebar-button">
-          <i class="fas fa-bars"></i>
-          <span class="dashboard" style="font-size: 30px;">Dashboard</span>
+  
+    <header class="header">
+      <div class="container-fluid">
+        <div class="row">
+            <nav class="subtitle3"><i class="fa fa-street-view" aria-hidden="true" style="font-size: 15px;"></i>
+              &nbsp;&nbsp;A M I N</nav>
         </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 profile-details">
-              <!-- <i class="far fa-bell mx-3"></i> -->
-              <div class="notification">
-                  <em class="far fa-bell icon" [ngClass]="{'notify':notify}"></em>
-                  <span class="badge" *ngIf="count > 0">{{count}}</span>
-                </div>
-
-                <!-- ปิด button ก่อน -->
-                <button hidden class="btn-send ripple" (click)="onSendClick()">Send Notification</button>
-
-              <img src="../../../../../assets/img/undraw_female_avatar_w3jk.svg" alt="">
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                      data-bs-toggle="dropdown" aria-expanded="false">
-                      ธัญวลัย ร่วมพงษ์
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" routerLink="/dashboard/profile">ข้อมูลส่วนตัว</a></li>
-                      <li>
-                          <hr class="dropdown-divider">
-                      </li>
-                      <li><a class="dropdown-item" href="/auth/login"><i class="fas fa-sign-out-alt mx-2" style="font-size: 15px;"></i>ออกจากระบบ</a></li>
-                  </ul>
-              </li>
-          </ul>
       </div>
-      </div>
-    </nav>
-
+    </header>
     <div class="home-content">
       <div class="overview-boxes">
-        <!-- <div class="box">
-            <div class="right-side">
-              <div class="box-topic">Total Order</div>
-              <div class="number">40,876</div>
-              <div class="indicator">
-                  <i class="far fa-list-alt"></i>
-                <span class="text">Up from yesterday</span>
-              </div>
-            </div>
-            <i class="far fa-list-alt cart"></i>
-          
-          </div>
-          <div class="box">
-            <div class="right-side">
-              <div class="box-topic">Total Sales</div>
-              <div class="number">38,876</div>
-              <div class="indicator">
-                <i class='bx bx-up-arrow-alt'></i>
-                <span class="text">Up from yesterday</span>
-              </div>
-            </div>
-            <i class='bx bxs-cart-add cart two' ></i>
-          </div>
-          <div class="box">
-            <div class="right-side">
-              <div class="box-topic">Total Profit</div>
-              <div class="number">$12,876</div>
-              <div class="indicator">
-                <i class='bx bx-up-arrow-alt'></i>
-                <span class="text">Up from yesterday</span>
-              </div>
-            </div>
-            <i class='bx bx-cart cart three' ></i>
-          </div>
-          <div class="box">
-            <div class="right-side">
-              <div class="box-topic">Total Return</div>
-              <div class="number">11,086</div>
-              <div class="indicator">
-                <i class='bx bx-down-arrow-alt down'></i>
-                <span class="text">Down From Today</span>
-              </div>
-            </div>
-            <i class='bx bxs-cart-download cart four' ></i>
-          </div> -->
-
-        <h1 style="color: #63799B;"><i class="far fa-thumbs-up mx-2" style="font-size: 30px;"></i>ลูกค้าที่สนใจทำแผนประกัน</h1>
+        <h1 style="color: #081D45;"><i class="far fa-thumbs-up mx-2" style="font-size: 30px;"></i>ลูกค้าที่สนใจทำแผนประกัน</h1>
         <legend></legend>
-        <div class="col-12">
+        <div class="row">
+          <div class="col-12 col-xl-3">
+              <div class="input-wrapper w-100">
+                  <input type="text" [(ngModel)]="filterCustomer" name="filterCustomer" class="form-control hight-input-text text1" placeholder="ค้นหาลูกค้า">
+              </div>
+          </div>
+      </div>
+        <div class="col-12 mt-2">
           <div class="bg-table">
             <table class="table table-list">
               <thead class="table-dark">
@@ -102,11 +32,11 @@
                   <th class="">เบอร์โทรศัพท์</th>
                   <th class="">อีเมล</th>
                   <th class="">จังหวัด</th>
-                  <th class="last-col">สถานะ</th>
+                  <th class="last-col">ปี-เดือน-วัน</th>
                 </tr>
               </thead>
               <tbody>
-                <tr class="tr-content" *ngFor="let user of user |
+                <tr class="tr-content" *ngFor="let user of user | filter:filterCustomer |
                 paginate: { itemsPerPage: 4, currentPage: page }">
                   <td class=""><img src="../../../../../assets/img/avatar/{{getRandom()}}" alt="" width="85"
                       height="85"></td>
@@ -116,19 +46,19 @@
                   <!-- <td><img src="../../../../../assets/img/user.png" alt="" width="100" height="100"></td> -->
                   <td class="">คุณ&nbsp; &nbsp;{{user.user_firstname}}&nbsp; &nbsp; &nbsp;
                     {{user.user_lastname}}</td>
-                  <td class=""><i class="fas fa-phone-alt" style="font-size: 15px;color: #63799B;"></i>&nbsp;&nbsp;&nbsp;{{user.user_phone}}</td>
-                  <td class=""><i class="far fa-envelope" style="font-size: 15px;color: #63799B;"></i>&nbsp;&nbsp;&nbsp;
+                  <td class=""><i class="fa fa-phone-alt" style="font-size: 15px;color: #081D45;"></i>&nbsp;&nbsp;&nbsp;{{user.user_phone}}</td>
+                  <td class=""><i class="fa fa-envelope" style="font-size: 15px;color: #081D45;"></i>&nbsp;&nbsp;&nbsp;
                     {{user.user_email}}</td>
                     <td class="">{{user.user_county}}</td>
                   <td class="">
-                    <label class="switch-relative">
+                    <!-- <label class="switch-relative">
                       <input type="checkbox">
                       <div class="slider-green">
                         <span class="on subtitle2 fix-switch">ติดต่อแล้ว</span>
                         <span class="off subtitle2 fix-switch">ยังไม่ติดต่อ</span>
                       </div>
-                    </label>
-
+                    </label> -->
+                    <i class="fa fa-calendar" style="font-size: 15px;color: #081D45;"></i>&nbsp;&nbsp;{{user.createdAt}}
                     <!-- <button type="button" class="button circle not mx-2">
                       <i class="fas fa-times" style="font-size: 20px;"></i></button> -->
                   </td>

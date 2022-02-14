@@ -1,1 +1,66 @@
-<p>hospital works!</p>
+<app-header-frontend></app-header-frontend>
+
+<body>
+    <div class="container-fluid" style="margin-top: 35px;">
+        <div class="row">
+            <nav class="subtitle3" style="position: fixed;">
+                <i class="fas fa-chevron-left"
+                    style="align-items: left; margin-left: 20px; margin-top: 7px; font-size: 17px;"
+                    routerLink="/krungthai/home-page">
+                    <span style="padding-top: 20px;font-size: 25px;" class="mx-2">ย้อนกลับ</span></i>
+            </nav>
+        </div>
+        <div class="row">
+            <h1 class="text-center" style="margin-top: 80px;margin-bottom: 10px;color: #0f2f86;">
+                ค้นหารายชื่อโรงพยาบาลในเครือข่าย</h1>
+            <!-- <div class="img-document">
+            </div> -->
+            <div class="text-center">
+                <img src="../../../../assets/img/hospital.png" alt="" width="150px">
+                <h4 class="mt-1" style="color: #0f2f86;">โรงพยาบาล</h4>
+                <div class="border-menu"></div>
+            </div>
+        </div>
+        <div class="row" style="background-color: #f1f2f7;">
+            <div class="text-center">
+                <div class="col-12 col-xl-4 col-md-8 center-block">
+                    <br>
+                    <div class="col mb-2">
+
+                        <div class="input-wrapper w-100">
+                            <input type="text" [(ngModel)]="filterHospital" name="filterHospital"
+                            class="form-control hight-input-text text1" placeholder="ค้นหาโรงพยาบาล">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-xl-4 col-md-8 center-block">
+                    <div *ngFor="let Hospital of hospital | filter:filterHospital |
+                    paginate: { itemsPerPage: 2, currentPage: page }" class="card mt-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img src="../../../../assets/img/hospital.png" alt="" width="80px">
+                                </div>
+                                <div class="col-9 text-left">
+                                    <h3 class="color-text">{{Hospital.hospital_name}}</h3>
+                                    <p class="text1">{{Hospital.hospital_location}}</p>
+                                    <i class="fas fa-phone-alt"></i><span
+                                        class="text1">&nbsp;&nbsp;&nbsp;{{Hospital.hospital_phone}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <br>
+                    <div class="d-flex justify-content-end">
+                        <pagination-controls class="text-center my-pagination" (pageChange)="page=$event">
+                        </pagination-controls>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+</body>
+<app-footer-frontend></app-footer-frontend>

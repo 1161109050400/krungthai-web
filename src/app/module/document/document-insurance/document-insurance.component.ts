@@ -1,24 +1,45 @@
 import { Component, OnInit } from '@angular/core';
+import { InsuranceService } from 'src/app/services/insurance.service';
 
 @Component({
   selector: 'app-document-insurance',
   templateUrl: './document-insurance.component.html',
-  styleUrls: ['./document-insurance.component.scss']
+  styleUrls: ['./document-insurance.component.scss'],
 })
 export class DocumentInsuranceComponent implements OnInit {
+  constructor(private insuranceService: InsuranceService) {}
 
-  constructor() { }
+  file: any;
+  insurances: any[] = [];
+  totalLength: any;
+  page: number = 1;
+  showpost: any = [];
 
   ngOnInit(): void {
+    this._fetchInsurance();
+    this.insuranceService.getInsurance().subscribe((result) => {
+      this.showpost = result;
+      this.totalLength = result.length;
+      console.log(this.showpost);
+    });
   }
 
-  years = [
-    { value: '1-12', label: '1 เดือน - 12 ปี' },
-    { value: '13-24', label: '13 - 24 ปี' },
-    { value: '25-36', label: '25 - 36 ปี' },
-    { value: '37-48', label: '37 - 48 ปี' },
-    { value: '<=49', label: '49 ปีขึ้นไป' },
+  typeInsurance = [
+    { value: '3', label: 'สะสมทรัพย์' },
+    { value: '4', label: 'เกษียณอายุ' },
+    { value: '1', label: 'โรคร้ายแรง' },
+    { value: '2', label: 'สุขภาพ' },
   ];
 
+  _fetchInsurance() {
+    this.insuranceService.getInsurance().subscribe((result) => {
+      this.insurances = result;
+    });
+  }
 
+  _setFile(event: Event) {
+    this.file = (event.target as any).files[0];
+  }
+
+  downloadFile(file: any) {}
 }

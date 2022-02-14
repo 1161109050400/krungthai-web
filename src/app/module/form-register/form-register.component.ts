@@ -10,6 +10,7 @@ import { Data, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { FormRegisterService } from 'src/app/services/form-register.service';
+import { MailService } from 'src/app/services/mail.service';
 
 // import { FormRegisterService } from './form-register.service';
 
@@ -26,18 +27,9 @@ export class FormRegisterComponent implements OnInit {
     private http: HttpClient,
     public formBuilder: FormBuilder,
     private modalService: NgbModal,
-    private toastr: ToastrService
-    
-  ) {
-    // this.registerForm = this.formBuilder.group({
-    //   firstName : [null, Validators.required],
-    //   lastName : [null, Validators.required],
-    //   Email : [null, Validators.required],
-    //   numberPhone : [null, Validators.required],
-    //   faxNumber : [null, Validators.required],
-    //   Province : [null, Validators.required],
-    // })
-  }
+    private toastr: ToastrService,
+    private mail: MailService
+  ) {}
   @ViewChild('saveModal') public saveModal: any; // เรียก Modal login
   provinces: any;
 
@@ -66,36 +58,42 @@ export class FormRegisterComponent implements OnInit {
       )
       .subscribe(
         (result) => {
-          if (Response) {
-            this.modalService.open(this.saveModal, { centered: true });
-            // this.login.open();
-            setTimeout(() => {
-              window.location.reload();
-            }, 1000);
+          if (result) {
+            this.mail
+              .mailTo({
+                user_firstname: this.firstName.value,
+                user_lastname: this.lastName.value,
+                user_fax: this.faxNumber.value,
+                user_county: this.dataSelect.value.province,
+                user_email: this.Email.value,
+                user_phone: this.numberPhone.value,
+              })
+              .subscribe((mailResult) => {
+                console.log(mailResult);
+                this.modalService.open(this.saveModal, { centered: true });
+                setTimeout(() => {
+                  window.location.reload();
+                }, 1000);
+              });
           } else {
             setTimeout(() => {
               window.location.reload();
             }, 1000);
           }
-          // this.router.navigate(['krungthai/home-page']);
-          // alert('Data added successfully !');
         },
         (err) => {
           if (err.status === 400) {
-            // alert('มีชื่อผู้ใช้นี้แล้ว?');
-            this.toastr.warning('มีชื่อผู้ใช้นี้แล้ว','แจ้งเตือน');
+            this.toastr.warning('มีชื่อผู้ใช้นี้แล้ว', 'แจ้งเตือน');
           }
         }
       );
 
     this.formRegisterService.getUser().subscribe((Response) => {
       this.user = Response;
-
-      console.log(this.user);
+      // console.log(this.user);
       this.user[0].user_firstname;
     });
   }
-
 
   ngOnInit(): void {
     this.http

@@ -28,48 +28,14 @@
 <body>
     <app-sidebar-backend></app-sidebar-backend>
     <section class="home-section">
-        <nav class="navbar navbar-expand-md  bg-dark fixed-top">
-            <div class="container-fluid mx-4">
-                <div class="sidebar-button">
-                    <i class="fas fa-bars"></i>
-                    <span class="dashboard" style="font-size: 30px;">Dashboard</span>
-                </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 profile-details">
-                        <!-- <i class="far fa-bell mx-3"></i> -->
-                        <div class="notification">
-                            <em class="far fa-bell icon" [ngClass]="{'notify':notify}"></em>
-                            <span class="badge" *ngIf="count > 0">{{count}}</span>
-                          </div>
-
-                          <!-- ปิด button ก่อน -->
-                          <button hidden class="btn-send ripple" (click)="onSendClick()">Send Notification</button>
-
-                        <img src="../../../../../assets/img/undraw_female_avatar_w3jk.svg" alt="">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                ธัญวลัย ร่วมพงษ์
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" routerLink="/dashboard/profile">ข้อมูลส่วนตัว</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="/auth/login"><i class="fas fa-sign-out-alt mx-2" style="font-size: 15px;"></i>ออกจากระบบ</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+        <header class="header">
+            <div class="container-fluid">
+              <div class="row">
+                  <nav class="subtitle3"><i class="fa fa-street-view" aria-hidden="true" style="font-size: 15px;"></i>
+                    &nbsp;&nbsp;A M I N</nav>
+              </div>
             </div>
-        </nav>
+          </header>
         <div class="home-content">
             <div class="overview-boxes">
                 <div class="box">
@@ -125,19 +91,25 @@
                   <div class="title">ผู้เยี่ยมชมรายวัน</div>
                   <div class="sales-details">
                     
-                                <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions1"
+                                <!-- <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions1"
                                     style="width: 100%; display: block;">
-                                </highcharts-chart>
+                                </highcharts-chart> -->
                   </div>
                   <div class="button">
                     <a href="#">See All</a>
                   </div>
                 </div>
                 <div class="top-sales box">
-                    <div class="title">ประกันยอดฮิต</div>
+
+                    <canvas id="myChart" width="200" height="200"></canvas>
+
+
+
+
+                    <!-- <div class="title">ประกันยอดฮิต</div>
                     <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
                                     style="width: 100%; display: block;">
-                                </highcharts-chart>
+                                </highcharts-chart> -->
                 </div>
             </div>
         </div>

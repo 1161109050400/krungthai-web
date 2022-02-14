@@ -10,7 +10,7 @@ import { FormRegisterService } from 'src/app/services/form-register.service';
   styleUrls: ['./dashboard-customer.component.scss'],
 })
 export class DashboardCustomerComponent implements OnInit {
-  fake_img = ['1.jpg', '2.png', '3.png', '4.png', '5.png', '6.png'];
+  fake_img = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'];
   constructor(
     private formRegisterService: FormRegisterService,
     private router: Router,
@@ -30,6 +30,7 @@ export class DashboardCustomerComponent implements OnInit {
   }
 
   isSuccess: boolean = false;
+  filterCustomer!: string;
   
 
   toggleTag() {

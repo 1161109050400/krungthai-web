@@ -36,8 +36,4 @@ export class InsuranceService {
     return this.http.delete<any>('/api/insurance/del-insurance/'+id);
   }
 
-
-  
-
-
 }
