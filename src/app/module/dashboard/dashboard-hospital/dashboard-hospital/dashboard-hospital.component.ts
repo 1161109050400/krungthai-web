@@ -4,6 +4,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/services/auth.service';
 import { HospitalService } from 'src/app/services/hospital.service';
 import Swal from 'sweetalert2';
 
@@ -42,7 +43,8 @@ export class DashboardHospitalComponent implements OnInit {
     private http: HttpClient,
     private hospitalService: HospitalService,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private authService: AuthService
   ) {}
 
   onSubmit() {
@@ -143,8 +145,8 @@ export class DashboardHospitalComponent implements OnInit {
     });
   }
 
-  _logOut() {
-    this.router.navigate(['/login']);
-    // window.location.reload();
+  logout() {
+    this.authService.logout();
+    window.location.reload();
   }
 }

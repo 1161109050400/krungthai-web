@@ -40,6 +40,10 @@ import { CardHomeComponent } from './shared/card-home/card-home/card-home.compon
 import { DocumentInsuranceComponent } from './module/document/document-insurance/document-insurance.component';
 import { HospitalComponent } from './module/hospital/hospital/hospital.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './auth/auth.guard';
+
+
 
 
 
@@ -73,7 +77,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     FooterFrontendComponent,
     CardHomeComponent,
     DocumentInsuranceComponent,
-    HospitalComponent,
+    HospitalComponent
  
   ],
   imports: [
@@ -94,8 +98,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     NgxSpinnerModule,
     NgImageSliderModule,
     NgxPaginationModule,
+
   ],
-  providers: [],
+  providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 

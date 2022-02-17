@@ -125,15 +125,15 @@ export class FormAxaComponent implements OnInit {
             this.spinner.hide();
 
             if ('PWLNP85' == value2) {
-              this.router.navigate(['krungthai/pwlnp85']);
+              this.router.navigate(['pwlnp85']);
             } else if ('WLANP85' == value2) {
-              this.router.navigate(['krungthai/wlanp85']);
+              this.router.navigate(['wlanp85']);
             } else if ('10EC' == value2) {
-              this.router.navigate(['krungthai/10ec']);
+              this.router.navigate(['10ec']);
             } else if ('RL05' == value2) {
-              this.router.navigate(['krungthai/rl05']);
+              this.router.navigate(['rl05']);
             } else if ('RPUL' == value2) {
-              this.router.navigate(['krungthai/rpul']);
+              this.router.navigate(['rpul']);
             }
           }, 1000);
         }

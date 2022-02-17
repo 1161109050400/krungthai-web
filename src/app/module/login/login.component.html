@@ -15,7 +15,7 @@
 						<i class="fas fa-user"></i>
 					</div>
 					<div class="div">
-						<input type="text" class="input" [formControl]="username">
+						<input type="text" [formControl]="email" class="input">
 					</div>
 				</div>
 				<div class="input-div pass">
@@ -23,13 +23,12 @@
 						<i class="fas fa-lock"></i>
 					</div>
 					<div class="div">
-						<input type="password" class="input" [formControl]="password">
+						<input type="password" [formControl]="password" class="input" [formControl]="password">
 					</div>
 				</div>
 				<a href="#" class="subtitle2">Forgot Password?</a>
-				<input type="button" class="btn subtitle1" value="เข้าสู่ระบบ" (click)="_beforeLogin()"
+				<input type="button" class="btn subtitle1" value="เข้าสู่ระบบ" (click)="logIn()"
 					data-bs-toggle="modal" data-bs-target="#login">
-				<!-- routerLink="/krungthai/dashboard" -->
 			</form>
 		</div>
 	</div>

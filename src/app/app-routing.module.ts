@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
 import { DashboardInsuranceComponent } from './module/dashboard/dashboard- insurance/dashboard-insurance/dashboard-insurance.component';
 import { DashboardChartComponent } from './module/dashboard/dashboard-chart/dashboard-chart/dashboard-chart.component';
 import { DashboardCustomerComponent } from './module/dashboard/dashboard-customer/dashboard-customer/dashboard-customer.component';
@@ -24,34 +25,113 @@ import { RpulComponent } from './module/result-insurance/RPUL/rpul/rpul.componen
 import { WLANP85Component } from './module/result-insurance/WLANP85/wlanp85/wlanp85.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'krungthai/form-axa', component: FormAxaComponent },
-  { path: 'krungthai/form-rating', component: FormRatingComponent },
-  { path: 'krungthai/home-page', component: HomePageComponent },
-  { path: '', pathMatch: 'full', redirectTo: 'krungthai/home-page' },
-  { path: 'krungthai/form-register', component: FormRegisterComponent },
-  { path: 'krungthai/dashboard', component: DashboardComponent },
-  { path: 'krungthai/dashboard-chart', component: DashboardChartComponent },
-  {path: 'krungthai/dashboard-hospital', component: DashboardHospitalComponent,},
-  { path: 'krungthai/insurance', component: DashboardInsuranceComponent },
-  { path: 'krungthai/customer', component: DashboardCustomerComponent },
-  { path: 'krungthai/disease', component: DiseaseComponent },
-  { path: 'krungthai/health', component: HealthComponent },
-  { path: 'krungthai/money', component: MoneyComponent },
-  { path: 'krungthai/retire', component: RetireComponent },
-  { path: 'krungthai/contact', component: ContactPageComponent },
-  { path: 'krungthai/wlanp85', component: WLANP85Component },
-  { path: 'krungthai/pwlnp85', component: Pwlnp85Component },
-  { path: 'krungthai/10ec', component: Ec10Component },
-  { path: 'krungthai/rl05', component: Rl05Component },
-  { path: 'krungthai/rpul', component: RpulComponent },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'form-axa',
+    component: FormAxaComponent,
+  },
+  {
+    path: 'form-rating',
+    component: FormRatingComponent,
+  },
+  {
+    path: 'home-page',
+    component: HomePageComponent,
+  },
+  {
+    path: '', pathMatch: 'full' ,
+    redirectTo: 'home-page',
+  },
+  {
+    path: 'form-register',
+    component: FormRegisterComponent,
+  },
+  {
+    path: 'form-register',
+    component: FormRegisterComponent,
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+  },
+  {
+    path: 'dashboard-chart',
+    component: DashboardChartComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'dashboard-hospital',
+    component: DashboardHospitalComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'dashboard-insurance',
+    component: DashboardInsuranceComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'dashboard-customer',
+    component: DashboardCustomerComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'disease',
+    component: DiseaseComponent,
+  },
+  {
+    path: 'health',
+    component: HealthComponent,
+  },
+  {
+    path: 'money',
+    component: MoneyComponent,
+  },
+  {
+    path: 'retire',
+    component: RetireComponent,
+  },
+  {
+    path: 'contact',
+    component: ContactPageComponent,
+  },
+  {
+    path: 'contact',
+    component: ContactPageComponent,
+  },
+  { path: 'wlanp85', 
+    component: WLANP85Component 
+  },
+  { 
+    path: 'pwlnp85', 
+    component: Pwlnp85Component 
+  },
+  { 
+    path: '10ec', 
+    component: Ec10Component 
+  },
+  { 
+    path: 'rl05', 
+    component: Rl05Component 
+  },
 
+  { 
+    path: 'rpul', 
+    component: RpulComponent 
+  },
 
-  { path: 'krungthai/download', component: DocumentInsuranceComponent },
-  { path: 'krungthai/hospital', component: HospitalComponent }
+  { 
+    path: 'download', 
+    component: DocumentInsuranceComponent 
+  },
+
+  { path: 'hospital', 
+    component: HospitalComponent 
+  }
 
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

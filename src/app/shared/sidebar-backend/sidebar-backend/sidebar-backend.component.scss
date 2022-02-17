@@ -1,17 +1,24 @@
 @import "/src/assets/scss/base/typography";
 @import "/src/assets/scss/base/responsive";
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+// *{
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
+
+
 .sidebar{
   position: fixed;
   height: 100%;
   width: 240px;
   background: #084298;
   transition: all 0.5s ease;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  
 }
 .sidebar.active{
   width: 60px;
@@ -414,3 +421,22 @@ nav .profile-details i{
   }
 }
 
+ul {
+  padding-left: 0rem !important;
+}
+
+
+.btn-link-need{
+  color: #2BD47D;
+  background: #C0F2D8;
+  border-radius: 0.3rem;
+  padding: 10px 30px;
+
+}
+
+.btn-link-need-1{
+  border-radius: 0.3rem;
+  color: #e05260;
+  background: #f7d4d7;
+  padding: 10px 30px;
+}

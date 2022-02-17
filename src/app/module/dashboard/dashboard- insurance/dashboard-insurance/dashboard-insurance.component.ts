@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { InsuranceService } from 'src/app/services/insurance.service';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-dashboard-insurance',
@@ -62,7 +63,8 @@ export class DashboardInsuranceComponent implements OnInit {
 
   constructor(
     private insuranceService: InsuranceService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -159,4 +161,11 @@ export class DashboardInsuranceComponent implements OnInit {
   }
 
   downloadFile(file: any) {}
+
+  logout() {
+    this.authService.logout();
+    window.location.reload();
+  }
+
+
 }

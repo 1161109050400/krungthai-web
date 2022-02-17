@@ -1,28 +1,23 @@
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+<!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <!-- <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div> -->
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
             <div class="modal-body">
-                <h2 class="text-center"> คุณต้องการออกจากระบบหรือไม่ ?</h2>
-                <!-- <div class="text-center">
-                        <i class="fas fa-sign-out-alt" style="font-size: 60px;"></i>
-                    </div> -->
+                <h2 class="text-center" style="color: #081D45;"> คุณต้องการออกจากระบบหรือไม่ ?</h2>
                 <div class="text-center mt-2">
-                    <button type="button" class="btn btn-link-need subtitle1 mx-2" routerLink="/login">ใช่</button>
-                    <button type="button" class="btn btn-link-need-1 subtitle1" data-bs-dismiss="modal">ไม่</button>
+                    <button type="button" class="btn btn-link-need subtitle1 mx-2" (click)="logout()"><i
+                            class="fas fa-sign-out-alt"></i>&nbsp; &nbsp;ใช่</button>
+                    <button type="button" class="btn btn-link-need-1 subtitle1" data-bs-dismiss="modal"><i
+                            class="fas fa-times-circle"></i>&nbsp; &nbsp;ไม่</button>
                 </div>
             </div>
-            <!-- <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
-        </div> -->
         </div>
     </div>
-</div>
+</div> -->
 
 
 <body>
@@ -30,12 +25,12 @@
     <section class="home-section">
         <header class="header">
             <div class="container-fluid">
-              <div class="row">
-                  <nav class="subtitle3"><i class="fa fa-street-view" aria-hidden="true" style="font-size: 15px;"></i>
-                    &nbsp;&nbsp;A M I N</nav>
-              </div>
+                <div class="row">
+                    <nav class="subtitle3"><i class="fa fa-street-view" aria-hidden="true" style="font-size: 15px;"></i>
+                        &nbsp;&nbsp;A M I N</nav>
+                </div>
             </div>
-          </header>
+        </header>
         <div class="home-content">
             <div class="overview-boxes">
                 <div class="box">
@@ -60,7 +55,7 @@
                         </div>
                     </div>
                     <i class='far fa-hospital cart two'></i>
-                  
+
                 </div>
                 <div class="box">
                     <div class="right-side">
@@ -88,30 +83,25 @@
 
             <div class="sales-boxes">
                 <div class="recent-sales box">
-                  <div class="title">ผู้เยี่ยมชมรายวัน</div>
-                  <div class="sales-details">
-                    
-                                <!-- <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions1"
+                    <div class="title">ผู้เยี่ยมชมรายวัน</div>
+                    <div class="sales-details">
+
+                        <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions1"
                                     style="width: 100%; display: block;">
-                                </highcharts-chart> -->
-                  </div>
-                  <div class="button">
-                    <a href="#">See All</a>
-                  </div>
+                                </highcharts-chart>
+                    </div>
+                    <div class="button">
+                        <a href="#">See All</a>
+                    </div>
                 </div>
                 <div class="top-sales box">
-
-                    <canvas id="myChart" width="200" height="200"></canvas>
-
-
-
-
-                    <!-- <div class="title">ประกันยอดฮิต</div>
+                    <div class="title">ประกันยอดฮิต</div>
                     <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
                                     style="width: 100%; display: block;">
-                                </highcharts-chart> -->
+                                </highcharts-chart>
                 </div>
             </div>
         </div>
     </section>
 </body>
+

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { flatten } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { FormRegisterService } from 'src/app/services/form-register.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class DashboardCustomerComponent implements OnInit {
   constructor(
     private formRegisterService: FormRegisterService,
     private router: Router,
-    private http: HttpClient
+    private http: HttpClient,
+    private authService: AuthService
   ) {}
 
   title = 'increment-notification';
@@ -62,4 +64,14 @@ export class DashboardCustomerComponent implements OnInit {
       console.log(this.showpost);
     });
   }
+
+
+  logout() {
+    this.authService.logout();
+    window.location.reload();
+  }
+
+
+
+
 }
