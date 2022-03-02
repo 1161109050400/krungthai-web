@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 import { HospitalService } from 'src/app/services/hospital.service';
@@ -47,37 +46,47 @@ export class DashboardHospitalComponent implements OnInit {
     private authService: AuthService
   ) {}
 
-  onSubmit() {
+  onSubmit():any {
+    // if (
+    //   this.hospitalName.value == '' ||
+    //   this.hospitalLocation.value == '' ||
+    //   this.phone.value == ''
+    // ) {
+    //   Swal.fire({
+    //     icon: 'error',
+    //     title: 'Oops...',
+    //     text: 'กรุณากรอกช่องให้ครบ !',
+    //     confirmButtonText: 'ตกลง',
+    //   });
+    // } 
     this.hospitalService
       .Hospital(
         this.hospitalName.value,
         this.hospitalLocation.value,
-        // this.latitude.value,
-        // this.longitude.value,
         this.phone.value
       )
       .subscribe(
         (result) => {
-          Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Your work has been saved',
-            showConfirmButton: false,
-            timer: 1500,
-          }).then((result) => {
-            window.location.reload();
-          });
-
+         
+            Swal.fire({
+              icon: 'success',
+              title: 'บันทึกเรียบร้อย',
+              // text: 'กรุณากรอกช่องให้ครบ !',
+              confirmButtonText: 'ตกลง',
+            }).then((result) => {
+              window.location.reload();
+            });
           // this.toastr.success('เพิ่มข้อมูลเรียบร้อยแล้ว', 'แจ้งเตือน');
           // this.getHospital();
           // this.closeModalView.nativeElement.click();
         },
         (err) => {
           if (err.status === 400) {
-            this.toastr.warning(
-              'มีข้อมูลเครือข่ายพยาบาลนี้อยู่แล้ว',
-              'แจ้งเตือน'
-            );
+            Swal.fire({
+              icon: 'warning',
+              title: 'มีข้อมูลเครือข่ายพยาบาลนี้อยู่แล้ว',
+              confirmButtonText: 'ตกลง',
+            });
           }
         }
       );
@@ -110,7 +119,12 @@ export class DashboardHospitalComponent implements OnInit {
         this.hospital_id
       )
       .subscribe((result) => {
-        this.toastr.success('แก้ไขข้อมูลสำเร็จ', 'แจ้งเตือน');
+        Swal.fire({
+          icon: 'success',
+          title: 'แก้ไขข้อมูลสำเร็จ',
+          // text: 'กรุณากรอกช่องให้ครบ !',
+          confirmButtonText: 'ตกลง',
+        });
       });
     window.location.reload();
   }
@@ -119,7 +133,13 @@ export class DashboardHospitalComponent implements OnInit {
     this.hospitalService
       .deleteHospital(this.hospital_id)
       .subscribe((result) => {
-        this.toastr.success('ลบข้อมูลสำเร็จ', 'แจ้งเตือน');
+        Swal.fire({
+          icon: 'success',
+          title: 'ลบข้อมูลสำเร็จ',
+          // text: 'กรุณากรอกช่องให้ครบ !',
+          confirmButtonText: 'ตกลง',
+        });
+        // this.toastr.success('ลบข้อมูลสำเร็จ', 'แจ้งเตือน');
         // this.getHospital();
       });
     window.location.reload();

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { apiUrl } from '../../environments/environment';
+// import { apiUrl } from '../../environments/environment';
 import { Request } from '../interface/request';
 import { map, catchError, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -27,7 +27,7 @@ export class AuthService {
   getProfile() {
     const token = localStorage.getItem('token');
     return this.http
-      .get(apiUrl + 'profile', {
+      .get('/api/auth/profile', {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,

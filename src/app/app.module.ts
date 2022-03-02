@@ -48,6 +48,8 @@ import { AuthGuard } from './auth/auth.guard';
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -98,6 +100,7 @@ import { AuthGuard } from './auth/auth.guard';
     NgxSpinnerModule,
     NgImageSliderModule,
     NgxPaginationModule,
+
 
   ],
   providers: [AuthService,AuthGuard],

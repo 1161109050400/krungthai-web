@@ -259,12 +259,15 @@ nav .profile-details i{
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
 .overview-boxes .box-topic{
-  font-size: 20px;
+  font-family: DB HelvethaicaMon X\ 65 Med!important;
+  font-size: 25px!important;
   font-weight: 500;
 }
 .home-content .box .number{
   display: inline-block;
-  font-size: 35px;
+  font-family: DB HelvethaicaMon X\ 65 Med!important;
+  font-size: 2.5rem!important;
+  font-weight: 400!important;
   margin-top: -6px;
   font-weight: 500;
 }
@@ -299,7 +302,7 @@ nav .profile-details i{
   text-align: center;
   color: #66b0ff;
   border-radius: 12px;
-  margin: -15px 0 0 6px;
+  margin: -20px 0px -18px 15px;
 }
 .home-content .box .cart.two{
    color: #2BD47D;
@@ -338,7 +341,8 @@ nav .profile-details i{
   justify-content: space-between;
 }
 .sales-boxes .box .title{
-  font-size: 24px;
+  font-family: DB HelvethaicaMon X\ 65 Med!important;
+  font-size: 25px!important;
   font-weight: 500;
   /* margin-bottom: 10px; */
 }

@@ -1,8 +1,13 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
-
 import { AuthService } from 'src/app/services/auth.service';
+
+import wordCloud from 'highcharts/modules/wordcloud.js';
+import { HttpClient } from '@angular/common/http';
+import { ChartService } from 'src/app/services/chart.service';
+wordCloud(Highcharts);
+
 // import * as Chart from 'chart.js'
 
 @Component({
@@ -11,95 +16,124 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./dashboard-chart.component.scss'],
 })
 export class DashboardChartComponent implements OnInit {
-  title = 'increment-notification';
-  notify = false;
-  count = 0;
-
-  onSendClick() {
-    this.count++;
-    this.notify = true;
-    setTimeout(() => {
-      this.notify = false;
-    }, 300);
-  }
-
-
-
+  Highcharts: typeof Highcharts = Highcharts;
+  dataTotal: any = {
+    total_insurance:0,
+    total_hospital:0,
+    total_user:0
+  };
   public pieChartLabels = ['Sales Q1', 'Sales Q2', 'Sales Q3', 'Sales Q4'];
   public pieChartData = [120, 150, 180, 90];
   public pieChartType = 'pie';
 
-  Highcharts = Highcharts;
+  // Highcharts = Highcharts;
   chartOptions = {};
   chartOptions1 = {};
+  chartOptions2 = {};
 
   @Input() data = [];
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private http: HttpClient,
+    private chartService: ChartService
+  ) {}
 
   ngOnInit() {
-   
-      this.chartOptions = {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
+    this.chartOptions2 = {
+      title: {
+        text: '',
+      },
+      subtitle: {
+        text: '',
+      },
+      exporting: { enabled: false },
+      credits: { enabled: false },
+      xAxis: {
+        categories: [
+          'Jan',
+          'Feb',
+          'Mar',
+          'Apr',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+          'Nov',
+          'Dec',
+        ],
+      },
+      series: [
+        {
+          type: 'column',
+          colorByPoint: true,
+          data: [1, 2, 1, 1, 5, 1, 5, 1, 3, 2, 1, 2],
+          showInLegend: false,
         },
-        title: {
-            text: ''
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        },
-        accessibility: {
-            point: {
-                valueSuffix: '%'
-            }
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                dataLabels: {
-                    enabled: false
-                },
-                showInLegend: true
-            }
-        },
-        exporting: { enabled: false },
-        credits: { enabled: false },
-        series: [{
-            name: 'Brands',
-            colorByPoint: true,
-            data: [{
-                name: 'PWLNP85',
-                y: 61.41,
-                sliced: true,
-                selected: true
-            }, {
-                name: 'WLANP85',
-                y: 11.84
-            }, {
-                name: '12PL',
-                y: 10.85
-            }, {
-                name: '10EC',
-                y: 4.67
-            }, {
-                name: 'WLN99L',
-                y: 4.18
-            }, {
-                name: 'PLB10',
-                y: 7.05
-            }]
-        }]
+      ],
     };
-    HC_exporting(Highcharts);
 
-    setTimeout(() => {
-      window.dispatchEvent(new Event('resize'));
-    }, 300);
+    this.chartOptions = {
+      chart: {
+        styledMode: true,
+      },
+
+      title: {
+        text: '',
+      },
+
+      xAxis: {
+        categories: [
+          'Jan',
+          'Feb',
+          'Mar',
+          'Apr',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+          'Nov',
+          'Dec',
+        ],
+      },
+      exporting: { enabled: false },
+      credits: { enabled: false },
+      series: [
+        {
+          type: 'pie',
+          allowPointSelect: true,
+          keys: ['name', 'y', 'selected', 'sliced'],
+          data: [
+            // ['Apples', 29.9, false],
+            // ['Pears', 71.5, false],
+            // ['Oranges', 106.4, false],
+            // ['Plums', 129.2, false],
+            // ['Bananas', 144.0, false],
+            // ['Peaches', 176.0, false],
+            // ['Prunes', 135.6, true, true],
+            // ['Avocados', 148.5, false],
+            // ['Avocados', 148.5, false],
+            // ['Avocados', 148.5, false]
+
+            ['PWLNP85', 116, true, true],
+            ['WLANP85', 99, false],
+            ['12PL', 34, false],
+            ['10EC', 25, false],
+            ['PLB10', 20, false],
+            ['RPUL', 14, false],
+            ['WLCI05', 11, false],
+            ['RL05', 7, false],
+            ['WLN99L', 7, false],
+            ['20P10', 4, false],
+          ],
+          showInLegend: true,
+        },
+      ],
+    };
 
     this.chartOptions1 = {
       chart: {
@@ -152,23 +186,25 @@ export class DashboardChartComponent implements OnInit {
       exporting: { enabled: false },
       credits: { enabled: false },
       series: [
-        {
-          name: 'ผู้ที่มาเยี่ยมชม',
-          data: [
-            49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1,
-            95.6, 54.4,
-          ],
-        },
+        // {
+        //   name: 'ผู้ที่มาเยี่ยมชม',
+        //   data: [
+        //     49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1,
+        //     95.6, 54.4,
+        //   ],
+        // },
         {
           name: 'ลูกค้าที่สนใจ',
-          data: [
-            83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5,
-            106.6, 92.3,
-          ],
+          data: [2, 3, 5, 4, 1, 5, 1, 3, 2, 5, 6, 3],
         },
-
       ],
     };
+    this.getTotalData();
+  }
+  getTotalData() {
+    this.chartService.getTotal().subscribe((result) => {
+      this.dataTotal = result;
+    });
   }
   logout() {
     this.authService.logout();

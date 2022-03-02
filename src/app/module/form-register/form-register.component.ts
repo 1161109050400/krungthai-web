@@ -67,8 +67,7 @@ export class FormRegisterComponent implements OnInit {
                 user_county: this.dataSelect.value.province,
                 user_email: this.Email.value,
                 user_phone: this.numberPhone.value,
-              })
-              .subscribe((mailResult) => {
+              }).subscribe((mailResult) => {
                 console.log(mailResult);
                 this.modalService.open(this.saveModal, { centered: true });
                 setTimeout(() => {
@@ -97,10 +96,7 @@ export class FormRegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.http
-      .get<any>(
-        'https://thaiaddressapi-thaikub.herokuapp.com/v1/thailand/provinces'
-      )
-      .subscribe((response) => {
+      .get<any>('https://thaiaddressapi-thaikub.herokuapp.com/v1/thailand/provinces').subscribe((response) => {
         this.dataList = response.data;
       });
   }

@@ -27,7 +27,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <nav class="subtitle3"><i class="fa fa-street-view" aria-hidden="true" style="font-size: 15px;"></i>
-                        &nbsp;&nbsp;A M I N</nav>
+                        &nbsp;&nbsp; <span class="subtitle1"> A D M I N</span></nav>
                 </div>
             </div>
         </header>
@@ -38,32 +38,32 @@
                         <div class="box-topic">แผนประกัน</div>
                         <div class="number">10</div>
                         <div class="indicator">
-                            <i class='bx bx-down-arrow-alt down'></i>
-                            <span class="text">Up from yesterday</span>
+                            <!-- <i class="fas fa-angle-up"></i>
+                            <span class="text">Insurance</span> -->
                         </div>
                     </div>
                     <i class="far fa-list-alt cart"></i>
-
                 </div>
+
                 <div class="box">
                     <div class="right-side">
                         <div class="box-topic">โรงพยาบาล</div>
-                        <div class="number">145</div>
+                        <div class="number">{{dataTotal.total_hospital}}</div>
                         <div class="indicator">
-                            <i class='bx bx-down-arrow-alt down'></i>
-                            <span class="text">Up from yesterday</span>
+                            <!-- <i class="fas fa-angle-up"></i>
+                            <span class="text">Hospital</span> -->
                         </div>
                     </div>
                     <i class='far fa-hospital cart two'></i>
-
                 </div>
+
                 <div class="box">
                     <div class="right-side">
                         <div class="box-topic">ลูกค้าที่สนใจ</div>
-                        <div class="number">10</div>
+                        <div class="number">{{dataTotal.total_user}}</div>
                         <div class="indicator">
-                            <i class='bx bx-down-arrow-alt down'></i>
-                            <span class="text">Up from yesterday</span>
+                            <!-- <i class="fas fa-angle-up"></i>
+                            <span class="text">Customer</span> -->
                         </div>
                     </div>
                     <i class='far fa-user cart three'></i>
@@ -71,37 +71,36 @@
                 <div class="box">
                     <div class="right-side">
                         <div class="box-topic">เอกสารอัปโหลด</div>
-                        <div class="number">13</div>
+                        <div class="number">{{dataTotal.total_insurance}}</div>
                         <div class="indicator">
-                            <i class='bx bx-down-arrow-alt down'></i>
-                            <span class="text">Down From Today</span>
+                            <!-- <i class='far fa-user cart three'></i>
+                            <span class="text">Document Insurance</span> -->
                         </div>
                     </div>
                     <i class='far fa-file-alt cart four'></i>
                 </div>
             </div>
-
+            
             <div class="sales-boxes">
                 <div class="recent-sales box">
-                    <div class="title">ผู้เยี่ยมชมรายวัน</div>
+                    <!-- <div class="title">ลูกค้าที่สนใจทำประกัน</div> -->
+                    
                     <div class="sales-details">
-
-                        <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions1"
-                                    style="width: 100%; display: block;">
-                                </highcharts-chart>
-                    </div>
-                    <div class="button">
-                        <a href="#">See All</a>
+                        <!-- <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions2" style="width: 100%;">
+                        </highcharts-chart> -->
+                        <img src="../../../../../assets/img/axa-png-5.jpg" alt="" width="700px">
+                      
                     </div>
                 </div>
+
                 <div class="top-sales box">
                     <div class="title">ประกันยอดฮิต</div>
                     <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
-                                    style="width: 100%; display: block;">
-                                </highcharts-chart>
+                        style="width: 100%; display: block;">
+                    </highcharts-chart>
+
                 </div>
             </div>
         </div>
     </section>
 </body>
-

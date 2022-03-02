@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { InsuranceService } from 'src/app/services/insurance.service';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-dashboard-insurance',
@@ -91,18 +92,32 @@ export class DashboardInsuranceComponent implements OnInit {
     formData.append('insurance_file', this.file);
     formData.append('insurance_name', this.form.controls.insurance_name.value);
 
+    // if (
+    //   this.form.controls.insurance_file.value == '' || this.form.controls.insurance_name.value == '' ||
+    //   this.form.controls.type_insurance_id.value == '' || this.form.controls.insurance_id.value == null
+    // ) {
+    //   Swal.fire({
+    //     icon: 'error',
+    //     title: 'Oops...',
+    //     text: 'กรุณากรอกช่องให้ครบ !',
+    //     confirmButtonText: 'ตกลง',
+    //   });
+    // } 
     this.insuranceService.postInsurance(formData).subscribe(
       (result) => {
-        console.log(result);
-        // alert('Uploaded Successfully.');
-        this.toastr.success('เพิ่มข้อมูลเรียบร้อยแล้ว', 'แจ้งเตือน');
-        // this._fetchInsurance();
-        this.closeModal.nativeElement.click();
+        Swal.fire({
+          icon: 'success',
+          title: 'เพิ่มข้อมูลเรียบร้อยแล้ว',
+          confirmButtonText: 'ตกลง',
+        });
       },
       (err) => {
         if (err.status === 400) {
-          // alert('มีข้อมูลเครือข่ายพยาบาลนี้อยู่แล้ว?');
-          this.toastr.warning('มีข้อมูลแผนประกันนี้อยู่แล้ว', 'แจ้งเตือน');
+          Swal.fire({
+            icon: 'warning',
+            title: 'มีข้อมูลแผนประกันนี้อยู่แล้ว',
+            confirmButtonText: 'ตกลง',
+          });
         }
       }
     );
@@ -136,9 +151,8 @@ export class DashboardInsuranceComponent implements OnInit {
         this.toastr.success('ลบข้อมูลสำเร็จ', 'แจ้งเตือน');
         // this.getHospital();
       });
-    // window.location.reload();
+    window.location.reload();
   }
-
 
   onUpdate() {
     this.insuranceService
@@ -149,9 +163,11 @@ export class DashboardInsuranceComponent implements OnInit {
         this.form.controls.type_insurance_id.value
       )
       .subscribe((result) => {
-        this.toastr.success('แก้ไขข้อมูลสำเร็จ', 'แจ้งเตือน');
-        this._fetchInsurance();
-        // this.closeModal.nativeElement.click();
+        Swal.fire({
+          icon: 'success',
+          title: 'แก้ไขข้อมูลสำเร็จ',
+          confirmButtonText: 'ตกลง',
+        });
       });
     window.location.reload();
   }
@@ -166,6 +182,4 @@ export class DashboardInsuranceComponent implements OnInit {
     this.authService.logout();
     window.location.reload();
   }
-
-
 }

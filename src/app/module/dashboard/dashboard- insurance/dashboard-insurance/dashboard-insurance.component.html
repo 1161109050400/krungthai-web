@@ -145,7 +145,7 @@
             <div class="container-fluid">
               <div class="row">
                   <nav class="subtitle3"><i class="fa fa-street-view" aria-hidden="true" style="font-size: 15px;"></i>
-                    &nbsp;&nbsp;A M I N</nav>
+                    &nbsp;&nbsp; <span class="subtitle1"> A D M I N</span></nav>
               </div>
             </div>
           </header>
@@ -208,7 +208,7 @@
                                             (click)="setEditModal(item.insurance_id)" data-bs-target="#EditModal"><i
                                                 class="fas fa-edit mx-1" style="font-size: 15px;"></i> แก้ไข</button>
                                         <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                            data-bs-target="#DeleteModal"><i class="fas fa-trash-alt mx-1"
+                                            data-bs-target="#DeleteModal" (click)="setDeleteModal(item.insurance_id)"><i class="fas fa-trash-alt mx-1"
                                                 style="font-size: 15px;"></i> ลบ</button>
 
                                     </td>

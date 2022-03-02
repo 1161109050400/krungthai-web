@@ -33,7 +33,11 @@ export class InsuranceService {
     });
   }
   deleteInsurance(id: number|null){
-    return this.http.delete<any>('/api/insurance/del-insurance/'+id);
+    return this.http.delete<any>('/api/insurance/del-insurance',{
+      body:{
+        insurance_id:id
+      }
+    });
   }
 
 }
